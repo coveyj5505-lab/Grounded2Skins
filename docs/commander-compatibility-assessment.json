@@ -1,0 +1,440 @@
+{
+  "source_identity": "Commander101 is a third-party custom Max replacement, not stock Grounded2 art.",
+  "packages": 17,
+  "export_class_counts": {
+    "PhysicsAsset": 4,
+    "Texture2D": 8,
+    "AnimCurveMetaData": 2,
+    "SkeletalMesh": 5,
+    "PhysicsConstraintTemplate": 17,
+    "SkeletalBodySetup": 18
+  },
+  "no_exports_of_classes": [
+    "Skeleton",
+    "AnimSequence",
+    "AnimBlueprint",
+    "AnimBlueprintGeneratedClass",
+    "AnimMontage"
+  ],
+  "exports": [
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Hair/SK_Male_Teen_01_HairDefault_PhysicsAsset.uasset",
+      "export_class": "PhysicsAsset",
+      "class_script_index_hex": "0x6ce65259da8a872c"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Head_C.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_N.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Head_N.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.uasset",
+      "export_class": "AnimCurveMetaData",
+      "class_script_index_hex": "0x49cde7b092534100"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.uasset",
+      "export_class": "SkeletalMesh",
+      "class_script_index_hex": "0x42d93e6acfce1861"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsAsset",
+      "class_script_index_hex": "0x6ce65259da8a872c"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "PhysicsConstraintTemplate",
+      "class_script_index_hex": "0x5853f63f596ff202"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset.uasset",
+      "export_class": "SkeletalBodySetup",
+      "class_script_index_hex": "0x7e606950971db15a"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_SSS.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Head_RMA.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Hair/SK_Male_Teen_01_HairDefault.uasset",
+      "export_class": "SkeletalMesh",
+      "class_script_index_hex": "0x42d93e6acfce1861"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_RMA.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack.uasset",
+      "export_class": "AnimCurveMetaData",
+      "class_script_index_hex": "0x49cde7b092534100"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack.uasset",
+      "export_class": "SkeletalMesh",
+      "class_script_index_hex": "0x42d93e6acfce1861"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Hair/SK_Male_Teen_01_Hair02_PhysicsAsset.uasset",
+      "export_class": "PhysicsAsset",
+      "class_script_index_hex": "0x6ce65259da8a872c"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_C.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Hair/SK_Male_Teen_01_Hair02.uasset",
+      "export_class": "SkeletalMesh",
+      "class_script_index_hex": "0x42d93e6acfce1861"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Hair/SK_Male_Teen_01_Hair03_PhysicsAsset.uasset",
+      "export_class": "PhysicsAsset",
+      "class_script_index_hex": "0x6ce65259da8a872c"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Hair/SK_Male_Teen_01_Hair03.uasset",
+      "export_class": "SkeletalMesh",
+      "class_script_index_hex": "0x42d93e6acfce1861"
+    },
+    {
+      "package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Head_SSS.uasset",
+      "export_class": "Texture2D",
+      "class_script_index_hex": "0x5b93bca796d1fa6f"
+    }
+  ],
+  "mesh_game_object_links": [
+    {
+      "chunk": "cd809abc483f179000000001",
+      "Buzz_unversioned_property_prefix_byte_exact": true,
+      "Buzz_native_reference_skeleton_bytes_exact": true,
+      "property_prefix_sha256": "d433b9930172c89042858a4a9f03a922189ee9e25dcae207bdc63bd726471a8e",
+      "original_game_object_links": [
+        {
+          "import_table_index": 1,
+          "serialized_FPackageIndex": -2,
+          "target_package": "/Game/_Augusta/Art/Animation/AnimationBlueprints/AB_Player_Deformer_PostProcess",
+          "public_export_hash_index": 1,
+          "prefix_byte_offsets": [
+            8464
+          ],
+          "note": "Object-reference candidates in unversioned property bytes; property labels are not fully mapped."
+        },
+        {
+          "import_table_index": 23,
+          "serialized_FPackageIndex": -24,
+          "target_package": "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset",
+          "public_export_hash_index": 9,
+          "prefix_byte_offsets": [
+            8460
+          ],
+          "note": "Object-reference candidates in unversioned property bytes; property labels are not fully mapped."
+        },
+        {
+          "import_table_index": 25,
+          "serialized_FPackageIndex": -26,
+          "target_package": "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+          "public_export_hash_index": 10,
+          "prefix_byte_offsets": [
+            8321
+          ],
+          "note": "Object-reference candidates in unversioned property bytes; property labels are not fully mapped."
+        }
+      ]
+    },
+    {
+      "chunk": "8021448bfc8c514500000001",
+      "Buzz_unversioned_property_prefix_byte_exact": true,
+      "Buzz_native_reference_skeleton_bytes_exact": true,
+      "property_prefix_sha256": "d433b9930172c89042858a4a9f03a922189ee9e25dcae207bdc63bd726471a8e",
+      "original_game_object_links": [
+        {
+          "import_table_index": 1,
+          "serialized_FPackageIndex": -2,
+          "target_package": "/Game/_Augusta/Art/Animation/AnimationBlueprints/AB_Player_Deformer_PostProcess",
+          "public_export_hash_index": 1,
+          "prefix_byte_offsets": [
+            8488
+          ],
+          "note": "Object-reference candidates in unversioned property bytes; property labels are not fully mapped."
+        },
+        {
+          "import_table_index": 23,
+          "serialized_FPackageIndex": -24,
+          "target_package": "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack_PhysicsAsset",
+          "public_export_hash_index": 9,
+          "prefix_byte_offsets": [
+            8484
+          ],
+          "note": "Object-reference candidates in unversioned property bytes; property labels are not fully mapped."
+        },
+        {
+          "import_table_index": 25,
+          "serialized_FPackageIndex": -26,
+          "target_package": "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+          "public_export_hash_index": 10,
+          "prefix_byte_offsets": [
+            8345
+          ],
+          "note": "Object-reference candidates in unversioned property bytes; property labels are not fully mapped."
+        }
+      ]
+    }
+  ],
+  "native_bone_count": 230,
+  "maximum_scale_deviation_from_unity": 4.768371579810804e-07,
+  "scale_observation": "Differences below 4.8e-7 are floating precision, not evidence of meaningful scaling edits.",
+  "verified_existing_comparisons": {
+    "commander_body_vs_commander_backpack": {
+      "reference_bones": 230,
+      "candidate_bones": 230,
+      "missing_bones": [],
+      "extra_bones": [],
+      "bone_order_equal": true,
+      "hierarchy_equal_by_name": true,
+      "raw_bone_records_exact": true,
+      "rest_pose_equal_within_tolerance": true,
+      "max_local_translation_error_cm": 0.0,
+      "max_local_rotation_error_deg": 0.0,
+      "max_local_scale_error": 0.0,
+      "tolerances": {
+        "translation_cm": 0.001,
+        "rotation_degrees": 0.001,
+        "scale": 1e-06
+      },
+      "differences": [],
+      "scope": "Compares actual supplied bone tables; does not prove all animation/retarget settings or runtime behavior."
+    },
+    "commander_vs_buzz_SK_Male_Teen_01.uasset": {
+      "reference_bones": 230,
+      "candidate_bones": 230,
+      "missing_bones": [],
+      "extra_bones": [],
+      "bone_order_equal": true,
+      "hierarchy_equal_by_name": true,
+      "raw_bone_records_exact": true,
+      "rest_pose_equal_within_tolerance": true,
+      "max_local_translation_error_cm": 0.0,
+      "max_local_rotation_error_deg": 0.0,
+      "max_local_scale_error": 0.0,
+      "tolerances": {
+        "translation_cm": 0.001,
+        "rotation_degrees": 0.001,
+        "scale": 1e-06
+      },
+      "differences": [],
+      "scope": "Compares actual supplied bone tables; does not prove all animation/retarget settings or runtime behavior."
+    },
+    "commander_vs_buzz_SK_Male_Teen_01_w_BackPack.uasset": {
+      "reference_bones": 230,
+      "candidate_bones": 230,
+      "missing_bones": [],
+      "extra_bones": [],
+      "bone_order_equal": true,
+      "hierarchy_equal_by_name": true,
+      "raw_bone_records_exact": true,
+      "rest_pose_equal_within_tolerance": true,
+      "max_local_translation_error_cm": 0.0,
+      "max_local_rotation_error_deg": 0.0,
+      "max_local_scale_error": 0.0,
+      "tolerances": {
+        "translation_cm": 0.001,
+        "rotation_degrees": 0.001,
+        "scale": 1e-06
+      },
+      "differences": [],
+      "scope": "Compares actual supplied bone tables; does not prove all animation/retarget settings or runtime behavior."
+    }
+  },
+  "stock_Max_reference_skeleton_available": false,
+  "stock_Max_equality": "NOT DETERMINED: original Max mesh and USkeleton packages not supplied. Equal names/import path or working animations cannot prove local rest-pose identity.",
+  "physics_warning": "Commander101 also overrides the backpack PhysicsAsset and three hair PhysicsAssets. Buzz staging preserved those mod bytes; their equality to stock physics has not been established. Pawn/capsule/movement assets are not in this mod.",
+  "recommendation": "Preserve current Buzz rig/encoder/template. Compare original-game Max mesh, backpack mesh, USkeleton and physics before final test ZIP. Original Max materials are the authoritative material-binding source. No rebuild without actual meaningful differences.",
+  "atlas_status": "Source images extracted; atlas and size-preserving four-texture mip staging written; original CUE texture mip readback works. Final atlas test ZIP paused for this assessment.",
+  "game_evidence": "User-tested Commander101 and fixed-count zMeshTest launch/render/animate. New Buzz topology/weights/materials have NOT been tested in-game."
+}

@@ -3,3 +3,5 @@ pipeline/native-buffer-probe/bin/
 pipeline/native-buffer-probe/obj/
 pipeline/native-lod-probe/bin/
 pipeline/native-lod-probe/obj/
+pipeline/texture-probe/bin/
+pipeline/texture-probe/obj/

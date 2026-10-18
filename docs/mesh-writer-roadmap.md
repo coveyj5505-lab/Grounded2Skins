@@ -1,5 +1,7 @@
 # Grounded 2 Buzz replacement: current state
 
+
+**Source clarification:** the 230-bone input is recovered from the third-party Commander101 mod. Stock-Max hierarchy/rest-pose equality has not yet been verified; the final test ZIP is paused for the [compatibility assessment](commander-stock-max-assessment.md).
 The user-tested Commander101 `zMeshTest_P` launch/render/animation result is
 recorded in [the Windows test report](windows-test-0.316.9020.0.json).
 The delivered Max test ZIP remains unchanged. Its helmet-bump A/B comparison is

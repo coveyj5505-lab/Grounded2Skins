@@ -1,5 +1,7 @@
 # Resized native LOD and Zen package: offline-validated
 
+
+**Source clarification:** the 230-bone input is recovered from the third-party Commander101 mod. Stock-Max hierarchy/rest-pose equality has not yet been verified; the final test ZIP is paused for the [compatibility assessment](commander-stock-max-assessment.md).
 The final source rig is at:
 `/workspace/mod-work/rig-stage/skinned-stowed-v9/Buzz-Grounded2-skinned.blend`.
 It contains eight packed textures, the visible skinned Buzz and both preserved

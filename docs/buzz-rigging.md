@@ -1,5 +1,7 @@
 # Buzz rig and initial wing state
 
+
+**Source clarification:** the 230-bone input is recovered from the third-party Commander101 mod. Stock-Max hierarchy/rest-pose equality has not yet been verified; the final test ZIP is paused for the [compatibility assessment](commander-stock-max-assessment.md).
 The initial playable design uses a visible backpack with the six extended wing
 panels excluded from the render mesh. The user approved this reversible approach.
 No controls, gliding, movement, collision, new bones, or deployment animations are
@@ -11,7 +13,7 @@ The saved Blender project contains:
 
 - `Buzz_Skinned`: visible, anatomically fitted, weighted mesh, 12,957 vertices,
   20,124 triangles, eight material slots and eight packed source textures.
-- `Grounded2_Armature_230`: the original 230 bones and original rest matrices.
+- `Grounded2_Armature_230`: the recovered Commander101 230 bones and their recovered rest matrices.
 - `Wings_Original_Source_UNTOUCHED`: six original panels, 430 vertices and 328
   triangles. Exact source coordinates, UVs, materials and original object matrices;
   no fitting or new weights. Hidden from viewport/render, not deleted.
@@ -65,7 +67,7 @@ seams are intentionally soft. No arbitrary root-only weighting is substituted.
 The visible rig uses at most five nonzero influences per vertex; the native codec
 supports eight. Face/eyes follow the head; facial expressions are not implemented.
 
-The scripts preserve all 230 original rest matrices. Hash:
+The scripts preserve all 230 recovered Commander101 rest matrices; stock-Max equality remains unverified. Hash:
 `9f5fdc5fe294ebc2b7277536292437fb01346700f3dcbe54a5b9f8b3759450ac`.
 Native skeleton signature:
 `204fba7a92cf816c84af30417b78b6e6f6d11716c3071611fffedb8b30a7a46a`.

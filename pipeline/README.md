@@ -1,5 +1,7 @@
 # Experimental variable-size mesh preparation
 
+
+**Current gate:** Commander101 is a third-party Max replacement. Its recovered 230-bone mesh reference pose has not yet been compared to stock Max. The atlas gameplay ZIP is paused for the [compatibility assessment](../docs/commander-stock-max-assessment.md); current rig and packaging work remain preserved.
 The working `zMeshTest_P` release is unchanged. Buzz is now fitted and skinned,
 with the approved stowed visibility state and six original wing panels preserved.
 Both complete resized native LODs and Zen packages have passed independent

@@ -1,0 +1,6 @@
+{
+  "calibration_not_stock_game_evidence": true,
+  "quaternion_sign_equivalence": "passed",
+  "detect_half_cm_wrist_translation_change": "passed",
+  "detect_parent_change": "passed"
+}
