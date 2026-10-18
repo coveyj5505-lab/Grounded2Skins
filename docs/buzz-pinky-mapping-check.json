@@ -1,0 +1,95 @@
+{
+  "weighted_bones": 52,
+  "all_positive_weight_joints_valid_unique_and_present_by_name_in_stock": true,
+  "pinky_tests": [
+    {
+      "bone": "LeftHandPinky3_JNT",
+      "influenced_render_vertices": 146,
+      "maximum_weight": 1.0,
+      "controlled_pose_results": [
+        {
+          "local_axis": "X",
+          "degrees": -45,
+          "max_displacement_difference_cm": 0.2462043030937881,
+          "rms_influenced_difference_cm": 0.14758060137226683
+        },
+        {
+          "local_axis": "X",
+          "degrees": 45,
+          "max_displacement_difference_cm": 0.23508391506221352,
+          "rms_influenced_difference_cm": 0.13860422125375038
+        },
+        {
+          "local_axis": "Y",
+          "degrees": -45,
+          "max_displacement_difference_cm": 0.26274071386398895,
+          "rms_influenced_difference_cm": 0.15255016054948492
+        },
+        {
+          "local_axis": "Y",
+          "degrees": 45,
+          "max_displacement_difference_cm": 0.25289526328829315,
+          "rms_influenced_difference_cm": 0.14764232169893216
+        },
+        {
+          "local_axis": "Z",
+          "degrees": -45,
+          "max_displacement_difference_cm": 0.0006957108487685839,
+          "rms_influenced_difference_cm": 0.0005824296750390927
+        },
+        {
+          "local_axis": "Z",
+          "degrees": 45,
+          "max_displacement_difference_cm": 0.0006770167853195088,
+          "rms_influenced_difference_cm": 0.0005693434791066059
+        }
+      ]
+    },
+    {
+      "bone": "RightHandPinky3_JNT",
+      "influenced_render_vertices": 147,
+      "maximum_weight": 1.0,
+      "controlled_pose_results": [
+        {
+          "local_axis": "X",
+          "degrees": -45,
+          "max_displacement_difference_cm": 1.0361508585422368,
+          "rms_influenced_difference_cm": 0.6153299798717076
+        },
+        {
+          "local_axis": "X",
+          "degrees": 45,
+          "max_displacement_difference_cm": 1.0848849442088597,
+          "rms_influenced_difference_cm": 0.6442972155076804
+        },
+        {
+          "local_axis": "Y",
+          "degrees": -45,
+          "max_displacement_difference_cm": 0.9102745873851075,
+          "rms_influenced_difference_cm": 0.5166941806081397
+        },
+        {
+          "local_axis": "Y",
+          "degrees": 45,
+          "max_displacement_difference_cm": 0.8187376270158014,
+          "rms_influenced_difference_cm": 0.47993901833836106
+        },
+        {
+          "local_axis": "Z",
+          "degrees": -45,
+          "max_displacement_difference_cm": 0.0011544154989341538,
+          "rms_influenced_difference_cm": 0.0009295322330057227
+        },
+        {
+          "local_axis": "Z",
+          "degrees": 45,
+          "max_displacement_difference_cm": 0.0011612334069136632,
+          "rms_influenced_difference_cm": 0.0009440146136560442
+        }
+      ]
+    }
+  ],
+  "scope": "Same +/-45 degree local-axis rotation applied separately in recovered and stock bind frames. This measures sensitivity to frame choice, not real game animation or which frame is artistically correct. No animation tracks, sockets or retarget policies are inferred.",
+  "correction": "None: no invalid/missing weighted bone mapping found. Keep recovered baseline intact for first gameplay test. A bind-frame change without animation evidence could introduce errors.",
+  "runtime": "Buzz not yet tested in Grounded 2"
+}

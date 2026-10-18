@@ -1,3 +1,5 @@
+LATEST: The stock assessment and final isolated atlas packaging are now complete. See [the first gameplay test report](buzz-first-gameplay-test.md). The text below is a historical pre-assessment staging checkpoint, not the current release status.
+
 # Atlas staging checkpoint — not a finalized gameplay mod
 
 The user approved a temporary single-material atlas test, then requested a
