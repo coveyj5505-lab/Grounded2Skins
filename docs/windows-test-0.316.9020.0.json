@@ -1,0 +1,43 @@
+{
+  "recorded_at_utc": "2026-10-18T21:24:55.769555+00:00",
+  "evidence_source": "User report in this conversation; not an assistant-run game test",
+  "mod": "zMeshTest_P",
+  "game": "Grounded 2",
+  "platform": "Windows PC Game Pass / WinGDK",
+  "build": "0.316.9020.0",
+  "results": {
+    "game_launched_normally": "passed",
+    "Commander101_appeared_correctly": "passed",
+    "character_animations_worked": "passed",
+    "small_helmet_bump_observed": true,
+    "helmet_difference_conclusively_compared_against_original": false
+  },
+  "not_established": [
+    "The observed bump was caused by the edited vertices rather than the original mesh",
+    "Every animation, camera mode, or equipment/backpack variant has been tested",
+    "Arbitrary new topology, UVs, normals, skin weights, or Buzz replacement works"
+  ],
+  "associated_delivery": {
+    "zip": "Max-Mesh-Test.zip",
+    "sha256": "0697a675afa0b3287e31d2b78c8f75bed59916f52639aa512b307158c370f148",
+    "files": [
+      {
+        "name": "zMeshTest_P.pak",
+        "bytes": 339,
+        "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+      },
+      {
+        "name": "zMeshTest_P.ucas",
+        "bytes": 144799107,
+        "sha256": "4cc9f78b554616e950eb0c8410e8581affe56fc20e85cade1c959c1c0aff3553"
+      },
+      {
+        "name": "zMeshTest_P.utoc",
+        "bytes": 29479,
+        "sha256": "535f0b709c5b06d4033f16434b7b53cdb0860cc09b1e741561a63b5b34870d6b"
+      }
+    ],
+    "pc_file_hashes_independently_reported": false
+  },
+  "scope": "In-game acceptance of the delivered fixed-count Commander101 position-edit package, with visual A/B comparison pending. No claim of a working Buzz mod."
+}

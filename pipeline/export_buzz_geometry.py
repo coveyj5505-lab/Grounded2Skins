@@ -1,0 +1,113 @@
+"""Blender exporter for source geometry; intentionally creates NO skin weights.
+
+Run against the orientation/height-aligned Buzz inspection scene. Hard-normal,
+tangent, and UV seams are split into render vertices; materials remain per face.
+The output NPZ is rejected by the skinned encoder until real weights exist.
+"""
+import bpy
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+
+sys.path.insert(0, str(Path(__file__).parent))
+from native_buffers import skeleton_signature, validate
+
+args = sys.argv[sys.argv.index('--') + 1:]
+reference, inspection, output = map(Path, args)
+if output.exists():
+    raise FileExistsError(output)
+output.mkdir(parents=True)
+arm = next(o for o in bpy.data.objects if o.type == 'ARMATURE')
+obj = next(o for o in bpy.data.objects if o.type == 'MESH')
+mesh = obj.data
+assert len(arm.data.bones) == 230 and not obj.vertex_groups
+assert not any(m.type == 'ARMATURE' for m in obj.modifiers)
+signature = skeleton_signature(reference)
+mesh.calc_loop_triangles()
+mesh.calc_tangents(uvmap=mesh.uv_layers.active.name)
+tri_loops = np.asarray([tuple(t.loops) for t in mesh.loop_triangles], dtype='i4')
+materials = np.asarray([t.material_index for t in mesh.loop_triangles], dtype='u2')
+loops = np.asarray([l.vertex_index for l in mesh.loops], dtype='i4')
+uv = np.asarray([tuple(v.uv) for v in mesh.uv_layers.active.data], dtype='f4')
+normal = np.asarray([tuple(l.normal) for l in mesh.loops], dtype='f8')
+tangent = np.asarray([tuple(l.tangent) for l in mesh.loops], dtype='f8')
+sign = np.asarray([l.bitangent_sign for l in mesh.loops], dtype='f4')
+transform = arm.matrix_world.inverted() @ obj.matrix_world
+positions = np.asarray([tuple(transform @ v.co) for v in mesh.vertices], dtype='f8')
+assert np.max(np.abs(np.asarray(transform) - np.eye(4))) < 1e-6, 'Inspection scene must have applied mesh-to-armature transform'
+# Same reference conversion as the proven exporter, reversed: meters -> cm,
+# reflect Y; retain Blender triangle order for Unreal clockwise faces.
+positions *= np.array([100, -100, 100])
+normal *= np.array([1, -1, 1])
+tangent *= np.array([1, -1, 1])
+sign *= -1
+points = positions[loops[tri_loops]]
+areas2 = np.linalg.norm(np.cross(points[:, 1] - points[:, 0], points[:, 2] - points[:, 0]), axis=1)
+keep = areas2 > 1e-12
+removed = np.flatnonzero(~keep).tolist()
+tri_loops, materials = tri_loops[keep], materials[keep]
+used = np.unique(tri_loops)
+normal_length = np.linalg.norm(normal[used], axis=1)
+assert np.all(normal_length > 1e-8), 'Cannot generate a normal for nondegenerate source faces'
+normal[used] /= normal_length[:, None]
+tangent[used] -= np.sum(tangent[used] * normal[used], axis=1, keepdims=True) * normal[used]
+bad = used[np.linalg.norm(tangent[used], axis=1) < 1e-8]
+axes = np.eye(3)[np.argmin(np.abs(normal[bad]), axis=1)]
+tangent[bad] = np.cross(axes, normal[bad])
+tangent[used] /= np.linalg.norm(tangent[used], axis=1, keepdims=True)
+# Handedness is undefined on degenerate UV derivatives. Use a deterministic
+# frame for those loops and explicitly report them; their UVs are not changed.
+bad_signs = used[~np.isin(sign[used], [-1, 1])]
+sign[bad_signs] = 1
+keys = np.empty(len(used), dtype=[('vertex', '<i4'), ('uv', '<f4', (2,)),
+                               ('normal', '<f4', (3,)), ('tangent', '<f4', (3,)), ('sign', '<f4')])
+keys['vertex'], keys['uv'] = loops[used], uv[used]
+keys['normal'], keys['tangent'], keys['sign'] = normal[used], tangent[used], sign[used]
+unique, first, inverse = np.unique(keys, return_index=True, return_inverse=True)
+source_loop = used[first]
+lookup = np.full(len(mesh.loops), -1, dtype='i4')
+lookup[used] = inverse
+indices = lookup[tri_loops].astype('<u4')
+source_vertex = loops[source_loop]
+n = len(source_loop)
+data = {'positions': positions[source_vertex].astype('f4'), 'normals': normal[source_loop].astype('f4'),
+        'tangents': tangent[source_loop].astype('f4'), 'signs': sign[source_loop], 'uv0': uv[source_loop],
+        'indices': indices, 'materials': materials, 'colors': np.full((n, 4), 255, dtype='u1'),
+        'source_vertices': source_vertex, 'material_count': np.asarray(len(mesh.materials)),
+        'skeleton_signature': np.asarray(signature), 'joints': np.empty((n, 0), dtype='u2'),
+        'weights': np.empty((n, 0), dtype='f4')}
+validate(data, signature, require_skin=False)
+try:
+    validate(data, signature)
+except ValueError as error:
+    skin_rejection = str(error)
+else:
+    raise AssertionError('Unrigged source must not be accepted as a skinned mesh')
+np.savez_compressed(output / 'Buzz-geometry-UNSKINNED.npz', **data)
+report = {'source_vertices': len(mesh.vertices), 'source_triangles': len(mesh.loop_triangles),
+          'render_vertices_after_uv_normal_tangent_seam_splitting': n, 'triangles': len(indices),
+          'material_slots': [m.name for m in mesh.materials], 'uv_channels': 1,
+          'coordinate_system': 'Unreal centimeters, Y reflected from Blender, clockwise triangle order',
+          'removed_degenerate_triangle_ids': removed, 'fallback_tangent_loop_count': len(bad),
+          'fallback_tangent_sign_loop_count': len(bad_signs), 'normals': 'Generated by Blender from OBJ; source OBJ had no vn records',
+          'tangents': 'Blender UV tangents orthogonalized; degenerate derivative fallbacks reported',
+          'geometry_preflight': 'passed', 'skin_preflight_expected_rejection': skin_rejection,
+          'skin_weights': 'NOT CREATED', 'game_compatibility': 'NOT TESTED',
+          'skeleton_signature': signature, 'armature_bones': len(arm.data.bones)}
+(output / 'geometry-preflight.json').write_text(json.dumps(report, indent=2) + '\n')
+# Fresh reopen checks packed images, geometry counts and rest matrices against
+# the inspection scene's saved matrix hash, when present.
+metadata = json.loads(inspection.read_text())
+assert sum(len(o.data.vertices) for o in bpy.data.objects if o.type == 'MESH') == sum(x['vertices'] for x in metadata['objects'])
+assert sum(len(o.data.polygons) for o in bpy.data.objects if o.type == 'MESH') == sum(x['faces'] for x in metadata['objects'])
+for image in bpy.data.images:
+    if image.source == 'FILE':
+        assert image.packed_file and image.size[0] > 0 and image.size[1] > 0
+if 'armature_rest_matrices_sha256' in metadata:
+    actual = {b.name: [list(row) for row in b.matrix_local] for b in arm.data.bones}
+    digest = hashlib.sha256(json.dumps(actual, sort_keys=True).encode()).hexdigest()
+    assert digest == metadata['armature_rest_matrices_sha256']
+print(json.dumps(report), flush=True)

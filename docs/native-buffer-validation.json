@@ -1,0 +1,93 @@
+{
+  "cases": {
+    "reference": {
+      "vertices": 258064,
+      "triangles": 364319,
+      "sections": 9,
+      "positions_indices_colors_exact": true,
+      "uvs_equal_float16_quantization": true,
+      "normal_tangent_error_below": 0.004,
+      "raw_weights_and_local_joints_exact": true,
+      "palette_to_original_skeleton_ids_exact": true,
+      "weights_sum255_every_vertex": true
+    },
+    "new-topology": {
+      "vertices": 6,
+      "triangles": 2,
+      "sections": 2,
+      "positions_indices_colors_exact": true,
+      "uvs_equal_float16_quantization": true,
+      "normal_tangent_error_below": 0.004,
+      "raw_weights_and_local_joints_exact": true,
+      "palette_to_original_skeleton_ids_exact": true,
+      "weights_sum255_every_vertex": true
+    },
+    "palette-split": {
+      "vertices": 6,
+      "triangles": 2,
+      "sections": 2,
+      "positions_indices_colors_exact": true,
+      "uvs_equal_float16_quantization": true,
+      "normal_tangent_error_below": 0.004,
+      "raw_weights_and_local_joints_exact": true,
+      "palette_to_original_skeleton_ids_exact": true,
+      "weights_sum255_every_vertex": true
+    },
+    "noncontiguous-influences": {
+      "vertices": 6,
+      "triangles": 2,
+      "sections": 2,
+      "positions_indices_colors_exact": true,
+      "uvs_equal_float16_quantization": true,
+      "normal_tangent_error_below": 0.004,
+      "raw_weights_and_local_joints_exact": true,
+      "palette_to_original_skeleton_ids_exact": true,
+      "weights_sum255_every_vertex": true
+    }
+  },
+  "expected_rejections": [
+    {
+      "case": "changed-skeleton",
+      "reason": "Skeleton signature differs"
+    },
+    {
+      "case": "nonfinite-position",
+      "reason": "Invalid shape or nonfinite positions"
+    },
+    {
+      "case": "index-out-of-range",
+      "reason": "Triangle index outside vertex array"
+    },
+    {
+      "case": "unweighted-vertex",
+      "reason": "Unweighted or unnormalized vertex"
+    },
+    {
+      "case": "unknown-bone",
+      "reason": "Joint IDs must refer to the unchanged 230-bone skeleton"
+    },
+    {
+      "case": "duplicate-influence",
+      "reason": "Duplicate nonzero influences"
+    },
+    {
+      "case": "unknown-material",
+      "reason": "Invalid material slot ID"
+    },
+    {
+      "case": "over-eight-influences",
+      "reason": "Only the measured maximum of eight influences is supported"
+    },
+    {
+      "case": "missing-skin",
+      "reason": "No skin weights: weight transfer and binding are required"
+    },
+    {
+      "case": "UV-half-overflow",
+      "reason": "UV exceeds measured float16 format"
+    }
+  ],
+  "cooked_package_integration": "NOT IMPLEMENTED",
+  "arbitrary_mesh_in_game_test": "NOT RUN",
+  "skeleton_signature": "204fba7a92cf816c84af30417b78b6e6f6d11716c3071611fffedb8b30a7a46a"
+}
