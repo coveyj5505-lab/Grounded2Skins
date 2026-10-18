@@ -1,3 +1,5 @@
 **/__pycache__/
 pipeline/native-buffer-probe/bin/
 pipeline/native-buffer-probe/obj/
+pipeline/native-lod-probe/bin/
+pipeline/native-lod-probe/obj/

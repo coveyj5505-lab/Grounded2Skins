@@ -212,7 +212,7 @@ def encode(data, signature, output, palette_limit=70):
                 'quantization_zeroed_influences': c['quantization_zeroed_influences'],
                 'files': {name: {'bytes': len(blob), 'sha256': hashlib.sha256(blob).hexdigest()}
                           for name, blob in blobs.items()},
-                'cooked_package_integration': 'NOT IMPLEMENTED', 'in_game_test': 'NOT RUN'}
+                'cooked_package_integration': 'Not performed by standalone encoder; see write_resized_lod.py', 'in_game_test': 'NOT RUN'}
     output.mkdir(parents=True)
     for name, blob in blobs.items():
         (output / name).write_bytes(blob)

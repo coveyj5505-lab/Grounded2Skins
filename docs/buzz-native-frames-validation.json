@@ -1,0 +1,11 @@
+{
+  "vertices": 19609,
+  "triangles": 20124,
+  "sections": 7,
+  "positions_indices_colors_exact": true,
+  "uvs_equal_float16_quantization": true,
+  "normal_tangent_error_below": 0.004,
+  "raw_weights_and_local_joints_exact": true,
+  "palette_to_original_skeleton_ids_exact": true,
+  "weights_sum255_every_vertex": true
+}

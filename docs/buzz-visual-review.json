@@ -1,0 +1,28 @@
+{
+  "reviewed": [
+    "rest",
+    "rest_back",
+    "arm_raise",
+    "elbow_bend",
+    "head_turn",
+    "torso_turn",
+    "finger_curl",
+    "sitting_approx",
+    "crouching_approx",
+    "running_approx",
+    "climbing_approx"
+  ],
+  "findings": [
+    "Extended wings absent from visible mesh; backpack visible.",
+    "No exploding geometry observed in the reviewed controlled poses.",
+    "Rigid suit pieces follow intended limbs; chest/backpack independent of arms."
+  ],
+  "limitations": [
+    "Synthetic poses, not original game animations.",
+    "Shoulder/hip/knee armor overlap and seams still need review with actual game animations, equipment and seating.",
+    "Human skeleton proportions deliberately change the supplied toy proportions.",
+    "Face follows head; facial expressions not implemented.",
+    "Movement and collision assets were not changed; runtime collision/clipping not tested."
+  ],
+  "game_test": "NOT RUN"
+}

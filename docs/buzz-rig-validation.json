@@ -1,0 +1,449 @@
+{
+  "fresh_reopen": true,
+  "vertices": 12957,
+  "triangles": 20124,
+  "material_slots": 8,
+  "packed_images": 8,
+  "bone_count": 230,
+  "rest_hash": "9f5fdc5fe294ebc2b7277536292437fb01346700f3dcbe54a5b9f8b3759450ac",
+  "normalized_weights": true,
+  "max_influences": 5,
+  "wing_archive": {
+    "objects": 6,
+    "vertices": 430,
+    "rigid_chest_only": true,
+    "hidden_from_initial_mesh": true
+  },
+  "untouched_source_wing_objects_verified": 6,
+  "source_wing_coordinates_and_matrices_exact": true,
+  "backpack_chest_only": true,
+  "pose_results": [
+    {
+      "pose": "rest",
+      "rotations_bone_axis_degrees": [],
+      "independent_LBS_max_error_m": 2.8228570437515444e-07,
+      "rigid_distance_error_m": 7.154616080140563e-08,
+      "edge_length_ratio_p01_p99_max": [
+        0.9999952923141676,
+        1.0000036179375276,
+        1.0000395787194605
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "arm_raise",
+      "rotations_bone_axis_degrees": [
+        [
+          56,
+          "Y",
+          -55
+        ],
+        [
+          160,
+          "Y",
+          55
+        ]
+      ],
+      "independent_LBS_max_error_m": 3.694711927274017e-07,
+      "rigid_distance_error_m": 1.7267330054693275e-07,
+      "edge_length_ratio_p01_p99_max": [
+        0.9999915502771931,
+        1.0000086662994037,
+        1.0000556108904242
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "elbow_bend",
+      "rotations_bone_axis_degrees": [
+        [
+          59,
+          "Z",
+          -65
+        ],
+        [
+          163,
+          "Z",
+          65
+        ]
+      ],
+      "independent_LBS_max_error_m": 2.8242070605997457e-07,
+      "rigid_distance_error_m": 1.3432650541878033e-07,
+      "edge_length_ratio_p01_p99_max": [
+        0.8644342571574303,
+        1.1027733467879342,
+        1.723180112842469
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "head_turn",
+      "rotations_bone_axis_degrees": [
+        [
+          101,
+          "Z",
+          40
+        ]
+      ],
+      "independent_LBS_max_error_m": 2.8228570437515444e-07,
+      "rigid_distance_error_m": 8.477795288008849e-08,
+      "edge_length_ratio_p01_p99_max": [
+        0.9999719475782844,
+        1.020176799706241,
+        1.5390312062448854
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "torso_turn",
+      "rotations_bone_axis_degrees": [
+        [
+          52,
+          "Z",
+          25
+        ]
+      ],
+      "independent_LBS_max_error_m": 3.4101270473319836e-07,
+      "rigid_distance_error_m": 9.07439312580749e-08,
+      "edge_length_ratio_p01_p99_max": [
+        0.9999905607397986,
+        1.0000094659746168,
+        14.875220183665814
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.26376351714134216,
+          0.06197787821292877,
+          1.0276904106140137
+        ],
+        [
+          0.1092502772808075,
+          0.30558258295059204,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "finger_curl",
+      "rotations_bone_axis_degrees": [
+        [
+          75,
+          "X",
+          45
+        ],
+        [
+          76,
+          "X",
+          45
+        ],
+        [
+          197,
+          "X",
+          45
+        ],
+        [
+          198,
+          "X",
+          45
+        ]
+      ],
+      "independent_LBS_max_error_m": 3.0661909437305446e-07,
+      "rigid_distance_error_m": 7.154616080140563e-08,
+      "edge_length_ratio_p01_p99_max": [
+        0.9999929222433489,
+        1.0000049808121818,
+        1.200220146903195
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "sitting_approx",
+      "rotations_bone_axis_degrees": [
+        [
+          24,
+          "X",
+          -75
+        ],
+        [
+          32,
+          "X",
+          -75
+        ],
+        [
+          25,
+          "X",
+          95
+        ],
+        [
+          33,
+          "X",
+          95
+        ],
+        [
+          59,
+          "Z",
+          -45
+        ],
+        [
+          163,
+          "Z",
+          45
+        ]
+      ],
+      "independent_LBS_max_error_m": 2.90837638752117e-07,
+      "rigid_distance_error_m": 1.4781895332771633e-07,
+      "edge_length_ratio_p01_p99_max": [
+        0.7225588353809737,
+        1.1833615636278756,
+        1.8500589126815563
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "crouching_approx",
+      "rotations_bone_axis_degrees": [
+        [
+          24,
+          "X",
+          -65
+        ],
+        [
+          32,
+          "X",
+          -65
+        ],
+        [
+          25,
+          "X",
+          110
+        ],
+        [
+          33,
+          "X",
+          110
+        ],
+        [
+          52,
+          "X",
+          20
+        ]
+      ],
+      "independent_LBS_max_error_m": 3.5451276219806286e-07,
+      "rigid_distance_error_m": 1.42204165592269e-07,
+      "edge_length_ratio_p01_p99_max": [
+        0.7159264221862804,
+        1.1720353264147676,
+        3.673192997194358
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494602620601654,
+          -0.05857178568840027,
+          1.1176105737686157
+        ],
+        [
+          0.20494595170021057,
+          0.25563281774520874,
+          1.8025288581848145
+        ]
+      ]
+    },
+    {
+      "pose": "running_approx",
+      "rotations_bone_axis_degrees": [
+        [
+          24,
+          "X",
+          -45
+        ],
+        [
+          32,
+          "X",
+          30
+        ],
+        [
+          25,
+          "X",
+          30
+        ],
+        [
+          33,
+          "X",
+          70
+        ],
+        [
+          56,
+          "Z",
+          30
+        ],
+        [
+          160,
+          "Z",
+          30
+        ],
+        [
+          59,
+          "Z",
+          -45
+        ],
+        [
+          163,
+          "Z",
+          45
+        ]
+      ],
+      "independent_LBS_max_error_m": 3.1186467453015385e-07,
+      "rigid_distance_error_m": 1.1721933956820862e-07,
+      "edge_length_ratio_p01_p99_max": [
+        0.816792047356056,
+        1.144684372620319,
+        1.7328365629361415
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    },
+    {
+      "pose": "climbing_approx",
+      "rotations_bone_axis_degrees": [
+        [
+          56,
+          "Y",
+          -100
+        ],
+        [
+          160,
+          "Y",
+          100
+        ],
+        [
+          59,
+          "Z",
+          -35
+        ],
+        [
+          163,
+          "Z",
+          35
+        ],
+        [
+          24,
+          "X",
+          -60
+        ],
+        [
+          25,
+          "X",
+          95
+        ]
+      ],
+      "independent_LBS_max_error_m": 3.5786806735823595e-07,
+      "rigid_distance_error_m": 2.3155627879023477e-07,
+      "edge_length_ratio_p01_p99_max": [
+        0.8270018735839619,
+        1.1190859783242293,
+        1.7853860286907142
+      ],
+      "finite": true,
+      "backpack_bbox_m": [
+        [
+          -0.20494601130485535,
+          0.14321556687355042,
+          1.0276904106140137
+        ],
+        [
+          0.20494596660137177,
+          0.30398842692375183,
+          1.7574849128723145
+        ]
+      ]
+    }
+  ],
+  "scope": "Synthetic controlled poses, not original Grounded 2 animations or game collision tests",
+  "visual_review": "Render images require inspection; numerical skinning checks do not alone prove acceptable deformation",
+  "game_test": "NOT RUN"
+}

@@ -1,9 +1,16 @@
 # Experimental variable-size mesh preparation
 
-The working `zMeshTest_P` release is unchanged. This directory adds the next
-stage's source, with a deliberately limited claim: variable-size **native buffer
-records** have been written and independently read back. They are not yet
-integrated into a resized cooked skeletal-mesh asset.
+The working `zMeshTest_P` release is unchanged. Buzz is now fitted and skinned,
+with the approved stowed visibility state and six original wing panels preserved.
+Both complete resized native LODs and Zen packages have passed independent
+CUE4Parse/retoc readback and container round-trip checks. Unreal materials/textures
+are still the original Commander references; this is not a finished textured or
+in-game-tested Buzz release.
+
+See [rigging and wing preservation](../docs/buzz-rigging.md) and
+[resized package reproduction](../docs/resized-package-pipeline.md).
+The standalone-buffer and unskinned-intake examples below remain useful isolated
+stages; their historical limited scope does not describe the completed full writer.
 
 ## Tools and retained inputs
 
@@ -118,6 +125,4 @@ columns on purpose. Geometry checks pass; skinned checks must reject that file
 until actual weights are created. No placeholder skin or substitute Buzz model
 is generated.
 
-See [the roadmap](../docs/mesh-writer-roadmap.md) for full-package relocation,
-native LOD/section serialization, anatomical fitting, materials/textures, and
-Windows testing still required.
+See [the current roadmap](../docs/mesh-writer-roadmap.md) for completed full-package work and remaining Unreal material/texture integration and Windows tests.
