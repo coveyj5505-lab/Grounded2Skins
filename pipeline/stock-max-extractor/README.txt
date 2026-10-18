@@ -24,7 +24,7 @@ Paks-folder context is requested, so installed Commander101/Buzz overrides canno
 silently substitute for the original game assets during this extraction.
 
 The five package paths are listed in targets.json: stock Max body mesh, backpack
-mesh, USkeleton, backpack PhysicsAsset, and Max's Apparel01 material instance.
+mesh, USkeleton, stock skeletal PhysicsAsset, and Max's Apparel01 material instance.
 The first three answer the bone/rest-pose question. The other two allow inspecting
 skeletal physics differences and the actual atlas material dependency.
 
@@ -33,3 +33,7 @@ stops the operation; an incomplete ZIP is not presented as success. The wrapper
 has not been executed on Windows in the cloud environment. Its underlying Python
 extractor has been exercised against the supplied mod using the same retoc CLI;
 actual original-game extraction remains a Windows step.
+
+Correction 2026-10-18: the stock meshes import /Game/Art/Characters/Player_Male01/Mesh/SK_Male_Kid_01_PhysicsAsset.
+The former _Augusta/.../SK_Male_Teen_01_w_BackPack_PhysicsAsset path belongs
+to the Commander101 replacement and was absent from the original container.

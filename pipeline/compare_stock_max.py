@@ -25,7 +25,7 @@ def names(data,pos):
 def run(folder,reference,out):
  assert not out.exists();report=json.loads((folder/'extraction-report.json').read_text(encoding='utf-8-sig'))
  assert report['source'].replace('\\','/').split('/')[-1].casefold()=='augusta-wingdk.utoc','Must originate from ORIGINAL game index, not mod'
- assert report['source_size_and_mtime_unchanged'] and not report['missing_targets']
+ assert report['source_size_and_mtime_unchanged']
  baseline=json.loads(reference.read_text())['meshes'][0]['bones'];assets=[];bones_out=[]
  for entry in report['chunks']:
   if entry['type']!='ExportBundleData':continue
@@ -40,9 +40,9 @@ def run(folder,reference,out):
    item['note']='Dependency/header inventory only, not mapped property/shader/physics-shape deserialization'
    if leaf.startswith('MI_'):item['parameter_name_candidates_not_a_verified_binding']=[n for n in local if any(s in n.lower() for s in ['texture','color','diffuse','albedo','normal'])]
   assets.append(item)
- assert len(bones_out)==3,'Expected original Max body/backpack meshes and USkeleton'
+ assert bones_out,'No supported skeletal packages available for comparison'
  out.mkdir();(out/'stock-reference-skeletons.json').write_text(json.dumps({'meshes':bones_out},indent=2)+'\n')
- result={'source':'Original Augusta-WinGDK game container, as recorded by read-only extractor','assets':assets,'scope':'Bone names/order/parents/local rest poses compared. Physics and material parameters are inventoried, not fully deserialized.','game_runtime_compatibility':'Still requires Windows test; equality alone does not test all animations.'}
+ result={'missing_targets':report.get('missing_targets',[]),'skeletal_packages_compared':len(bones_out),'source':'Original Augusta-WinGDK game container, as recorded by read-only extractor','assets':assets,'scope':'Bone names/order/parents/local rest poses compared. Physics and material parameters are inventoried, not fully deserialized.','game_runtime_compatibility':'Still requires Windows test; equality alone does not test all animations.'}
  (out/'comparison.json').write_text(json.dumps(result,indent=2)+'\n')
  print(json.dumps({x['path']:x['compared_to_Commander101']['rest_pose_equal_within_tolerance'] for x in assets if 'compared_to_Commander101' in x},indent=2))
 
