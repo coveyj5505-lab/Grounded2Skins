@@ -1,0 +1,35 @@
+{
+  "source_archive": "bo-peep-toy-story.zip",
+  "archive_sha256": "41bd13601371d3cb5c92c84b2f69309e9d2fc8c65cae1e0b9a30cbed49ed4b49",
+  "FBX_vertices": 5419,
+  "FBX_triangles": 7049,
+  "source_rig_bones": 63,
+  "source_deform_groups": 43,
+  "all_vertices_weighted": true,
+  "actions": 0,
+  "material_slots_used": 1,
+  "unique_texture": "bo_peep_d.png,512x512RGBA,opaque",
+  "appearance": "Actually rendered: blue adventurer outfit,pink belt,cape,blonde hair/bow,curved blue crook",
+  "separate_body": {
+    "vertices": 5028,
+    "triangles": 6459
+  },
+  "preserved_crook": {
+    "vertices": 391,
+    "triangles": 590,
+    "hidden_from_initial_export": true,
+    "pivot": "Original source e_stick bone-head; future native hand socket not verified"
+  },
+  "preservation_validation": {
+    "fresh_reopen": true,
+    "source_triangles_partition_exact": true,
+    "body_and_crook_positions_UVs_materials_weights_world_transforms_exact": true,
+    "original_rig_bones": 63,
+    "crook_hidden_from_initial_playable_export": true,
+    "unique_texture_images": 1,
+    "source_original_object_preserved": true,
+    "Willow_compatibility": "Awaiting stock Willow packages"
+  },
+  "native_Willow_status": "Original mesh/skeleton packages not supplied; no bone-count or animation-compatibility assumption",
+  "source_files_and_Buzz_baselines_modified": false
+}
