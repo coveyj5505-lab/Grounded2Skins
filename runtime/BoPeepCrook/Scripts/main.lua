@@ -4,6 +4,10 @@ local function valid(o) return o~=nil and o:IsValid() end
 local function full(o) if valid(o) then return o:GetFullName() end return 'NONE' end
 local signatures={};local enums={};local busy=false;local recording=false
 local untilTime=0;local sequence=0;local lastState=nil;local fault=false
+local lastEligibility=nil
+local function eligibility(message)
+    if message~=lastEligibility then log(message);lastEligibility=message end
+end
 local function checked(tag,fn)
     log('BEFORE '..tag)
     local value=fn()
@@ -181,7 +185,7 @@ local function cleanup()
     end
     component=nil;ownerPawn=nil;lastVisible=nil;lastFirst=nil
 end
-local function create(p)
+local function create(p,body)
     -- Complete signature/enum/asset/socket checks BEFORE creating a component.
     for key,args in pairs(S) do
         local class,method=key:match('^(.*)%.([^%.]+)$')
@@ -192,12 +196,12 @@ local function create(p)
     noCollision=engineEnum('ECollisionEnabled','NoCollision')
     snap=engineEnum('EAttachmentRule','SnapToTarget')
     worldSpace=engineEnum('ERelativeTransformSpace','RTS_World')
-    local body=unsafeProperty(p,'Mesh','ObjectProperty');assert(valid(body),'Character Mesh unavailable')
+    assert(valid(body),'Character Mesh unavailable')
     -- Validate the existing player mesh without altering it. Use this test with the Bo Peep skin installed.
     local active=body.SkeletalMeshAsset or body.SkeletalMesh
     assert(valid(active),'Character mesh asset unavailable')
     log('BODY '..full(active))
-    -- FP skin package retains its original Willow mesh path; identify the player class separately.
+    -- Eligibility was checked against the actual cooked Willow mesh path, not a guessed Blueprint name.
     local bone=FName('r_hand_JNT')
     assert(invoke(body,'Engine.SceneComponent','DoesSocketExist',bone)==true,'r_hand_JNT missing')
     if not valid(meshAsset) then
@@ -232,12 +236,22 @@ local function create(p)
 end
 local function update()
     local p=pawn()
-    if not valid(p) then cleanup();return end
-    if not full(p):find('BP_SurvivalPlayerCharacter_Female01_C ',1,true) then
-        cleanup();return
+    if not valid(p) then
+        cleanup();eligibility('WAIT: no valid local player pawn. Load into gameplay, then leave the test enabled.');return
     end
+    local body=unsafeProperty(p,'Mesh','ObjectProperty')
+    if not valid(body) then
+        cleanup();eligibility('WAIT: character Mesh unavailable; pawn='..full(p));return
+    end
+    local active=body.SkeletalMeshAsset or body.SkeletalMesh
+    local identity=full(active)
+    local willow='/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01'
+    if not identity:find(willow,1,true) then
+        cleanup();eligibility('WAIT: Willow mesh required; pawn='..full(p)..'; mesh='..identity);return
+    end
+    eligibility('ELIGIBLE: pawn='..full(p)..'; mesh='..identity)
     if valid(ownerPawn) and full(ownerPawn)~=full(p) then cleanup() end
-    if not valid(component) then create(p) end
+    if not valid(component) then create(p,body) end
     local eq=unsafeProperty(p,'EquipmentComponent','ObjectProperty');assert(valid(eq),'Equipment unavailable')
     local main=invoke(eq,'Maine.EquipmentComponent','GetItemInSlot',mainSlot)
     local off=invoke(eq,'Maine.EquipmentComponent','GetItemInSlot',offSlot)
@@ -259,8 +273,8 @@ RegisterKeyBind(Key.F9,function()
     dispatch(function()
         if enabled then enabled=false;cleanup();log('OFF: cosmetic removed');return end
         if failed then log('Restart game after preserving log; no repeated native attempts');return end
-        enabled=true;log('ON: stand upright as Bo Peep with empty hands for initial orientation');update()
+        lastEligibility=nil;enabled=true;log('ON: stand upright as Bo Peep with empty hands for initial orientation');update()
     end)
 end)
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded carry test v0.1. As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')
+log('Loaded carry test v0.1.1 (actual Willow mesh eligibility). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')

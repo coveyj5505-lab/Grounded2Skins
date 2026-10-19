@@ -1,0 +1,8 @@
+{
+  "file": "BoPeep-Crook-Update-v0.1.1.zip",
+  "bytes": 5948,
+  "sha256": "171cc65357a03d3d748646290a0988caa414e7165c089764406ef6e1aca8d538",
+  "status": "WINDOWS_PENDING",
+  "purpose": "Script-only correction for silent eligibility return; no asset changes",
+  "regressions": "7 carry Lua mock groups pass"
+}

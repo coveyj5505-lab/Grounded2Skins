@@ -38,7 +38,8 @@ local invalid={IsValid=function() return false end}
 local asset=obj('SkeletalMesh /Game/_BoCrook/Asset',{'Engine.SkeletalMesh'})
 local item=obj('Item Equipped',{'Maine.Item'})
 local body=obj('SkeletalMeshComponent Body',{'Engine.SkeletalMeshComponent','Engine.SkinnedMeshComponent','Engine.PrimitiveComponent','Engine.SceneComponent'})
-body.SkeletalMeshAsset=obj('SkeletalMesh /Game/_Augusta/Willow',{'Engine.SkeletalMesh'})
+body.SkeletalMeshAsset=obj('SkeletalMesh /Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01',{'Engine.SkeletalMesh'})
+body.SkeletalMeshAsset.GetFullName=function() return female and 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01' or 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01' end
 body.DoesSocketExist=function(self,b) assert(b=='r_hand_JNT');return true end
 body.GetSocketTransform=function() return {Rotation={X=0,Y=0,Z=0,W=1}} end
 local eq=obj('EquipmentComponent Equipment',{'Maine.EquipmentComponent'})
@@ -81,10 +82,12 @@ function StaticFindObject(path)
 end
 '''.replace('SPECS',',\n'.join(specs))
 checks=[
+("valid Willow mesh with unexpected Blueprint name", "p.GetFullName=function() return 'BP_ActualWillowVariant_C Player' end;key();assert(made==1 and show)"),
+("wrong mesh explains why nothing attaches", "female=false;key();assert(made==0);assert(table.concat(events,'\\n'):find('WAIT: Willow mesh required',1,true))"),
 ("attachment, safety ordering, actual slots, both views, cleanup", "key();assert(made==1 and show);main=true;timer();assert(not show);main=false;off=true;timer();assert(not show);off=false;timer();assert(show);fp=true;timer();assert(show);key();assert(destroyed==1 and not show)"),
 ("signature rejection before creation", "bad=true;key();assert(made==0);timer();assert(made==0)"),
 ("missing asset before creation", "missingAsset=true;key();assert(made==0)"),
-("only Willow gets accessory", "female=false;key();assert(made==0)"),
+("only Willow mesh gets accessory", "female=false;key();assert(made==0)"),
 ("player swap removes accessory", "key();assert(show);female=false;timer();assert(destroyed==1 and not show)"),
 ]
 for name,checksLua in checks:

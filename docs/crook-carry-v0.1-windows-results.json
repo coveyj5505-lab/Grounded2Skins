@@ -1,0 +1,19 @@
+{
+  "source_sha256": "f3da144839fe993f8a7d4edffb184fb30ca09390c6474eee019d70954886da1f",
+  "mod_loaded": true,
+  "F9_callback_reached": true,
+  "component_creation_reached": false,
+  "asset_loading_reached": false,
+  "crook_lines": [
+    "[2026-10-19 18:36:36.6962282] [Lua] [BoPeepCrook] Loaded carry test v0.1. As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.",
+    "[2026-10-19 18:38:39.6218522] [Lua] [FreeBuild v1.3] SET SurvivalModeManagerComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalGameState_C_2147479884.SurvivalModeManagerComponent before=false after=true[2026-10-19 18:38:41.0272615] [Lua] [FreeBuild v1.3] ACTIVE: building auto-complete enabled; crafting unchanged[2026-10-19 18:38:41.5018191] [Lua] [BoPeepCrook] ON: stand upright as Bo Peep with empty hands for initial orientation",
+    "[2026-10-19 18:38:44.1957020] [Lua] [BoPeepCrook] OFF: cosmetic removed",
+    "[2026-10-19 18:38:45.2571720] [Lua] [FreeBuild v1.3] SET SurvivalModeManagerComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalGameState_C_2147479884.SurvivalModeManagerComponent before=true after=true[2026-10-19 18:38:46.6049435] [Lua] [FreeBuild v1.3] ACTIVE: building auto-complete enabled; crafting unchanged[2026-10-19 18:38:48.9015287] [Lua] [BoPeepCrook] ON: stand upright as Bo Peep with empty hands for initial orientation",
+    "[2026-10-19 18:38:49.6757494] [Lua] [BoPeepCrook] OFF: cosmetic removed",
+    "[2026-10-19 18:38:49.8675983] [Lua] [BoPeepCrook] ON: stand upright as Bo Peep with empty hands for initial orientation",
+    "[2026-10-19 18:38:50.9843187] [Lua] [FreeBuild v1.3] SET SurvivalModeManagerComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalGameState_C_2147479884.SurvivalModeManagerComponent before=true after=true[2026-10-19 18:38:52.3589367] [Lua] [FreeBuild v1.3] ACTIVE: building auto-complete enabled; crafting unchanged[2026-10-19 18:38:53.3618534] [Lua] [BoPeepCrook] OFF: cosmetic removed",
+    "[2026-10-19 18:38:56.6757298] [Lua] [FreeBuild v1.3] SET SurvivalModeManagerComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalGameState_C_2147479884.SurvivalModeManagerComponent before=true after=true[2026-10-19 18:38:58.0403483] [Lua] [FreeBuild v1.3] ACTIVE: building auto-complete enabled; crafting unchanged[2026-10-19 18:38:59.8799341] [Lua] [BoPeepCrook] ON: stand upright as Bo Peep with empty hands for initial orientation"
+  ],
+  "assessment": "Silent early return at no-local-pawn or exact guessed Blueprint class guard. Log does not distinguish which. No native attachment API failure established.",
+  "correction": "Replace guessed class-name eligibility with verified actual Willow skeletal mesh path; log every waiting condition once per change. Preserve assets and skins."
+}
