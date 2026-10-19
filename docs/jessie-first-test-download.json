@@ -1,0 +1,22 @@
+{
+  "file": "Jessie-Hoops-First-Test.zip",
+  "bytes": 7105920,
+  "sha256": "f0a1f7ceeef3eed51d96d5b2dfa7016739b245e5ae17f01440e57bf4b0b8689a",
+  "status": "offline validated; Windows gameplay untested",
+  "entries": [
+    "mod/zJessieTest_P.pak",
+    "mod/zJessieTest_P.ucas",
+    "mod/zJessieTest_P.utoc",
+    "READ-ME-FIRST.txt",
+    "previews/rig-front.png",
+    "previews/rig-side.png",
+    "previews/rig-sitting.png",
+    "previews/rig-finger-curl.png",
+    "previews/cooked-front.png",
+    "previews/cooked-side.png",
+    "reports/offline-validation.json",
+    "reports/iostore-validation.json",
+    "reports/blender-validation.json",
+    "reports/tangent-frame-validation.json"
+  ]
+}

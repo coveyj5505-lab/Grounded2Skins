@@ -18,7 +18,7 @@ for b,m in zip(bones,rest):
  eb=armdata.edit_bones.new(b['name']);eb.length=.015;eb.matrix=m
  if b['parent']>=0:eb.parent=armdata.edit_bones[bones[b['parent']]['name']]
 bpy.ops.object.mode_set(mode='OBJECT')
-spec={'Bip001':('Hips_JNT',None,None),'Bip001 Pelvis':('Hips_JNT','Bip001 Spine','spine1_JNT'),'Bip001 Spine':('spine1_JNT','Bip001 Spine1','spine2_JNT'),'Bip001 Spine1':('spine2_JNT','Bip001 Spine2','spine3_JNT'),'Bip001 Spine2':('spine3_JNT','Bip001 Neck','neck1_JNT'),'Bip001 Neck':('neck1_JNT','Bip001 Head','head_JNT'),'Bip001 Head':('head_JNT',None,None)}
+spec={'Bip001':('Hips_JNT',None,None),'Bip001 Pelvis':('Hips_JNT','Bip001 Spine','spine1_JNT'),'Bip001 Spine':('spine1_JNT','Bip001 Spine1','spine2_JNT'),'Bip001 Spine1':('spine2_JNT','Bip001 Spine2','spine3_JNT'),'Bip001 Spine2':('spine3_JNT','Bip001 Neck','neck3_JNT'),'Bip001 Neck':('neck3_JNT','Bip001 Head','head_JNT'),'Bip001 Head':('head_JNT',None,None)}
 for side,short,label in [('L','l','Left'),('R','r','Right')]:
  prefix=f'Bip001 {side} '
  for a,b,c,d in [('Clavicle','shoulder','UpperArm','upperArm'),('UpperArm','upperArm','Forearm','lowerArm'),('Forearm','lowerArm','Hand','hand'),('Thigh','UpperLeg','Calf','LowerLeg'),('Calf','LowerLeg','Foot','Foot'),('Foot','Foot','Toe0','Toes')]:spec[prefix+a]=(f'{short}_{b}_JNT',prefix+c,f'{short}_{d}_JNT')

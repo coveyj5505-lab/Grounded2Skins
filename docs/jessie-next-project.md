@@ -38,3 +38,7 @@ Use `/workspace/mod-work/jessie-stage/hoops-stock-normalized` (normalized verifi
 Current private scene: `rig-v5/Jessie-Hoops-skinned.blend`; fresh-process `rig-v5-review/validation.json` verifies all 4,883 vertices are weighted/normalized, native 189 bone order, original UV/topology, three packed images and finite synthetic sitting/finger-curl poses. These tests do not prove good appearance or game-animation compatibility. Front/side/sitting previews were rendered; front/sitting were inspected. The initial fit still has an elongated neck/shoulder silhouette, and the eye material remains provisional. Do not package or label this initial fit finished. Refine those before an installable Jessie test, preserving all source assets and the verified stock skeleton.
 
 No additional user input is required for the next fitting/material work. No Jessie gameplay ZIP exists yet. Existing Buzz and the verified Bo Peep test remain unchanged. The Hoops helper remains available for reproducibility but the user's data is already complete.
+
+## First installable test completed
+
+The subsequent `rig-v6` adjusts the neck fit; `gameplay-v1` combines preserved parts with a body/temporary-green-eye atlas. Full four-LOD writing, private materials, Zen relocation, IoStore verification and independent native/texture readbacks are complete. The new `Jessie-Hoops-First-Test.zip` / `zJessieTest_P` is separate from Buzz and Bo Peep and awaits the user's Windows test. [Installation, compromises and reproduction](jessie-first-test.md) supersede earlier unfinished-stage notes.
