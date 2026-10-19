@@ -7,7 +7,7 @@
     "Actual Lua5.4 mocked execution: menu, local/remote filtering, 128 descriptor bound, busy handling, superclass exhaustion",
     "Actual Lua5.4 mocked execution: descriptor Lua error releases latch and retries stage"
   ],
-  "windows_validation": "NOT YET RUN",
+  "windows_validation": "User log confirms identity, depth0 Male02 class (0 properties), depth1 base player Blueprint (94 properties); no errors; later gameplay log activity. Native parent depth2 and state reads not tested.",
   "purpose": "Bounded player class property-name metadata, not equipment/glide-state recording",
   "key": "Ctrl+F9",
   "first_test": "standing still, 1 identity step then up to 3 class metadata steps, five seconds between; return UE4SS.log",
