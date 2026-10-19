@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "ca43ed747a126b8720e8d82109d5583d974bdae2c7f8a93e15b27933c5d0cbe5",
+  "packages": 16,
+  "decoded_bytes": 13394988,
+  "all_chunk_sizes_and_sha256_valid": true,
+  "source_unchanged_as_reported": true,
+  "body_bones": 188,
+  "body_package": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male02/SK_Male_Teen_02.uasset",
+  "native_skeletal_meshes_decoded": 12,
+  "native_LODs_decoded": 48,
+  "accessory_vertex_color_mode": "Nine accessories require --no-colors; main three retain vertex colors",
+  "design_guidance": "Jessie V2 accepted; reuse soft doll limb behavior without copying Hoops bone indices"
+}

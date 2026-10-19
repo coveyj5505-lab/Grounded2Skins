@@ -1,0 +1,67 @@
+{
+  "fresh_reopen": true,
+  "native_bones": 188,
+  "native_rest_max_error": 1.3582408428192139e-05,
+  "native_rest_translation_max_error_m": 2.384185791015625e-07,
+  "native_parent_hierarchy_exact": true,
+  "vertex_group_order_exact": true,
+  "vertices": 32379,
+  "triangles": 54801,
+  "normalized_weights": true,
+  "source_meshes_geometry_triangles_transforms_preserved": [
+    "000_bip_pelvis",
+    "001_bip_neck",
+    "002_scarf root a",
+    "003_scarf root b",
+    "004_scarf 1a",
+    "005_scarf 1b",
+    "006_scarf 2a",
+    "007_scarf 2b",
+    "008_holster a",
+    "009_holster b",
+    "00A_holster c",
+    "00B_Phy hat root",
+    "KH3 Woody V3_mesh",
+    "KH3 Woody V3_mesh.001",
+    "KH3 Woody V3_mesh.002",
+    "KH3 Woody V3_mesh.003",
+    "KH3 Woody V3_mesh.004",
+    "KH3 Woody V3_mesh.005",
+    "KH3 Woody V3_mesh.006",
+    "KH3 Woody V3_mesh.007",
+    "KH3 Woody V3_mesh.008"
+  ],
+  "packed_original_maps": 12,
+  "finite_normals_tangents": true,
+  "poses": [
+    {
+      "pose": "rest-front",
+      "independent_numpy_LBS_max_error_m": 2.384185791015625e-07
+    },
+    {
+      "pose": "rest-side",
+      "independent_numpy_LBS_max_error_m": 2.384185791015625e-07
+    },
+    {
+      "pose": "running",
+      "independent_numpy_LBS_max_error_m": 3.343685595069701e-07
+    },
+    {
+      "pose": "sitting-side",
+      "independent_numpy_LBS_max_error_m": 2.5219472243875884e-07
+    },
+    {
+      "pose": "sitting",
+      "independent_numpy_LBS_max_error_m": 2.5219472243875884e-07
+    },
+    {
+      "pose": "standing",
+      "independent_numpy_LBS_max_error_m": 2.605184268311689e-07
+    }
+  ],
+  "limitations": [
+    "Synthetic FK checks, not game animation clips",
+    "Eye/mouth material remains provisional",
+    "No Woody cooked package or Windows test yet"
+  ]
+}

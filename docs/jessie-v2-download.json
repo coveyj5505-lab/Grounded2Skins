@@ -2,7 +2,7 @@
   "file": "Jessie-Hoops-V2-Test.zip",
   "bytes": 7983140,
   "sha256": "c96f405ca6a5424b9c9b74ed78bcbf5679f125e8ab43160f56262a41c813c283",
-  "status": "V2 offline validated; Windows test required",
+  "status": "User reports Jessie V2 is good in Windows gameplay",
   "entries": [
     "mod/zJessieV2_P.pak",
     "mod/zJessieV2_P.ucas",
@@ -25,5 +25,10 @@
     "reports/iostore-validation.json",
     "reports/independent-cooked-validation.json",
     "reports/tangent-frames.json"
-  ]
+  ],
+  "windows_test_report": {
+    "date_reported_client": "2026-10-18",
+    "user_statement": "jessie is good",
+    "scope": "User acceptance; no additional enumerated animation or crash-duration coverage supplied"
+  }
 }

@@ -1,0 +1,10 @@
+{
+  "date_reported_client": "2026-10-18",
+  "file": "Jessie-Hoops-V2-Test.zip",
+  "sha256": "c96f405ca6a5424b9c9b74ed78bcbf5679f125e8ab43160f56262a41c813c283",
+  "user_statement": "jessie is good",
+  "result": "User accepted Windows gameplay result",
+  "scope": "Do not infer unreported specific test coverage",
+  "preserve_as_accepted_baseline": true,
+  "woody_design_guidance": "Both are stuffed dolls: similar soft arm/leg behavior, preserve Woody proportions and use Jessie V2 coherent clothing/limb fields; use native Pete skeleton rather than copying Hoops bone indices"
+}
