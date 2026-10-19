@@ -1,0 +1,112 @@
+{
+  "scope": "Blender mechanical motion prototype; no cooked or runtime changes",
+  "source": "/workspace/mod-work/rig-stage/skinned-stowed-v2-proportions/Buzz-Grounded2-skinned.blend",
+  "original_signatures": {
+    "Wing_0_Extended_Preserved": "6923901441bc79b105f01dde73041c6d6b650d53003e3ddc030a599be5dada37",
+    "Wing_0_Original_Source": "edb8ba42f752c2e00a578b030d04160397d6292f9cb49d5555b49fe0daf209f0",
+    "Wing_12_Extended_Preserved": "86c67f01309614b5a7db08d1e8d7b58dc8bec882d74b7ff294827d1c6a631e1b",
+    "Wing_12_Original_Source": "8cc5e5bc934391cf5027b2e90516cb7070c0cf82151364ca677f33fe2815d693",
+    "Wing_1_Extended_Preserved": "257637052c83d8c3e52fbc90138ae95b6e5b3a320a9e7b3dc91c7f135aaef88b",
+    "Wing_1_Original_Source": "cf4ce2c3e8b3d8d1a4219ceae1527f012b68243d6a955c024bb52915c882eaa4",
+    "Wing_51_Extended_Preserved": "688c09a1d76a6fada44fe06af1814e3a310d18b9a539f5a3c986459247e5d5d6",
+    "Wing_51_Original_Source": "ff0325b3bf629daafabdf54c56f89a25b3df8a10c500ad2c8b7e59e83c8d7c73",
+    "Wing_62_Extended_Preserved": "404583fdf54f64ab376e5dde34e565d1a21bfb6dc6865c5de3b0c9b016e6cdd5",
+    "Wing_62_Original_Source": "6102225887add4c440b96de9abf3d365ea6670ff1144b14e4c509da89c05a71e",
+    "Wing_72_Extended_Preserved": "cd9a6c4bc1d212ca1a426a980fb46a61b493c3415cf960f73727e68c0c5e3431",
+    "Wing_72_Original_Source": "4355703c22708b27a358adbe0493bdf47d9ac20be567a1ef1225bae95c1dd7b5"
+  },
+  "originals_unchanged": true,
+  "extended_world_error_m": 0,
+  "hinges": [
+    {
+      "component": 12,
+      "pivot": [
+        0.13612208458442585,
+        0.24054888832569127,
+        1.3989233599796451
+      ],
+      "axis": "local Y",
+      "fold_degrees": 82,
+      "status": "provisional; no backpack clearance certification"
+    },
+    {
+      "component": 0,
+      "pivot": [
+        0.6675926478771628,
+        0.24597922946512701,
+        1.3352487215030624
+      ],
+      "axis": "local Y",
+      "fold_degrees": 96,
+      "status": "provisional; no backpack clearance certification"
+    },
+    {
+      "component": 51,
+      "pivot": [
+        -0.13612209033067246,
+        0.2405488883256912,
+        1.3989233472904785
+      ],
+      "axis": "local Y",
+      "fold_degrees": -82,
+      "status": "provisional; no backpack clearance certification"
+    },
+    {
+      "component": 62,
+      "pivot": [
+        -0.6675924360752633,
+        0.2459793367534876,
+        1.3352488040717598
+      ],
+      "axis": "local Y",
+      "fold_degrees": -96,
+      "status": "provisional; no backpack clearance certification"
+    }
+  ],
+  "tip_parenting": {
+    "1": 0,
+    "72": 62
+  },
+  "native_skeleton_modified": false,
+  "fold_clearance": "UNVERIFIED; panels can intersect backpack or each other. Visibility stow remains the playable baseline.",
+  "runtime": "NOT IMPLEMENTED; needs discovered glide state and owned accessory component control",
+  "poses": {
+    "1": {
+      "bounds_min": [
+        -1.1915762424468994,
+        0.2056456208229065,
+        1.115094780921936
+      ],
+      "bounds_max": [
+        1.1915762424468994,
+        0.282541424036026,
+        1.5986078977584839
+      ]
+    },
+    "24": {
+      "bounds_min": [
+        -0.3826528787612915,
+        0.2056456208229065,
+        0.6959536671638489
+      ],
+      "bounds_max": [
+        0.3826529383659363,
+        0.282541424036026,
+        1.427306890487671
+      ]
+    },
+    "48": {
+      "bounds_min": [
+        -1.1915762424468994,
+        0.2056456208229065,
+        1.115094780921936
+      ],
+      "bounds_max": [
+        1.1915762424468994,
+        0.282541424036026,
+        1.5986078977584839
+      ]
+    }
+  },
+  "independent_reopen_validation": "PASS: 6 panels, all originals exact, all three pose bounds reproduced"
+}
