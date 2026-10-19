@@ -1,0 +1,88 @@
+{
+  "fresh_reopen": true,
+  "native_bones": 189,
+  "vertices": 4883,
+  "triangles": 8757,
+  "normalized_weights": true,
+  "topology_and_UVs_match_preserved_source": true,
+  "all_native_rest_matrices_unchanged_during_pose_checks": true,
+  "packed_images": 3,
+  "poses": [
+    {
+      "pose": "front",
+      "vertices": 4883,
+      "finite": true,
+      "bounds": [
+        [
+          -0.7042906284332275,
+          -0.3401448726654053,
+          0.002798113040626049
+        ],
+        [
+          0.7048186659812927,
+          0.30951327085494995,
+          2.171809673309326
+        ]
+      ]
+    },
+    {
+      "pose": "side",
+      "vertices": 4883,
+      "finite": true,
+      "bounds": [
+        [
+          -0.7042906284332275,
+          -0.3401448726654053,
+          0.002798113040626049
+        ],
+        [
+          0.7048186659812927,
+          0.30951327085494995,
+          2.171809673309326
+        ]
+      ]
+    },
+    {
+      "pose": "sitting",
+      "vertices": 4883,
+      "finite": true,
+      "bounds": [
+        [
+          -0.7042906284332275,
+          -0.3401448726654053,
+          0.3636970520019531
+        ],
+        [
+          0.7048186659812927,
+          0.30951327085494995,
+          2.171809673309326
+        ]
+      ]
+    },
+    {
+      "pose": "finger-curl",
+      "vertices": 4883,
+      "finite": true,
+      "bounds": [
+        [
+          -0.6737653017044067,
+          -0.3401448726654053,
+          0.002798113040626049
+        ],
+        [
+          0.7638823390007019,
+          0.30951327085494995,
+          2.171809673309326
+        ]
+      ]
+    }
+  ],
+  "eye_material": "Still provisional body diffuse, not final",
+  "runtime_test": "NOT RUN",
+  "status": "initial_native_binding_preflight_passed; visual refinement still required",
+  "visual_limitations": [
+    "elongated neck/shoulder silhouette in initial fit",
+    "eye material still incorrectly uses body diffuse"
+  ],
+  "source_blend_stage": "rig-v5"
+}

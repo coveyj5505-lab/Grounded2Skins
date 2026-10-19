@@ -9,7 +9,7 @@ import numpy as np
 source,out=map(Path,sys.argv[sys.argv.index('--')+1:]);out.mkdir(exist_ok=False)
 images=[]
 for path in sorted((source/'textures').glob('*.png')):
- im=bpy.data.images.load(str(path),check_existing=True);im.pack();images.append(im)
+ im=bpy.data.images.load(str(path),check_existing=True);im.pack();im.use_fake_user=True;images.append(im)
 diffuse=next(i for i in images if 'diffuse' in i.name)
 report=[];positions=[]
 for o in [x for x in bpy.data.objects if x.type=='MESH']:

@@ -1,0 +1,66 @@
+{
+  "original_container": "Augusta-WinGDK.utoc",
+  "packages": 13,
+  "decoded_bytes": 10068423,
+  "all_chunk_sha256_valid": true,
+  "missing_targets": [],
+  "source_size_and_mtime_unchanged": true,
+  "stock_native_bones": 189,
+  "third_party_SuperEvie_bones": 230,
+  "use_stock_Hoops_reference_for_Jessie": true,
+  "independent_native_profiles": [
+    {
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Default.uasset",
+      "bones": 12,
+      "lods": 4,
+      "vertices_LOD0": 4245,
+      "triangles_LOD0": 7253
+    },
+    {
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/SK_Female_Teen_02.uasset",
+      "bones": 189,
+      "lods": 4,
+      "vertices_LOD0": 18841,
+      "triangles_LOD0": 27820
+    },
+    {
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Hair03.uasset",
+      "bones": 12,
+      "lods": 4,
+      "vertices_LOD0": 4253,
+      "triangles_LOD0": 7253
+    },
+    {
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Hair02.uasset",
+      "bones": 12,
+      "lods": 4,
+      "vertices_LOD0": 4175,
+      "triangles_LOD0": 7145
+    },
+    {
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/SK_Female_Teen_02_w_BackPack.uasset",
+      "bones": 189,
+      "lods": 4,
+      "vertices_LOD0": 24502,
+      "triangles_LOD0": 36388
+    },
+    {
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Hair01.uasset",
+      "bones": 12,
+      "lods": 4,
+      "vertices_LOD0": 4251,
+      "triangles_LOD0": 7253
+    }
+  ],
+  "reference_imports": "Shared original SK_Male_Teen_01_Skeleton; original stock physics/animations remain external",
+  "custom_vs_stock_summary": {
+    "reference_bones": 189,
+    "candidate_bones": 230,
+    "bone_order_equal": false,
+    "hierarchy_equal_by_name": false,
+    "max_local_translation_error_cm": 176.87546009386546,
+    "max_local_rotation_error_deg": 44.75941798570579
+  },
+  "status": "Verified stock data; no additional extraction requested",
+  "runtime": "No Jessie package or Windows test yet"
+}

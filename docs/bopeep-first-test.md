@@ -1,6 +1,6 @@
 # Bo Peep → Willow: first Windows test
 
-Status: **offline validated; not yet tested in Grounded 2**. Target game: PC Game Pass / WinGDK 0.316.9020.0. Buzz V2 and the original reference files are unchanged.
+Status: **Windows user confirmed walking, running, jumping and crouching. Hand deformation and cape gaps remain.** See `bopeep-windows-test-0.316.9020.0.json` for the exact reported scope. Original creation-time offline reports and ZIP remain unchanged. Target game: PC Game Pass / WinGDK 0.316.9020.0. Buzz V2 and the original reference files are unchanged.
 
 ## Install and remove
 

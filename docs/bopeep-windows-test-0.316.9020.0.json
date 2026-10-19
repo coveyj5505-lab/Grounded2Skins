@@ -1,0 +1,13 @@
+{
+  "date_reported_client": "2026-10-18",
+  "character": "Bo Peep replacing Willow",
+  "package": "BoPeep-Willow-First-Test.zip",
+  "baseline_sha256": "1839b9e660a274f75a929a5387bd3daa7bba75dbceff92224b6e66fa578b5422",
+  "game_build_context": "Grounded 2 PC Game Pass / WinGDK 0.316.9020.0",
+  "user_confirmed_passes": ["walking", "running", "jumping", "crouching"],
+  "screenshots_show": ["Bo Peep textured and rendered while seated", "Bo Peep rendered from behind", "hand/finger deformation", "cape upper-region gaps or clipping"],
+  "user_reported_issues": ["fingers are messed up on her hands", "slight issue with cape"],
+  "not_explicitly_reported_this_message": ["punching", "backpack toggling", "extended crash-free testing", "first-person arms", "all equipment and animation combinations"],
+  "scope": "Observed Windows functionality; not a claim that every animation, cloth interaction, or visual issue is resolved.",
+  "baseline_policy": "Keep original tested ZIP and original authoring/output stages unchanged; corrections use new stages and a distinct test ZIP."
+}

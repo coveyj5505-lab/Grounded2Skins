@@ -1,6 +1,6 @@
 # Jessie preparation — Hoops replacement
 
-User requested Jessie preparation while testing Bo Peep. Buzz is accepted complete; Bo Peep's first test awaits user results. Preserve both. Jessie will use separate `zJessieTest_P` files and `/Game/_Jessie0` material/texture paths; no existing character paths except verified Hoops targets will be overridden.
+User requested Jessie preparation while testing Bo Peep. Buzz is accepted complete; Bo Peep's user test confirms walking, running, jumping and crouching, with hand/cape issues recorded separately. Preserve both. Jessie will use separate `zJessieTest_P` files and `/Game/_Jessie0` material/texture paths; no existing character paths except verified Hoops targets will be overridden.
 
 ## Supplied model already inspected
 
@@ -10,7 +10,7 @@ Blender 4.3.2 imports three mesh objects (3,449 + 1,288 + 146 vertices; 6,008 + 
 
 The FBX's imported material slots have no texture nodes. A reversible working copy packs all three PNGs and provisionally connects the supplied diffuse sheet. Rendered front/back/side previews confirm recognizable hat, shirt, belt, cow-print chaps and boots. The separate 146-vertex eye mesh uses a full-sheet UV layout and maps incorrectly to the body diffuse. Its original material has no image binding and no dedicated eye texture is supplied. Resolve an isolated eye material/atlas region before gameplay packaging; the user's archive need not be replaced. Normal/specular maps are packed and preserved but their channel semantics are not assumed. Use the proven flat BC5/matte material fallback initially if necessary.
 
-Private stage: `/workspace/mod-work/jessie-stage`. Imported original working scene: `inspection/Jessie-source-inspection.blend`. Packed provisional-texture scene: `textured-source/Jessie-source-textured.blend`; front/back/side previews and `source-preparation.json` alongside it. Fresh-process fingerprints compare original import and packed scene geometry, triangle order, UVs, weights, object matrices and source bone rest matrices exactly; texture/material changes do not alter the source rig.
+Private stage: `/workspace/mod-work/jessie-stage`. Imported original working scene: `inspection/Jessie-source-inspection.blend`. Packed provisional-texture scene: `textured-source-v2/Jessie-source-textured.blend`; front/back/side previews and `source-preparation.json` alongside it. Fresh-process fingerprints compare original import and packed scene geometry, triangle order, UVs, weights, object matrices and source bone rest matrices exactly; texture/material changes do not alter the source rig.
 
 ## Technical reference actually extracted
 
@@ -23,12 +23,18 @@ Both have identical 230-bone mesh-local tables. The native CUE reader successful
 
 Private extracted reference is `reference-raw`; `reference-metadata.json`, `reference-skeletons.json`, body/backpack readbacks and `preparation-report.json` preserve actual findings. Original reference files are unchanged. Existing Buzz/Bo Peep geometry encoder, four-LOD serializer, Zen import relocation, private material cloning and IoStore validation can be reused after profiling stock Hoops. No arbitrary UE editor cooking is proposed.
 
-## One remaining input before native binding
+## Stock Hoops received and verified
 
-Run `Hoops-Compatibility-Extractor.zip` using the same Windows retoc 0.1.5 / Python 3.11+ setup that worked for Willow. Extract it, launch `Start-Extraction.cmd`, choose retoc.exe and original `Augusta-WinGDK.utoc` (with adjacent UCAS). Upload the Desktop `Grounded2-Hoops-[timestamp].zip`.
+The user supplied `Grounded2-Hoops-20261018-194644-471.zip`: **13 packages / 10,068,423 decoded bytes**, all chunk hashes and sizes valid, no missing targets, errors or header warnings; report records original size/mtime unchanged. The ZIP uses Windows backslashes: normalize separators safely rather than asking for another extraction. `inspect_character_extraction.py` reproduces the normalization, verification, metadata and skeleton reads exactly.
 
-The helper discovers actual indexed meshes under `Player_Female02`, reads their real skeleton/physics imports and extracts only selected packages. No full-game copy, texture dump, injection, game installation edits or installed mod overrides. It caps output at 48 packages / 128 MiB decoded. It returns available chunks and a report even when dependencies are missing; use those rather than blindly repeating extraction.
+Stock gameplay body/backpack each have **189 mesh-local bones and four cooked LODs**, unlike the third-party SuperEvie 230-bone/one-LOD layout. Shared original game skeleton has 195 bones; original stock physics is supplied. Stock hair has four variants with 12 bones and four LODs. Main stock LOD0 has 18,841 vertices / 27,820 triangles; backpack has 24,502 vertices / 36,388 triangles (consult actual native readback for authoritative counts). CUE independently parses both gameplay meshes and all four hair variants. Do not request any further stock extraction or force SuperEvie's custom bone table onto Jessie.
 
-Actual control runs: SuperEvie yields seven selected packages / 3,697,469 decoded bytes with matching known raw hashes, no header errors, unchanged source size/mtime, and correctly reports its two unavailable original skeleton dependencies. Commander101 yields zero Hoops packages. These are tool controls, not stock Hoops evidence. Windows dialog UI is inherited from the user's successful launcher and is not executable in this Linux environment.
+Use `/workspace/mod-work/jessie-stage/hoops-stock-normalized` (normalized verified data), `stock-native-profiles.json`, and `stock-vs-superevie.json`. The reference-mod comparison has extra/missing bones, reordering and local-pose differences; the stock table is authoritative. No original physics, USkeleton or animation override is planned. Do not reuse custom cloth data.
 
-Next: verify uploaded stock Hoops hashes/bone hierarchy/rest pose/LOD layout; map the source's anatomical weights (face/hat to head, fingers individually, braid conservatively), preserve uniform head/body width; controlled pose checks and fresh reopen; isolated textured package and independent read-back. No Jessie gameplay ZIP or runtime compatibility is claimed yet.
+## Initial native binding prepared
+
+`rig_jessie_blender.py` preserves the supplied source armature/meshes and creates a new stock 189-bone rig with source anatomical skin weights mapped by name/ancestry. It maps all five Biped finger chains separately; terminal digit segments inherit a fitted frame rather than identity. Facial, hat and braid helpers use a common head transform. Source mesh topology/UVs remain unchanged. Unweighted FBX root/helper bones are explicitly excluded from deformation mapping. All three PNGs have persistent packed-image users so unused normal/specular images survive repeated saves.
+
+Current private scene: `rig-v5/Jessie-Hoops-skinned.blend`; fresh-process `rig-v5-review/validation.json` verifies all 4,883 vertices are weighted/normalized, native 189 bone order, original UV/topology, three packed images and finite synthetic sitting/finger-curl poses. These tests do not prove good appearance or game-animation compatibility. Front/side/sitting previews were rendered; front/sitting were inspected. The initial fit still has an elongated neck/shoulder silhouette, and the eye material remains provisional. Do not package or label this initial fit finished. Refine those before an installable Jessie test, preserving all source assets and the verified stock skeleton.
+
+No additional user input is required for the next fitting/material work. No Jessie gameplay ZIP exists yet. Existing Buzz and the verified Bo Peep test remain unchanged. The Hoops helper remains available for reproducibility but the user's data is already complete.
