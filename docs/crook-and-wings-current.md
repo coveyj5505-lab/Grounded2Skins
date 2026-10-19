@@ -1,3 +1,5 @@
+> Latest authoritative checkpoint: accessory-implementation-checkpoint.md. FP is COMPLETE on all4. Crook must be VISIBLE in FP and TP; two-handed constraint withdrawn. New small read-only checker ready; private crook asset passed Blender/CUE/IoStore validation, not attached in-game. Older status below is historical.
+
 > V1 discovery probe WITHDRAWN after user-reported Ctrl+F8 native crash. See ue4ss-discovery-crash.json. Current runtime source is a disabled stub, not a working discovery probe. Preserve UE4SS.log before restarting; do not repeat the glide test.
 
 # Crook and wing work checkpoint

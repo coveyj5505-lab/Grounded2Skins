@@ -1,0 +1,10 @@
+{
+  "file": "ToyStory-Accessory-Check.zip",
+  "bytes": 4529,
+  "sha256": "ef3e7cd27432200e57c39947966f440c86ee3d1e4549f0f2cbdb66ae46cc6c76",
+  "offline_validation": "4realLua5.4mock groups pass; ZIPCRC pass; no mutating APIs or FPvisibility code",
+  "windows_status": "NOT_YET_TESTED; reflected signatures and receiver classes validated before new getters, native faults still possible",
+  "controls": "F9alone starts/stops180second automatic recording every0.5seconds",
+  "target": "Component getters, main/offhand and passive spear montage/stance; no general character dump",
+  "stable_skins": "Unchanged; head/body separation already confirmed, do not reinstall or retest it"
+}

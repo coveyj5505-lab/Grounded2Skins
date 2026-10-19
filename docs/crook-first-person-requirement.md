@@ -1,0 +1,7 @@
+# Authoritative crook presentation clarification (2026-10-19)
+
+User explicitly wants Bo Peep's crook VISIBLE in first person and third person. "Does not obstruct" never meant invisible. Carry upright in one hand alongside the body/screen edge, using native first-person spear presentation as a reference. Do not carry horizontally through screen center. After attacking using the game's actual native spear animation/hand positioning (one-handed or otherwise), return to relaxed one-handed carry. The user explicitly withdrew the two-handed requirement; do not create a custom two-handed stance. Preserve unarmed gameplay mechanics. This updates presentation policy, not geometry, working head/body separation, rig or source preservation.
+
+Do not implement a blanket `firstPerson -> crook hidden` rule. Observe camera mode only to choose suitable hand/component alignment or separate first-person placement if actual native behavior requires it. Visibility remains dependent on both hands being empty and appropriate non-clipping interaction states, with native combat animation substitution still unverified. Do not punch while visibly holding a staff as a substitute for the requested attack. Hide during unsupported punch/combat temporarily rather than changing damage, until a safe animation route is established.
+
+An older UNPUBLISHED policy under /workspace/mod-work/withdrawn-fp-runtime-prototype hides crook in FP. That superseded policy must NOT be reused. The current read-only ToyStoryAccessoryCheck does not hide any object or change camera/rendering state.
