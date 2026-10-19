@@ -1,0 +1,381 @@
+{
+  "archive_sha256": "78ae3038f74fee058975283ed0bd1088721e8fcaeb92063f3757ca6d9372273c",
+  "archive_sha384": "64e6571b4b1b2ae73f1b551b594fa51fe74850a811358f743fb7038c3f12c43c53145021883f0e2330d4e2c12b0d2379",
+  "generated_header_build": "5.6.1-3054196+++Augusta+release-0.5.0.2",
+  "scope": "Static SDK evidence only; target runtime not validated; never reuse offsets",
+  "definitions": [
+    {
+      "owner": "Maine.Attack",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 9517,
+      "declaration": "class UAnimMontage* GetAnimMontage() const;"
+    },
+    {
+      "owner": "Maine.Attack",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 9518,
+      "declaration": "struct FDataTableRowHandle GetAttackDataRowHandle() const;"
+    },
+    {
+      "owner": "Maine.Attack",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 9522,
+      "declaration": "float GetAttackRange() const;"
+    },
+    {
+      "owner": "Maine.Attack",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 9527,
+      "declaration": "int32 GetCurrentStaminaCost() const;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11281,
+      "declaration": "TMulticastInlineDelegate<void(bool bIsGliding)> OnGliderMovementModeChanged;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11292,
+      "declaration": "TMulticastInlineDelegate<void(class ACharacter* Character, bool bIsSitting)> OnSittingChanged;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11387,
+      "declaration": "void SetIsSitting(bool bSitting, class AChairBuilding* InChair);"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11396,
+      "declaration": "ECameraDisplayMode GetCameraDisplayMode() const;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11398,
+      "declaration": "EGlidingStyle GetGlidingStyle() const;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11407,
+      "declaration": "bool IsClimbing() const;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11408,
+      "declaration": "bool IsGliding() const;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11409,
+      "declaration": "bool IsSitting() const;"
+    },
+    {
+      "owner": "Maine.MaineCharMovementComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 11415,
+      "declaration": "bool IsZiplining() const;"
+    },
+    {
+      "owner": "Maine.CharacterAnimInstance",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 12032,
+      "declaration": "EGlidingStyle                                 GlidingStyle;"
+    },
+    {
+      "owner": "Maine.CharacterAnimInstance",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 12053,
+      "declaration": "uint8                                         IsFirstPerson : 1;"
+    },
+    {
+      "owner": "Maine.CharacterAnimInstance",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 12055,
+      "declaration": "uint8                                         HasWeapon : 1;"
+    },
+    {
+      "owner": "Maine.CharacterAnimInstance",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 12065,
+      "declaration": "int32                                         Stance;"
+    },
+    {
+      "owner": "Maine.CharacterAnimInstance",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 12066,
+      "declaration": "int32                                         OffhandStance;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23102,
+      "declaration": "class UMaineCharMovementComponent*            CharMovementComponent;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23108,
+      "declaration": "class UEquipmentComponent*                    EquipmentComponent;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23109,
+      "declaration": "class UInventoryComponent*                    InventoryComponent;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23110,
+      "declaration": "class UInventoryComponent*                    MountInventoryComponent;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23111,
+      "declaration": "class UProximityInventoryComponent*           ProximityInventoryComponent;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23205,
+      "declaration": "class UAttack*                                CurrentAttack;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23206,
+      "declaration": "EAttackType                                   CurrentAttackType;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23246,
+      "declaration": "float                                         CurrentAttackStaminaCost;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23247,
+      "declaration": "float                                         CurrentAttackChargeRatio;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23248,
+      "declaration": "bool                                          CurrentAttackIsRanged;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23356,
+      "declaration": "void MulticastGliderVisuals(bool bVisible, class UItem* GliderItem);"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23362,
+      "declaration": "void MulticastPlayAttackAnimMontage(const struct FDataTableRowHandle_NetCrc32& AttackRowHandle, const bool bMotionWarping, const struct FVector& WarpTargetLocation, const struct FRotator& WarpTargetRotation);"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23460,
+      "declaration": "void ServerSortInventory(class UInventoryComponent* Inventory);"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23513,
+      "declaration": "ECameraDisplayMode GetCameraDisplayMode() const;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23520,
+      "declaration": "class UAttack* GetCurrentAttack() const;"
+    },
+    {
+      "owner": "Maine.SurvivalCharacter",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 23537,
+      "declaration": "bool GetIsFirstPerson() const;"
+    },
+    {
+      "owner": "Maine.InventoryComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 31320,
+      "declaration": "class UItem*                                  UsingGliderItem;"
+    },
+    {
+      "owner": "Maine.InventoryComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 31321,
+      "declaration": "class UItem*                                  BestGliderItem;"
+    },
+    {
+      "owner": "Maine.InventoryComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 31322,
+      "declaration": "int32                                         BestGliderQty;"
+    },
+    {
+      "owner": "Maine.InventoryComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 31371,
+      "declaration": "void OnRep_BestGliderItem();"
+    },
+    {
+      "owner": "Maine.InventoryComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 31372,
+      "declaration": "void OnRep_BestGliderQty();"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44687,
+      "declaration": "uint8                                         bHasMainHand : 1;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44688,
+      "declaration": "uint8                                         bHasOffHand : 1;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44697,
+      "declaration": "class UItem*                                  MainHand;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44698,
+      "declaration": "class UItem*                                  OffHand;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44731,
+      "declaration": "bool DestroyVisuals(class UItem* Item);"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44734,
+      "declaration": "void HideSlot(struct FHideSlotHandle* Handle, EEquipmentSlot Slot);"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44768,
+      "declaration": "void SpawnVisuals(class UItem* Item, class FName Socket, EItemVisualsPriority Priority);"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44769,
+      "declaration": "void UnhideSlot(struct FHideSlotHandle* Handle);"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44779,
+      "declaration": "class UItem* GetItemInSlot(EEquipmentSlot Slot) const;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44781,
+      "declaration": "int32 GetOffhandStance() const;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44783,
+      "declaration": "int32 GetStance() const;"
+    },
+    {
+      "owner": "Maine.EquipmentComponent",
+      "file": "SDK/Maine_classes.hpp",
+      "line": 44784,
+      "declaration": "class UItem* GetWeapon() const;"
+    },
+    {
+      "owner": "DAC_StanceAnimationKit.DAC_StanceAnimationKit_C",
+      "file": "SDK/DAC_StanceAnimationKit_classes.hpp",
+      "line": 28,
+      "declaration": "class UBlendSpace*                            BS_StandWalkRun;"
+    },
+    {
+      "owner": "DAC_StanceAnimationKit.DAC_StanceAnimationKit_C",
+      "file": "SDK/DAC_StanceAnimationKit_classes.hpp",
+      "line": 29,
+      "declaration": "class UBlendSpace*                            BS_StandWalkRunBack;"
+    },
+    {
+      "owner": "DAC_StanceAnimationKit.DAC_StanceAnimationKit_C",
+      "file": "SDK/DAC_StanceAnimationKit_classes.hpp",
+      "line": 30,
+      "declaration": "class UAnimSequence*                          StandIdle;"
+    },
+    {
+      "owner": "DAC_StanceAnimationKit.DAC_StanceAnimationKit_C",
+      "file": "SDK/DAC_StanceAnimationKit_classes.hpp",
+      "line": 37,
+      "declaration": "class UAnimSequence*                          FP_Idle;"
+    }
+  ],
+  "enum_definitions": {
+    "EEquipmentSlot": {
+      "None": 0,
+      "MainHand": 1,
+      "OffHand": 2,
+      "Head": 3,
+      "Chest": 4,
+      "Arms": 5,
+      "Legs": 6,
+      "Glider": 7,
+      "BodySkin": 8,
+      "HeadSkin": 9,
+      "EEquipmentSlot_MAX": 10
+    },
+    "ECameraDisplayMode": {
+      "None": 0,
+      "FirstPerson": 1,
+      "ThirdPerson": 2,
+      "ECameraDisplayMode_MAX": 3
+    },
+    "EGlidingStyle": {
+      "None": 0,
+      "FallingSlowly": 1,
+      "Gliding": 2,
+      "EGlidingStyle_MAX": 3
+    },
+    "EMaineCustomMovementMode": {
+      "CUSTMOVE_None": 0,
+      "CUSTMOVE_SplineClimb": 1,
+      "CUSTMOVE_Glide": 2,
+      "CUSTMOVE_Zipline": 3,
+      "CUSTMOVE_Perched": 4,
+      "CUSTMOVE_MAX": 5
+    }
+  },
+  "function_flags": {
+    "Maine.MaineCharMovementComponent.IsGliding": "(Final, Native, Public, BlueprintCallable, BlueprintPure, Const)\r",
+    "Maine.MaineCharMovementComponent.GetGlidingStyle": "(Final, Native, Public, BlueprintCallable, BlueprintPure, Const)\r",
+    "Maine.SurvivalCharacter.GetIsFirstPerson": "(Final, Native, Public, BlueprintCallable, BlueprintPure, Const)\r",
+    "Maine.EquipmentComponent.GetItemInSlot": "(Final, Native, Public, BlueprintCallable, BlueprintPure, Const)\r",
+    "Maine.EquipmentComponent.GetStance": "(Final, Native, Public, BlueprintCallable, BlueprintPure, Const)\r",
+    "Maine.Attack.GetAnimMontage": "(Final, Native, Public, BlueprintCallable, BlueprintPure, Const)\r"
+  }
+}
