@@ -1,6 +1,6 @@
 # Jessie V2 — focused deformation correction
 
-**Offline validated, not yet tested in Grounded 2.** Jessie still replaces Hoops on the same PC Game Pass / WinGDK build 0.316.9020.0. V1, Buzz and Bo Peep files are preserved unchanged.
+**User accepted in Windows gameplay on 2026-10-18: “jessie is good.”** Jessie still replaces Hoops on the same PC Game Pass / WinGDK build 0.316.9020.0. V1, Buzz and Bo Peep files are preserved unchanged.
 
 ## Install / revert
 

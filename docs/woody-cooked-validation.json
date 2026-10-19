@@ -1,0 +1,74 @@
+{
+  "status": "passed_offline",
+  "mesh_readbacks": [
+    {
+      "mesh": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male02/SK_Male_Teen_02_w_BackPack.uasset",
+      "vertices": 32574,
+      "triangles": 54801,
+      "LOD_positions_weights_joints_indices_colors_materials_UVs": "exact intended encoding",
+      "skeleton": "188 original recovered bones and rest transforms exact",
+      "material": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wdy_Apparel01"
+    },
+    {
+      "mesh": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male02/SK_Male_Teen_02.uasset",
+      "vertices": 32574,
+      "triangles": 54801,
+      "LOD_positions_weights_joints_indices_colors_materials_UVs": "exact intended encoding",
+      "skeleton": "188 original recovered bones and rest transforms exact",
+      "material": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wdy_Apparel01"
+    },
+    {
+      "mesh": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male02/SK_Male_Teen_02_CharSelect.uasset",
+      "vertices": 32574,
+      "triangles": 54801,
+      "LOD_positions_weights_joints_indices_colors_materials_UVs": "exact intended encoding",
+      "skeleton": "187 original recovered bones and rest transforms exact",
+      "material": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wdy_Apparel01"
+    }
+  ],
+  "material_texture_bindings": [
+    {
+      "parameter": "Albedo",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_C",
+      "serialized_offset": 1741,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    },
+    {
+      "parameter": "Normal",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_N",
+      "serialized_offset": 1778,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    },
+    {
+      "parameter": "RMA",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_RMA",
+      "serialized_offset": 1815,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    },
+    {
+      "parameter": "SSSMask",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_SSS",
+      "serialized_offset": 1852,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    }
+  ],
+  "material_parent": "Original MM_Character; cached MI shader/native payload preserved byte-exact",
+  "flat_BC5_normal_pixels_all_mips": "independently decoded RG128 constant; no alternating columns",
+  "private_texture_and_MI_paths": true,
+  "original_game_texture_or_MI_paths_overridden": false,
+  "legacy_export_and_bulk_payloads_roundtrip_exact": 21,
+  "texture_mips_read_by_CUE4Parse_and_hash_checked": 50,
+  "independent_BC3_RGBA_mean_absolute_error": 1.3853665788968403,
+  "atlas_UVs": "Six source diffuse tiles plus original-art eye composite; explicit V reversal and exact independent CUE half-float UV readback",
+  "physics": "Original Pete game physics/skeleton/animation references preserved; no replacements bundled",
+  "native_bone_binding": "No native bone/rest transform edits",
+  "runtime": "NOT TESTED: user Windows gameplay test required",
+  "limitations": [
+    "One opaque character material; eyes/face share simplified suit shading",
+    "Atlas downsampling and distant mip color bleed possible",
+    "Flat normal map, temporary matte RMA and black SSS",
+    "Original voices/portrait remain; no new facial animation",
+    "Hat follows head; scarf/holster use simplified rig weights; no cloth physics; original source preserved",
+    "No input, movement, collision capsule or gliding mechanic changes"
+  ]
+}

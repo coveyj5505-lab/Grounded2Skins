@@ -47,7 +47,7 @@ def mix(a,b,t):
  r={k:v*(1-t) for k,v in a.items()}
  for k,v in b.items():r[k]=r.get(k,0)+v*t
  return {k:v for k,v in r.items() if v>1e-7}
-hip=sw['bip_pelvis'];H=nw['Hips_JNT'];width=1.35;zscale=(nw['head_JNT'][2]-H[2])/(sw['bip_head'][2]-hip[2])
+hip=sw['bip_pelvis'];H=nw['Hips_JNT'];width=1.35;zscale=1.60;head_anchor=nw['head_JNT']-np.array([0.,0.,.08])
 points=[];rows=[];regions=[];parts=[];head_count=0
 for source in sources:
  start=len(points)
@@ -56,9 +56,9 @@ for source in sources:
   for n,w in orig.items():row[index[mapping[n]]]=row.get(index[mapping[n]],0)+w
   head=sum(w for n,w in orig.items() if mapping[n]=='head_JNT')
   if head>.999:
-   q=nw['head_JNT']+1.30*(p-sw['bip_head']);row={index['head_JNT']:1};region='head';head_count+=1
+   q=head_anchor+1.05*(p-sw['bip_head']);row={index['head_JNT']:1};region='head';head_count+=1
   else:
-   q=H+(p-hip)*[width,width,zscale];region='torso'
+   q=H+(p-hip)*[width,width,zscale];q[2]+=.12*smooth((p[2]-1.02)/.15)+.08*smooth((abs(p[0]-hip[0])-.04)/.08)*smooth((p[2]-1.04)/.10);region='torso'
    for side,short in [('L','l'),('R','r')]:
     upper,lower,hand=[f'{short}_{n}_JNT' for n in ['upperArm','lowerArm','hand']]
     amount=sum(w for n,w in orig.items() if mapping[n] in [upper,lower,hand]);blend=smooth(amount)
@@ -78,7 +78,7 @@ for source in sources:
     if ankle:
      foot=segment(p,c,sw[f'bip_toe_{side}'],D,nw[f'{short}_Toes_JNT'],1.25);limb=(1-ankle)*limb+ankle*foot;legrow=mix(legrow,{index[f'{short}_Foot_JNT']:1},ankle)
     blend=smooth(legamount);q=(1-blend)*q+blend*limb;row=mix(row,legrow,blend);region='leg'
-   if head>0:q=(1-head)*q+head*(nw['head_JNT']+1.30*(p-sw['bip_head']))
+   if head>0:q=(1-head)*q+head*(head_anchor+1.05*(p-sw['bip_head']))
   row={k:w for k,w in row.items() if w>1e-7};s=sum(row.values());row={k:w/s for k,w in row.items()};assert len(row)<=8
   points.append(q);rows.append(row);regions.append(region)
  mesh=source.data.copy();bm=bmesh.new();bm.from_mesh(mesh);deform=bm.verts.layers.deform.active
@@ -103,6 +103,6 @@ assert [g.name for g in obj.vertex_groups]==[b['name'] for b in bones]
 for v in obj.data.vertices:assert abs(sum(g.weight for g in v.groups)-1)<1e-5
 for im in bpy.data.images:
  if im.source=='FILE':assert im.packed_file;im.use_fake_user=True
-report={'stock_bones':188,'source_bones':290,'vertices':len(obj.data.vertices),'triangles':sum(len(p.vertices)-2 for p in obj.data.polygons),'materials':[m.name for m in obj.data.materials],'mapping':mapping,'head_uniform_scale':1.30,'head_rigid_vertices':head_count,'torso_width_scale':width,'torso_height_scale':zscale,'limb_width_scale':1.35,'hand_policy':'Source doll silhouette rigid to native hand; fine finger articulation deferred','geometry_stage':'First review fit, not packaged','source_preserved':True,'runtime_test':'NOT RUN'}
+report={'stock_bones':188,'source_bones':290,'vertices':len(obj.data.vertices),'triangles':sum(len(p.vertices)-2 for p in obj.data.polygons),'materials':[m.name for m in obj.data.materials],'mapping':mapping,'head_uniform_scale':1.05,'head_anchor_offset_m':[0,0,-.08],'head_rigid_vertices':head_count,'torso_width_scale':width,'torso_height_scale':zscale,'limb_width_scale':1.35,'hand_policy':'Source doll silhouette rigid to native hand; fine finger articulation deferred','geometry_stage':'First review fit, not packaged','source_preserved':True,'runtime_test':'NOT RUN'}
 (out/'rig-report.json').write_text(json.dumps(report,indent=2)+'\n');np.savez_compressed(out/'fit.npz',positions=points,regions=regions);bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(out/'Woody-Pete-review.blend'),compress=True)
 print(json.dumps({k:v for k,v in report.items() if k!='mapping'}),flush=True)
