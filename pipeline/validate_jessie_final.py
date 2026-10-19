@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 import texture2ddecoder
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',type=Path);p.add_argument('reference',type=Path);p.add_argument('new_report',type=Path);a=p.parse_args();root=a.stage;assert not a.new_report.exists()
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',type=Path);p.add_argument('reference',type=Path);p.add_argument('new_report',type=Path);p.add_argument('--source-geometry',type=Path);a=p.parse_args();root=a.stage;assert not a.new_report.exists()
 meta=json.loads((root/'final-metadata.json').read_text());by_path={'/Game/'+m['path'].split('/Content/',1)[1][:-7]:m for m in meta};raw=root/'final-unpacked/chunks'
 def resolve(m,index):
  assert index<0;b=(raw/m['chunk_id']).read_bytes();s=struct.unpack_from('<15I',b);v=struct.unpack_from('<Q',b,s[7]+(-index-1)*8)[0];assert v>>62==2;v&=(1<<62)-1;pkg=m['imported_packages'][v>>32];h=struct.unpack_from('<Q',b,s[6]+(v&0xffffffff)*8)[0]
@@ -83,7 +83,7 @@ for record in json.loads((normal_dir/'texture.json').read_text())['mips']:
 d=root/'final-mips-T_Jes_Apparel_01_C';decoded=np.frombuffer(texture2ddecoder.decode_bc3((d/'mip-00.bin').read_bytes(),4096,4096),dtype='u1').reshape(4096,4096,4)[:,:,[2,1,0,3]];atlas=np.asarray(Image.open(root.parent/'atlas-v1/Jessie-basecolor-atlas.png').convert('RGBA'));mae=float(np.mean(abs(decoded[:,:,:3].astype(float)-atlas[:,:,:3])));assert mae<5 and np.all(decoded[:,:,3]==255)
 Image.fromarray(decoded).save(root/'final-decoded-atlas.png')
 # The single source sheet needs only V reversal, no atlas cell packing.
-src=np.load(root.parent/'geometry-v1/Jessie-geometry-SKINNED.npz')
+src=np.load(a.source_geometry or root.parent/'geometry-v1/Jessie-geometry-SKINNED.npz')
 assert np.array_equal(expected['uv0'],src['uv0'][expected['source_vertices']])
 assert np.all((src['uv0']>=-1e-5)&(src['uv0']<=1+1e-5))
 report={'status':'passed_offline','mesh_readbacks':mesh_reports,'material_texture_bindings':bindings,'material_parent':'Original MM_Character; cached MI shader/native payload preserved byte-exact','flat_BC5_normal_pixels_all_mips':'independently decoded RG128 constant; no alternating columns','private_texture_and_MI_paths':True,'original_game_texture_or_MI_paths_overridden':False,'legacy_export_and_bulk_payloads_roundtrip_exact':legacy_matches,'texture_mips_read_by_CUE4Parse_and_hash_checked':mips,'independent_BC3_RGBA_mean_absolute_error':mae,'atlas_UVs':'Body sheet plus temporary eye region; explicit V reversal and exact independent CUE half-float UV readback','physics':'Original Hoops game physics/skeleton/animation references preserved; no replacements bundled','native_bone_binding':'No native bone/rest transform edits','runtime':'NOT TESTED: user Windows gameplay test required','limitations':['One opaque character material; eyes/face share simplified suit shading','Atlas downsampling and distant mip color bleed possible','Flat normal map, temporary matte RMA and black SSS','Original voices/portrait remain; no new facial animation','Hat and braid follow head; no cloth or braid physics; original source preserved','No input, movement, collision capsule or gliding mechanic changes']}

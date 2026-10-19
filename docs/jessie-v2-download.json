@@ -1,0 +1,29 @@
+{
+  "file": "Jessie-Hoops-V2-Test.zip",
+  "bytes": 7983140,
+  "sha256": "c96f405ca6a5424b9c9b74ed78bcbf5679f125e8ab43160f56262a41c813c283",
+  "status": "V2 offline validated; Windows test required",
+  "entries": [
+    "mod/zJessieV2_P.pak",
+    "mod/zJessieV2_P.ucas",
+    "mod/zJessieV2_P.utoc",
+    "READ-ME-FIRST.txt",
+    "previews/V2-front-side-sitting.png",
+    "previews/V1-V2-controlled-comparison.png",
+    "previews/V2-standing.png",
+    "previews/V2-sitting.png",
+    "previews/V2-sitting-side.png",
+    "previews/V2-running.png",
+    "previews/V2-rest-side.png",
+    "previews/cooked-front.png",
+    "previews/cooked-side.png",
+    "reports/corrections.json",
+    "reports/fresh-scene-validation.json",
+    "reports/baseline-preservation.json",
+    "reports/source-fit-comparison.json",
+    "reports/clothing-attachment-validation.json",
+    "reports/iostore-validation.json",
+    "reports/independent-cooked-validation.json",
+    "reports/tangent-frames.json"
+  ]
+}

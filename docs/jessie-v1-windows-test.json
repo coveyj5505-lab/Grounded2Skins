@@ -1,0 +1,11 @@
+{
+  "date_reported_client": "2026-10-18",
+  "package": "Jessie-Hoops-First-Test.zip",
+  "sha256": "f0a1f7ceeef3eed51d96d5b2dfa7016739b245e5ae17f01440e57bf4b0b8689a",
+  "game_build_context": "Grounded 2 PC Game Pass / WinGDK 0.316.9020.0",
+  "user_confirmed": ["model loads", "animates", "renders"],
+  "visual_failures": ["arms bend unnaturally outward with wrong elbow/wrist positioning", "legs/chaps separate and deform", "torso/neck stretched and narrow", "sitting exaggerates deformation"],
+  "accepted_appearance": ["face", "hat", "hair", "textures"],
+  "correction_priority": "Focused Jessie V2 with source proportions, semantic bone mapping and coherent clothing weights; preserve accepted head and all existing releases.",
+  "scope": "V1 runtime loading confirmed; no claim of acceptable V1 deformation or complete animation/crash-free coverage. V2 requires a new Windows test."
+}

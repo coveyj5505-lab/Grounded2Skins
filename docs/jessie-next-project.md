@@ -42,3 +42,7 @@ No additional user input is required for the next fitting/material work. No Jess
 ## First installable test completed
 
 The subsequent `rig-v6` adjusts the neck fit; `gameplay-v1` combines preserved parts with a body/temporary-green-eye atlas. Full four-LOD writing, private materials, Zen relocation, IoStore verification and independent native/texture readbacks are complete. The new `Jessie-Hoops-First-Test.zip` / `zJessieTest_P` is separate from Buzz and Bo Peep and awaits the user's Windows test. [Installation, compromises and reproduction](jessie-first-test.md) supersede earlier unfinished-stage notes.
+
+## Jessie V2 correction
+
+User confirmed V1 runtime loading/rendering but reported major limb, chaps and torso deformation. A focused V2 corrects twist-role mapping and coherent clothing fitting while preserving the accepted head/atlas and existing releases. See [V2 diagnosis, validation and installation](jessie-v2-test.md). V2 remains untested in Windows until user feedback.

@@ -1,6 +1,6 @@
 # Jessie replaces Hoops — first gameplay test
 
-**Offline validated; Windows gameplay not yet tested.** Target: Grounded 2 PC Game Pass / WinGDK build 0.316.9020.0.
+**V1 user test confirms loading, animation and rendering, with major body deformation.** See `jessie-v1-windows-test.json` and `jessie-v2-test.md`. V1 ZIP remains the unchanged fallback. Target: Grounded 2 PC Game Pass / WinGDK build 0.316.9020.0.
 
 ## Install
 
