@@ -1,14 +1,20 @@
 {
-  "file": "ToyStory-Accessory-Check-v1.1.zip",
-  "bytes": 4804,
-  "sha256": "a80ecaedb6bd8ece1b2428b3d254bc2b31ed6e375aeed1aa86c4837b0da8d964",
-  "offline_validation": "RealLua5.4 tests pass with IsA intentionally absent on all mock objects, signature/type rejection, menu/wrongclass, queued sampler; ZIPCRC pass",
-  "windows_status": "V1.1 NOT_YET_TESTED; V1 proved IsGliding signature exists, not its runtime return",
-  "controls": "F9alone starts/stops180second automatic recording every0.5seconds",
-  "target": "Component getters, main/offhand and passive spear montage/stance; no general character dump",
-  "stable_skins": "Unchanged; head/body separation already confirmed, do not reinstall or retest it",
-  "version": "1.1",
-  "previous_version_status": "V1 halted at receiver IsA guard; no states captured. Superseded by1.1.",
-  "status": "WITHDRAWN: both published versions halted before state capture; await one-shot wrapper type result",
-  "next_diagnostic": "ToyStory-Object-Access-Check.zip"
+  "file": "ToyStory-Accessory-Check-v2.zip",
+  "bytes": 6375,
+  "sha256": "98216fb5af0267651fb51e24899c469332731e138069ed7abe0b52e7898de424",
+  "version": "2.0",
+  "diagnosis": "Runtime RemoteObjectBase tags for both component value spellings; exact Beta Reflection base-constructor path can seed incomplete UObject metatable",
+  "fix": "No Reflection; exact native-class field metadata then normal property indexing in fresh mod state. Check returned type before methods.",
+  "offline_checks": [
+    "7realLua5.4cases pass",
+    "Reflection deliberately forbidden in mocks",
+    "RemoteObjectBase rejection and independent equipment lane",
+    "Glide errors do not abort equipment/attacks; equipment errors do not abort glide/attacks",
+    "Live enum numbers differ from SDK in tests",
+    "ZIPCRC and4expectedfiles verified"
+  ],
+  "windows_status": "Workaround and getter values NOT_YET_VERIFIED; short wrapper diagnostic itself succeeded",
+  "controls": "F9once; wait5seconds then check Scripts/AccessoryCheck-status.txt; READY permits gameplay, PARTIAL only working lanes, STOP avoids wasted sequence",
+  "first_person": "COMPLETE, untouched",
+  "accessory_requirements": "Crook visible FP/TP; native spear positioning no two-handed constraint; unarmed mechanics unchanged"
 }

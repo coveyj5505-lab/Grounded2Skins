@@ -1,3 +1,4 @@
+-- SUPERSEDED: old speculative reference access. Current v2.0 recorder avoids Reflection(), based on runtime RemoteObjectBase evidence and exact Beta source. Do not install this file.
 -- PENDING ACCESS CHECK: NOT FOR WINDOWS INSTALL. AccessoryCheck1.2: read-only exact SDK getter validation; NO camera/mesh/visibility/combat writes.
 local function log(s) print('[ToyStoryAccessoryCheck] '..s..'\n') end
 local function valid(o) return o~=nil and o:IsValid() end

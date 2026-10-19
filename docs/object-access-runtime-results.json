@@ -1,0 +1,17 @@
+{
+  "source_sha256": "ce9960291ec9f38e0aae919f58174f54bc8272f1766088f1e74c13ec135562d7",
+  "completed": true,
+  "wrapper_tags": {
+    "pawn_V2_direct": "AActor",
+    "CharMovementComponent.descriptor": "ObjectProperty",
+    "CharMovementComponent.GetPropertyValue": "RemoteObjectBase",
+    "CharMovementComponent.direct": "RemoteObjectBase",
+    "EquipmentComponent.descriptor": "ObjectProperty",
+    "EquipmentComponent.GetPropertyValue": "RemoteObjectBase",
+    "EquipmentComponent.direct": "RemoteObjectBase"
+  },
+  "component_methods": "Both direct and GetPropertyValue results lack GetFullName/GetClass/IsA/get; IsValid/type present",
+  "diagnosis": "Exact Beta source contains Reflection()->SelfType::construct with SelfType=Super (ObjectBase). That can seed metatable UObject with RemoteObjectBase members. UObjectBase::construct later skips complete setup when that same metatable exists. Source path predicts precisely the logged tags/methods.",
+  "scope": "Runtime tag evidence plus static source-backed cause; no native engine reproduction or post-workaround Windows success claimed",
+  "workaround": "No Reflection calls in recorder. Validate exact whitelisted descriptors through UClass metadata, then use normal indexing in fresh mod Lua state. Do not simply switch accessor spellings or remove type safety."
+}

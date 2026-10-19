@@ -11,6 +11,7 @@ local lines={};print=function(s) table.insert(lines,s) end
 local wall=1000;os.time=function() return wall end
 function StaticConstructObject() error('unexpected actor/component creation') end
 function RegisterHook() error('unexpected hook') end
+local fieldTypeOverride=nil;local reflectionCalls=0
 local keys={};local timer;local queued;local first=false;local glide=false;local main=false;local off=false;local mismatch=false;local wrongReceiver=false;local menu=false;local attackActive=false;local writes=0;local remoteCalls=0;local calls=0
 Key={F9=120,F10=121}
 function RegisterKeyBind(k,f) assert(type(f)=='function');keys[k]=f end
@@ -36,6 +37,12 @@ function StaticFindObject(path)
   fn({ToString=function() return 'EEquipmentSlot::MainHand' end},17)
   fn({ToString=function() return 'EEquipmentSlot::OffHand' end},29)
  end} end
+ local fields={
+ ['/Script/Maine.SurvivalCharacter']={CharMovementComponent='ObjectProperty',EquipmentComponent='ObjectProperty',bIsAttacking='BoolProperty',bIsChargingAttack='BoolProperty'},
+ ['/Script/Maine.EquipmentComponent']={bHasMainHand='BoolProperty',bHasOffHand='BoolProperty'}}
+ if fields[path] then return {IsValid=function() return true end,ForEachProperty=function(self,fn)
+  for n,t in pairs(fields[path]) do if fn(descriptor(n,fieldTypeOverride or t)) then break end end
+ end} end
  local spec=methods[path:gsub('^/Script/','')]
  if not spec then return {IsValid=function() return false end} end
  return {IsValid=function() return true end,ForEachProperty=function(self,fn)
@@ -43,7 +50,7 @@ function StaticFindObject(path)
  end}
 end
 local function object(name,classes,props)
- local o={SetPropertyValue=function() writes=writes+1;error('unexpected write') end,IsValid=function() return true end,GetFullName=function() return name end,GetClass=function(self)
+ local o={type=function() return name:find('SurvivalPlayerCharacter',1,true) and 'AActor' or 'UObject' end,SetPropertyValue=function() writes=writes+1;error('unexpected write') end,IsValid=function() return true end,GetFullName=function() return name end,GetClass=function(self)
   local list={};for c in pairs(classes) do table.insert(list,c) end
   local function at(i)
    if not list[i] then return nil end
@@ -51,8 +58,7 @@ local function object(name,classes,props)
   end
   return at(1)
  end}
- o.Reflection=function() return {GetProperty=function(self,k) local v=props[k];if not v then return nil end;return descriptor(k,v.kind) end} end
- -- Reproduce returned references with missing GetClass, and avoid GetPropertyValue entirely.
+ o.Reflection=function() reflectionCalls=reflectionCalls+1;error('Reflection would seed incomplete metatable; forbidden') end
  o.GetPropertyValue=function() error('GetPropertyValue must not be used') end
  setmetatable(o,{__index=function(self,k) if props[k] then calls=calls+1;return props[k].value() end;return nil end})
  return o
@@ -68,20 +74,20 @@ local montage=object('AnimMontage SpearObservedOnly',{}, {})
 local attack=object('Attack Current',{['/Script/Maine.Attack']=true},{})
 attack.GetAnimMontage=function() return montage end
 local localCharacter=object('SurvivalPlayerCharacter LocalPawn',{['/Script/Maine.SurvivalCharacter']=true},{
- CharMovementComponent={kind='ObjectProperty',value=function() return movement end},EquipmentComponent={kind='ObjectProperty',value=function() return equipment end},bIsAttacking={kind='BoolProperty',value=function() return attackActive end}})
+ CharMovementComponent={kind='ObjectProperty',value=function() return movement end},EquipmentComponent={kind='ObjectProperty',value=function() return equipment end},bIsAttacking={kind='BoolProperty',value=function() return attackActive end},bIsChargingAttack={kind='BoolProperty',value=function() return false end}})
 localCharacter.GetIsFirstPerson=function() return first end;localCharacter.GetCameraDisplayMode=function() return first and 1 or 2 end;localCharacter.GetCurrentAttack=function() return attack end
 local pc={IsValid=function() return true end,IsLocalController=function() return true end,Pawn=localCharacter}
 local remote={IsValid=function() return true end,IsLocalController=function() return false end,Pawn=setmetatable({}, {__index=function() remoteCalls=remoteCalls+1;error('remote access') end})}
 function FindAllOf(k) assert(k=='PlayerController');if menu then return nil end;return {remote,pc} end
 '''
-src=(root/'runtime/pending/AccessoryRecorder-main.lua.disabled').read_text()
+src=(root/'runtime/ToyStoryAccessoryCheck/Scripts/main.lua').read_text()
 tests={
  'regression: component GetClass/IsA absent, GetPropertyValue forbidden; direct references work':r"""
 assert(movement.IsA==nil and equipment.IsA==nil and movement.GetClass==nil and equipment.GetClass==nil)
 keys[Key.F9]();flush();assert(writes==0 and remoteCalls==0)
 first=true;glide=true;main=true;off=true;attackActive=true;tick();assert(writes==0)
 local all=table.concat(lines,'');assert(all:find('gliding=true',1,true));assert(all:find('MainHand=Item Spear',1,true));assert(all:find('OffHand=Item Shield',1,true));assert(all:find('attackMontage=AnimMontage SpearObservedOnly',1,true));assert(not all:find('ERROR',1,true))
-assert(keys[Key.F10]==nil)
+assert(keys[Key.F10]==nil and reflectionCalls==0)
 wall=1181;local old=calls;tick();assert(calls==old)
 """,
  'signature mismatch skips incompatible getter':r"""
@@ -90,7 +96,7 @@ keys[Key.F9]();flush();assert(writes==0);local all=table.concat(lines,'');assert
 """,
  'unexpected property types rejected, menu and wrong receiver handled':r"""
 menu=true;keys[Key.F9]();flush();assert(calls==0);menu=false
-localCharacter.Reflection=function() return {GetProperty=function(self,k) return descriptor(k,'ArrayProperty') end} end
+fieldTypeOverride='ArrayProperty'
 wrongReceiver=true;tick();assert(calls==0 and writes==0)
 """,
  'glide failure isolated: equipment and attack continue across samples':r"""
@@ -102,6 +108,11 @@ local all=table.concat(lines,'');assert(all:find('LANE DISABLED getter Maine.Mai
 equipment.GetStance=function() error('mock equipment Lua failure') end
 glide=true;attackActive=true;keys[Key.F9]();flush();tick()
 local all=table.concat(lines,'');assert(all:find('gliding=true',1,true));assert(all:find('attackMontage=AnimMontage SpearObservedOnly',1,true));assert(not all:find('STOP LUA ERROR',1,true))
+""",
+ 'RemoteObjectBase rejected before method calls; equipment still records':r"""
+movement.type=function() return 'RemoteObjectBase' end;movement.GetClass=nil;movement.GetFullName=nil
+main=true;keys[Key.F9]();flush();tick()
+local all=table.concat(lines,'');assert(all:find('REJECTED WRAPPER CharMovementComponent RemoteObjectBase',1,true));assert(all:find('MainHand=Item Spear',1,true));assert(all:find('READINESS PARTIAL READY: EQUIPMENT ONLY',1,true));assert(not all:find('STOP LUA ERROR',1,true))
 """,
  'queued game-thread samples never overlap':r"""
 keys[Key.F9]();timer();timer();flush();assert(writes==0);tick();assert(not table.concat(lines,''):find('ERROR',1,true))

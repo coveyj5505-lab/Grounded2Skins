@@ -1,3 +1,5 @@
+> Latest: see ue4ss-reflection-binding-workaround.md and object-access-runtime-results.json. Short diagnostic confirmed component RemoteObjectBase wrappers; exact Beta source identifies Reflection initialization-order defect. v2.0 full recorder avoids Reflection, adds readiness file and isolated getter errors. Fresh game state required. Old gameplay check builds superseded; runtime getter values still pending.
+
 # Accessory implementation checkpoint
 
 First-person functionality is COMPLETE by the user's report on all4skins. Working packages/head-body separation are unchanged; baseline SHA256s were rechecked. No FPtest, camera/visibility override or new skin install is requested.

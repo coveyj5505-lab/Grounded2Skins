@@ -1,34 +1,33 @@
-WITHDRAWN: v1 and v1.1 halted before state capture. Do not repeat the gameplay sequence. Current main.lua is a no-keybind stub. Use only the one-shot ToyStoryObjectAccess diagnostic until actual wrapper identity is resolved. Instructions below are historical.
+ToyStoryAccessoryCheck v2.0 - NO Reflection() binding poisoning
+Read-only targeted equipment, spear montage/stance and reusable-trinket glide recording.
+First-person and all skins remain unchanged; no FP test requested.
 
-VERSION1.1: fixes nil IsA receiver guard. Replaces it with class-hierarchy checks; no gameplay or skin changes. Replace the SAME ToyStoryAccessoryCheck folder; do not install both versions.
+INSTALL WITH GAME CLOSED
+Remove ToyStoryObjectAccess and old ToyStoryDiscovery* from ue4ss/Mods and their mods.txt entries if present. Replace the old ToyStoryAccessoryCheck folder with this folder. enabled.txt included; keep/add ToyStoryAccessoryCheck : 1 only if your loader needs mods.txt. Keep working UE4SS/FreeBuild/skins untouched. Restart the game: an already-poisoned per-mod Lua binding cannot be repaired by changing the accessor spelling.
 
-ToyStoryAccessoryCheck - ONE READ-ONLY focused SDK check
-First-person functionality is COMPLETE. Do not replace skins, repeat FPtests, or install any unpublished FPoverride. This package has NO cooked assets and NO visibility changes.
+FIRST FIVE SECONDS - CHECK READY BEFORE SPENDING TIME ON GAMEPLAY
+Load a save standing with both hands empty, then press F9 ONCE.
+Wait5seconds. Open ue4ss/Mods/ToyStoryAccessoryCheck/Scripts/AccessoryCheck-status.txt.
+- READY: equipment AND glide getter values are valid. Proceed below.
+- PARTIAL READY: EQUIPMENT ONLY: do the equipment/attack sequence only; no glide needed. Equipment/crook progress continues independently.
+- PARTIAL READY: GLIDE ONLY: do glide/land only; equipment recording isn't ready.
+- STOP, NOT STARTED, or missing status file: preserve/send UE4SS.log; don't repeat a long gameplay sequence. Readiness also prints in UE4SS.log if folder permissions prevent writing the status file.
+No extra keypresses are needed while gliding. You can alt-tab to read the small status file, then return to the same running session.
 
-INSTALL
-Close game. Move old ToyStoryDiscovery/V2/V3/V4 folders outside ue4ss/Mods and remove their mods.txt entries if present. Copy ToyStoryAccessoryCheck to ue4ss/Mods. enabled.txt is included. If your loader requires mods.txt, add ToyStoryAccessoryCheck : 1 without replacing other lines. Keep existing UE4SS3.0.1Beta, FreeBuild, four stable skins and head/body separation unchanged.
-
-ONE SESSION - PRESS F9 ONCE, THEN PLAY; NO CAPTURE KEY WHILE GLIDING
-Load a copied test save. Use whichever working character is convenient; state-getter validation does not need all four characters. Start standing, with NO weapon or shield.
-Press F9 once, wait5seconds. If still responsive, do the following within3minutes, holding equipment states for about3seconds:
-1. Empty hands, no shield.
-2. Spear ONLY (no shield); perform2normal spear thrusts if convenient.
-3. Spear+shield.
-4. Shield ONLY (no main-hand item).
+ONE RECORDING SESSION (automatic180seconds from F9;0.5second sampling)
+1. Empty BOTH hands/no shield.
+2. Spear only:2normal attacks and a charged attack.
+3. Spear+shield: same attack sequence if convenient.
+4. Shield only.
 5. Empty BOTH hands again.
-6. Ordinary jump WITHOUT gliding (optional comparison), then glide with your existing REUSABLE TUFT TRINKET and land.
-Press F9 again to stop, or it stops after3minutes. Do not press Ctrl or any key while gliding to capture; sampling is automatic every0.5seconds. No camera-toggle/first-person test needed. Keep the order above or note differences.
+6. If glide READY: ordinary jump without tuft (optional), then glide with your reusable TUFT TRINKET and land.
+Hold equipment states about3seconds. F9again stops early, otherwise recording ends after3minutes. Send UE4SS.log BEFORE relaunching, plus changed action order/skipped actions. Short attacks may fall between samples; charging and montage fields are passive observations, not attack execution. No first-person or four-character repeat needed.
 
-Return ue4ss/UE4SS.log before relaunching. Tell us if you skipped spear attacks or used a different state order. This automatically captures getter transitions, hand-item names, stance values and (when sampled during an actual attack) its montage reference. Very short attacks might fall between samples; a missing montage would not prove that no attack occurred.
+WHY THIS FIX IS DIFFERENT
+The short type diagnostic confirmed both component access forms returned RemoteObjectBase, while pawn was AActor and descriptors were ObjectProperty. Exact Beta ca6f9b4c source reveals Reflection() can create a bare 'UObject' metatable before the full UObject constructor. Later reads reuse it and lack GetClass/IsA/GetFullName. v2.0 never calls Reflection(): exact known field descriptors come from native UClass.ForEachProperty metadata (the V2-proven class path), then ordinary indexing constructs full UObject wrappers. Actual wrapper tags are checked; RemoteObjectBase is rejected without calling missing methods. No pointer casting, raw addresses, engine/SDK offsets, metatable patches, DLL changes or blanket unwrapping.
 
-WHAT IT DOES
-Looks up a short allowlist of exact reflected SDK functions. Checks input/return property-name/kind signatures and receiver class via GetClass/GetSuperStruct before invoking getters. IsA is not used. Reads only whitelisted ObjectProperty component references and BoolProperty fields. Equipment slot numbers come from the LIVE EEquipmentSlot enum; no SDK memory offsets or assumed slot integers. Missing/mismatched signatures are logged and skipped. Logs native-call BEFORE/AFTER markers and state changes. GetIsFirstPerson is a read only for future accessory suppression; no FPtesting or changes requested.
-
-WHAT IT DOES NOT DO
-No general player properties, recursive object dump, component traversal, mesh/material/camera writes, hooks, attack calls, animation replacement, inventory edits, movement/physics changes, crook/wings spawning or save writes.
-
-LIMITS
-New getter calls are not yet Windows-tested. Offline Lua tests cannot establish native safety; Lua pcall cannot catch native access violations. Stop if crash/freeze, preserve UE4SS.log before restarting, and remove this mod. Header/signature matching is a compatibility guard, not proof of correct runtime behavior. Existing V3 succeeded but did not directly measure the needed component states; no V4 results have been supplied.
+RESILIENCE
+Each optional getter/property/enum has its own protected Lua operation. One error disables that operation and leaves equipment, glide and passive attack collection independent. Native access violations are NOT catchable by Lua. The new binding workaround/getters still need actual Windows confirmation; offline mocks don't establish native safety. No new rendering/visibility/camera/inventory/animation/combat/movement changes. No crook or wing actors spawned by this test.
 
 REMOVE
-Close game, move ToyStoryAccessoryCheck outside Mods, and remove only its mods.txt entry if added. Stable character mods remain unchanged.
+Close game, move this folder outside Mods and remove only its mods.txt entry if added. Stable skins remain untouched.

@@ -1,0 +1,2 @@
+NOT STARTED
+Launch the game, load a save, stand still and press F9 once. Wait5seconds and reopen this file. Continue gameplay only when it says READY or the applicable PARTIAL READY state.

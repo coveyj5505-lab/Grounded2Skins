@@ -1,3 +1,5 @@
+> Update: wrapper identity is now known from the successful short diagnostic: BOTH component access spellings return RemoteObjectBase, pawn AActor, descriptors ObjectProperty. See ue4ss-reflection-binding-workaround.md for the source-backed initialization-order cause and v2.0 workaround. Historical uncertainty below is superseded.
+
 # UE4SS object-access audit after two recorder failures
 
 ## Evidence and correction
