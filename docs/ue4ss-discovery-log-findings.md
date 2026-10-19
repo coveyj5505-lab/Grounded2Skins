@@ -1,0 +1,9 @@
+# Uploaded crash-log assessment
+
+UE4SS v3.0.1 Beta #0, Git ca6f9b4c, is recorded in the uploaded log. One snapshot began and none finished. Scheduling, controller enumeration, local-controller identification and controller inspection all progressed before the character-property scan. This rules out a failure before snapshot dispatch for this run.
+
+Observed local classes: BP_SurvivalPlayerController_Augusta_C and BP_SurvivalPlayerCharacter_Female_C. The last recorded property is OnItemEquipped, a MulticastInlineDelegateProperty declared on /Game/Blueprints/Player/BP_SurvivalPlayerCharacter.BP_SurvivalPlayerCharacter_C. This is useful equipment-event discovery evidence, not a verified hook or proof that this delegate caused the native crash. The failing operation may be the next property conversion, iteration advance, or another unlogged operation. Broad scanning converted arrays, struct and delegate wrappers as well as object references; stop doing that. Lua pcall does not contain native access violations.
+
+No character animation-instance or mesh inspection completed, and no glide state was established. The log also reports failed InitGameState detour installation during startup, but later successful gameplay/snapshot progress does not connect that warning causally to this crash. Do not reinstall or reconfigure working UE4SS based solely on it.
+
+Keep V1 withdrawn and current stub disabled. A replacement must separate metadata enumeration from value reads, exclude delegates/arrays/struct/object conversion, stop after bounded steps, log before each native operation with real newlines, and initially avoid invoking reflected game functions. A finer-grained Windows test may still crash; do not label it runtime-safe based on mock tests. No new runtime test is distributed with this assessment. Crook/wing asset authoring can continue independently.

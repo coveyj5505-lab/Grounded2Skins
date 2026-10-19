@@ -3,11 +3,25 @@
   "trigger": "User pressed Ctrl+F8 in ToyStoryDiscovery V1",
   "exception": "EXCEPTION_ACCESS_VIOLATION reading address 0x0000000000000000",
   "stack_summary": "VCRUNTIME140, repeated UE4SS frames, Grounded2_WinGDK_Shipping, kernel32, ntdll; no symbolic call names or offsets supplied",
-  "confirmed": ["User reports game crashed on snapshot key", "Offline mock validation did not establish native reflection safety"],
-  "unknown": ["Exact failing call", "Whether scheduling, controller lookup, property enumeration, property value conversion or another native call caused the fault", "Whether any snapshot completed"],
+  "confirmed": [
+    "User reports game crashed on snapshot key",
+    "Offline mock validation did not establish native reflection safety",
+    "Snapshot callback executed and reached local player character property scan",
+    "Final log record is OnItemEquipped delegate property; no SNAPSHOT END"
+  ],
+  "unknown": [
+    "Exact failing native operation after last recorded entry",
+    "Whether logging buffered any subsequent progress"
+  ],
   "mitigation": "Withdraw V1, replace current probe source and mutable ZIP with a no-keybind/no-UObject quarantine stub; preserve original source under runtime/quarantined with .disabled extension outside a Mods layout",
-  "needed_evidence": "Original UE4SS.log preserved before next launch, especially last 150 lines and ToyStoryDiscovery messages",
-  "not_changed": ["UE4SS installation", "FreeBuild", "Character skins", "Saved games", "Cooked assets"],
+  "needed_evidence": "UE4SS.log received and analyzed; see ue4ss-discovery-log-assessment.json. Exact native call still needs finer-grained diagnostics or native crash dump.",
+  "not_changed": [
+    "UE4SS installation",
+    "FreeBuild",
+    "Character skins",
+    "Saved games",
+    "Cooked assets"
+  ],
   "native_fault_catchable_by_lua_pcall": false,
   "next_discovery_strategy": "Use existing log to locate last completed stage; remove broad reflection/property value traversal; require individually logged bounded steps before any replacement runtime discovery"
 }

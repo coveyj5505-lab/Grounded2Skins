@@ -1,0 +1,17 @@
+{
+  "log_sha256": "392452b9064e64ef0e05c02a978180d9e29479df2135b00d85bcbd80e277c213",
+  "log_bytes": 66455,
+  "ue4ss_build": "UE4SS - v3.0.1 Beta #0 - Git SHA #ca6f9b4c",
+  "probe_records": 68,
+  "snapshot_begin_count": 1,
+  "snapshot_end_count": 0,
+  "object_classes_observed": [
+    "BP_SurvivalPlayerController_Augusta_C",
+    "BP_SurvivalPlayerCharacter_Female_C"
+  ],
+  "last_probe_record": "[2026-10-19 06:35:39.9197512] [Lua] [ToyStoryDiscovery] PROPERTY OnItemEquipped = MulticastInlineDelegateProperty /Game/Blueprints/Player/BP_SurvivalPlayerCharacter.BP_SurvivalPlayerCharacter_C:OnItemEquipped",
+  "evidence_scope": "Last recorded entry identifies progress, not necessarily the exact crashing operation. Log buffering may omit subsequent operations.",
+  "glide_state_captured": false,
+  "native_failure_stage": "Character property scan",
+  "next_strategy": "Do not enumerate or convert arbitrary property values. Use names/type metadata only in bounded explicitly logged steps before reading whitelisted simple scalar state. Do not call event delegates or arbitrary functions."
+}
