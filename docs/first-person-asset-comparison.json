@@ -1,0 +1,1131 @@
+{
+  "models": [
+    {
+      "character": "Buzz",
+      "stock": {
+        "source_sha256": "fdffc42e3c2455394b83d2bf22292f8bad00be3f9006e6ab3df77b14add94916",
+        "native_bones": 188,
+        "vertices": 18818,
+        "head_vertices": 3124,
+        "head_bounds_cm": {
+          "min": [
+            -13.579751968383789,
+            -9.85452938079834,
+            161.7223663330078
+          ],
+          "max": [
+            13.579894065856934,
+            19.56678009033203,
+            195.83041381835938
+          ]
+        },
+        "hand_vertices": 2772,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Max_Apparel_01",
+            "package_index": -7
+          },
+          {
+            "slot": 1,
+            "name": "Max_Apparel_02",
+            "package_index": -8
+          },
+          {
+            "slot": 2,
+            "name": "Max_ArmsLegs",
+            "package_index": -9
+          },
+          {
+            "slot": 3,
+            "name": "Eyes_AO",
+            "package_index": -6
+          },
+          {
+            "slot": 4,
+            "name": "Max_Eyes",
+            "package_index": -11
+          },
+          {
+            "slot": 5,
+            "name": "Max_Head",
+            "package_index": -10
+          },
+          {
+            "slot": 6,
+            "name": "Max_Head_02",
+            "package_index": -10
+          },
+          {
+            "slot": 7,
+            "name": "Max_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 8,
+            "name": "MI_Eye_Occlusion_Mike_fem01_Willow",
+            "package_index": -6
+          },
+          {
+            "slot": 9,
+            "name": "Fbx Default Material 6",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Max_Apparel_01",
+            "vertices": 3811,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          },
+          {
+            "section": 1,
+            "material": 1,
+            "material_slot_name": "Max_Apparel_02",
+            "vertices": 5975,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          },
+          {
+            "section": 2,
+            "material": 2,
+            "material_slot_name": "Max_ArmsLegs",
+            "vertices": 5680,
+            "head_vertices": 0,
+            "hand_vertices": 2772
+          },
+          {
+            "section": 3,
+            "material": 4,
+            "material_slot_name": "Max_Eyes",
+            "vertices": 733,
+            "head_vertices": 733,
+            "hand_vertices": 0
+          },
+          {
+            "section": 4,
+            "material": 5,
+            "material_slot_name": "Max_Head",
+            "vertices": 1943,
+            "head_vertices": 1934,
+            "hand_vertices": 0
+          },
+          {
+            "section": 5,
+            "material": 6,
+            "material_slot_name": "Max_Head_02",
+            "vertices": 238,
+            "head_vertices": 19,
+            "hand_vertices": 0
+          },
+          {
+            "section": 6,
+            "material": 7,
+            "material_slot_name": "Max_Hair",
+            "vertices": 438,
+            "head_vertices": 438,
+            "hand_vertices": 0
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 39,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 185,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 186,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 187,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "6cef035d3f93746193a957add5c7d5b09c25ed4a5c23b732b784a7e7a050adf3"
+      },
+      "replacement": {
+        "source_sha256": "ad826a1ff7b66da07cbb338ac394e926d7463e70732728cd5eefa3483bc1c028",
+        "native_bones": 230,
+        "vertices": 18780,
+        "head_vertices": 4817,
+        "head_bounds_cm": {
+          "min": [
+            -11.280064582824707,
+            -4.2225565910339355,
+            153.68540954589844
+          ],
+          "max": [
+            11.279900550842285,
+            23.223846435546875,
+            190.00912475585938
+          ]
+        },
+        "hand_vertices": 3066,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "MI_Character_Male01_Buz_Apparel01",
+            "package_index": -7
+          },
+          {
+            "slot": 1,
+            "name": "MI_Character_Male01_Max_Apparel02",
+            "package_index": -8
+          },
+          {
+            "slot": 2,
+            "name": "MI_Character_Male01_Max_ArmsLegs",
+            "package_index": -9
+          },
+          {
+            "slot": 3,
+            "name": "MI_Eye_Human_Max",
+            "package_index": -11
+          },
+          {
+            "slot": 4,
+            "name": "MI_Character_Male01_Max_Head",
+            "package_index": -10
+          },
+          {
+            "slot": 5,
+            "name": "Neck",
+            "package_index": -10
+          },
+          {
+            "slot": 6,
+            "name": "MI_Human_Hair_Afro_Max01",
+            "package_index": -12
+          },
+          {
+            "slot": 7,
+            "name": "MI_BackPack_Max_Cutout",
+            "package_index": -6
+          },
+          {
+            "slot": 8,
+            "name": "MI_BackPack_Max",
+            "package_index": -6
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "MI_Character_Male01_Buz_Apparel01",
+            "vertices": 18780,
+            "head_vertices": 4817,
+            "hand_vertices": 3066
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 5,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 6,
+            "name": "FPVcam_SpineFP",
+            "parent": "FPVcam_Joint",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 9,
+            "name": "FPV_Camera_NSK_Socket",
+            "parent": "FPVcam_Joint",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 12,
+            "name": "FPV_Camera_NSK_Socket_001",
+            "parent": "FPVcam_Joint",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 51,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 224,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 225,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "4ec81796a64073af640d9e43319e441afbdbb9fb6374de27986594ac08df2158"
+      }
+    },
+    {
+      "character": "Woody",
+      "stock": {
+        "source_sha256": "ccc9a4d09b921fb64b16a3cd9421ac56c7cf28f5727b7bca8594fe81b83b900b",
+        "native_bones": 188,
+        "vertices": 23710,
+        "head_vertices": 2951,
+        "head_bounds_cm": {
+          "min": [
+            -15.454614639282227,
+            -8.208346366882324,
+            161.87362670898438
+          ],
+          "max": [
+            14.120079040527344,
+            21.372703552246094,
+            196.74606323242188
+          ]
+        },
+        "hand_vertices": 2771,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Pete_Apparel_02",
+            "package_index": -8
+          },
+          {
+            "slot": 1,
+            "name": "Pete_Apparel_01",
+            "package_index": -7
+          },
+          {
+            "slot": 2,
+            "name": "Pete_ArmsLegs",
+            "package_index": -9
+          },
+          {
+            "slot": 3,
+            "name": "Pete_Head",
+            "package_index": -10
+          },
+          {
+            "slot": 4,
+            "name": "Pete_EyesAo",
+            "package_index": -6
+          },
+          {
+            "slot": 5,
+            "name": "Pete_Eyes",
+            "package_index": -11
+          },
+          {
+            "slot": 6,
+            "name": "Pete_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 7,
+            "name": "Pete_Head_02",
+            "package_index": -10
+          },
+          {
+            "slot": 8,
+            "name": "Pete_Glasses_Lenses",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Pete_Apparel_02",
+            "vertices": 12587,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          },
+          {
+            "section": 1,
+            "material": 1,
+            "material_slot_name": "Pete_Apparel_01",
+            "vertices": 3903,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          },
+          {
+            "section": 2,
+            "material": 2,
+            "material_slot_name": "Pete_ArmsLegs",
+            "vertices": 4047,
+            "head_vertices": 0,
+            "hand_vertices": 2771
+          },
+          {
+            "section": 3,
+            "material": 3,
+            "material_slot_name": "Pete_Head",
+            "vertices": 1950,
+            "head_vertices": 1938,
+            "hand_vertices": 0
+          },
+          {
+            "section": 4,
+            "material": 5,
+            "material_slot_name": "Pete_Eyes",
+            "vertices": 733,
+            "head_vertices": 733,
+            "hand_vertices": 0
+          },
+          {
+            "section": 5,
+            "material": 6,
+            "material_slot_name": "Pete_Hair",
+            "vertices": 253,
+            "head_vertices": 253,
+            "hand_vertices": 0
+          },
+          {
+            "section": 6,
+            "material": 7,
+            "material_slot_name": "Pete_Head_02",
+            "vertices": 237,
+            "head_vertices": 27,
+            "hand_vertices": 0
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 39,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 453
+          },
+          {
+            "index": 185,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 186,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 187,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "6cef035d3f93746193a957add5c7d5b09c25ed4a5c23b732b784a7e7a050adf3"
+      },
+      "replacement": {
+        "source_sha256": "b7ff0d3ea9ec0af913761ed85cffbefc5b85523bfc06a6bb782ce0a39a525734",
+        "native_bones": 188,
+        "vertices": 32574,
+        "head_vertices": 16246,
+        "head_bounds_cm": {
+          "min": [
+            -28.97099494934082,
+            -26.56617546081543,
+            158.55160522460938
+          ],
+          "max": [
+            26.317745208740234,
+            35.027427673339844,
+            208.89324951171875
+          ]
+        },
+        "hand_vertices": 1408,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Pete_Apparel_02",
+            "package_index": -8
+          },
+          {
+            "slot": 1,
+            "name": "Pete_Apparel_01",
+            "package_index": -7
+          },
+          {
+            "slot": 2,
+            "name": "Pete_ArmsLegs",
+            "package_index": -9
+          },
+          {
+            "slot": 3,
+            "name": "Pete_Head",
+            "package_index": -10
+          },
+          {
+            "slot": 4,
+            "name": "Pete_EyesAo",
+            "package_index": -6
+          },
+          {
+            "slot": 5,
+            "name": "Pete_Eyes",
+            "package_index": -11
+          },
+          {
+            "slot": 6,
+            "name": "Pete_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 7,
+            "name": "Pete_Head_02",
+            "package_index": -10
+          },
+          {
+            "slot": 8,
+            "name": "Pete_Glasses_Lenses",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Pete_Apparel_02",
+            "vertices": 32574,
+            "head_vertices": 16246,
+            "hand_vertices": 1408
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 39,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 185,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 186,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 187,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "6cef035d3f93746193a957add5c7d5b09c25ed4a5c23b732b784a7e7a050adf3"
+      }
+    },
+    {
+      "character": "BoPeep",
+      "stock": {
+        "source_sha256": "7db622f83b9f6ddaf93d963db861e156725d7ff20c1f45a2c16e7b825764e42a",
+        "native_bones": 192,
+        "vertices": 22517,
+        "head_vertices": 3730,
+        "head_bounds_cm": {
+          "min": [
+            -13.22262191772461,
+            -10.322528839111328,
+            162.50685119628906
+          ],
+          "max": [
+            13.610495567321777,
+            19.759279251098633,
+            195.83306884765625
+          ]
+        },
+        "hand_vertices": 3431,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Willow_Apparel_01",
+            "package_index": -7
+          },
+          {
+            "slot": 1,
+            "name": "Willow_Arms_Legs",
+            "package_index": -8
+          },
+          {
+            "slot": 2,
+            "name": "Willow_Apparel_02",
+            "package_index": -6
+          },
+          {
+            "slot": 3,
+            "name": "Willow_Head",
+            "package_index": -9
+          },
+          {
+            "slot": 4,
+            "name": "Willow_Head_02",
+            "package_index": -9
+          },
+          {
+            "slot": 5,
+            "name": "Willow_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 6,
+            "name": "Eye_AO",
+            "package_index": -11
+          },
+          {
+            "slot": 7,
+            "name": "Willow_Eyes",
+            "package_index": -10
+          },
+          {
+            "slot": 8,
+            "name": "MI_BackPack_Cutout",
+            "package_index": 0
+          },
+          {
+            "slot": 9,
+            "name": "MI_Backpack",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Willow_Apparel_01",
+            "vertices": 7216,
+            "head_vertices": 0,
+            "hand_vertices": 673
+          },
+          {
+            "section": 1,
+            "material": 1,
+            "material_slot_name": "Willow_Arms_Legs",
+            "vertices": 4702,
+            "head_vertices": 0,
+            "hand_vertices": 2758
+          },
+          {
+            "section": 2,
+            "material": 2,
+            "material_slot_name": "Willow_Apparel_02",
+            "vertices": 6665,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          },
+          {
+            "section": 3,
+            "material": 3,
+            "material_slot_name": "Willow_Head",
+            "vertices": 2136,
+            "head_vertices": 2132,
+            "hand_vertices": 0
+          },
+          {
+            "section": 4,
+            "material": 4,
+            "material_slot_name": "Willow_Head_02",
+            "vertices": 233,
+            "head_vertices": 33,
+            "hand_vertices": 0
+          },
+          {
+            "section": 5,
+            "material": 5,
+            "material_slot_name": "Willow_Hair",
+            "vertices": 832,
+            "head_vertices": 832,
+            "hand_vertices": 0
+          },
+          {
+            "section": 6,
+            "material": 7,
+            "material_slot_name": "Willow_Eyes",
+            "vertices": 733,
+            "head_vertices": 733,
+            "hand_vertices": 0
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 39,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 189,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 190,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 191,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "c55dab35f50e794892abd39df0b38414559dcfaa9ac25dae2f8d2349d907669d"
+      },
+      "replacement": {
+        "source_sha256": "73fc0e1e2f5a2301b46a511b45ca78e7130b87fc99218b8062c0b48c7606e60f",
+        "native_bones": 192,
+        "vertices": 5185,
+        "head_vertices": 1817,
+        "head_bounds_cm": {
+          "min": [
+            -18.8648738861084,
+            -15.303812980651855,
+            161.6956787109375
+          ],
+          "max": [
+            14.401713371276855,
+            25.244098663330078,
+            207.84005737304688
+          ]
+        },
+        "hand_vertices": 692,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Willow_Apparel_01",
+            "package_index": -7
+          },
+          {
+            "slot": 1,
+            "name": "Willow_Arms_Legs",
+            "package_index": -8
+          },
+          {
+            "slot": 2,
+            "name": "Willow_Apparel_02",
+            "package_index": -6
+          },
+          {
+            "slot": 3,
+            "name": "Willow_Head",
+            "package_index": -9
+          },
+          {
+            "slot": 4,
+            "name": "Willow_Head_02",
+            "package_index": -9
+          },
+          {
+            "slot": 5,
+            "name": "Willow_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 6,
+            "name": "Eye_AO",
+            "package_index": -11
+          },
+          {
+            "slot": 7,
+            "name": "Willow_Eyes",
+            "package_index": -10
+          },
+          {
+            "slot": 8,
+            "name": "MI_BackPack_Cutout",
+            "package_index": 0
+          },
+          {
+            "slot": 9,
+            "name": "MI_Backpack",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Willow_Apparel_01",
+            "vertices": 5185,
+            "head_vertices": 1817,
+            "hand_vertices": 692
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 39,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 189,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 190,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 191,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "c55dab35f50e794892abd39df0b38414559dcfaa9ac25dae2f8d2349d907669d"
+      }
+    },
+    {
+      "character": "Jessie",
+      "stock": {
+        "source_sha256": "8f8018c0a81f67d54c7e278c958043e38d9cbd35b887d668730c15ecd8e7d3ac",
+        "native_bones": 189,
+        "vertices": 18841,
+        "head_vertices": 2870,
+        "head_bounds_cm": {
+          "min": [
+            -13.362377166748047,
+            -9.477335929870605,
+            163.21817016601562
+          ],
+          "max": [
+            13.35915470123291,
+            18.195676803588867,
+            195.6197052001953
+          ]
+        },
+        "hand_vertices": 2758,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Ally_Head",
+            "package_index": -10
+          },
+          {
+            "slot": 1,
+            "name": "Ally_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 2,
+            "name": "Ally_Eyes",
+            "package_index": -11
+          },
+          {
+            "slot": 3,
+            "name": "Ally_EyeAO",
+            "package_index": -6
+          },
+          {
+            "slot": 4,
+            "name": "Ally_Head_02",
+            "package_index": -10
+          },
+          {
+            "slot": 5,
+            "name": "Ally_ArmsLegs",
+            "package_index": -9
+          },
+          {
+            "slot": 6,
+            "name": "Ally_Apparel01",
+            "package_index": -7
+          },
+          {
+            "slot": 7,
+            "name": "Ally_Apparel02",
+            "package_index": -8
+          },
+          {
+            "slot": 8,
+            "name": "MI_BackPack_Cutout",
+            "package_index": 0
+          },
+          {
+            "slot": 9,
+            "name": "MI_Backpack",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Ally_Head",
+            "vertices": 1953,
+            "head_vertices": 1953,
+            "hand_vertices": 0
+          },
+          {
+            "section": 1,
+            "material": 1,
+            "material_slot_name": "Ally_Hair",
+            "vertices": 144,
+            "head_vertices": 144,
+            "hand_vertices": 0
+          },
+          {
+            "section": 2,
+            "material": 2,
+            "material_slot_name": "Ally_Eyes",
+            "vertices": 733,
+            "head_vertices": 733,
+            "hand_vertices": 0
+          },
+          {
+            "section": 3,
+            "material": 4,
+            "material_slot_name": "Ally_Head_02",
+            "vertices": 276,
+            "head_vertices": 40,
+            "hand_vertices": 0
+          },
+          {
+            "section": 4,
+            "material": 5,
+            "material_slot_name": "Ally_ArmsLegs",
+            "vertices": 5580,
+            "head_vertices": 0,
+            "hand_vertices": 2758
+          },
+          {
+            "section": 5,
+            "material": 6,
+            "material_slot_name": "Ally_Apparel01",
+            "vertices": 4051,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          },
+          {
+            "section": 6,
+            "material": 7,
+            "material_slot_name": "Ally_Apparel02",
+            "vertices": 6104,
+            "head_vertices": 0,
+            "hand_vertices": 0
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 4,
+            "name": "FPVcam_SpineFP",
+            "parent": "FPVcam_Joint",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 41,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 186,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 187,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 188,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "6d4c56691c9a7175e3c4bc87226c4a49bc2916b74cbd6c7b622ff6ae6a9dbc49"
+      },
+      "replacement": {
+        "source_sha256": "3e518a1a0f347e8bb27a3bde10c93f253754a6570ddd21a8c204b8e25239bf7f",
+        "native_bones": 189,
+        "vertices": 6844,
+        "head_vertices": 3311,
+        "head_bounds_cm": {
+          "min": [
+            -32.691368103027344,
+            -30.951326370239258,
+            148.9192352294922
+          ],
+          "max": [
+            33.251014709472656,
+            34.014488220214844,
+            217.18096923828125
+          ]
+        },
+        "hand_vertices": 449,
+        "materials": [
+          {
+            "slot": 0,
+            "name": "Ally_Head",
+            "package_index": -10
+          },
+          {
+            "slot": 1,
+            "name": "Ally_Hair",
+            "package_index": -12
+          },
+          {
+            "slot": 2,
+            "name": "Ally_Eyes",
+            "package_index": -11
+          },
+          {
+            "slot": 3,
+            "name": "Ally_EyeAO",
+            "package_index": -6
+          },
+          {
+            "slot": 4,
+            "name": "Ally_Head_02",
+            "package_index": -10
+          },
+          {
+            "slot": 5,
+            "name": "Ally_ArmsLegs",
+            "package_index": -9
+          },
+          {
+            "slot": 6,
+            "name": "Ally_Apparel01",
+            "package_index": -7
+          },
+          {
+            "slot": 7,
+            "name": "Ally_Apparel02",
+            "package_index": -8
+          },
+          {
+            "slot": 8,
+            "name": "MI_BackPack_Cutout",
+            "package_index": 0
+          },
+          {
+            "slot": 9,
+            "name": "MI_Backpack",
+            "package_index": 0
+          }
+        ],
+        "sections": [
+          {
+            "section": 0,
+            "material": 0,
+            "material_slot_name": "Ally_Head",
+            "vertices": 6844,
+            "head_vertices": 3311,
+            "hand_vertices": 449
+          }
+        ],
+        "first_person_named_bones": [
+          {
+            "index": 3,
+            "name": "FPVcam_Joint",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 4,
+            "name": "FPVcam_SpineFP",
+            "parent": "FPVcam_Joint",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 41,
+            "name": "FPV_Camera_NSK",
+            "parent": "Hips_JNT",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 186,
+            "name": "FPSpine_Parent",
+            "parent": "Root_NSK",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 187,
+            "name": "FPSpine_Spine3",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          },
+          {
+            "index": 188,
+            "name": "FPSpine_Pelvis",
+            "parent": "FPSpine_Parent",
+            "weighted_vertices": 0
+          }
+        ],
+        "skeleton_name_hierarchy_sha256": "6d4c56691c9a7175e3c4bc87226c4a49bc2916b74cbd6c7b622ff6ae6a9dbc49"
+      }
+    }
+  ],
+  "scope": "Independently decoded native vertex bindings/sections; no runtime camera or visibility claim",
+  "candidate_failure": "Head and hands must be compared with actual runtime material/section hiding and bone visibility, not assumed camera offsets"
+}

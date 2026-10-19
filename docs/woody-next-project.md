@@ -1,3 +1,5 @@
+> Latest status supersedes the historical preparation notes below: Woody's `Woody-Pete-First-Test.zip` was delivered and the user confirmed the skin works in Windows third person. First person is obstructed. Source/rigging/atlas/packaging are complete; see `woody-first-test.md`. The current priority is the ALL FOUR first-person material-section repair described in `first-person-section-repair.md`, before any crook or wing development. No new Pete extraction/model download is needed.
+
 # Woody → Pete preparation
 
 User requested Woody preparation while testing Jessie/Hoops. Jessie V2 is now user-accepted in Windows gameplay (“jessie is good”, reported 2026-10-18 client date). Preserve that baseline and use its coherent limb/clothing weighting as the behavioral reference for Woody’s stuffed-doll limbs. Buzz and Bo Peep remain preserved; Bo Peep's hand/cape correction targets are documented. No current gameplay files or original reference assets are changed for Woody preparation.

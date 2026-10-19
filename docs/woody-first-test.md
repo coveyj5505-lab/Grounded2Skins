@@ -1,3 +1,5 @@
+CURRENT WINDOWS STATUS: user confirms Woody skin works in third person; head obstructs first person. Preserve this original ZIP as the tested baseline. See first-person-section-repair.md for a separate candidate update. The original release instructions below retain their pre-test wording as history.
+
 WOODY -> PETE: FIRST WINDOWS TEST
 
 Offline validated; NOT yet tested in Grounded 2. Target: PC Game Pass / WinGDK 0.316.9020.0.

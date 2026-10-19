@@ -1,0 +1,12 @@
+{
+  "date_reported_client": "2026-10-18",
+  "file": "BoPeep-Willow-V2-Test.zip",
+  "user_statement": "hands look right now; much better",
+  "confirmed_improvement": "Finger appearance accepted in Windows gameplay",
+  "remaining_reported_visual_issues": [
+    "Hands do not fit game gloves correctly",
+    "Clothing intersects/protrudes through chair near feet"
+  ],
+  "screenshot_evidence": "Seated Bo Peep shows fingers intact, equipment glove misfit and fabric/hem protrusion near ankles",
+  "scope": "Do not call glove fit/cape collision resolved. Keep corrected hand shape. First-person repair is current priority."
+}

@@ -1,0 +1,57 @@
+{
+  "character": "Buzz",
+  "status": "passed_offline",
+  "meshes": [
+    {
+      "chunk": "cd809abc483f179000000001",
+      "LOD_count": 1,
+      "vertices": 18795,
+      "triangles": 20124,
+      "head_slot": 5,
+      "head_slot_name": "Max_Head",
+      "body_slot": 0,
+      "both_slots_resolve_same_private_material": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Buz_Apparel01",
+      "all_original_triangle_corner_attributes_exact": [
+        "positions.f32",
+        "uv0.f32",
+        "normals.f32",
+        "joints.u16",
+        "weights.u16",
+        "colors.rgba8",
+        "actual_packed_tangent_normal_handedness_bytes"
+      ],
+      "original_bone_hierarchy_rest_exact": true,
+      "all_LODs_independently_read": true
+    },
+    {
+      "chunk": "8021448bfc8c514500000001",
+      "LOD_count": 1,
+      "vertices": 18795,
+      "triangles": 20124,
+      "head_slot": 5,
+      "head_slot_name": "Max_Head",
+      "body_slot": 0,
+      "both_slots_resolve_same_private_material": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Buz_Apparel01",
+      "all_original_triangle_corner_attributes_exact": [
+        "positions.f32",
+        "uv0.f32",
+        "normals.f32",
+        "joints.u16",
+        "weights.u16",
+        "colors.rgba8",
+        "actual_packed_tangent_normal_handedness_bytes"
+      ],
+      "original_bone_hierarchy_rest_exact": true,
+      "all_LODs_independently_read": true
+    }
+  ],
+  "only_changed_mesh_chunks": [
+    "8021448bfc8c514500000001",
+    "cd809abc483f179000000001"
+  ],
+  "other_material_shader_texture_hair_menu_chunks_exact_baseline": 16,
+  "camera_offsets_animations_physics_or_network_state_changed": false,
+  "full_head_geometry_retained": true,
+  "legacy_native_payloads_roundtrip_exact": true,
+  "runtime": "NOT TESTED; Windows first/third-person switch and multiplayer visibility require user validation"
+}

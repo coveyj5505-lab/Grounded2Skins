@@ -1,3 +1,5 @@
+LATEST WINDOWS FEEDBACK: user reports V2 fingers look right and appearance is much improved; glove fit and fabric/clothing near the feet while sitting remain unresolved (see bopeep-v2-windows-feedback.json). First-person visibility across all four characters is now the priority before crook work. Preserve the V2 hand shape; this release remains a fallback. The original pre-test documentation below is historical.
+
 BO PEEP V2 -> WILLOW: HANDS AND CAPE TEST
 
 Offline validated; this new build has NOT yet been tested in Grounded 2.

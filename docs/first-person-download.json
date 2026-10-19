@@ -1,0 +1,20 @@
+{
+  "file": "ToyStory-All4-FirstPerson-Test.zip",
+  "bytes": 23710725,
+  "sha256": "a7d963ada57fc9de89477185c35df1320fdbfc6f9c46863d306f815faee0e916",
+  "status": "All four offline validated; Windows first-person repair NOT YET CONFIRMED",
+  "mod_files": [
+    "mod/zBoPeepFP_P.pak",
+    "mod/zBoPeepFP_P.ucas",
+    "mod/zBoPeepFP_P.utoc",
+    "mod/zBuzzFP_P.pak",
+    "mod/zBuzzFP_P.ucas",
+    "mod/zBuzzFP_P.utoc",
+    "mod/zJessieFP_P.pak",
+    "mod/zJessieFP_P.ucas",
+    "mod/zJessieFP_P.utoc",
+    "mod/zWoodyFP_P.pak",
+    "mod/zWoodyFP_P.ucas",
+    "mod/zWoodyFP_P.utoc"
+  ]
+}

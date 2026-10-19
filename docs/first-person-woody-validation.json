@@ -1,0 +1,57 @@
+{
+  "character": "Woody",
+  "status": "passed_offline",
+  "meshes": [
+    {
+      "chunk": "b0baaf49556b7e2200000001",
+      "LOD_count": 4,
+      "vertices": 32601,
+      "triangles": 54801,
+      "head_slot": 3,
+      "head_slot_name": "Pete_Head",
+      "body_slot": 0,
+      "both_slots_resolve_same_private_material": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wdy_Apparel01",
+      "all_original_triangle_corner_attributes_exact": [
+        "positions.f32",
+        "uv0.f32",
+        "normals.f32",
+        "joints.u16",
+        "weights.u16",
+        "colors.rgba8",
+        "actual_packed_tangent_normal_handedness_bytes"
+      ],
+      "original_bone_hierarchy_rest_exact": true,
+      "all_LODs_independently_read": true
+    },
+    {
+      "chunk": "69965555c28c2aae00000001",
+      "LOD_count": 4,
+      "vertices": 32601,
+      "triangles": 54801,
+      "head_slot": 3,
+      "head_slot_name": "Pete_Head",
+      "body_slot": 0,
+      "both_slots_resolve_same_private_material": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wdy_Apparel01",
+      "all_original_triangle_corner_attributes_exact": [
+        "positions.f32",
+        "uv0.f32",
+        "normals.f32",
+        "joints.u16",
+        "weights.u16",
+        "colors.rgba8",
+        "actual_packed_tangent_normal_handedness_bytes"
+      ],
+      "original_bone_hierarchy_rest_exact": true,
+      "all_LODs_independently_read": true
+    }
+  ],
+  "only_changed_mesh_chunks": [
+    "69965555c28c2aae00000001",
+    "b0baaf49556b7e2200000001"
+  ],
+  "other_material_shader_texture_hair_menu_chunks_exact_baseline": 19,
+  "camera_offsets_animations_physics_or_network_state_changed": false,
+  "full_head_geometry_retained": true,
+  "legacy_native_payloads_roundtrip_exact": true,
+  "runtime": "NOT TESTED; Windows first/third-person switch and multiplayer visibility require user validation"
+}

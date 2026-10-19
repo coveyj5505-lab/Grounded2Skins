@@ -1,0 +1,19 @@
+{
+  "date_reported_client": "2026-10-18",
+  "source": "User Windows gameplay report",
+  "third_person": "All four skins work in third person; Woody specifically confirmed working",
+  "first_person": {
+    "Buzz_Max": "Head obstructs camera",
+    "Woody_Pete": "Head obstructs camera",
+    "BoPeep_Willow": "Camera around mouth/nose; head obstructs view",
+    "Jessie_Hoops": "Clear playable view but hands absent"
+  },
+  "scope": "No new unreported animation, duration or multiplayer coverage inferred",
+  "priority": "Fix all four first-person behaviors before crook or deployable wing development",
+  "stable_release_sha256": {
+    "Buzz-Lightyear-V2-Proportions-Test.zip": "42b0c50091bc7a5fb97a37ff91ff06da9c0f3f5eac5dd04fba241520aa837250",
+    "Woody-Pete-First-Test.zip": "770661afc75557c03302becc2bf97043d616a88711ed1f58b233e013182e2aca",
+    "BoPeep-Willow-V2-Test.zip": "f64c65c9da95b7bd5ab903ad01e9c5b87c8a4334ebff707134bb985ecd9cfc62",
+    "Jessie-Hoops-V2-Test.zip": "c96f405ca6a5424b9c9b74ed78bcbf5679f125e8ab43160f56262a41c813c283"
+  }
+}
