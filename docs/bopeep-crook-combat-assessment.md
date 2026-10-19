@@ -1,44 +1,44 @@
-# Deferred Bo Peep cosmetic crook combat assessment
+# Deferred Bo Peep crook combat — spear animation plan
 
-User priority: finish Jessie and current Bo Peep hand/cape fixes first. This is an initial feasibility assessment, not an implemented feature or confirmed game hook. Preserve the separate original crook mesh, textures, source weights/transforms and authored prop pivot in the Bo Peep project. Do not embed it permanently in the playable body.
+**Latest user direction supersedes the earlier stock-punch proposal: investigate reusing existing spear animations for the crook.** This remains future work after current character work/fixes. No spear, combat, equipment, Blueprint or gliding modification is implemented now.
 
-## Simplest architecture
+## Desired presentation and preserved requirements
 
-Use one separately rendered, cosmetic crook component attached to the character's existing right-hand bone, with a fitted local translation/rotation. `r_hand_JNT` is actually present at mesh-local index 147 in the verified stock Willow table; `l_hand_JNT` is index 53. Attach by bone name rather than assuming a custom socket or altering the shared game skeleton. The source `e_stick` pivot is an authoring candidate, not a verified game hand attachment transform.
+When Bo Peep is otherwise unarmed, show her preserved crook using a spear-like hold, carry and attack animation presentation. Hide it with any equipped weapon or shield, and during interactions with major clipping; restore it when eligible again. Keep original unarmed damage, timing and collision unless the user explicitly changes that earlier requirement. Coordinate future gliding so only the parasol/glider representation is visible while gliding, with no duplicate hand crook.
 
-Keep the original animation blueprint, locomotion and punch animations. A hand attachment follows those animations automatically; no custom animation system is required for the basic visual test. Walking/running will use the original empty-hand motion, and punches will move the crook along the fist's existing short arc. This does **not** turn a punch into a convincing full staff swing. Long ends can clip the body/environment and look detached from the expected impact. Reusing an actual weapon animation would need a game-specific animation/equipment binding investigation; it is not the simplest initial option and could affect pose/timing. Do not change attack damage, traces, collisions, reach or timing to match the crook's visible length.
+Use the existing spear visual/animation path as the first animation candidate instead of trying to make normal punches look like staff attacks. This can avoid authoring custom animations, but suitability of spear thrusts, hand spacing, crook length and curved tip still needs preview/testing. No promise that a particular spear montage/weapon definition already supports this behavior.
 
-The crook component must have collision, physics simulation, hit/overlap generation and damage participation disabled. Character capsule, movement and unarmed combat remain original. Hide it conservatively in seating, climbing, swimming or other interaction states where clearance is poor; exact game state accessors are not yet established.
+## Simplest investigation path
 
-## Mesh replacement alone cannot implement the requested visibility
+1. Locate the actual current-build spear held-item visual, carry/grip poses and attack montage/animation routing, using discovered game definitions rather than guessed Blueprint names.
+2. Test a cosmetic crook visual in that existing spear presentation path. A reskin of an **actually equipped spear** is a useful animation/attachment control, but it does not by itself implement an unarmed-default crook or preserve unarmed gameplay.
+3. Determine whether presentation can select those spear animations for Bo Peep's eligible unarmed state while retaining the original unarmed combat mechanics. Check all relevant animation notifies, trace events, combo transitions, montage durations, locomotion layers and interaction interruption behavior.
+4. Add the smallest verified equipment/state controller for visibility and presentation routing, scoped to Bo Peep. No new animation system or automatic full combat replacement.
 
-Our current pipeline writes cooked skeletal render buffers, static skin weights, textures/material references and IoStore metadata. It has no event handlers and does not observe inventory, shields, interactions or gliding. Skinning crook vertices rigidly to a hand would make them always present wherever the body mesh renders. A new mesh section or fixed material does not create an equipment-state controller. Do not claim the current skin ZIP can already implement the requested behavior.
+Simply equipping an invisible spear could also select spear statistics, reach, attack timing, damage traces, durability or inventory behavior. Do not treat that as a cosmetic implementation. Likewise, playing a spear montage may invoke attack notifies or mismatch the unarmed timing window. Existing spear animation reuse does **not** automatically guarantee unchanged unarmed gameplay. If these cannot be separated safely through existing game definitions, report the precise limitation before implementing broader changes.
 
-The visibility rule needs equipment/state logic, preferably on a separate accessory component:
+## What the current skin pipeline supports
 
-| State | Hand crook |
+The current pipeline writes skeletal render buffers, fixed skin weights, textures/material references and IoStore metadata. It can produce the crook's render asset, but cannot by itself select spear animations for an unarmed actor, observe inventory, or conditionally hide it. A static hand-weighted addition would be always visible and would not satisfy the new spear-animation plan.
+
+A separate cosmetic accessory is still a useful asset boundary for the future weapon-presentation system, with collision/physics/overlap/damage disabled. Stock Willow has verified hand bones `r_hand_JNT` (index147) and `l_hand_JNT` (53); actual spear attachment transform, sockets and two-hand IK must be inspected. The original source `e_stick` pivot is preserved as an authoring candidate, not a verified game spear socket. No shared game skeleton changes are needed just to author an attachment asset.
+
+Equipment visibility requires existing game equipment logic, a compatible Blueprint/data-asset entry point, or a verified supported runtime hook. Animation routing may require an existing weapon/animation data override or animation-graph changes if no suitable selector exists. Prefer the smallest existing selector/data path, retaining the game's AnimBlueprint where feasible; do not assume a simple component toggle also handles the spear animation change. Adding a new Blueprint to a PAK does not make it run automatically. UE4SS/WinGDK compatibility, arbitrary UE5.6 Blueprint cooking and the needed game hooks are not verified by working skins.
+
+## Accessory state policy
+
+| State | Crook presentation |
 | --- | --- |
-| Bo Peep, unarmed, ordinary walking/running/idle/punching | Visible |
-| Any weapon equipped | Hidden |
-| Any shield equipped, even if the weapon hand is otherwise empty | Hidden |
-| Sitting/climbing/interaction states with major clipping | Hidden |
-| Gliding | Hidden; reserve the future parasol representation |
-| Another character or unknown/unsupported state | Hidden |
+| Bo Peep, otherwise unarmed, normal locomotion/combat | Eligible for crook + verified spear presentation |
+| Any actual weapon or shield equipped | Hidden; preserve equipped item behavior |
+| Sitting/climbing/swimming/interaction with major clipping | Hidden; defer to interaction animation |
+| Gliding | Hide combat crook; future parasol owns presentation |
+| Another character, death/respawn transition or unknown state | Hidden until eligibility is established |
 
-React to equipment changes and interaction transitions; returning to an eligible unarmed state restores visibility. A one-time spawn check is insufficient. Scope the condition to Bo Peep/Willow's skin context rather than globally replacing an unarmed mesh for every character. Account for death, respawn, character switching and equipment changes during interactions before shipping.
+Transitions must react to equipment changes, character swaps, respawns and interaction/glide changes, not only initial spawn. Future parasol and combat crook share one state policy to avoid conflicting animation ownership or two visible props.
 
-## What is and is not verified
+## Current evidence and remaining unknowns
 
-Verified local evidence: stock Willow hand bone names; preserved separate crook geometry; working skin loading; no equipment-controller/character Blueprint assets in the skin package. Existing selected stock data is skeletal/physics data, not a decoded character equipment graph.
+Verified: preserved separate crook geometry/UVs/material/source weights/transforms and source pivot; stock Willow hand bone names; working Bo Peep skin; no character/equipment logic override in the skin ZIP. Unverified: spear asset package paths, equipment/animation interfaces, montage notify semantics, game loading entry point, and whether unarmed mechanics can be retained with spear animation presentation. Inspect these later through exact discovered assets or supported tooling; do not request a full-game upload or install a runtime framework now.
 
-Unverified: whether Grounded 2 already exposes a separate unarmed held-item visual component that disappears automatically for *both* weapons and shields, whether an existing data asset can assign its mesh per character, and the exact equipment/interaction/glide signals. If such a component/data path exists and can be scoped to Willow, reusing it would be the smallest content-based solution. Do not invent the package path or assume empty-hand attacks have a rendered weapon asset.
-
-Otherwise, the smallest implementation is accessory attachment + visibility logic through a verified game Blueprint entry point or a supported runtime mod hook. An Animation Blueprint change is not inherently required to follow a hand or toggle a component; prefer leaving it intact. Merely adding a newly cooked Blueprint to a PAK will not make the game spawn or run it: a compatible reference/loading entry point must exist. An arbitrary UE5.6 cook, UE4SS compatibility or Game Pass runtime access is **not verified** by the successful mesh pipeline. No injection framework or loader is being installed for this assessment.
-
-## Bounded next investigation, after current work
-
-First inspect the matching game's actual character/equipment definitions or a supported runtime inspection facility for an existing held-item visual and equipment events. Only request exact additional package paths after discovering them; no full UCAS upload or speculative Blueprint filename list. Then test one cosmetic attachment with collision disabled and a debug visibility switch, before connecting real equipment/shield/interaction state. Retain stock punch animations first; evaluate staff clipping in walking, running and attack poses. Do not author new combat animations or change gameplay as a prerequisite.
-
-## Future glider coexistence
-
-Keep one shared accessory-state policy: when not gliding, the eligible unarmed hand crook may be shown; while gliding, hide the hand copy and let the future crook/parasol representation take ownership. Do not independently spawn two visible copies. The original separate source object/pivot and optional distinct future parasol mesh can be reused without rebuilding the Bo Peep body or changing its proven packaging. This is a design boundary, not an implemented gliding feature.
+The original Bo Peep source, playable body and current mods remain unchanged. The spear plan replaces the earlier recommendation to retain punches for the cosmetic crook; it does not imply that feature is already supported or tested.

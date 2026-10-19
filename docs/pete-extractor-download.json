@@ -1,0 +1,10 @@
+{
+  "file": "Pete-Compatibility-Extractor.zip",
+  "bytes": 8218,
+  "sha256": "93511459bdf9459d970e91e6f30f69487c0822705edb03578812316d9d988863",
+  "positive_control_packages": 6,
+  "positive_control_decoded_bytes": 31542177,
+  "positive_control_hashes_match_known_raw": true,
+  "negative_Male02_control_packages": 0,
+  "actual_Pete_skeleton_verified": false
+}
