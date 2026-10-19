@@ -43,7 +43,14 @@ function StaticFindObject(path)
  end}
 end
 local function object(name,classes,props)
- local o={SetPropertyValue=function() writes=writes+1;error('unexpected write') end,IsValid=function() return true end,GetFullName=function() return name end,IsA=function(self,c) return not wrongReceiver and classes[c]==true end}
+ local o={SetPropertyValue=function() writes=writes+1;error('unexpected write') end,IsValid=function() return true end,GetFullName=function() return name end,GetClass=function(self)
+  local list={};for c in pairs(classes) do table.insert(list,c) end
+  local function at(i)
+   if not list[i] then return nil end
+   return {IsValid=function() return true end,GetFullName=function() return 'Class '..(wrongReceiver and '/Script/Engine.Unrelated' or list[i]) end,GetSuperStruct=function() return at(i+1) end}
+  end
+  return at(1)
+ end}
  o.Reflection=function() return {GetProperty=function(self,k) local v=props[k];if not v then return nil end;return descriptor(k,v.kind) end} end
  o.GetPropertyValue=function(self,k) calls=calls+1;assert(props[k],'unapproved property '..k);return props[k].value() end
  return o
@@ -65,7 +72,8 @@ function FindAllOf(k) assert(k=='PlayerController');if menu then return nil end;
 '''
 src=(root/'runtime/ToyStoryAccessoryCheck/Scripts/main.lua').read_text()
 tests={
- 'automatic exact getters: live slot enum, glide/camera/stance/actual attack; no writes':r"""
+ 'regression: IsA absent on all objects; automatic exact getters still work':r"""
+assert(movement.IsA==nil and equipment.IsA==nil)
 keys[Key.F9]();flush();assert(writes==0 and remoteCalls==0)
 first=true;glide=true;main=true;off=true;attackActive=true;tick();assert(writes==0)
 local all=table.concat(lines,'');assert(all:find('gliding=true',1,true));assert(all:find('MainHand=Item Spear',1,true));assert(all:find('OffHand=Item Shield',1,true));assert(all:find('attackMontage=AnimMontage SpearObservedOnly',1,true));assert(not all:find('ERROR',1,true))

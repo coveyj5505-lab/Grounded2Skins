@@ -1,4 +1,4 @@
--- Read-only exact SDK getter validation; NO camera/mesh/visibility/combat writes.
+-- AccessoryCheck1.1: read-only exact SDK getter validation; NO camera/mesh/visibility/combat writes.
 local function log(s) print('[ToyStoryAccessoryCheck] '..s..'\n') end
 local function valid(o) return o~=nil and o:IsValid() end
 local function full(o) if valid(o) then return o:GetFullName() end return 'NONE' end
@@ -38,7 +38,16 @@ local function signature(class,method,expected)
 end
 local function call(o,class,method,expected,...)
     if not valid(o) or not signature(class,method,expected) then return nil end
-    if not o:IsA('/Script/'..class) then log('REJECTED RECEIVER '..class..'.'..method);return nil end
+    -- This Beta returned nil for UObject:IsA. Use the class methods proven by V2.
+    local cls=checked('receiver.GetClass '..class,function() return o:GetClass() end)
+    local match=false
+    for depth=0,11 do
+        if not valid(cls) then break end
+        local name=cls:GetFullName()
+        if name:match('^%S+ (.+)$')=='/Script/'..class then match=true;break end
+        cls=checked('receiver.GetSuperStruct '..depth,function() return cls:GetSuperStruct() end)
+    end
+    if not match then log('REJECTED RECEIVER '..class..'.'..method);return nil end
     local args={...}
     return checked('CALL '..class..'.'..method,function() return o[method](o,table.unpack(args)) end)
 end
@@ -129,4 +138,4 @@ LoopAsync(500,function()
     if recording then run(function() sample(false) end) end
     return false
 end)
-log('Loaded. F9 starts/stops read-only automatic targeted recording. No first-person retest or rendering changes.')
+log('Loaded v1.1 (no IsA dependency). F9 starts/stops read-only automatic targeted recording. No first-person retest or rendering changes.')

@@ -1,3 +1,5 @@
+VERSION1.1: fixes nil IsA receiver guard. Replaces it with class-hierarchy checks; no gameplay or skin changes. Replace the SAME ToyStoryAccessoryCheck folder; do not install both versions.
+
 ToyStoryAccessoryCheck - ONE READ-ONLY focused SDK check
 First-person functionality is COMPLETE. Do not replace skins, repeat FPtests, or install any unpublished FPoverride. This package has NO cooked assets and NO visibility changes.
 
@@ -18,7 +20,7 @@ Press F9 again to stop, or it stops after3minutes. Do not press Ctrl or any key 
 Return ue4ss/UE4SS.log before relaunching. Tell us if you skipped spear attacks or used a different state order. This automatically captures getter transitions, hand-item names, stance values and (when sampled during an actual attack) its montage reference. Very short attacks might fall between samples; a missing montage would not prove that no attack occurred.
 
 WHAT IT DOES
-Looks up a short allowlist of exact reflected SDK functions. Checks input/return property-name/kind signatures and receiver class before invoking getters. Reads only whitelisted ObjectProperty component references and BoolProperty fields. Equipment slot numbers come from the LIVE EEquipmentSlot enum; no SDK memory offsets or assumed slot integers. Missing/mismatched signatures are logged and skipped. Logs native-call BEFORE/AFTER markers and state changes. GetIsFirstPerson is a read only for future accessory suppression; no FPtesting or changes requested.
+Looks up a short allowlist of exact reflected SDK functions. Checks input/return property-name/kind signatures and receiver class via GetClass/GetSuperStruct before invoking getters. IsA is not used. Reads only whitelisted ObjectProperty component references and BoolProperty fields. Equipment slot numbers come from the LIVE EEquipmentSlot enum; no SDK memory offsets or assumed slot integers. Missing/mismatched signatures are logged and skipped. Logs native-call BEFORE/AFTER markers and state changes. GetIsFirstPerson is a read only for future accessory suppression; no FPtesting or changes requested.
 
 WHAT IT DOES NOT DO
 No general player properties, recursive object dump, component traversal, mesh/material/camera writes, hooks, attack calls, animation replacement, inventory edits, movement/physics changes, crook/wings spawning or save writes.

@@ -1,10 +1,12 @@
 {
-  "file": "ToyStory-Accessory-Check.zip",
-  "bytes": 4529,
-  "sha256": "ef3e7cd27432200e57c39947966f440c86ee3d1e4549f0f2cbdb66ae46cc6c76",
-  "offline_validation": "4realLua5.4mock groups pass; ZIPCRC pass; no mutating APIs or FPvisibility code",
-  "windows_status": "NOT_YET_TESTED; reflected signatures and receiver classes validated before new getters, native faults still possible",
+  "file": "ToyStory-Accessory-Check-v1.1.zip",
+  "bytes": 4804,
+  "sha256": "a80ecaedb6bd8ece1b2428b3d254bc2b31ed6e375aeed1aa86c4837b0da8d964",
+  "offline_validation": "RealLua5.4 tests pass with IsA intentionally absent on all mock objects, signature/type rejection, menu/wrongclass, queued sampler; ZIPCRC pass",
+  "windows_status": "V1.1 NOT_YET_TESTED; V1 proved IsGliding signature exists, not its runtime return",
   "controls": "F9alone starts/stops180second automatic recording every0.5seconds",
   "target": "Component getters, main/offhand and passive spear montage/stance; no general character dump",
-  "stable_skins": "Unchanged; head/body separation already confirmed, do not reinstall or retest it"
+  "stable_skins": "Unchanged; head/body separation already confirmed, do not reinstall or retest it",
+  "version": "1.1",
+  "previous_version_status": "V1 halted at receiver IsA guard; no states captured. Superseded by1.1."
 }

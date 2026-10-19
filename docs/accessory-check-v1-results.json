@@ -1,0 +1,18 @@
+{
+  "log_sha256": "2f270b01b10d6a37620a0e9e0f203efd639067ce98eecb0a09b3915f0225dccc",
+  "user_actions": "Spear-only two normal attacks plus charged attack, then spear+shield repeated same sequence",
+  "confirmed": [
+    "Check loaded; F9start reached movement/equipment reference reads",
+    "IsGliding UFunction found and BoolProperty ReturnValue signature matched",
+    "Recorder stopped on Lua nil-method IsA at main.lua41",
+    "Later FreeBuild log activity continued"
+  ],
+  "not_captured": [
+    "Any IsGliding return value",
+    "Equipment state values",
+    "Spear normal/charged montage references"
+  ],
+  "cause": "Receiver guard assumed IsA existed on object. This Beta returned nil. Precise API availability failure, not missing Grounded2 IsGliding function.",
+  "fix": "v1.1 uses GetClass/GetFullName/GetSuperStruct class-chain comparison; no IsA dependency. Methods had prior V2 hierarchy evidence. New test mocks omit IsA entirely.",
+  "runtime_validation": "Correction offline-tested only; native getter invocation/return still needs one Windows run."
+}
