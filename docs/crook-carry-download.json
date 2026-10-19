@@ -1,0 +1,14 @@
+{
+  "filename": "BoPeep-Crook-Carry-Test-v0.1.zip",
+  "bytes": 34870,
+  "sha256": "ac4495cb1a122b15b4d9546a618eb2435150d71822229d4d0c769bb048c29d5a",
+  "status": "FIRST_WINDOWS_TEST_PENDING",
+  "tests": "5 Lua logic groups pass; retoc verify passes; native component behavior and grip unverified",
+  "asset": "/Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+  "limitations": [
+    "No attack substitution",
+    "Local-client only",
+    "Activation pose determines upright offset; first-person placement pending Windows",
+    "No clipping-specific interaction hiding yet"
+  ]
+}

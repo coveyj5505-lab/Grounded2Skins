@@ -1,0 +1,23 @@
+BO PEEP CROOK CARRY TEST v0.1 - FIRST WINDOWS TEST, NOT RUNTIME-VERIFIED
+Close game. Disable previous ToyStoryAccessoryCheck/ObjectAccess/Discovery probes (F9 conflicts).
+Keep UE4SS, FreeBuild and all four working skins installed.
+Run Install.cmd: choose Augusta\Content\Paks, then your existing UE4SS Mods folder.
+No original skin, game package, save or UE4SS DLL is changed.
+
+Load as Bo Peep. Stand upright, empty BOTH hands. F9 once attaches the crook.
+Check third person, first person, walking, spear, shield-only, then both hands empty.
+Crook should hide for either occupied slot and return for both empty. F9 again removes it.
+Send UE4SS.log and screenshots, especially first-person grip and side view.
+If nothing appears or an error occurs, send log; no long sequence required.
+No need to repeat gliding discovery. Spear attacks are NOT substituted yet.
+
+LIMITS: experimental grip/size/orientation; initial upright reference uses activation pose.
+Native unarmed punches remain unchanged. Interaction clipping not yet refined.
+Local-client cosmetic only: other multiplayer clients do not receive the new component automatically.
+No physics/glide/equipment/combat changes. Separate asset depends on the installed Bo Peep private atlas.
+Crook component disables collision, simulation, animation, post-process BP and cloth.
+Original source crook and working skins preserved.
+
+Rollback: close game, run Uninstall.cmd from this extracted folder.
+Manual install: copy Paks trio into game Paks and UE4SS\Mods\BoPeepCrook into UE4SS Mods.
+Manual remove: delete ONLY zBoCrookAsset_P.{pak,utoc,ucas} and BoPeepCrook mod folder.
