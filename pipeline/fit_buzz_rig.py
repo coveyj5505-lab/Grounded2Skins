@@ -49,7 +49,8 @@ def curve_fit(p, source_points, target_points, radial=.65):
     return result,root
 
 
-def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/body')):
+def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/body'),style='reference-v1'):
+    v2=style=='buzz-v2'
     output.mkdir(parents=True,exist_ok=False)
     data=np.load(inputs/'source.npz');original=data['positions'];faces=data['indices'];materials=data['materials']
     assert original.shape==(13450,3) and faces.shape==(20482,3)
@@ -96,8 +97,8 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
 
     def body_fit(p):
         z=p[:,2];out=p.copy()
-        out[:,0]*=np.interp(z,[.76,.97,1.1,1.43,1.60,1.94],[.75,.75,.68,.52,.52,.8])
-        out[:,1]=(p[:,1]-.43)*.7
+        out[:,0]*=np.interp(z,[.76,.97,1.1,1.43,1.60,1.94],[.95,.95,.90,.85,.85,.9] if v2 else [.75,.75,.68,.52,.52,.8])
+        out[:,1]=(p[:,1]-.43)*(.9 if v2 else .7)
         out[:,2]=np.interp(z,[0,.76,.965,1.1,1.25,1.43,1.60,1.94],[0,.78,.965,1.0763,1.22,1.3551,1.55,1.94])
         return out
 
@@ -121,6 +122,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
     scale=np.array([abs(point('l_Eye_JNT')[0])/abs(v[groups[31]].mean(0)[0]),
                     (target_eye[1]-target_pivot[1])/(eye[1]-source_pivot[1]),
                     (target_eye[2]-target_pivot[2])/(eye[2]-source_pivot[2])])
+    if v2:scale=np.full(3,.9)  # preserve source facial proportions, not Max eye spacing
     # The connected OBJ body includes both the face and rigid collar. Its
     # supplied face material separates anatomical head geometry reliably;
     # coordinate-only tests incorrectly stretched the collar toward the head.
@@ -133,7 +135,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
     region[hi]='head-neck';rigid[hi]=-1
     core=hi[blend>.999999];bind(core,name['head_JNT'],'rigid-head')
     bind(np.flatnonzero(back),name['chest_JNT'],'rigid-wings-backpack')
-    anchors.append({'name':'head-pivot','source':source_pivot.tolist(),'target':target_pivot.tolist(),'fitted':target_pivot.tolist(),'basis':'inferred neck/skull pivot; eye-pair driven anisotropic fit'})
+    anchors.append({'name':'head-pivot','source':source_pivot.tolist(),'target':target_pivot.tolist(),'fitted':target_pivot.tolist(),'basis':'Source-proportion uniform0.9 fit' if v2 else 'inferred neck/skull pivot; eye-pair driven anisotropic fit'})
     for c,bn in [(31,'l_Eye_JNT'),(38,'r_Eye_JNT')]:
         expected=point(bn);fitted=position[groups[c]].mean(0)
         # Component source sides swap after the required facing correction.
@@ -149,8 +151,10 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
         def side_group(candidates):return next(c for c in candidates if np.sign(v[groups[c],0].mean())==side)
         upper,elbow,fore,palm=map(side_group,(upper_ids,elbow_ids,fore_ids,palm_ids))
         source_U=np.array([side*.35,.435,1.425]);source_E=v[groups[elbow]].mean(0);source_W=np.array([side*.96,.24,1.40])
-        upper_map=lambda p:segment(p,source_U,source_E,U,E,.72)
-        fore_map=lambda p:segment(p,source_E,source_W,E,W,.75)
+        if v2:
+            U=U+np.array([side*.07,0,0]);E=E+np.array([side*.02,0,0])
+        upper_map=lambda p:segment(p,source_U,source_E,U,E,1.02 if v2 else .72)
+        fore_map=lambda p:segment(p,source_E,source_W,E,W,1.0 if v2 else .75)
         arm=(v[:,0]*side>.28)&np.isin(component,[2,3,4,5,6,7,8,9,10,11,13,15,55,56,59,60,61,63,64,65,66,67,68,69,70,71])
         ix=np.flatnonzero(arm)
         blend=smooth((v[ix,0]*side-(abs(source_E[0])-.07))/.14)
@@ -161,6 +165,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
             ci=groups[c];position[ci]=upper_map(v[ci]) if label!='forearm-armor' else fore_map(v[ci]);bind(ci,name[bn],prefix+'-rigid-'+label)
         ci=groups[elbow];bind_target=[name[prefix+'_upperArm_JNT'],name[prefix+'_lowerArm_JNT']]
         weights[ci]=0;transfer(ci,bind_target,prefix+'-elbow-joint')
+        if v2:bind(ci,name[prefix+'_lowerArm_JNT'],prefix+'-rigid-elbow-joint')
         # Four separate source finger shells ordered anatomically across the palm.
         fingers=[c for c,g in groups.items() if len(g)==81 and np.sign(v[g,0].mean())==side and abs(v[g,0].mean())>1.0]
         fingers.sort(key=lambda c:v[groups[c],1].mean());assert len(fingers)==4
@@ -169,7 +174,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
         for c,label in finger_defs:
             names=[word+'Hand'+label+str(k)+'_JNT' for k in range(1,5)]
             target=np.array([point(n) for n in names]);ci=groups[c]
-            position[ci],root=curve_fit(v[ci],v[ci],target,.6)
+            position[ci],root=curve_fit(v[ci],v[ci],target,.85 if v2 else .6)
             weights[ci]=0;transfer(ci,[name[n] for n in names],prefix+'-'+label.lower())
             roots.append(root);targets.append(target[0]);models.append((c,label,target))
         # Fit the palm/cuff from wrist plus all five digit roots. Regularized
@@ -193,7 +198,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
             if not len(ci):continue
             model=min(models,key=lambda item:np.linalg.norm(v[ci].mean(0)-v[groups[item[0]]].mean(0)))
             fc,label,target=model
-            position[ci],_=curve_fit(v[ci],v[groups[fc]],target,.6)
+            position[ci],_=curve_fit(v[ci],v[groups[fc]],target,.85 if v2 else .6)
             weights[ci]=0;transfer(ci,[name[word+'Hand'+label+str(k)+'_JNT'] for k in range(1,5)],prefix+'-digit-detail')
         for a,b,label in [(source_U,U,'shoulder'),(source_E,E,'elbow'),(source_W,W,'wrist')]:
             anchors.append({'name':prefix+'-'+label,'source':a.tolist(),'target':b.tolist(),'fitted':b.tolist(),'error_m':0.0})
@@ -202,10 +207,12 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
         hip,knee,ankle=side_group([23,43]),side_group([25,45]),side_group([22,48])
         thigh,shin,foot=[name[prefix+n] for n in ['_UpperLeg_JNT','_LowerLeg_JNT','_Foot_JNT']]
         Ahip=np.array([side*.144,.421,.967]);Aknee=v[groups[knee]].mean(0);Afoot=v[groups[ankle]].mean(0)
-        hipmap=lambda p:segment(p,Ahip,Aknee,heads[thigh],heads[shin],.75)
-        shinmap=lambda p:segment(p,Aknee,Afoot,heads[shin],heads[foot],.75)
-        foot_scale=np.array([.65,.55,heads[foot,2]/Afoot[2]])
-        footmap=lambda p:(p-Afoot)*foot_scale+heads[foot]
+        visual_hip=heads[thigh]+([side*.025,0,0] if v2 else np.zeros(3));visual_knee=heads[shin]+([side*.025,0,0] if v2 else np.zeros(3));visual_ankle=heads[foot].copy()
+        if v2:visual_ankle+=np.array([side*.025,0,Afoot[2]*.9-heads[foot,2]])
+        hipmap=lambda p:segment(p,Ahip,Aknee,visual_hip,visual_knee,1.05 if v2 else .75)
+        shinmap=lambda p:segment(p,Aknee,Afoot,visual_knee,visual_ankle,1.0 if v2 else .75)
+        foot_scale=np.array([.95,.9,.9] if v2 else [.65,.55,heads[foot,2]/Afoot[2]])
+        footmap=lambda p:(p-Afoot)*foot_scale+visual_ankle
         leg=(v[:,0]*side>0)&np.isin(component,[19,20,21,22,23,25,33,41,42,43,44,45,48,54])
         li=np.flatnonzero(leg);t=smooth((Aknee[2]+.08-v[li,2])/.16)
         position[li]=hipmap(v[li])*(1-t[:,None])+shinmap(v[li])*t[:,None]
@@ -213,6 +220,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
         for c,bone,fn,label in [(hip,thigh,hipmap,'thigh'),(side_group([21,42]),shin,shinmap,'shin')]:
             ci=groups[c];position[ci]=fn(v[ci]);bind(ci,bone,prefix+'-rigid-'+label)
         ci=groups[knee];weights[ci]=0;transfer(ci,[thigh,shin],prefix+'-knee-joint')
+        if v2:bind(ci,shin,prefix+'-rigid-knee-joint')
         boot=np.flatnonzero(leg&np.isin(component,[19,20,33,41,44,54]));position[boot]=footmap(v[boot]);bind(boot,foot,prefix+'-rigid-boot')
         ci=groups[ankle];t=smooth((Afoot[2]+.06-v[ci,2])/.12)
         position[ci]=shinmap(v[ci])*(1-t[:,None])+footmap(v[ci])*t[:,None];weights[ci]=0;transfer(ci,[shin,foot],prefix+'-ankle-joint')
@@ -244,7 +252,7 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
     np.savez_compressed(output/'fitted.npz',positions=position,weights=kept,joints=order,
                         source_vertices=use,faces=faces,face_keep=face_keep,component=component,region=region,rigid=rigid)
     report={'method':'Anatomical segment/eye/finger fitting, then constrained KNN transfer from original Commander101 weights; rigid armor overrides',
-            'reference_bones':230,'facing_correction':'180deg from prior inspection; native nose/toes face Blender -Y',
+            'fit_style':style,'head_axis_scales':scale.tolist(),'visual_joint_offsets':'V2 shoulder70mm/elbow20mm and leg25mm lateral offsets, raised visual ankle for source-size boots; reference skeleton untouched' if v2 else 'Reference anatomical anchors','reference_bones':230,'facing_correction':'180deg from prior inspection; native nose/toes face Blender -Y',
             'source_vertices':len(v),'output_vertices':len(use),'output_triangles':int(face_keep.sum()),
             'removed_source_marker_component':39,'removed_triangle_ids':np.flatnonzero(~face_keep).tolist(),
             'anchors':anchors,'transfers':transfers,'maximum_weight_pruned_mass':float(dropped.max()),
@@ -254,4 +262,4 @@ def fit(inputs,output,reference_buffers=Path('/workspace/mod-work/mesh-stage/bod
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('landmarks',type=Path);p.add_argument('new_output',type=Path);p.add_argument('--reference-buffers',type=Path,default=Path('/workspace/mod-work/mesh-stage/body'));a=p.parse_args();fit(a.landmarks,a.new_output,a.reference_buffers)
+    p=argparse.ArgumentParser();p.add_argument('landmarks',type=Path);p.add_argument('new_output',type=Path);p.add_argument('--reference-buffers',type=Path,default=Path('/workspace/mod-work/mesh-stage/body'));p.add_argument('--style',choices=['reference-v1','buzz-v2'],default='reference-v1');a=p.parse_args();fit(a.landmarks,a.new_output,a.reference_buffers,a.style)

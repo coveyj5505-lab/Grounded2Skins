@@ -45,6 +45,13 @@ def solid_bc1(rgb):
  return struct.pack('<HHI',c,c,0)
 
 
+def solid_bc5(red=128,green=128):
+ # BC5 is two BC4 blocks. Equal endpoints + zero selectors are constant.
+ # Do not pass an interleaved RGBA surface to the ISPC BC5 wrapper: that
+ # path produced alternating128/255 columns in the runtime-tested V1.
+ return bytes([red,red])+bytes(6)+bytes([green,green])+bytes(6)
+
+
 def encode(image,fmt):
  x,y=image.size;px,py=max(4,x),max(4,y)
  if (x,y)!=(px,py):image=Image.fromarray(np.pad(np.asarray(image),((0,py-y),(0,px-x),(0,0)),mode='edge'))
@@ -68,7 +75,7 @@ def write(raw,metadata,atlas,out):
   for m in info['mips']:
    wh=(m['width'],m['height']);fmt=info['format']
    if leaf.endswith('_C.uasset'):assert fmt=='PF_DXT5';im=base.resize(wh,Image.Resampling.LANCZOS);payload=encode(im,fmt)
-   elif leaf.endswith('_N.uasset'):assert fmt=='PF_BC5';payload=encode(Image.new('RGBA',(4,4),(128,128,255,255)),fmt)*(m['bytes']//16)
+   elif leaf.endswith('_N.uasset'):assert fmt=='PF_BC5';payload=solid_bc5()*(m['bytes']//16)
    else:
     assert fmt=='PF_DXT1';payload=solid_bc1((200,0,255) if '_RMA.' in leaf else (0,0,0))*(m['bytes']//8)
    assert len(payload)==m['bytes'];dest=target if m['inline'] else bulk;a=m['offset'];assert 0<=a<=len(dest)-len(payload);dest[a:a+len(payload)]=payload

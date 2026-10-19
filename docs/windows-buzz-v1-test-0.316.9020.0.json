@@ -1,0 +1,29 @@
+{
+  "source": "User report and two seated in-game screenshots, 2026-10-18 America/Chicago",
+  "game": "Grounded 2 PC Game Pass / WinGDK",
+  "build": "0.316.9020.0",
+  "mod": "zBuzzAtlasTest_P",
+  "zip_sha256": "54b0d16d083dc2f28dee6bc2f7a493a95d082ea4e1d3db2208a2962a95a98670",
+  "confirmed": [
+    "Game launches",
+    "Buzz replaces Max",
+    "Textures, colors, face and suit details render",
+    "Walking",
+    "Running",
+    "Jumping",
+    "Crouching",
+    "Punching",
+    "Sitting in a chair"
+  ],
+  "crashes_observed": false,
+  "limits": "Only user-reported actions tested. No universal animation, physics or stability guarantee.",
+  "visual_issues": [
+    "Distorted face/head",
+    "Long thin arms",
+    "Long narrow legs",
+    "Torso/waist proportions",
+    "Unnatural sitting deformations around knees, hips and arms",
+    "Striped suit shading; cause not yet established"
+  ],
+  "decision": "Preserve exact V1 trio and ZIP as runtime-verified baseline. Work in separate V2 stages. Do not alter integration/material references without concrete evidence."
+}

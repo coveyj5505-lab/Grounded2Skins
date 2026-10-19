@@ -1,0 +1,204 @@
+{
+  "V1_runtime_verified_baseline_sha256": "54b0d16d083dc2f28dee6bc2f7a493a95d082ea4e1d3db2208a2962a95a98670",
+  "source_and_fit_comparison": [
+    {
+      "component": 14,
+      "region": "connected torso/head shell",
+      "source_bbox_m": [
+        0.8753495514392853,
+        0.7977095544338226,
+        1.1665470600128174
+      ],
+      "V1_bbox_m": [
+        0.45749935938973596,
+        0.5583966881036757,
+        1.0676435998329976
+      ],
+      "V2_bbox_m": [
+        0.7440471187233925,
+        0.7179385989904403,
+        1.1147458844650082
+      ]
+    },
+    {
+      "component": 13,
+      "region": "upper arm",
+      "source_bbox_m": [
+        0.42027774453163147,
+        0.24933919310569763,
+        0.23942315578460693
+      ],
+      "V1_bbox_m": [
+        0.34435768756936824,
+        0.1806128291340906,
+        0.3117577654899608
+      ],
+      "V2_bbox_m": [
+        0.3439569338176485,
+        0.25602690123487876,
+        0.336487951767086
+      ]
+    },
+    {
+      "component": 10,
+      "region": "forearm",
+      "source_bbox_m": [
+        0.266335666179657,
+        0.3289305120706558,
+        0.22575867176055908
+      ],
+      "V1_bbox_m": [
+        0.21147237885597797,
+        0.227217112802048,
+        0.23326090763272167
+      ],
+      "V2_bbox_m": [
+        0.21644026703127917,
+        0.2675877799056744,
+        0.2641544564869136
+      ]
+    },
+    {
+      "component": 23,
+      "region": "thigh",
+      "source_bbox_m": [
+        0.21165746822953224,
+        0.21085208654403687,
+        0.41871052980422974
+      ],
+      "V1_bbox_m": [
+        0.1588638188462605,
+        0.15856646210060388,
+        0.463364221849186
+      ],
+      "V2_bbox_m": [
+        0.22240616496359605,
+        0.22199485240751127,
+        0.46343403310446263
+      ]
+    },
+    {
+      "component": 21,
+      "region": "shin",
+      "source_bbox_m": [
+        0.26378853246569633,
+        0.41446197032928467,
+        0.48564453423023224
+      ],
+      "V1_bbox_m": [
+        0.19779042630689392,
+        0.3289269082737057,
+        0.6465057033204119
+      ],
+      "V2_bbox_m": [
+        0.26375633512355906,
+        0.40427804459598327,
+        0.48832226034396214
+      ]
+    },
+    {
+      "component": 20,
+      "region": "main boot",
+      "source_bbox_m": [
+        0.26098596677184105,
+        0.4563257396221161,
+        0.22335554889343712
+      ],
+      "V1_bbox_m": [
+        0.1696408784016967,
+        0.25097915679216387,
+        0.10844160618097803
+      ],
+      "V2_bbox_m": [
+        0.24793666843324896,
+        0.41069316565990444,
+        0.20101999400409343
+      ]
+    }
+  ],
+  "stage_traces": [
+    {
+      "stage": "V1",
+      "authoring_to_export_max_error_cm": 1.3520508673536824e-05,
+      "engine_SNORM_normal_max_error": 0.011698484420776367,
+      "geometry_stretched_by_export": false
+    },
+    {
+      "stage": "V2",
+      "authoring_to_export_max_error_cm": 1.3589859008789062e-05,
+      "engine_SNORM_normal_max_error": 0.011713802814483643,
+      "geometry_stretched_by_export": false
+    }
+  ],
+  "V1_cooked_positions_exactly_match_compiled_positions": true,
+  "fitting_findings": [
+    "V1 torso horizontal scales as low as0.52; transverse limb scales0.72-0.75",
+    "V1 shin elongated to reach a native low foot pivot while boot height is compressed to about0.485",
+    "V1 facial axis scales1.055/0.544/0.642 driven by Max eye alignment, not source-face proportions",
+    "V2 uniform0.9 head scale, wider shells and source-height boots; larger rigid spherical elbows/knees avoid blended-shell collapse"
+  ],
+  "striping": {
+    "V1_BC5_R_columns": [
+      [
+        128,
+        255,
+        128,
+        255
+      ],
+      [
+        128,
+        255,
+        128,
+        255
+      ],
+      [
+        128,
+        255,
+        128,
+        255
+      ],
+      [
+        128,
+        255,
+        128,
+        255
+      ]
+    ],
+    "V1_BC5_G_columns": [
+      [
+        128,
+        255,
+        128,
+        255
+      ],
+      [
+        128,
+        255,
+        128,
+        255
+      ],
+      [
+        128,
+        255,
+        128,
+        255
+      ],
+      [
+        128,
+        255,
+        128,
+        255
+      ]
+    ],
+    "cause": "ISPC BC5 RGBA input produced alternating128/255 columns despite intended flat128,128",
+    "fix": "Explicit two BC4 constant endpoint blocks; validate decoded RG channels for every mip",
+    "old_validation_gap": "Encoded mip hashes proved transport correctness but did not prove normal pixel contents were flat",
+    "tangent_encoder_change": "None: direct signed-normal decode error below0.012; no evidence to alter working tangent storage"
+  },
+  "skeleton_and_integration": "No bone transforms/order, game animation/skeleton references, private MI paths, movement mechanics or capsule changes",
+  "limits": [
+    "Fixed original animation joint spacing limits exact source limb proportions. V2 changes visual shell widths/hinge offsets and boot height without claiming a new retarget system.",
+    "Synthetic poses do not predict every actual game deformation.",
+    "Geometry and shading corrections are independently attributable; other visual problems may remain until V2 Windows test."
+  ]
+}

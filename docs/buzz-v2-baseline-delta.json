@@ -1,0 +1,10 @@
+{
+  "shared_chunks_changed": {
+    "cd809abc483f179000000001": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.uasset",
+    "94430761e53876ef00000001": "../../../Augusta/Content/_BuzzMod/Art/Characters/Player_Male01/Textures/T_Buz_Apparel_01_N.uasset",
+    "94430761e53876ef00000002": "../../../Augusta/Content/_BuzzMod/Art/Characters/Player_Male01/Textures/T_Buz_Apparel_01_N.ubulk",
+    "8021448bfc8c514500000001": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack.uasset"
+  },
+  "shared_chunks_byte_exact": 14,
+  "scope": "Two geometry packages plus normal texture export+bulk and filename-derived container header identity. All shared material/other texture/physics/hair chunks preserved."
+}

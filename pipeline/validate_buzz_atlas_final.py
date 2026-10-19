@@ -43,22 +43,35 @@ assert all('/_BuzzMod/' in m['path'] for m in meta if '/Textures/' in m['path'])
 # Independent conversion readback of the actual final container, including cached
 # original MI shader payload and each native stream. All legacy payloads exact.
 legacy_matches=0
-for f in (root/'final-legacy').rglob('*'):
- if f.suffix not in ['.uexp','.ubulk']:continue
- assert f.read_bytes()==(root/'final-readback-legacy'/f.relative_to(root/'final-legacy')).read_bytes();legacy_matches+=1
-original_mi=next((root/'stock-mi-legacy-v3').rglob('*.uexp'));cloned_mi=next((root/'final-readback-legacy').rglob('MI_*.uexp'));assert original_mi.read_bytes()==cloned_mi.read_bytes()
+for m in meta:
+ payload=(raw/m['chunk_id']).read_bytes();header=struct.unpack_from('<I',payload,4)[0]
+ legacy=root/'final-readback-legacy'/m['path'].replace('../../../','');legacy=legacy.with_suffix('.uexp')
+ assert legacy.read_bytes()==payload[header:];legacy_matches+=1
+for cid,path in json.loads((root/'final-unpacked/manifest.json').read_text())['chunk_paths'].items():
+ if path.endswith('.ubulk'):
+  assert (raw/cid).read_bytes()==(root/'final-readback-legacy'/path.replace('../../../','')).read_bytes();legacy_matches+=1
+original_mi=(root.parent/'stock-max-stage/chunks/0cfec9856be41dcc00000001').read_bytes();original_header=struct.unpack_from('<I',original_mi,4)[0]
+cloned_mi=(raw/mi['chunk_id']).read_bytes();cloned_header=struct.unpack_from('<I',cloned_mi,4)[0]
+assert original_mi[original_header:]==cloned_mi[cloned_header:]
 texture_report=json.loads((root/'textured/texture-write-report.json').read_text());mips=0
 for t in texture_report['textures']:
  leaf=Path(t['path']).stem.replace('T_Max','T_Buz');d=root/('final-mips-'+leaf);j=json.loads((d/'texture.json').read_text());assert j['mip_count']==len(t['mips']) and j['pixel_format']==t['format']
  for e,got in zip(t['mips'],j['mips']):assert all(e[k]==got[k] for k in ['level','width','height','bytes','sha256']);mips+=1
+# Independently verify the flat BC5 normal's PIXELS, not merely encoded hashes.
+normal_dir=root/'final-mips-T_Buz_Apparel_01_N'
+for record in json.loads((normal_dir/'texture.json').read_text())['mips']:
+ payload=(normal_dir/f"mip-{record['level']:02}.bin").read_bytes();block=payload[:16]
+ assert payload==block*(len(payload)//16),'Normal map is not constant block-by-block'
+ normal_rg=np.frombuffer(texture2ddecoder.decode_bc5(block,4,4),dtype='u1').reshape(4,4,4)[:,:,[2,1]]
+ assert np.all(normal_rg==128),'Flat-normal regression: alternating channels/columns'
 # Independent BC decoder returns BGRA; explicitly convert to RGBA.
 d=root/'final-mips-T_Buz_Apparel_01_C';decoded=np.frombuffer(texture2ddecoder.decode_bc3((d/'mip-00.bin').read_bytes(),4096,4096),dtype='u1').reshape(4096,4096,4)[:,:,[2,1,0,3]];atlas=np.asarray(Image.open(root/'atlas/Buzz-basecolor-atlas.png').convert('RGBA'));mae=float(np.mean(abs(decoded[:,:,:3].astype(float)-atlas[:,:,:3])));assert mae<5 and np.all(decoded[:,:,3]==255)
 Image.fromarray(decoded).save(root/'final-decoded-atlas.png')
 # Independently recover expected atlas affine UVs from original per-face source
 # assignments, rather than accepting the writer's UV stream as its own oracle.
-z=np.load(root/'atlas/Buzz-atlas-SKINNED.npz');src=np.load(root.parent/'rig-stage/skinned-export-v9/Buzz-geometry-SKINNED.npz');ar=json.loads((root/'atlas/atlas-report.json').read_text());uv_expected=np.empty_like(z['uv0']);uv_checked=np.zeros(len(z['uv0']),bool)
+z=np.load(root/'atlas/Buzz-atlas-SKINNED.npz');src=np.load(root/'source-geometry.npz' if (root/'source-geometry.npz').exists() else root.parent/'rig-stage/skinned-export-v9/Buzz-geometry-SKINNED.npz');ar=json.loads((root/'atlas/atlas-report.json').read_text());uv_expected=np.empty_like(z['uv0']);uv_checked=np.zeros(len(z['uv0']),bool)
 for record in ar['materials']:
  vertices=np.unique(z['indices'][z['source_materials']==record['material_slot']]);old=z['source_vertices'][vertices];uv=src['uv0'][old];lo,hi=np.array(record['source_uv_bounds']);repeat=hi-lo;x,y,w,h=record['atlas_cell'];g=record['gutter'];uv_expected[vertices]=np.c_[(x+g+(uv[:,0]-lo[0])/repeat[0]*(w-2*g))/4096,(y+g+(hi[1]-uv[:,1])/repeat[1]*(h-2*g))/4096];uv_checked[vertices]=True
 assert uv_checked.all() and np.max(abs(uv_expected-z['uv0']))<1e-6
-report={'status':'passed_offline','mesh_readbacks':mesh_reports,'material_texture_bindings':bindings,'material_parent':'Original MM_Character; cached MI shader/native payload preserved byte-exact','private_texture_and_MI_paths':True,'original_game_texture_or_MI_paths_overridden':False,'legacy_export_and_bulk_payloads_roundtrip_exact':legacy_matches,'texture_mips_read_by_CUE4Parse_and_hash_checked':mips,'independent_BC3_RGBA_mean_absolute_error':mae,'atlas_UVs':'Independent affine reconstruction, source repeat bounds, PNG V orientation and final native half-float readback passed','physics':'Existing Commander101 custom physics preserved, not stock; targeted assessment complete','pinky':'No unsupported bind changes; existing baseline preserved after focused diagnostic','runtime':'NOT TESTED: user Windows gameplay test required','limitations':['One opaque character material; eyes/face share simplified suit shading','Atlas downsampling and distant mip color bleed possible','Flat normal map, temporary matte RMA and black SSS','Original voices/portrait remain; no new facial animation','Extended wing panels omitted; backpack retained; original six panels preserved in authoring project','No input, movement, collision capsule or gliding mechanic changes']}
+report={'status':'passed_offline','mesh_readbacks':mesh_reports,'material_texture_bindings':bindings,'material_parent':'Original MM_Character; cached MI shader/native payload preserved byte-exact','flat_BC5_normal_pixels_all_mips':'independently decoded RG128 constant; no alternating columns','private_texture_and_MI_paths':True,'original_game_texture_or_MI_paths_overridden':False,'legacy_export_and_bulk_payloads_roundtrip_exact':legacy_matches,'texture_mips_read_by_CUE4Parse_and_hash_checked':mips,'independent_BC3_RGBA_mean_absolute_error':mae,'atlas_UVs':'Independent affine reconstruction, source repeat bounds, PNG V orientation and final native half-float readback passed','physics':'Existing Commander101 custom physics preserved, not stock; targeted assessment complete','pinky':'No unsupported bind changes; existing baseline preserved after focused diagnostic','runtime':'NOT TESTED: user Windows gameplay test required','limitations':['One opaque character material; eyes/face share simplified suit shading','Atlas downsampling and distant mip color bleed possible','Flat normal map, temporary matte RMA and black SSS','Original voices/portrait remain; no new facial animation','Extended wing panels omitted; backpack retained; original six panels preserved in authoring project','No input, movement, collision capsule or gliding mechanic changes']}
 a.new_report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:report[k] for k in ['status','texture_mips_read_by_CUE4Parse_and_hash_checked','independent_BC3_RGBA_mean_absolute_error']}))

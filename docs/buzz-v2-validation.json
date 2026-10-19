@@ -1,0 +1,69 @@
+{
+  "status": "passed_offline",
+  "mesh_readbacks": [
+    {
+      "mesh": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack.uasset",
+      "vertices": 18780,
+      "triangles": 20124,
+      "LOD_positions_weights_joints_indices_colors_materials_UVs": "exact intended encoding",
+      "skeleton": "230 original recovered bones and rest transforms exact",
+      "material": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Buz_Apparel01"
+    },
+    {
+      "mesh": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.uasset",
+      "vertices": 18780,
+      "triangles": 20124,
+      "LOD_positions_weights_joints_indices_colors_materials_UVs": "exact intended encoding",
+      "skeleton": "230 original recovered bones and rest transforms exact",
+      "material": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Buz_Apparel01"
+    }
+  ],
+  "material_texture_bindings": [
+    {
+      "parameter": "Albedo",
+      "texture": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/T_Buz_Apparel_01_C",
+      "serialized_offset": 1741,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    },
+    {
+      "parameter": "Normal",
+      "texture": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/T_Buz_Apparel_01_N",
+      "serialized_offset": 1778,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    },
+    {
+      "parameter": "RMA",
+      "texture": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/T_Buz_Apparel_01_RMA",
+      "serialized_offset": 1815,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    },
+    {
+      "parameter": "SSSMask",
+      "texture": "/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/T_Buz_Apparel_01_SSS",
+      "serialized_offset": 1852,
+      "structure": "Unversioned TextureParameterValue fragment(3), ParameterInfo fragment(3), FName, association, index, FPackageIndex, GUID"
+    }
+  ],
+  "material_parent": "Original MM_Character; cached MI shader/native payload preserved byte-exact",
+  "flat_BC5_normal_pixels_all_mips": "independently decoded RG128 constant; no alternating columns",
+  "private_texture_and_MI_paths": true,
+  "original_game_texture_or_MI_paths_overridden": false,
+  "legacy_export_and_bulk_payloads_roundtrip_exact": 18,
+  "texture_mips_read_by_CUE4Parse_and_hash_checked": 50,
+  "independent_BC3_RGBA_mean_absolute_error": 1.195319910844167,
+  "atlas_UVs": "Independent affine reconstruction, source repeat bounds, PNG V orientation and final native half-float readback passed",
+  "physics": "Existing Commander101 custom physics preserved, not stock; targeted assessment complete",
+  "pinky": "No unsupported bind changes; existing baseline preserved after focused diagnostic",
+  "runtime": "NOT TESTED: user Windows gameplay test required",
+  "limitations": [
+    "One opaque character material; eyes/face share simplified suit shading",
+    "Atlas downsampling and distant mip color bleed possible",
+    "Flat normal map, temporary matte RMA and black SSS",
+    "Original voices/portrait remain; no new facial animation",
+    "Extended wing panels omitted; backpack retained; original six panels preserved in authoring project",
+    "No input, movement, collision capsule or gliding mechanic changes"
+  ],
+  "revision": "Buzz V2 proportions + flat-normal correction",
+  "V1_baseline_runtime": "User confirmed launch, rendering, walk/run/jump/crouch/punch/sitting; no observed crashes. V2 not tested.",
+  "visual_review": "Front/side/synthetic sitting previews reviewed before test ZIP creation. Not game animation or shader captures."
+}
