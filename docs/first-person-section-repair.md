@@ -1,6 +1,7 @@
 TOY STORY: ALL FOUR FIRST-PERSON SECTION TEST
 
-OFFLINE VALIDATED. WINDOWS FIRST-PERSON FIX NOT YET CONFIRMED.
+USER CONFIRMED: FIRST PERSON WORKS ON ALL FOUR CHARACTERS AFTER HEAD/BODY SEPARATION (2026-10-19).
+Do not rebuild these assets or add visibility overrides. Historical hypotheses and pending-test wording below describe the pre-confirmation investigation, superseded by this result.
 Target Grounded 2 PC Game Pass / WinGDK build 0.316.9020.0.
 No UE4SS script, camera setting change or game-file overwrite required.
 
@@ -41,7 +42,7 @@ Every original triangle, position, normal/tangent/sign, UV, color and skin-weigh
 Bo Peep includes V2's accepted finger appearance. Her glove fit and seated clothing clipping remain separate known visual issues; this package does not reshape them. Existing simplified hand articulation/materials and other model limitations remain. Buzz's six original wing panels and Bo Peep's crook remain preserved in the private source projects and are not added to gameplay.
 
 CROOK / WINGS
-Accessory development remains paused until these first-person behaviors are validated.
+First-person behavior is now user-confirmed. Continue accessory state validation without modifying the working section separation.
 
 REPRODUCIBLE TECHNICAL WORK
 - audit_first_person_assets.py /workspace/mod-work NEW_REPORT independently compares stock/replacement native head/hand weights, section slots and first-person named bones. This proves the section mismatch, not which runtime function hides them. Stock Max/Pete/Willow canonical head slots are5/3/3; Hoops head0 and ArmsLegs5. Original FPSpine bones generally have no weighted vertices; attaching geometry to them without evidence is not warranted.

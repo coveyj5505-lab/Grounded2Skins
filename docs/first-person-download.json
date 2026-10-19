@@ -2,7 +2,7 @@
   "file": "ToyStory-All4-FirstPerson-Test.zip",
   "bytes": 23710725,
   "sha256": "a7d963ada57fc9de89477185c35df1320fdbfc6f9c46863d306f815faee0e916",
-  "status": "All four offline validated; Windows first-person repair NOT YET CONFIRMED",
+  "status": "USER_CONFIRMED_WINDOWS_FIRST_PERSON_WORKING_ALL_FOUR_AFTER_HEAD_BODY_SEPARATION",
   "mod_files": [
     "mod/zBoPeepFP_P.pak",
     "mod/zBoPeepFP_P.ucas",
@@ -16,5 +16,6 @@
     "mod/zWoodyFP_P.pak",
     "mod/zWoodyFP_P.ucas",
     "mod/zWoodyFP_P.utoc"
-  ]
+  ],
+  "confirmation_client_date": "2026-10-19"
 }

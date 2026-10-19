@@ -1,3 +1,5 @@
+> Latest user confirmation (2026-10-19): all4 first-person views work after head/body separation. FP repair is complete. Future camera getters are for accessory policy only; no new head/body visibility override or FP test is required.
+
 # Existing Grounded 2 resources: crook and wings
 
 ## Result
