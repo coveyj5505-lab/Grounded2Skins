@@ -1,0 +1,8 @@
+{
+  "log_sha256": "d17243a7a38b0bad806709a72e8cc40c223b2f124111f0199829e683feb42005",
+  "actual_pawn_class": "BP_SurvivalPlayerCharacter_Female_C",
+  "Mesh_wrapper": "UObject",
+  "asset_identity": "NONE from guessed property expression",
+  "attachment_attempted": false,
+  "correction": "Use reflected GetSkeletalMeshAsset() getter; if base Mesh is assetless, inspect only local pawn-owned skeletal components via K2_GetComponentsByClass and select verified Willow asset. Actual getter and attachment remain Windows pending."
+}

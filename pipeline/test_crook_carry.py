@@ -40,12 +40,14 @@ local item=obj('Item Equipped',{'Maine.Item'})
 local body=obj('SkeletalMeshComponent Body',{'Engine.SkeletalMeshComponent','Engine.SkinnedMeshComponent','Engine.PrimitiveComponent','Engine.SceneComponent'})
 body.SkeletalMeshAsset=obj('SkeletalMesh /Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01',{'Engine.SkeletalMesh'})
 body.SkeletalMeshAsset.GetFullName=function() return female and 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01' or 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01' end
+body.GetSkeletalMeshAsset=function() return body.SkeletalMeshAsset end
 body.DoesSocketExist=function(self,b) assert(b=='r_hand_JNT');return true end
 body.GetSocketTransform=function() return {Rotation={X=0,Y=0,Z=0,W=1}} end
 local eq=obj('EquipmentComponent Equipment',{'Maine.EquipmentComponent'})
 eq.GetItemInSlot=function(self,slot) assert(slot==17 or slot==29);return ((slot==17 and main) or (slot==29 and off)) and item or invalid end
 local p=obj('BP_SurvivalPlayerCharacter_Female01_C Player',{'Maine.SurvivalCharacter','Engine.Character','Engine.Actor'})
 p.Mesh=body;p.EquipmentComponent=eq
+p.K2_GetComponentsByClass=function() return {body} end
 p.GetFullName=function() return female and 'BP_SurvivalPlayerCharacter_Female01_C Player' or 'BP_SurvivalPlayerCharacter_Male01_C Player' end
 p.GetIsFirstPerson=function() return fp end
 local c
@@ -82,8 +84,10 @@ function StaticFindObject(path)
 end
 '''.replace('SPECS',',\n'.join(specs))
 checks=[
+("native getter succeeds without guessed asset property", "local actual=body.SkeletalMeshAsset;body.SkeletalMeshAsset=nil;body.GetSkeletalMeshAsset=function() return actual end;key();assert(made==1 and show)"),
+("empty base Mesh falls back to owned Willow component", "local empty=obj('SkeletalMeshComponent Empty',{'Engine.SkeletalMeshComponent'});empty.GetSkeletalMeshAsset=function() return invalid end;p.Mesh=empty;key();assert(made==1 and show)"),
 ("valid Willow mesh with unexpected Blueprint name", "p.GetFullName=function() return 'BP_ActualWillowVariant_C Player' end;key();assert(made==1 and show)"),
-("wrong mesh explains why nothing attaches", "female=false;key();assert(made==0);assert(table.concat(events,'\\n'):find('WAIT: Willow mesh required',1,true))"),
+("wrong mesh explains why nothing attaches", "female=false;key();assert(made==0);assert(table.concat(events,'\\n'):find('WAIT: no owned component uses verified Willow mesh',1,true))"),
 ("attachment, safety ordering, actual slots, both views, cleanup", "key();assert(made==1 and show);main=true;timer();assert(not show);main=false;off=true;timer();assert(not show);off=false;timer();assert(show);fp=true;timer();assert(show);key();assert(destroyed==1 and not show)"),
 ("signature rejection before creation", "bad=true;key();assert(made==0);timer();assert(made==0)"),
 ("missing asset before creation", "missingAsset=true;key();assert(made==0)"),

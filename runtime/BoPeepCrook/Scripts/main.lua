@@ -5,6 +5,7 @@ local function full(o) if valid(o) then return o:GetFullName() end return 'NONE'
 local signatures={};local enums={};local busy=false;local recording=false
 local untilTime=0;local sequence=0;local lastState=nil;local fault=false
 local lastEligibility=nil
+local lastMeshCheck=nil
 local function eligibility(message)
     if message~=lastEligibility then log(message);lastEligibility=message end
 end
@@ -116,6 +117,8 @@ local function spec(owner,method,args)
     S[owner..'.'..method]=args
 end
 local enum='EnumProperty|ByteProperty'
+spec('Engine.SkeletalMeshComponent','GetSkeletalMeshAsset',{ReturnValue='ObjectProperty'})
+spec('Engine.Actor','K2_GetComponentsByClass',{ComponentClass='ClassProperty',ReturnValue='ArrayProperty'})
 spec('Engine.Actor','AddComponentByClass',{Class='ClassProperty',bManualAttachment='BoolProperty',RelativeTransform='StructProperty',bDeferredFinish='BoolProperty',ReturnValue='ObjectProperty'})
 spec('Engine.Actor','FinishAddComponent',{Component='ObjectProperty',bManualAttachment='BoolProperty',RelativeTransform='StructProperty'})
 spec('Engine.ActorComponent','K2_DestroyComponent',{Object='ObjectProperty'})
@@ -146,7 +149,7 @@ local function invoke(o,owner,method,...)
         cls=cls:GetSuperStruct()
     end
     assert(matched,'Wrong receiver for '..owner..'.'..method)
-    if method~='GetItemInSlot' and method~='GetIsFirstPerson' then log('CALL '..owner..'.'..method) end
+    if method~='GetItemInSlot' and method~='GetIsFirstPerson' and method~='GetSkeletalMeshAsset' then log('CALL '..owner..'.'..method) end
     return o[method](o,...)
 end
 local function engineEnum(name,leaf)
@@ -198,7 +201,7 @@ local function create(p,body)
     worldSpace=engineEnum('ERelativeTransformSpace','RTS_World')
     assert(valid(body),'Character Mesh unavailable')
     -- Validate the existing player mesh without altering it. Use this test with the Bo Peep skin installed.
-    local active=body.SkeletalMeshAsset or body.SkeletalMesh
+    local active=invoke(body,'Engine.SkeletalMeshComponent','GetSkeletalMeshAsset')
     assert(valid(active),'Character mesh asset unavailable')
     log('BODY '..full(active))
     -- Eligibility was checked against the actual cooked Willow mesh path, not a guessed Blueprint name.
@@ -240,14 +243,30 @@ local function update()
         cleanup();eligibility('WAIT: no valid local player pawn. Load into gameplay, then leave the test enabled.');return
     end
     local body=unsafeProperty(p,'Mesh','ObjectProperty')
-    if not valid(body) then
-        cleanup();eligibility('WAIT: character Mesh unavailable; pawn='..full(p));return
-    end
-    local active=body.SkeletalMeshAsset or body.SkeletalMesh
-    local identity=full(active)
     local willow='/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01'
-    if not identity:find(willow,1,true) then
-        cleanup();eligibility('WAIT: Willow mesh required; pawn='..full(p)..'; mesh='..identity);return
+    local identity='NONE'
+    local function matches(candidate)
+        if not valid(candidate) then return false end
+        local active=invoke(candidate,'Engine.SkeletalMeshComponent','GetSkeletalMeshAsset')
+        local name=full(active)
+        local check=full(candidate)..'; asset='..name
+        if check~=lastMeshCheck then log('CHECK: pawn='..full(p)..'; component='..check);lastMeshCheck=check end
+        if name:find(willow,1,true) then identity=name;return true end
+        return false
+    end
+    if not matches(body) then
+        body=nil
+        local class=StaticFindObject('/Script/Engine.SkeletalMeshComponent')
+        assert(valid(class),'Missing SkeletalMeshComponent class')
+        local components=invoke(p,'Engine.Actor','K2_GetComponentsByClass',class)
+        assert(components~=nil,'Owned skeletal component list unavailable')
+        for i=1,math.min(#components,32) do
+            local candidate=components[i]
+            if matches(candidate) then body=candidate;break end
+        end
+    end
+    if not valid(body) then
+        cleanup();eligibility('WAIT: no owned component uses verified Willow mesh; pawn='..full(p));return
     end
     eligibility('ELIGIBLE: pawn='..full(p)..'; mesh='..identity)
     if valid(ownerPawn) and full(ownerPawn)~=full(p) then cleanup() end
@@ -277,4 +296,4 @@ RegisterKeyBind(Key.F9,function()
     end)
 end)
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded carry test v0.1.1 (actual Willow mesh eligibility). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')
+log('Loaded carry test v0.1.2 (native mesh getter; owned-component fallback). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')

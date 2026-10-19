@@ -1,0 +1,7 @@
+{
+  "file": "BoPeep-Crook-Update-v0.1.2.zip",
+  "sha256": "afd75749e1072087d8baf604ecf042b2947c1ed4dde26730de735fcbe81343cf",
+  "bytes": 6212,
+  "checks": "9 carry Lua regression groups pass; archive byte-readback passes; exact Beta docs support TArray index and length",
+  "status": "Windows pending; no assets or skin modifications"
+}
