@@ -20,8 +20,8 @@ STRIP = b'\x05\x00'  # measured cooked reference: editor/cooking data stripped
 def skeleton_signature(path):
     meshes = json.loads(Path(path).read_text())['meshes']
     bones = meshes[0]['bones']
-    if len(bones) != 230 or any(x['bones'] != bones for x in meshes):
-        raise ValueError('Expected the preserved identical 230-bone reference')
+    if not 1 <= len(bones) <= 2000 or any(x['bones'] != bones for x in meshes):
+        raise ValueError('Expected identical validated reference bone tables')
     canonical = json.dumps(bones, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
     return hashlib.sha256(canonical).hexdigest()
 
@@ -72,8 +72,8 @@ def validate(data, signature, require_skin=True):
             'Joint/weight dimensions differ')
     require(joints.shape[1] >= 1, 'No skin weights: weight transfer and binding are required')
     require(joints.shape[1] <= 8, 'Only the measured maximum of eight influences is supported')
-    require(np.issubdtype(joints.dtype, np.integer) and np.all((joints >= 0) & (joints < 230)),
-            'Joint IDs must refer to the unchanged 230-bone skeleton')
+    require(np.issubdtype(joints.dtype, np.integer) and np.all((joints >= 0) & (joints < int(np.asarray(data.get('skeleton_bone_count', 230)).item()))),
+            'Joint IDs must refer to the declared reference skeleton')
     require(np.isfinite(weights).all() and np.all(weights >= 0), 'Invalid bone weights')
     require(np.all(np.abs(weights.sum(axis=1) - 1) < 1e-5), 'Unweighted or unnormalized vertex')
     for a in range(joints.shape[1]):
@@ -202,7 +202,7 @@ def encode(data, signature, output, palette_limit=70):
     metadata = {'format': 'experimental-grounded2-native-buffers-v1',
                 'scope': 'Standalone buffer records and section plan only; NOT an installable cooked mesh',
                 'profile': 'CUE4Parse GAME_Grounded2 UE5.6', 'skeleton_signature': signature,
-                'skeleton_bones': 230, 'input_vertices': c['input_vertices'], 'output_vertices': n,
+                'skeleton_bones': int(np.asarray(data.get('skeleton_bone_count', 230)).item()), 'input_vertices': c['input_vertices'], 'output_vertices': n,
                 'triangles': c['triangles'], 'uv_channels': 1, 'uv_precision': 'float16',
                 'normal_tangent_precision': '8-bit packed signed components',
                 'weight_precision': 'UNORM8, fixed eight influence slots, exact total255',

@@ -1,0 +1,21 @@
+{
+  "file": "BoPeep-Willow-First-Test.zip",
+  "bytes": 7183625,
+  "sha256": "1839b9e660a274f75a929a5387bd3daa7bba75dbceff92224b6e66fa578b5422",
+  "status": "offline validated; Windows gameplay untested",
+  "entries": [
+    "mod/zBoPeepTest_P.pak",
+    "mod/zBoPeepTest_P.ucas",
+    "mod/zBoPeepTest_P.utoc",
+    "READ-ME-FIRST.txt",
+    "previews/rig-front.png",
+    "previews/rig-side.png",
+    "previews/rig-sitting.png",
+    "previews/rig-arms.png",
+    "previews/cooked-front.png",
+    "previews/cooked-side.png",
+    "reports/offline-validation.json",
+    "reports/iostore-validation.json",
+    "reports/blender-validation.json"
+  ]
+}
