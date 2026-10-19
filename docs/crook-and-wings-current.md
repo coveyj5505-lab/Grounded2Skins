@@ -1,3 +1,5 @@
+> V1 discovery probe WITHDRAWN after user-reported Ctrl+F8 native crash. See ue4ss-discovery-crash.json. Current runtime source is a disabled stub, not a working discovery probe. Preserve UE4SS.log before restarting; do not repeat the glide test.
+
 # Crook and wing work checkpoint
 
 User authorized parallel progress while testing the four first-person skin candidates. Older deferred-work notes are superseded by this authorization. Stable character packages remain untouched.
