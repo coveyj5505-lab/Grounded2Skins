@@ -1,0 +1,11 @@
+{
+  "log_sha256": "b03d381a0b221222af231bec0a2781b9a29bcefe742416248cf0bca01a0bba3d",
+  "mesh": "/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01_w_BackPack.SK_Female_Teen_01_w_BackPack",
+  "mesh_selection": "Windows confirmed",
+  "all_preflight_signatures": "Windows confirmed",
+  "right_hand_bone": "DoesSocketExist succeeded",
+  "stopping_point": "UE4SS LoadAsset then StaticFindObject returned no valid private crook asset",
+  "component_created": false,
+  "source_finding": "Exact ca6f9b4c LuaMod.cpp LoadAsset uses AssetRegistry GetAssetByObjectPath and returns loaded_asset, was_asset_found, did_asset_load. A new private package may not be registered. Log cannot establish whether Paks were installed/mounted.",
+  "correction": "Native KismetSystemLibrary MakeSoftObjectPath -> Conv_SoftObjPathToSoftObjRef -> LoadAsset_Blocking. SoftObjectProperty get/set and owned local TSoftObjectPtr copy verified in exact Beta source. All reflected signatures checked at runtime. Includes unchanged Paks to eliminate missing-file ambiguity."
+}

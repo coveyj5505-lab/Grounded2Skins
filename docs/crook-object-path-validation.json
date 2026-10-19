@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "source": "Fresh retoc unpack of packaged zBoCrookAsset_P.utoc/ucas, not authoring JSON",
+  "unpacked_chunk_sha256": "a641034658dbe4db391ec1c8d8039c1a6ed8753ad4eb2beb083a44d915479709",
+  "cooked_package_summary_name": "/Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01",
+  "cooked_exports": [
+    {
+      "name": "AnimCurveMetaData_1",
+      "class": "AnimCurveMetaData",
+      "outer_index": "0x1"
+    },
+    {
+      "name": "SK_Female_Teen_01",
+      "class": "SkeletalMesh",
+      "outer_index": "0xffffffffffffffff"
+    }
+  ],
+  "resolved_top_level_mesh_object_path": "/Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+  "lua_requested_object_path": "/Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+  "exact_match": true,
+  "scope": "Confirms serialized package/export identity and actual global metadata class; does not prove mounted or loaded in game"
+}

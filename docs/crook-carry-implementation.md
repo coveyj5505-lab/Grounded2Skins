@@ -1,8 +1,10 @@
 # Independent Bo Peep crook carry test
 
-Current script: **0.1.2**, Windows pending. The 0.1 log confirms loading and F9 callbacks, but a silent eligibility return prevented any attachment attempt. The log cannot distinguish a missing local pawn from the guessed Blueprint class mismatch. The corrected script checks the actual verified Willow skeletal mesh path (including backpack variant), logs the actual pawn/mesh identity or missing-pawn condition, and has seven passing carry regression groups. Existing v0.1 ZIP is preserved as historical; install the script-only `BoPeep-Crook-Update-v0.1.1.zip` over it. No assets change.
+Current script: **0.1.3**, Windows pending. Version 0.1.2 now successfully selects the actual Willow backpack mesh, validates all preflight signatures and confirms the hand bone. It stops at private asset loading, before component creation. The exact Beta UE4SS LoadAsset helper queries the asset registry, so it cannot establish whether an unregistered private IoStore asset is loadable. Version 0.1.3 uses native MakeSoftObjectPath, Conv_SoftObjPathToSoftObjRef and LoadAsset_Blocking through the KismetSystemLibrary CDO, with signature and receiver checks. UE4SS ca6f9b4c source confirms SoftObjectProperty get/set and local TSoftObjectPtr value ownership; Windows execution remains pending.
 
-The 0.1.1 Windows log identifies the pawn as `BP_SurvivalPlayerCharacter_Female_C` and the base Mesh wrapper as UObject, but the guessed asset-property expression returns NONE. Version 0.1.2 uses native `GetSkeletalMeshAsset()` and a bounded local-pawn-owned skeletal component fallback, validating exact native signatures before these getter calls. Nine carry mock groups now pass, including absent guessed asset fields and an assetless base Mesh with an owned rendered Willow component. Use the newest script-only update; previous ZIPs remain historical.
+User preference: **drag and drop only; no installer/updater scripts or README in new downloads.** New file-only ZIP contains main.lua and the three unchanged crook Paks. Keep mods.txt and all four skins unchanged.
+
+Fourteen carry Lua mock regression groups pass, including a forbidden registry-only helper, native soft-load chain, missing package, missing guessed properties, assetless base mesh fallback, wrong player, signature rejection, occupancy, both views and cleanup. These do not execute Unreal. The log now records separate path, loaded asset identity, component creation, hand attachment, visibility read-back and final success/error milestones, including exact asset path, phase and last native function on errors. Fresh retoc unpack independently confirms the Zen summary package name and top-level SkeletalMesh export match the Lua path exactly; see crook-object-path-validation.json.
 
 First Windows attachment test. Native placement, visibility, component API marshalling and registration remain unverified until the user runs it. Local-client cosmetic only, not replicated to other clients.
 
@@ -20,9 +22,9 @@ Attack substitution is deliberately absent in this first attachment test: native
 python pipeline/test_crook_carry.py
 python pipeline/test_accessory_check.py
 /workspace/mod-work/bin/retoc verify /workspace/mod-work/crook-stage/package-v1/mod/zBoCrookAsset_P.utoc
-python pipeline/package_crook_carry.py --assets /workspace/mod-work/crook-stage/package-v1/mod
+python pipeline/package_crook_dragdrop.py --assets /workspace/mod-work/crook-stage/package-v1/mod
 ```
 
 Five carry lifecycle/visibility/error-path Lua mock groups and seven existing recorder mock groups pass. They execute Lua 5.4 through liblua, not UE4SS or Unreal. Retoc verifies the original isolated asset; the ZIP builder independently reads every archive entry back and compares it to source bytes. No PowerShell or native Unreal runtime is available here, so the installer and attachment still require Windows validation.
 
-Install.cmd selects the existing Paks and UE4SS Mods directories and refuses to overwrite any crook files. It writes a per-file hash receipt. Uninstall.cmd removes only matching installed files and empty accessory directories, preserving modified files. Keep the extracted folder for rollback. Disable earlier F9 probes before use; the installer does not change their configuration.
+Copy `BoPeepCrook/Scripts/main.lua` into the existing UE4SS mod and the three `Paks` files into Augusta/Content/Paks. Existing files with these crook-only names can be replaced; working character packages are untouched. Roll back by restoring the prior main.lua or disabling BoPeepCrook and removing only zBoCrookAsset_P files.

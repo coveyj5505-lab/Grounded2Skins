@@ -21,7 +21,7 @@ Key={F9=120};function RegisterKeyBind(k,fn) key=fn end
 function LoopAsync(ms,fn) assert(ms==200);timer=fn end
 function ExecuteInGameThread(fn) fn() end
 function FName(s) return s end
-function LoadAsset(s) assert(s:find('_BoCrook',1,true)) end
+function LoadAsset(s) error('Registry-only UE4SS LoadAsset forbidden for new private assets') end
 local function obj(name,classes)
  local o={IsValid=function() return true end,GetFullName=function() return name end,type=function() return 'UObject' end}
  o.Reflection=function() error('Reflection forbidden') end
@@ -35,7 +35,11 @@ local function obj(name,classes)
  return o
 end
 local invalid={IsValid=function() return false end}
-local asset=obj('SkeletalMesh /Game/_BoCrook/Asset',{'Engine.SkeletalMesh'})
+local asset=obj('SkeletalMesh /Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01',{'Engine.SkeletalMesh'})
+local system=obj('KismetSystemLibrary /Script/Engine.Default__KismetSystemLibrary',{'Engine.KismetSystemLibrary'})
+system.MakeSoftObjectPath=function(self,path) assert(path:find('/Game/_BoCrook/',1,true));return {Path=path} end
+system.Conv_SoftObjPathToSoftObjRef=function(self,path) assert(path.Path);return {SoftPath=path.Path} end
+system.LoadAsset_Blocking=function(self,soft) assert(soft.SoftPath:find('/Game/_BoCrook/',1,true));return missingAsset and invalid or asset end
 local item=obj('Item Equipped',{'Maine.Item'})
 local body=obj('SkeletalMeshComponent Body',{'Engine.SkeletalMeshComponent','Engine.SkinnedMeshComponent','Engine.PrimitiveComponent','Engine.SceneComponent'})
 body.SkeletalMeshAsset=obj('SkeletalMesh /Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01',{'Engine.SkeletalMesh'})
@@ -55,6 +59,7 @@ p.AddComponentByClass=function(self,cls,manual,t,deferred)
  assert(manual and deferred);made=made+1
  c=obj('SkeletalMeshComponent Cosmetic',{'Engine.SkeletalMeshComponent','Engine.SkinnedMeshComponent','Engine.PrimitiveComponent','Engine.SceneComponent','Engine.ActorComponent'})
  c.SetHiddenInGame=function(self,v,prop) assert(not prop);show=not v end
+ c.IsVisible=function() return show end
  c.SetVisibility=function(self,v,prop) assert(not prop);show=v end
  c.SetCollisionEnabled=function(self,v) assert(v==0);collision=true end
  c.SetSimulatePhysics=function(self,v) assert(not v) end
@@ -73,6 +78,7 @@ p.FinishAddComponent=function() assert(meshSet and collision and post and anim) 
 function FindAllOf(name) assert(name=='PlayerController');return {{IsValid=function() return true end,IsLocalController=function() return true end,Pawn=p}} end
 local function desc(name,kind) return {GetFullName=function() return kind..' Test.Owner:'..name end} end
 function StaticFindObject(path)
+ if path=='/Script/Engine.Default__KismetSystemLibrary' then return system end
  if path:find('_BoCrook',1,true) then return missingAsset and invalid or asset end
  local fields={['/Script/Engine.Character']={Mesh='ObjectProperty'},['/Script/Maine.SurvivalCharacter']={EquipmentComponent='ObjectProperty'}}
  if fields[path] then return {IsValid=function() return true end,ForEachProperty=function(self,f) for n,t in pairs(fields[path]) do f(desc(n,t)) end end} end
@@ -84,6 +90,11 @@ function StaticFindObject(path)
 end
 '''.replace('SPECS',',\n'.join(specs))
 checks=[
+("attachment rejection logs final error and destroys cosmetic", "local make=p.AddComponentByClass;p.AddComponentByClass=function(...) local created=make(...);created.K2_AttachToComponent=function() return false end;return created end;key();assert(made==1 and destroyed==1 and not show);assert(table.concat(events,'\\n'):find('phase=hand%-attachment'))"),
+("visibility readback mismatch removes cosmetic and logs phase", "local make=p.AddComponentByClass;p.AddComponentByClass=function(...) local created=make(...);created.IsVisible=function() return false end;return created end;key();assert(destroyed==1 and not show);assert(table.concat(events,'\\n'):find('phase=visibility',1,true))"),
+("six separately logged milestones and successful final readback", "key();local text=table.concat(events,'\\n');for i=1,6 do assert(text:find('MILESTONE '..i..'/6',1,true)) end;assert(text:find('RESULT SUCCESS',1,true))"),
+("failed load reports exact path and phase without component creation", "missingAsset=true;key();local text=table.concat(events,'\\n');assert(made==0);assert(text:find('phase=asset%-load'));assert(text:find('/Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01',1,true));assert(text:find('RESULT ERROR',1,true))"),
+("native loader works without asset-registry helper or preloaded object", "key();assert(made==1 and show);assert(table.concat(events,'\\n'):find('LOAD RESULT SkeletalMesh',1,true))"),
 ("native getter succeeds without guessed asset property", "local actual=body.SkeletalMeshAsset;body.SkeletalMeshAsset=nil;body.GetSkeletalMeshAsset=function() return actual end;key();assert(made==1 and show)"),
 ("empty base Mesh falls back to owned Willow component", "local empty=obj('SkeletalMeshComponent Empty',{'Engine.SkeletalMeshComponent'});empty.GetSkeletalMeshAsset=function() return invalid end;p.Mesh=empty;key();assert(made==1 and show)"),
 ("valid Willow mesh with unexpected Blueprint name", "p.GetFullName=function() return 'BP_ActualWillowVariant_C Player' end;key();assert(made==1 and show)"),

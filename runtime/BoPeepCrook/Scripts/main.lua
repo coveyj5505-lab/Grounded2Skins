@@ -6,6 +6,7 @@ local signatures={};local enums={};local busy=false;local recording=false
 local untilTime=0;local sequence=0;local lastState=nil;local fault=false
 local lastEligibility=nil
 local lastMeshCheck=nil
+local phase='idle';local lastCall='NONE';local needsResult=false
 local function eligibility(message)
     if message~=lastEligibility then log(message);lastEligibility=message end
 end
@@ -117,11 +118,15 @@ local function spec(owner,method,args)
     S[owner..'.'..method]=args
 end
 local enum='EnumProperty|ByteProperty'
+spec('Engine.KismetSystemLibrary','MakeSoftObjectPath',{PathString='StrProperty',ReturnValue='StructProperty'})
+spec('Engine.KismetSystemLibrary','Conv_SoftObjPathToSoftObjRef',{SoftObjectPath='StructProperty',ReturnValue='SoftObjectProperty'})
+spec('Engine.KismetSystemLibrary','LoadAsset_Blocking',{Asset='SoftObjectProperty',ReturnValue='ObjectProperty'})
 spec('Engine.SkeletalMeshComponent','GetSkeletalMeshAsset',{ReturnValue='ObjectProperty'})
 spec('Engine.Actor','K2_GetComponentsByClass',{ComponentClass='ClassProperty',ReturnValue='ArrayProperty'})
 spec('Engine.Actor','AddComponentByClass',{Class='ClassProperty',bManualAttachment='BoolProperty',RelativeTransform='StructProperty',bDeferredFinish='BoolProperty',ReturnValue='ObjectProperty'})
 spec('Engine.Actor','FinishAddComponent',{Component='ObjectProperty',bManualAttachment='BoolProperty',RelativeTransform='StructProperty'})
 spec('Engine.ActorComponent','K2_DestroyComponent',{Object='ObjectProperty'})
+spec('Engine.SceneComponent','IsVisible',{ReturnValue='BoolProperty'})
 spec('Engine.SceneComponent','DoesSocketExist',{InSocketName='NameProperty',ReturnValue='BoolProperty'})
 spec('Engine.SceneComponent','GetSocketTransform',{InSocketName='NameProperty',TransformSpace=enum,ReturnValue='StructProperty'})
 spec('Engine.SceneComponent','K2_AttachToComponent',{Parent='ObjectProperty',SocketName='NameProperty',LocationRule=enum,RotationRule=enum,ScaleRule=enum,bWeldSimulatedBodies='BoolProperty',ReturnValue='BoolProperty'})
@@ -149,6 +154,7 @@ local function invoke(o,owner,method,...)
         cls=cls:GetSuperStruct()
     end
     assert(matched,'Wrong receiver for '..owner..'.'..method)
+    lastCall=owner..'.'..method
     if method~='GetItemInSlot' and method~='GetIsFirstPerson' and method~='GetSkeletalMeshAsset' then log('CALL '..owner..'.'..method) end
     return o[method](o,...)
 end
@@ -175,10 +181,13 @@ local function pawn()
 end
 local function visible(value)
     if not valid(component) or value==lastVisible then return end
+    phase='visibility'
     -- Hide first, show last; never propagate into any native character components.
     invoke(component,'Engine.SceneComponent','SetHiddenInGame',not value,false)
     invoke(component,'Engine.SceneComponent','SetVisibility',value,false)
-    lastVisible=value;log(value and 'CROOK VISIBLE: both actual hand slots empty' or 'CROOK HIDDEN')
+    local actual=invoke(component,'Engine.SceneComponent','IsVisible')
+    assert(actual==value,'Component visibility read-back differs from requested state')
+    lastVisible=value;log(value and 'MILESTONE 5/6 VISIBILITY ENABLED (IsVisible=true); both actual hand slots empty' or 'VISIBILITY HIDDEN (IsVisible=false)')
 end
 local function cleanup()
     if valid(component) then
@@ -189,6 +198,7 @@ local function cleanup()
     component=nil;ownerPawn=nil;lastVisible=nil;lastFirst=nil
 end
 local function create(p,body)
+    phase='preflight'
     -- Complete signature/enum/asset/socket checks BEFORE creating a component.
     for key,args in pairs(S) do
         local class,method=key:match('^(.*)%.([^%.]+)$')
@@ -207,11 +217,23 @@ local function create(p,body)
     -- Eligibility was checked against the actual cooked Willow mesh path, not a guessed Blueprint name.
     local bone=FName('r_hand_JNT')
     assert(invoke(body,'Engine.SceneComponent','DoesSocketExist',bone)==true,'r_hand_JNT missing')
+    phase='package-path'
+    log('MILESTONE 1/6 PACKAGE/OBJECT REQUEST '..assetPath..' (matches cooked package/export offline; runtime load pending)')
     if not valid(meshAsset) then
-        LoadAsset(assetPath)
-        meshAsset=StaticFindObject(assetPath)
+        phase='asset-load'
+        -- Beta LoadAsset() queries AssetRegistry first; new private packages may have no registry entry.
+        -- Native soft loading resolves the mounted package directly, without modifying the registry.
+        local system=StaticFindObject('/Script/Engine.Default__KismetSystemLibrary')
+        assert(valid(system),'KismetSystemLibrary default object unavailable')
+        local path=invoke(system,'Engine.KismetSystemLibrary','MakeSoftObjectPath',assetPath)
+        local soft=invoke(system,'Engine.KismetSystemLibrary','Conv_SoftObjPathToSoftObjRef',path)
+        log('LOAD PRIVATE PACKAGE '..assetPath)
+        meshAsset=invoke(system,'Engine.KismetSystemLibrary','LoadAsset_Blocking',soft)
+        log('LOAD RESULT '..full(meshAsset))
     end
-    assert(valid(meshAsset),'Crook asset missing: install zBoCrookAsset_P trio and restart')
+    assert(valid(meshAsset),'Direct crook loader returned no valid UObject for '..assetPath..'; package missing/unmounted or loading/dependency failure; send log')
+    assert(full(meshAsset)=='SkeletalMesh '..assetPath,'Loaded object identity differs from requested skeletal mesh: '..full(meshAsset))
+    log('MILESTONE 2/6 MESH LOADED '..full(meshAsset))
     local class=StaticFindObject('/Script/Engine.SkeletalMeshComponent');assert(valid(class),'Missing component class')
     -- Derive an initial upright offset from the current hand frame. Retained as a rigid hand attachment.
     local socket=invoke(body,'Engine.SceneComponent','GetSocketTransform',bone,worldSpace)
@@ -219,9 +241,13 @@ local function create(p,body)
     assert(norm>0.9 and norm<1.1,'Invalid hand rotation')
     local offset=transform({X=-q.X/norm,Y=-q.Y/norm,Z=-q.Z/norm,W=q.W/norm})
     ownerPawn=p
+    phase='component-create'
     component=invoke(p,'Engine.Actor','AddComponentByClass',class,true,transform(),true)
     assert(valid(component),'Deferred component creation failed')
+    log('MILESTONE 3/6 COMPONENT CREATED '..full(component))
+    phase='component-configure'
     lastVisible=nil;visible(false)
+    phase='component-configure'
     invoke(component,'Engine.PrimitiveComponent','SetCollisionEnabled',noCollision)
     invoke(component,'Engine.PrimitiveComponent','SetSimulatePhysics',false)
     invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
@@ -233,8 +259,12 @@ local function create(p,body)
     invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
     invoke(component,'Engine.SkeletalMeshComponent','SetEnableAnimation',false)
     invoke(p,'Engine.Actor','FinishAddComponent',component,true,transform())
+    phase='hand-attachment'
     assert(invoke(component,'Engine.SceneComponent','K2_AttachToComponent',body,bone,snap,snap,snap,false)==true,'Hand attachment rejected')
+    log('MILESTONE 4/6 ATTACH CALL SUCCEEDED parent='..full(body)..'; bone=r_hand_JNT')
+    phase='grip-transform'
     invoke(component,'Engine.SceneComponent','K2_SetRelativeTransform',offset,false,{},true)
+    needsResult=true
     log('ATTACHED r_hand_JNT; upright-at-activation offset. Local cosmetic only; no combat changes.')
 end
 local function update()
@@ -277,6 +307,10 @@ local function update()
     -- Only the actual returned item identities determine occupancy; bHas* flags are deliberately absent.
     local empty=not valid(main) and not valid(off)
     visible(empty)
+    if needsResult then
+        needsResult=false;phase='attached'
+        log('MILESTONE 6/6 RESULT SUCCESS: asset='..assetPath..'; component='..full(component)..'; bone=r_hand_JNT; visible='..tostring(lastVisible)..'; main='..full(main)..'; off='..full(off)..'; rendered appearance awaits user inspection')
+    end
     local fp=invoke(p,'Maine.SurvivalCharacter','GetIsFirstPerson')
     if fp~=lastFirst then log('VIEW '..tostring(fp)..' (true=first person); crook remains eligible in both views');lastFirst=fp end
 end
@@ -285,7 +319,12 @@ local function dispatch(fn)
     busy=true
     ExecuteInGameThread(function()
         local ok,why=pcall(fn);busy=false
-        if not ok then enabled=false;failed=true;cleanup();log('STOP '..tostring(why)..'; cosmetic removed. Send UE4SS.log.') end
+        if not ok then
+            enabled=false;failed=true
+            local failedPhase=phase;local failedCall=lastCall
+            log('MILESTONE 6/6 RESULT ERROR: phase='..failedPhase..'; lastCall='..failedCall..'; asset='..assetPath..'; error='..tostring(why))
+            cleanup();log('STOP: accessory cleanup attempted; no further native attempts. Send UE4SS.log.')
+        end
     end)
 end
 RegisterKeyBind(Key.F9,function()
@@ -296,4 +335,4 @@ RegisterKeyBind(Key.F9,function()
     end)
 end)
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded carry test v0.1.2 (native mesh getter; owned-component fallback). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')
+log('Loaded carry test v0.1.3 (native soft-object loading; no AssetRegistry dependency). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')

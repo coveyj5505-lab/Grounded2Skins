@@ -1,0 +1,13 @@
+{
+  "file": "BoPeep-Crook-Test-v0.1.3.zip",
+  "sha256": "bc501344630ff07d1add420ca442b1a78a20504bbd28345be282d35fd7cf98bf",
+  "bytes": 32591,
+  "files": {
+    "BoPeepCrook/Scripts/main.lua": "ce00045f8d9d7b0f2d63df75a299d6a59a05951660cb5ca066c5c33f6b5178c0",
+    "Paks/zBoCrookAsset_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBoCrookAsset_P.utoc": "beea56666ddb94d6b16eeeabebe61f9ca8dd522620caea2b818ab897796b24aa",
+    "Paks/zBoCrookAsset_P.ucas": "2be8d2c384e262ed153aeac9fc76d4b51ed4c9a2a2bf2d0688c50fff3454741a"
+  },
+  "status": "WINDOWS_PENDING",
+  "checks": "14 carry Lua mock regression groups pass; no registry-only LoadAsset call; package files unchanged from v0.1; ZIP byte-readback verified"
+}
