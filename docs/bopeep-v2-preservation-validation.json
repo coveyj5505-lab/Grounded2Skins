@@ -1,0 +1,21 @@
+{
+  "changed_body_chunks": [
+    "2ee2517f02d2199900000001",
+    "5bf07aadb2b863d000000001"
+  ],
+  "unchanged_private_material_texture_bulk_and_hair_chunks": 14,
+  "all_triangle_source_vertex_IDs_and_UVs_exact_V1": true,
+  "unchanged_body_regions_encoded_positions_joints_weights_exact": true,
+  "other_release_sha256_unchanged": {
+    "Buzz-Lightyear-V2-Proportions-Test.zip": "42b0c50091bc7a5fb97a37ff91ff06da9c0f3f5eac5dd04fba241520aa837250",
+    "BoPeep-Willow-First-Test.zip": "1839b9e660a274f75a929a5387bd3daa7bba75dbceff92224b6e66fa578b5422",
+    "Jessie-Hoops-V2-Test.zip": "c96f405ca6a5424b9c9b74ed78bcbf5679f125e8ab43160f56262a41c813c283",
+    "Woody-Pete-First-Test.zip": "770661afc75557c03302becc2bf97043d616a88711ed1f58b233e013182e2aca"
+  },
+  "normal_tangent_readback": {
+    "normals_max_component_error": 0.003921516239643097,
+    "tangents_max_component_error": 0.003921210765838623
+  },
+  "tangent_handedness_exact": true,
+  "runtime": "NOT TESTED"
+}

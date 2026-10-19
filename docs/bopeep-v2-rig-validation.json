@@ -1,0 +1,56 @@
+{
+  "fresh_reopen": true,
+  "bones": 192,
+  "vertices": 5028,
+  "triangles": 6459,
+  "normalized_weights": true,
+  "unchanged_appearance_outside_masks_vertices": 3369,
+  "unaffected_positions_and_weights_exact": true,
+  "topology_material_UVs_exact_V1": true,
+  "cape_all_936_vertices_rigid_spine3": true,
+  "cape_displacement_under_arm_stress_m": 0.0,
+  "finger_stress": [
+    {
+      "finger_joint_rotation_deg": -75,
+      "max_hand_surface_displacement_m": 0.0
+    },
+    {
+      "finger_joint_rotation_deg": 75,
+      "max_hand_surface_displacement_m": 0.0
+    }
+  ],
+  "poses": [
+    {
+      "pose": "rest-front",
+      "independent_numpy_LBS_max_error_m": 2.8379607264206186e-07
+    },
+    {
+      "pose": "rest-side",
+      "independent_numpy_LBS_max_error_m": 2.8379607264206186e-07
+    },
+    {
+      "pose": "running",
+      "independent_numpy_LBS_max_error_m": 3.4561220374484947e-07
+    },
+    {
+      "pose": "sitting-side",
+      "independent_numpy_LBS_max_error_m": 2.4723609456933637e-07
+    },
+    {
+      "pose": "sitting",
+      "independent_numpy_LBS_max_error_m": 2.4723609456933637e-07
+    },
+    {
+      "pose": "standing",
+      "independent_numpy_LBS_max_error_m": 2.1937785210646155e-07
+    }
+  ],
+  "preserved_crook_hidden": true,
+  "crook_original_positions_UVs_triangles_materials_weights_world_transform_exact": true,
+  "limits": [
+    "Source-shaped predominantly rigid hands; fine finger animation/grips simplified",
+    "Cape stiffly follows torso, no cloth collision",
+    "Synthetic FK tests are not game clips",
+    "Windows test still required"
+  ]
+}

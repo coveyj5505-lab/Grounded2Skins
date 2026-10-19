@@ -1,0 +1,15 @@
+{
+  "vertices": 5028,
+  "bones": 192,
+  "unchanged_vertices": 3369,
+  "hands_changed_vertices": 723,
+  "cape_vertices": 936,
+  "cape_previously_mixed_arm_vertices": 54,
+  "cape_new_arm_influences": 0,
+  "hands": "Uniform source-shaped hand fit; predominantly rigid native-hand weights; individual finger animation intentionally simplified",
+  "cape": "Single torso transform and rigid spine3 weights; stiff cape, no new cloth simulation",
+  "appearance_outside_masks_positions_and_weights_exact": true,
+  "material_UVs_topology_native_rest_unchanged": true,
+  "crook": "Preserved on original object; not exported",
+  "runtime": "NOT TESTED"
+}
