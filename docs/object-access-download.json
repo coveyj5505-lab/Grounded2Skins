@@ -1,0 +1,11 @@
+{
+  "file": "ToyStory-Object-Access-Check.zip",
+  "bytes": 2775,
+  "sha256": "1a42b4fbb95b7bd3d048691f42eab439d6c26a03f421fd083c80cf920673a4c4",
+  "purpose": "Single-shot exact2component wrapper comparison; not a gameplay recorder",
+  "controls": "F9once standing,wait5seconds,returnUE4SS.log",
+  "offline_checks": "3realLua5.4 diagnostic cases plus6pending recorder cases; ZIPCRC; no gameplay getter calls",
+  "windows_status": "UNTESTED; actual returned wrapper remains unknown until log",
+  "first_person": "Complete, untouched",
+  "next": "Resolve actual wrapper before complete gameplay test; optional getter failures isolated"
+}

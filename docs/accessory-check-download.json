@@ -8,5 +8,7 @@
   "target": "Component getters, main/offhand and passive spear montage/stance; no general character dump",
   "stable_skins": "Unchanged; head/body separation already confirmed, do not reinstall or retest it",
   "version": "1.1",
-  "previous_version_status": "V1 halted at receiver IsA guard; no states captured. Superseded by1.1."
+  "previous_version_status": "V1 halted at receiver IsA guard; no states captured. Superseded by1.1.",
+  "status": "WITHDRAWN: both published versions halted before state capture; await one-shot wrapper type result",
+  "next_diagnostic": "ToyStory-Object-Access-Check.zip"
 }

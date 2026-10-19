@@ -1,0 +1,9 @@
+{
+  "log_sha256": "5bb1830206a5d336ec854ac683dd28f75cebabf38e26369e54b73bccf9a87ede",
+  "recorded_states": 0,
+  "last_success": "IsGliding UFunction found; expected BoolProperty ReturnValue metadata matched",
+  "failure": "nil GetClass on returned movement reference before gameplay getter invocation",
+  "runtime_wrapper_type": "NOT RECORDED; cannot identify representation from this log",
+  "correction": "Exact ca6f9b4c source registers GetClass/IsA on UObject. Global API absence is not established. Short wrapper identity check needed.",
+  "user_involvement": "One F9 press while standing; no gameplay sequence for representation diagnosis"
+}

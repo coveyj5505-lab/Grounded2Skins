@@ -1,3 +1,5 @@
+WITHDRAWN: v1 and v1.1 halted before state capture. Do not repeat the gameplay sequence. Current main.lua is a no-keybind stub. Use only the one-shot ToyStoryObjectAccess diagnostic until actual wrapper identity is resolved. Instructions below are historical.
+
 VERSION1.1: fixes nil IsA receiver guard. Replaces it with class-hierarchy checks; no gameplay or skin changes. Replace the SAME ToyStoryAccessoryCheck folder; do not install both versions.
 
 ToyStoryAccessoryCheck - ONE READ-ONLY focused SDK check

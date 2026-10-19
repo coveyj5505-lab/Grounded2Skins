@@ -52,12 +52,16 @@ local function object(name,classes,props)
   return at(1)
  end}
  o.Reflection=function() return {GetProperty=function(self,k) local v=props[k];if not v then return nil end;return descriptor(k,v.kind) end} end
- o.GetPropertyValue=function(self,k) calls=calls+1;assert(props[k],'unapproved property '..k);return props[k].value() end
+ -- Reproduce returned references with missing GetClass, and avoid GetPropertyValue entirely.
+ o.GetPropertyValue=function() error('GetPropertyValue must not be used') end
+ setmetatable(o,{__index=function(self,k) if props[k] then calls=calls+1;return props[k].value() end;return nil end})
  return o
 end
 local movement=object('MaineCharMovementComponent LocalPawn.Move',{['/Script/Maine.MaineCharMovementComponent']=true},{})
 movement.IsGliding=function() return glide end;movement.GetGlidingStyle=function() return glide and 2 or 0 end
+movement.GetClass=nil
 local equipment=object('EquipmentComponent LocalPawn.Equip',{['/Script/Maine.EquipmentComponent']=true},{bHasMainHand={kind='BoolProperty',value=function() return main end},bHasOffHand={kind='BoolProperty',value=function() return off end}})
+equipment.GetClass=nil
 equipment.GetStance=function() return main and 7 or 0 end;equipment.GetOffhandStance=function() return off and 3 or 0 end
 equipment.GetItemInSlot=function(self,slot) assert(slot==17 or slot==29,'copied SDK enum constant');if slot==17 and main then return object('Item Spear',{}, {}) end;if slot==29 and off then return object('Item Shield',{}, {}) end end
 local montage=object('AnimMontage SpearObservedOnly',{}, {})
@@ -70,10 +74,10 @@ local pc={IsValid=function() return true end,IsLocalController=function() return
 local remote={IsValid=function() return true end,IsLocalController=function() return false end,Pawn=setmetatable({}, {__index=function() remoteCalls=remoteCalls+1;error('remote access') end})}
 function FindAllOf(k) assert(k=='PlayerController');if menu then return nil end;return {remote,pc} end
 '''
-src=(root/'runtime/ToyStoryAccessoryCheck/Scripts/main.lua').read_text()
+src=(root/'runtime/pending/AccessoryRecorder-main.lua.disabled').read_text()
 tests={
- 'regression: IsA absent on all objects; automatic exact getters still work':r"""
-assert(movement.IsA==nil and equipment.IsA==nil)
+ 'regression: component GetClass/IsA absent, GetPropertyValue forbidden; direct references work':r"""
+assert(movement.IsA==nil and equipment.IsA==nil and movement.GetClass==nil and equipment.GetClass==nil)
 keys[Key.F9]();flush();assert(writes==0 and remoteCalls==0)
 first=true;glide=true;main=true;off=true;attackActive=true;tick();assert(writes==0)
 local all=table.concat(lines,'');assert(all:find('gliding=true',1,true));assert(all:find('MainHand=Item Spear',1,true));assert(all:find('OffHand=Item Shield',1,true));assert(all:find('attackMontage=AnimMontage SpearObservedOnly',1,true));assert(not all:find('ERROR',1,true))
@@ -88,6 +92,16 @@ keys[Key.F9]();flush();assert(writes==0);local all=table.concat(lines,'');assert
 menu=true;keys[Key.F9]();flush();assert(calls==0);menu=false
 localCharacter.Reflection=function() return {GetProperty=function(self,k) return descriptor(k,'ArrayProperty') end} end
 wrongReceiver=true;tick();assert(calls==0 and writes==0)
+""",
+ 'glide failure isolated: equipment and attack continue across samples':r"""
+movement.IsGliding=function() error('mock glide Lua failure') end
+main=true;off=true;attackActive=true;keys[Key.F9]();flush();tick()
+local all=table.concat(lines,'');assert(all:find('LANE DISABLED getter Maine.MaineCharMovementComponent.IsGliding',1,true));assert(all:find('MainHand=Item Spear',1,true));assert(all:find('OffHand=Item Shield',1,true));assert(all:find('attackMontage=AnimMontage SpearObservedOnly',1,true));assert(not all:find('STOP LUA ERROR',1,true))
+""",
+ 'equipment failure isolated: glide and attack continue':r"""
+equipment.GetStance=function() error('mock equipment Lua failure') end
+glide=true;attackActive=true;keys[Key.F9]();flush();tick()
+local all=table.concat(lines,'');assert(all:find('gliding=true',1,true));assert(all:find('attackMontage=AnimMontage SpearObservedOnly',1,true));assert(not all:find('STOP LUA ERROR',1,true))
 """,
  'queued game-thread samples never overlap':r"""
 keys[Key.F9]();timer();timer();flush();assert(writes==0);tick();assert(not table.concat(lines,''):find('ERROR',1,true))
