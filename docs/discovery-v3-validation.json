@@ -7,7 +7,7 @@
     "Real Lua5.4 mocked execution: no-modifier binding, menu, game-thread dispatch, busy guard, descriptor-gated scalar reads, ignored delegates/arrays/objects/structs, cached metadata, standing/glide state change, non-scalar no-conversion, read error recovery",
     "ZIP3 expected files and CRC pass"
   ],
-  "windows_status": "UNTESTED; V2 metadata success does not prove V3 scalar safety",
+  "windows_status": "7/7 snapshots completed with45 values each; no probe errors in uploaded log. Only2jump counters varied. Target glide/equipment state not yet identified.",
   "workflow": "One standing discovery/snapshot, then active gliding, landed, spear, shield, unarmed; return ordered log",
   "limits": "May not expose actual glide/equipment state; runtime native access violations remain possible"
 }

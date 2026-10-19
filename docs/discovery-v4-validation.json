@@ -1,0 +1,20 @@
+{
+  "file": "ToyStory-Discovery-V4-Components-F9.zip",
+  "bytes": 3999,
+  "sha256": "0fca25fc2aa16e3e1871f826d875cc8a0380dc738a6d521625bcb0665b3c2735",
+  "offline_checks": [
+    "Actual Lua5.4 mocked menu, F9alone, game thread, busy guard, exact component references, per-scope metadata cache, typed scalar filtering, gliding value changes, rejection of delegate/array/struct/other object values",
+    "Lua5.4 scalar error recovery",
+    "ZIP3 expected files/CRC pass"
+  ],
+  "windows_status": "UNTESTED new component references/scalars. V3 proven only for player scalars.",
+  "verified_reference_metadata": [
+    "ObjectProperty /Script/Maine.SurvivalCharacter:CharMovementComponent",
+    "ObjectProperty /Script/Maine.SurvivalCharacter:EquipmentComponent"
+  ],
+  "remaining_limits": [
+    "No direct glide/equipment candidate confirmed",
+    "No complex equipment containers parsed",
+    "No runtime behavior modifications"
+  ]
+}
