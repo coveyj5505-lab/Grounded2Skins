@@ -1,0 +1,21 @@
+{
+  "third_party_reference": "SuperEvie custom Hoops skin; not stock Grounded 2",
+  "body_paths": [
+    "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/SK_Female_Teen_02.uasset",
+    "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/SK_Female_Teen_02_w_BackPack.uasset"
+  ],
+  "body_bones": 230,
+  "body_backpack_bone_tables_equal": true,
+  "hair_variants": 4,
+  "hair_bones": 12,
+  "native_reader_succeeded": true,
+  "native_lods": 1,
+  "native_cloth_data": true,
+  "stock_skeleton_compatibility": "Not yet compared; use original Hoops extraction",
+  "extractor_control_packages": 7,
+  "extractor_control_bytes": 3697469,
+  "original_inputs_unchanged": true,
+  "user_model_received": "jessie.zip; no need to download another model",
+  "proposed_private_namespace": "/Game/_Jessie0",
+  "proposed_mod_basename": "zJessieTest_P"
+}
