@@ -20,6 +20,7 @@ for i,m in enumerate(x for x in meta if '/SK_Male_Teen_01.uasset' in x['path']):
  assert np.max(abs(read('normals.f32','<f4',3)-expected['normals']))<.008
  assert np.all(read('weights.u16','<u2',8)[:,0]==255) and np.all(read('weights.u16','<u2',8)[:,1:]==0) and np.all(read('joints.u16','<u2',8)==0)
  assert j['used_bones']==[0] and np.all(read('triangle-materials.u16','<u2',1)==0)
+ baseline_meta=json.loads((a.reference.parent/'metadata.json').read_text());source_meta=next(x for x in baseline_meta if x['chunk_id']=='cd809abc483f179000000001');oldmi='/Game/_BuzzMod/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Buz_Apparel01';newmi='/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01';assert m['imported_packages']==[newmi if value==oldmi else value for value in source_meta['imported_packages']], 'Non-material external dependency changed'
  material=resolve(m,j['materials'][0]['package_index']);assert material=='/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01'
  # Actual serialized self package summary and top-level exported UObject name, not directory-only identity.
  b=(raw/m['chunk_id']).read_bytes();s=struct.unpack_from('<15I',b);nm,_=names(b,60);package=nm[s[2]&0x3fffffff];assert s[3]==0;mesh_names=[]
@@ -32,7 +33,7 @@ for i,m in enumerate(x for x in meta if '/SK_Male_Teen_01.uasset' in x['path']):
  for record in ar['materials']:
   ids=np.unique(z['indices'][z['source_materials']==record['material_slot']]);old=z['source_vertices'][ids];source=src['uv0'][old];lo,hi=np.array(record['source_uv_bounds']);x,y,w,h=record['atlas_cell'];g=record['gutter'];uv[ids]=np.c_[(x+g+(source[:,0]-lo[0])/(hi[0]-lo[0])*(w-2*g))/4096,(y+g+(hi[1]-source[:,1])/(hi[1]-lo[1])*(h-2*g))/4096];coverage[ids]=True
  assert coverage.all() and np.max(abs(uv-z['uv0']))<1e-6
- reports.append({'state':state,'vertices':n,'triangles':328,'asset':package+'.'+mesh_names[0],'material':material,'native_positions_indices_weights_UVs':'Exact intended encoding','230_bone_reference_exact':True,'atlas_UVs_independently_reconstructed':True})
+ reports.append({'state':state,'vertices':n,'triangles':328,'asset':package+'.'+mesh_names[0],'material':material,'native_positions_indices_weights_UVs':'Exact intended encoding','230_bone_reference_exact':True,'all_external_skeleton_physics_game_dependencies_exact_baseline':True,'atlas_UVs_independently_reconstructed':True})
 mi=next(m for m in meta if m['path'].endswith('MI_Character_Male01_Wng_Apparel01.uasset'));b=(raw/mi['chunk_id']).read_bytes();s=struct.unpack_from('<15I',b);needle=struct.pack('<I',4)+b'\x00\x07\x00\x07';hits=[i for i in range(s[1],s[1]+600) if b[i:i+8]==needle];assert len(hits)==1;q=hits[0]+4;bindings=[]
 for k in range(4):
  assert b[q:q+4]==b'\x00\x07\x00\x07';name,num=struct.unpack_from('<II',b,q+4);assert num==0;index,tex=struct.unpack_from('<ii',b,q+13);assert index==-1;bindings.append({'parameter':mi['name_map'][name],'texture':resolve(mi,tex)});q+=37

@@ -1,13 +1,24 @@
 {
   "source": "/workspace/mod-work/bopeep-v2-stage/fit-v1/BoPeep-Willow-V2.blend",
   "source_file_sha256": "f3f8e7218ee413b1f39e336ae3079544c4ab99408dd780e38bab7b1857b9f29a",
-  "vertices": 5028,
-  "triangles": 6459,
+  "vertices": 4972,
+  "triangles": 6415,
   "bone_rest_hash": "5192bc875c0ee3d873c40207384914ae3a917058b4e9a2649e18ca5a6fe03dd8",
   "native_bones_unchanged": 192,
-  "all_weights_UVs_topology_unchanged": true,
-  "hands_and_pure_head_positions_exact": 2444,
-  "changed_vertices": 1709,
+  "retained_body_weights_UVs_topology_unchanged": true,
+  "source_helper_plate_preserved_and_omitted": {
+    "vertices": 56,
+    "triangles": 44
+  },
+  "hands_positions_exact": 723,
+  "head_face_hat_shape_rigid_translation_m": [
+    1.5683863098967504e-07,
+    0.013062137983919498,
+    -0.07611300246197207
+  ],
+  "pure_head_vertices": 1721,
+  "hips": "Upper-hip transverse dimensions move toward measured source envelope; knee/feet positions unchanged",
+  "changed_vertices": 3489,
   "torso_longitudinal_ratio_correction": {
     "e_root_m": {
       "old": 0.5140066100192993,

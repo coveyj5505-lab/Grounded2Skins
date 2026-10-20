@@ -23,7 +23,7 @@ def reset():
  for pb in arm.pose.bones:pb.matrix_basis=Matrix.Identity(4)
  bpy.context.view_layer.update()
 def render(name,view):
- ev=o.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh();p=np.asarray([v.co[:] for v in m.vertices]);assert np.isfinite(p).all() and len(p)==5028;ev.to_mesh_clear();pose_data.append({'name':name,'positions_finite':True,'min':p.min(0).tolist(),'max':p.max(0).tolist()})
+ ev=o.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh();p=np.asarray([v.co[:] for v in m.vertices]);assert np.isfinite(p).all() and len(p)==len(o.data.vertices);ev.to_mesh_clear();pose_data.append({'name':name,'positions_finite':True,'min':p.min(0).tolist(),'max':p.max(0).tolist()})
  np.savez_compressed(out/(name+'.npz'),positions=p,bone_world=np.asarray([pb.matrix[:] for pb in arm.pose.bones]))
  camera.location=view;camera.rotation_euler=(Vector((0,0,1.1))-camera.location).to_track_quat('-Z','Y').to_euler();scene.render.filepath=str(out/(name+'.png'));bpy.ops.render.render(write_still=True)
 reset();render('rest-front',(0,-5,1.25));render('rest-side',(5,0,1.25))
@@ -39,4 +39,4 @@ for short,sign in [('l',1),('r',-1)]:
  aim(f'{short}_UpperLeg_JNT',f'{short}_LowerLeg_JNT',(0,-sign*.55,-.84));aim(f'{short}_LowerLeg_JNT',f'{short}_Foot_JNT',(0,sign*.35,-.94));aim(f'{short}_upperArm_JNT',f'{short}_lowerArm_JNT',(sign*.12,sign*.55,-.84));aim(f'{short}_lowerArm_JNT',f'{short}_hand_JNT',(0,-sign*.65,-.76))
 render('running',(3,-5,1.8))
 assert rest=={b.name:[list(row) for row in b.matrix_local] for b in arm.data.bones}
-(out/'validation.json').write_text(json.dumps({'fresh_reopen':True,'bones':192,'vertices':5028,'normalized_weights':True,'native_rest_matrices_unchanged':True,'poses':pose_data,'pose_method':'FK aiming using world-space parent/child joint directions; synthetic, not extracted game clips','gameplay_compatibility':'NOT TESTED'},indent=2)+'\n')
+(out/'validation.json').write_text(json.dumps({'fresh_reopen':True,'bones':192,'vertices':len(o.data.vertices),'normalized_weights':True,'native_rest_matrices_unchanged':True,'poses':pose_data,'pose_method':'FK aiming using world-space parent/child joint directions; synthetic, not extracted game clips','gameplay_compatibility':'NOT TESTED'},indent=2)+'\n')

@@ -1,6 +1,6 @@
 # Buzz wing visual states: first Windows test
 
-Windows pending. Working Buzz body/head sections, textures, proportions and native skeleton remain unchanged. The Bo Peep crook v0.1.3 ZIP remains untouched and is now user-confirmed visible in third person.
+Initial Windows test failed at native asset loading. The v0.1.1 package corrects accidental prefix replacement of external skeleton/physics dependencies; fresh read-back verifies all external imports against the working baseline. Corrected Windows test pending. Working Buzz body/head sections, textures, proportions and native skeleton remain unchanged. The Bo Peep crook v0.1.3 ZIP remains untouched and is now user-confirmed visible in third person.
 
 The separate wing accessory uses all six preserved extended panel objects. New stored copies compress/nest inside the backpack instead of using the earlier protruding hinge prototype. Original meshes/UVs/transforms and the accepted body are exact in the new Blender file. Rear/side/quarter previews are genuine CPU Blender renders, not game screenshots. Stored surfaces were sampled from eight horizontal viewpoints; all sampled rays were occluded by the original body/backpack. This is not collision or all-pose clearance certification.
 
@@ -10,7 +10,7 @@ Separate chest-local deployed/stored cooked meshes attach to chest_JNT as a coll
 
 Game closed: copy the three files inside Paks into Augusta/Content/Paks. Copy BuzzWings into ue4ss/Mods and add `BuzzWings : 1` to mods.txt. Keep all four working skins and crook files installed.
 
-Load as Buzz/Max. F6 once. Inspect retracted backpack, glide using the reusable tuft, then land. No airborne key presses. F6 again removes the accessory. Send UE4SS.log and rear screenshots. Six native lifecycle milestones are logged; errors include phase and last native function. Windows load/attachment/alignment remain unverified until this test.
+Use Buzz-Wings-Test-v0.1.1.zip; replace all three prior zBuzzWings_P files. Load as Buzz/Max. F6 once while standing. Stored wings are concealed, so no large visible change is expected. Jump from sufficient height and press Shift to open the tuft. Inspect retracted backpack, glide using the reusable tuft, then land. No airborne key presses. F6 again removes the accessory. Send UE4SS.log and rear screenshots. Six native lifecycle milestones are logged; errors include phase and last native function. Windows load/attachment/alignment remain unverified until this test.
 
 Remove only BuzzWings : 1/the BuzzWings folder and zBuzzWings_P.{pak,utoc,ucas} to roll back. Do not remove the Buzz body skin.
 

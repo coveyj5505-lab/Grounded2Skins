@@ -9,6 +9,7 @@
       "material": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
       "native_positions_indices_weights_UVs": "Exact intended encoding",
       "230_bone_reference_exact": true,
+      "all_external_skeleton_physics_game_dependencies_exact_baseline": true,
       "atlas_UVs_independently_reconstructed": true
     },
     {
@@ -19,6 +20,7 @@
       "material": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
       "native_positions_indices_weights_UVs": "Exact intended encoding",
       "230_bone_reference_exact": true,
+      "all_external_skeleton_physics_game_dependencies_exact_baseline": true,
       "atlas_UVs_independently_reconstructed": true
     }
   ],

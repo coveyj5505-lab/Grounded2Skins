@@ -2,7 +2,7 @@
   "file": "Buzz-Wings-First-Test.zip",
   "bytes": 2955242,
   "sha256": "9af21f74125d27069962cdc77ca779b080befbc436b395b5600b7247558789e2",
-  "runtime": "WINDOWS NOT TESTED",
+  "runtime": "WINDOWS FAILED: native load invalid; skeleton and physics dependency prefixes incorrectly renamed. Superseded by v0.1.1.",
   "toggle": "F6",
   "hand_equipment_not_modified": true,
   "gliding_physics_not_modified": true,

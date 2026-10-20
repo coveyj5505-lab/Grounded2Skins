@@ -1,0 +1,13 @@
+{
+  "file": "Buzz-Wings-Test-v0.1.1.zip",
+  "bytes": 2823002,
+  "sha256": "94aed782f7edc8038afd304e052de1417a96426838b5fb9fa3cca31b9527b4bd",
+  "runtime": "WINDOWS_PENDING",
+  "fix": "Exact package-name replacement preserves original external skeleton and physics dependencies.",
+  "files": {
+    "Paks/zBuzzWings_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBuzzWings_P.utoc": "a2848b88c7f1923f50fdbb2bb6b087e1448f44587a60740aa54a9a1569e1b80a",
+    "Paks/zBuzzWings_P.ucas": "6450339ba4361aeed0f38b583f7ab0194719d95a1d37bb60b9033b037795e447",
+    "BuzzWings/Scripts/main.lua": "aceaf65f516daf9cf4b2dbe398614a21e9a6dfedf8358e8fcd87b38884a7e8d8"
+  }
+}

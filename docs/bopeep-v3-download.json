@@ -1,0 +1,16 @@
+{
+  "file": "BoPeep-V3-Model-and-Crook-Test.zip",
+  "bytes": 4068208,
+  "sha256": "abf507c6e1a72753aae07f48f0f8c4b2ce6f429b9b0c11632c528dad480c2ad2",
+  "status": "WINDOWS_PENDING",
+  "model": "V3 source-informed incremental shape/cape correction",
+  "crook_script": "v0.2, identical to separate grip/FP script ZIP",
+  "requires_keep_existing": "zBoCrookAsset_P trio; all non-BoPeep skins; UE4SS mods.txt entry BoPeepCrook : 1",
+  "install": "Move only previous BoPeep skin trio outside Paks as backup; copy new zBoPeepV3_P trio. Replace only BoPeepCrook/Scripts/main.lua in existing UE4SS mod.",
+  "files": {
+    "Paks/zBoPeepV3_P.ucas": "b6571cb82da380131336e586c957ffb4086d8ea939beb5c83935bc6a3fb0740b",
+    "Paks/zBoPeepV3_P.utoc": "6b0500f66560bb0af2f6e2c6c0120bc1f8937ef6e15f06ead70509cbbecfbe83",
+    "Paks/zBoPeepV3_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "BoPeepCrook/Scripts/main.lua": "04ef6cdaa1caacd252bea39ed8bda3689de0b20d2199863aa0a7ca298bf6d204"
+  }
+}

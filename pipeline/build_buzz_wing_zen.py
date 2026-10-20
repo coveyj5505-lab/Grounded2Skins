@@ -15,8 +15,8 @@ def clone_header(raw,replacements):
  for at in [60,s[12]]:
   old,end=names(b,at);new=[]
   for value in old:
-   for k,v in replacements.items():value=value.replace(k,v)
-   new.append(value)
+   # Exact FName equality is essential: mesh package prefixes also match _Skeleton/_PhysicsAsset.
+   new.append(replacements.get(value,value))
   encoded=batch(new);assert len(encoded)==end-at;b[at:end]=encoded
  # Only the renamed private material public object hash changes, not mesh export name.
  oldname='MI_Character_Male01_Buz_Apparel01';newname='MI_Character_Male01_Wng_Apparel01';oh,nh=H(oldname),H(newname)
@@ -52,6 +52,8 @@ for state,namespace in [('deployed','_BzWExt0'),('retracted','_BzWRet0')]:
  assert b[profile['material_start']:start]==original[profile['material_start']:start] and b[start+len(lod):]==original[end:]
  newpkg=oldpkg.replace('/_Augusta/','/'+namespace+'/')
  raw=clone_header(bytes(b),{oldpkg:newpkg,oldmi:newmi,'MI_Character_Male01_Buz_Apparel01':'MI_Character_Male01_Wng_Apparel01'})
+ original_imports,_=names(original,s[12]);new_imports,_=names(raw,s[12]);assert new_imports==[newmi if value==oldmi else value for value in original_imports],'Unrelated skeleton/physics/game dependency renamed'
+ assert oldpkg+'_Skeleton' in new_imports and oldpkg+'_w_BackPack_PhysicsAsset' in new_imports
  cid=H(newpkg).to_bytes(8,'little').hex()+'00000001';(out/'chunks'/cid).write_bytes(raw);paths[cid]='../../../Augusta/Content/'+newpkg.removeprefix('/Game/')+'.uasset'
  reports.append({'state':state,'asset':newpkg+'.SK_Male_Teen_01','chunk':cid,'vertices':manifest['output_vertices'],'triangles':manifest['triangles'],'root_only':True,'lod_count':1,'skeleton_and_native_tail_preserved':True,'source_sha256':profile['source_sha256'],'sha256':hashlib.sha256(raw).hexdigest()})
 # Select ONLY the new private MI + four textures/bulk streams from the proven template clone.

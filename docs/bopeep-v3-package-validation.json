@@ -1,0 +1,33 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "meshes": [
+    {
+      "chunk": "5bf07aadb2b863d000000001",
+      "vertices": 5134,
+      "triangles": 6415,
+      "lods": 4,
+      "positions_indices_weights_UVs_exact": true,
+      "original_192_bone_table_exact": true,
+      "head_slot3_body_slot0_private_material_preserved": true
+    },
+    {
+      "chunk": "2ee2517f02d2199900000001",
+      "vertices": 5134,
+      "triangles": 6415,
+      "lods": 4,
+      "positions_indices_weights_UVs_exact": true,
+      "original_192_bone_table_exact": true,
+      "head_slot3_body_slot0_private_material_preserved": true
+    }
+  ],
+  "source_to_cooked": "New intended geometry verified; no added cooking distortion",
+  "source_cape_plate": "Disconnected56-vertex44-triangle helper plate excluded; retained in Blender",
+  "retained_triangles_UVs_weights_joint_ids_and_FP_assignments_exact": true,
+  "only_changed_chunks": [
+    "2ee2517f02d2199900000001",
+    "5bf07aadb2b863d000000001"
+  ],
+  "other_texture_material_hair_shader_chunks_byte_exact": 14,
+  "animations_physics_camera_or_skeleton_changed": false,
+  "runtime": "NOT TESTED; hunched native idle/sitting stance still requires gameplay comparison"
+}
