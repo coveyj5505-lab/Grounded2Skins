@@ -1,0 +1,31 @@
+{
+  "status": "BAKED_VISUAL_CANDIDATE",
+  "parts": [
+    {
+      "part": "body",
+      "triangles": 19788,
+      "Blender_evaluated_max_position_error_m": 3.717202385900009e-07,
+      "rest_correspondence_error_m": 1.3360303752049072e-07,
+      "min_skin_Jacobian_determinant": 0.786788445538207
+    },
+    {
+      "part": "wings",
+      "triangles": 328,
+      "mapping": "Existing atlas chest-local deployed geometry transformed by the flight chest pose"
+    }
+  ],
+  "render_input_vertices": 19239,
+  "triangles": 20116,
+  "atlas": "Private4096x4096; body left half, wing right half; matching UV remap; original eight textures and released textures unchanged",
+  "body_atlas_source_sha256": "5a88c71915eb4c47663b92381a1ee960280f3b3a2d0aec8bad5f65f32281747a",
+  "wing_atlas_source_sha256": "6db3fa2faeed9774319beb2767554a0edbc4f2a36bfbe13bec6a809c8f2b58d6",
+  "weights": "Independent root0 only; never run player animation on this visual",
+  "original_body_and_runtime_changes": false,
+  "implementation_scope": "Proposed TP-only gliding visual swap, no actor/camera transform changes",
+  "limitations": [
+    "Static flying pose while visible; no flight limb animation",
+    "Body and wing atlas horizontal texel resolution halved; geometry and color proportions preserved",
+    "Requires a separate runtime adapter; not included in v0.3",
+    "Original tuft visual remains until a separate verified visual-only hide"
+  ]
+}

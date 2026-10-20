@@ -1,0 +1,20 @@
+{
+  "status": "PASS_OFFLINE",
+  "private_decoded_cooked_atlas": true,
+  "samples": [
+    {
+      "part": "body",
+      "triangle_center_samples": 3298,
+      "mean_abs_RGB_error_vs_correct_original_atlas": 1.9904992925005054,
+      "UV_half": 0
+    },
+    {
+      "part": "wings",
+      "triangle_center_samples": 328,
+      "mean_abs_RGB_error_vs_correct_original_atlas": 2.5396341463414633,
+      "UV_half": 0.5
+    }
+  ],
+  "original_atlases_untouched": true,
+  "compromise": "Horizontal resolution halved in flight-only private atlas; original playable body unchanged"
+}

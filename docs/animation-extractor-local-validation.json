@@ -1,0 +1,13 @@
+{
+  "status": "PASS_LOCAL_CONTAINER_ONLY",
+  "actual_container_dependency_extraction": {
+    "packages": 5,
+    "chunks": 9,
+    "decoded_bytes": 56933480,
+    "all_payloads_exact_to_independent_unpacked_source": true
+  },
+  "missing_exact_target_reported_without_guessing": true,
+  "budget_failure_retains_usable_partial_evidence": true,
+  "input_file_size_and_mtime_unchanged_all_cases": true,
+  "actual_current_build_spear_montage": "NOT AVAILABLE; extractor prepared, no new Windows action requested"
+}

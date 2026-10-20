@@ -45,6 +45,7 @@ for s,k in [('l',1),('r',-1)]:
  aim(s+'_upperArm_JNT',s+'_lowerArm_JNT',(k*.38,-1,-.02));aim(s+'_lowerArm_JNT',s+'_wrist_JNT',(k*.04,-1,.08))
 flight=np.array([p.matrix[:] for p in arm.pose.bones]);evaluated=body.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=evaluated.to_mesh();p=np.array([v.co[:] for v in mesh.vertices]);evaluated.to_mesh_clear();assert np.isfinite(p).all();center=(p.min(0)+p.max(0))/2
 render('flight-quarter',(3,-5,3),center);render('flight-side',(5,0,1.8),center)
+np.savez_compressed(out/'rest-and-evaluated.npz',rest=rest,bone_names=np.array([b.name for b in arm.data.bones]),source_rest=original_positions,source_evaluated=p)
 np.savez_compressed(out/'pose-targets.npz',standing=standing,flight=flight,bone_names=np.array([b.name for b in arm.data.bones]));bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(out/'Buzz-Flight-Visual-Candidate.blend'),compress=True)
 assert np.array_equal(rest,np.array([b.matrix_local[:] for b in arm.data.bones]));assert np.array_equal(original_positions,np.array([v.co[:] for v in body.data.vertices]));assert np.array_equal(original_uv,np.array([v.uv[:] for v in body.data.uv_layers.active.data]));assert weights==[[(g.group,g.weight) for g in v.groups] for v in body.data.vertices]
 reset();assert all(np.max(abs(np.array(p.matrix_basis)-np.eye(4)))<1e-6 for p in arm.pose.bones)

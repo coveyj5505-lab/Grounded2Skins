@@ -1,0 +1,38 @@
+{
+  "status": "PASS_OFFLINE_CANDIDATE_ONLY",
+  "asset": "/Game/_BzFlit1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+  "actual_path_and_export_verified": true,
+  "render_vertices": 19239,
+  "triangles": 20116,
+  "lods": 4,
+  "root0_only": true,
+  "reference_bones": 192,
+  "all_native_streams_match_intended_encoding": true,
+  "private_material": "/Game/_BzFMat1/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
+  "actual_material_texture_public_export_hashes_resolved": [
+    {
+      "parameter": "Albedo",
+      "texture": "/Game/_BzFMat1/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_C"
+    },
+    {
+      "parameter": "Normal",
+      "texture": "/Game/_BzFMat1/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_N"
+    },
+    {
+      "parameter": "RMA",
+      "texture": "/Game/_BzFMat1/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_RMA"
+    },
+    {
+      "parameter": "SSSMask",
+      "texture": "/Game/_BzFMat1/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_SSS"
+    }
+  ],
+  "fresh_texture_mips_exact": 50,
+  "private_albedo_mips_independently_hash_checked": 13,
+  "other_texture_mips_exact_to_validated_wings": 37,
+  "combined_atlas_BC3_RGB_mean_error": 1.3457303643226624,
+  "body_UVs_left_half_wing_UVs_right_half": true,
+  "legacy_native_payloads_exact": 6,
+  "runtime": "No runtime adapter installed or tested; this is not a playable flight feature",
+  "v03_released_files_modified": false
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_MOCKED_LUA_NOT_UNREAL",
+  "groups": 10,
+  "checks": [
+    "disabled development default makes no native changes",
+    "standing leaves manual wings and native body alone",
+    "glide creates hidden proxy before suppression and restores on landing",
+    "first-person switch restores original presentation and tick policy",
+    "asset-load failure never hides native source",
+    "unknown glide restores active visual safely",
+    "source tick setter failure aborts before native suppression",
+    "wrong source tick property type fails safely",
+    "wrong character receives no flight visual",
+    "missing native function signature rejects before creation"
+  ],
+  "default": "DISABLED, no default hotkey, no enabled.txt, not installed or in v0.3",
+  "runtime": "NOT TESTED; live property/function validation still required"
+}

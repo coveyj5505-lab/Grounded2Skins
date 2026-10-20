@@ -1,0 +1,49 @@
+{
+  "v03": {
+    "state": "FROZEN_WINDOWS_TEST_PENDING",
+    "sha256": "57b5d3f858326fc7ed8df9ef7c1be5f6f5a7187fea533b5ab1ab30d3f2b42511",
+    "all_original_runtime_file_hashes_reverified": true
+  },
+  "Woody": {
+    "state": "SEPARATE_TEST_RELEASE_OFFLINE_VALIDATED_WINDOWS_PENDING",
+    "file": "Woody-Boots-Ring-V2-Test.zip",
+    "sha256": "4f973e2e15a67181e7ae8e4af77229163677869c6ad5ed263729c0380166101d",
+    "published_commit": "6e924c1ee5a4b8829558353ac5362ea4b0709214",
+    "public_bytes_verified": true
+  },
+  "Buzz_flight": {
+    "state": "ISOLATED_DEVELOPMENT_CANDIDATE_NOT_INSTALLED",
+    "pose": "Forward pitch65deg, neck counterpitch55deg, arms forward",
+    "native_asset": "PASS_OFFLINE_CANDIDATE_ONLY",
+    "full_body_plus_wings": true,
+    "private_material_namespace": "/Game/_BzFMat1",
+    "atlas_layout_corrected_after_rejected_first_preview": true,
+    "controller_Lua_test_groups": 15,
+    "adapter_Lua_test_groups": 10,
+    "adapter_default_enabled": false,
+    "default_key": null,
+    "native_Windows_runtime_tested": false,
+    "remaining": [
+      "Actual UE4SS load/native tick-policy access and visual restoration",
+      "User acceptance of static TP flight silhouette and FP isolation",
+      "Tuft visual still present",
+      "Integration only after v0.3 Windows results"
+    ],
+    "staged_package_files": {
+      "zBuzzFlightDev_P.ucas": "99051b8fac518c7bc6d8dd3b04e79f131373cc36edd47d50ab595fefea4e665b",
+      "zBuzzFlightDev_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+      "zBuzzFlightDev_P.utoc": "246354cd357728f0054e51605ed0f42a10dbf94854f9ac41493d9c7158eb4133"
+    }
+  },
+  "BoPeep_spear": {
+    "state": "TARGETED_ASSET_DEPENDENCY_EXTRACTOR_PREPARED",
+    "existing_native_montage_path_already_verified": true,
+    "notifies_and_tracks_available_locally": false,
+    "new_gameplay_test_requested": false
+  },
+  "cape": {
+    "state": "SMALL_COVER_OFFSET_CANDIDATE_REJECTED",
+    "reason": "No clear improvement; original skin/lower cape and v0.3 left unchanged"
+  },
+  "Jessie": "UNCHANGED"
+}
