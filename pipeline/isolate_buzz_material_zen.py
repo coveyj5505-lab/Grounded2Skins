@@ -8,8 +8,8 @@ import argparse,json,struct,hashlib,shutil
 from pathlib import Path
 from cityhash import CityHash64
 from compare_stock_max import names
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('atlas_raw',type=Path);p.add_argument('stock_mi_chunk',type=Path);p.add_argument('new_output',type=Path);a=p.parse_args();assert not a.new_output.exists();(a.new_output/'chunks').mkdir(parents=True)
-base='/Game/_Augusta/Art/Characters/Player_Male01/Textures/';leafs=['MI_Character_Male01_Max_Apparel01']+['T_Max_Apparel_01_'+s for s in ['C','N','RMA','SSS']];paths={base+n:(base+n).replace('/_Augusta/','/_BuzzMod/').replace('_Max_','_Buz_') for n in leafs};shorts={n:n.replace('_Max_','_Buz_') for n in leafs};repl={**paths,**shorts}
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('atlas_raw',type=Path);p.add_argument('stock_mi_chunk',type=Path);p.add_argument('new_output',type=Path);p.add_argument('--namespace',default='_BuzzMod');p.add_argument('--character-tag',default='Buz');a=p.parse_args();assert len(a.namespace)==8 and a.namespace.startswith('_') and a.namespace.replace('_','').isalnum() and len(a.character_tag)==3 and a.character_tag.isalnum();assert not a.new_output.exists();(a.new_output/'chunks').mkdir(parents=True)
+base='/Game/_Augusta/Art/Characters/Player_Male01/Textures/';leafs=['MI_Character_Male01_Max_Apparel01']+['T_Max_Apparel_01_'+s for s in ['C','N','RMA','SSS']];paths={base+n:(base+n).replace('/_Augusta/','/'+a.namespace+'/').replace('_Max_','_'+a.character_tag+'_') for n in leafs};shorts={n:n.replace('_Max_','_'+a.character_tag+'_') for n in leafs};repl={**paths,**shorts}
 pkg_hash=lambda s:CityHash64(s.lower().encode('utf-16-le'));obj_hash=lambda s:CityHash64(s.lower().encode('utf-16-le'))
 ids={pkg_hash(k):pkg_hash(v) for k,v in paths.items()};hashes={obj_hash(k):obj_hash(v) for k,v in shorts.items()}
 def patch_batch(b,pos):

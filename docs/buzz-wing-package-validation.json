@@ -1,0 +1,50 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "meshes": [
+    {
+      "state": "retracted",
+      "vertices": 818,
+      "triangles": 328,
+      "asset": "/Game/_BzWRet0/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01",
+      "material": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
+      "native_positions_indices_weights_UVs": "Exact intended encoding",
+      "230_bone_reference_exact": true,
+      "atlas_UVs_independently_reconstructed": true
+    },
+    {
+      "state": "deployed",
+      "vertices": 826,
+      "triangles": 328,
+      "asset": "/Game/_BzWExt0/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01",
+      "material": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
+      "native_positions_indices_weights_UVs": "Exact intended encoding",
+      "230_bone_reference_exact": true,
+      "atlas_UVs_independently_reconstructed": true
+    }
+  ],
+  "material_bindings": [
+    {
+      "parameter": "Albedo",
+      "texture": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_C"
+    },
+    {
+      "parameter": "Normal",
+      "texture": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_N"
+    },
+    {
+      "parameter": "RMA",
+      "texture": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_RMA"
+    },
+    {
+      "parameter": "SSSMask",
+      "texture": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/T_Wng_Apparel_01_SSS"
+    }
+  ],
+  "private_packages": 7,
+  "texture_mips_readback_hash_checked": 50,
+  "independent_BC3_mean_absolute_error": 1.1749255458513896,
+  "flat_normal_map_all_mips": "RG128 constant; no stripe regression",
+  "game_body_or_BoPeep_packages_overridden": false,
+  "runtime": "Not yet tested in Windows",
+  "retoc_legacy_assets_converted": 7
+}

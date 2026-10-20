@@ -4,7 +4,7 @@ import argparse,hashlib,json,os,shutil,struct,subprocess
 from pathlib import Path
 from compare_stock_max import names
 from extract_reference_skeleton import extract
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',type=Path);p.add_argument('package_work',type=Path);p.add_argument('--global-input',type=Path,default=Path('/workspace/mod-work/global-stage/input'));a=p.parse_args();stage=a.stage.resolve();pack=a.package_work.resolve();pipeline=Path(__file__).resolve().parent
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',type=Path);p.add_argument('package_work',type=Path);p.add_argument('--global-input',type=Path,default=Path('/workspace/mod-work/global-stage/input'));p.add_argument('--texture-prefix',default='T_Buz');a=p.parse_args();stage=a.stage.resolve();pack=a.package_work.resolve();pipeline=Path(__file__).resolve().parent
 for n,t in {'final-unpacked':pack/'unpacked','final-package':pack/'mod'}.items():assert not (stage/n).exists();(stage/n).symlink_to(t,target_is_directory=True)
 manifest=json.loads((stage/'final-unpacked/manifest.json').read_text());metadata=[];skeletons=[]
 for cid,path in manifest['chunk_paths'].items():
@@ -24,6 +24,6 @@ for i,m in enumerate([m for m in metadata if m['path'].endswith(('SK_Male_Teen_0
 li=stage/'final-legacy-input';li.mkdir()
 for f in list((stage/'final-package').iterdir())+list(a.global_input.glob('global.*')):shutil.copyfile(f,li/f.name)
 run('final-readback-legacy',['/workspace/mod-work/bin/retoc','to-legacy',li,stage/'final-readback-legacy','--no-shaders','--no-script-objects','--no-parallel','--verbose'])
-for f in (stage/'final-readback-legacy').rglob('T_Buz*.uasset'):
+for f in (stage/'final-readback-legacy').rglob(a.texture_prefix+'*.uasset'):
  run(f.stem+'-mip-readback',[dotnet,pipeline/'texture-probe/bin/Release/net10.0/TextureProbe.dll',f.with_suffix(''),stage/('final-mips-'+f.stem)])
 print('Fresh native mesh and texture readbacks complete')

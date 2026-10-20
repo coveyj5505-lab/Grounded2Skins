@@ -1,0 +1,28 @@
+{
+  "source_log_sha256": "306e33cd3d223ef8962fa76838af76d19d381776cb919738d3b53591ccc8a344",
+  "build": "crook v0.1.3",
+  "Windows_result": "USER CONFIRMED VISIBLE THIRD-PERSON ACCESSORY",
+  "milestones": [
+    "[2026-10-19 18:57:38.6345675] [Lua] [BoPeepCrook] MILESTONE 1/6 PACKAGE/OBJECT REQUEST /Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01 (matches cooked package/export offline; runtime load pending)",
+    "[2026-10-19 18:57:38.6351308] [Lua] [BoPeepCrook] MILESTONE 2/6 MESH LOADED SkeletalMesh /Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+    "[2026-10-19 18:57:38.6353337] [Lua] [BoPeepCrook] MILESTONE 3/6 COMPONENT CREATED SkeletalMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalPlayerCharacter_Female_C_2147480119.SkeletalMeshComponent_2147321943",
+    "[2026-10-19 18:57:38.6361128] [Lua] [BoPeepCrook] MILESTONE 4/6 ATTACH CALL SUCCEEDED parent=SkeletalMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalPlayerCharacter_Female_C_2147480119.CharacterMesh0; bone=r_hand_JNT",
+    "[2026-10-19 18:57:38.6367209] [Lua] [BoPeepCrook] MILESTONE 5/6 VISIBILITY ENABLED (IsVisible=true); both actual hand slots empty",
+    "[2026-10-19 18:57:38.6367458] [Lua] [BoPeepCrook] MILESTONE 6/6 RESULT SUCCESS: asset=/Game/_BoCrook/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01; component=SkeletalMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalPlayerCharacter_Female_C_2147480119.SkeletalMeshComponent_2147321943; bone=r_hand_JNT; visible=true; main=NONE; off=NONE; rendered appearance awaits user inspection",
+    "[2026-10-19 18:58:03.7000376] [Lua] [BoPeepCrook] MILESTONE 5/6 VISIBILITY ENABLED (IsVisible=true); both actual hand slots empty",
+    "[2026-10-19 18:58:07.1592289] [Lua] [BoPeepCrook] MILESTONE 5/6 VISIBILITY ENABLED (IsVisible=true); both actual hand slots empty"
+  ],
+  "confirmed": [
+    "Private direct soft loading",
+    "Independent component creation",
+    "Attachment to CharacterMesh0 r_hand_JNT",
+    "Visible result in user screenshots"
+  ],
+  "issues": [
+    "Grip/angle offset",
+    "Not visible in first-person despite no flag change on view switch",
+    "Bottom end leads existing punch",
+    "Bo Peep torso/hips/cape shape need independent model audit"
+  ],
+  "scope": "Do not describe FP or spear animations as working. Do not rebuild proven loading/attachment."
+}

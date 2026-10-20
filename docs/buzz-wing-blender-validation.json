@@ -1,0 +1,26 @@
+{
+  "fresh_reopen": true,
+  "body_and_all_preserved_objects_exact": true,
+  "original_source_file_sha256_matches": true,
+  "native_bones_unchanged": 230,
+  "pose_checks": [
+    {
+      "chest_rotation_degrees": 0,
+      "max_rigid_deformation_error_m": 0
+    },
+    {
+      "chest_rotation_degrees": 25,
+      "max_rigid_deformation_error_m": 1.228781230931777e-07
+    },
+    {
+      "chest_rotation_degrees": -25,
+      "max_rigid_deformation_error_m": 1.2731557704981462e-07
+    },
+    {
+      "chest_rotation_degrees": 45,
+      "max_rigid_deformation_error_m": 1.3328003749250113e-07
+    }
+  ],
+  "stored_occlusion_all_8_views": true,
+  "scope": "Sampled rest-view occlusion and synthetic rigid chest poses; not native game animations, collision, FP visibility or runtime load proof"
+}

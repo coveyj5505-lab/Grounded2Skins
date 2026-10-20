@@ -1,0 +1,22 @@
+{
+  "file": "Buzz-Wings-First-Test.zip",
+  "bytes": 2955242,
+  "sha256": "9af21f74125d27069962cdc77ca779b080befbc436b395b5600b7247558789e2",
+  "runtime": "WINDOWS NOT TESTED",
+  "toggle": "F6",
+  "hand_equipment_not_modified": true,
+  "gliding_physics_not_modified": true,
+  "private_asset_prefixes": [
+    "_BzWing0",
+    "_BzWRet0",
+    "_BzWExt0"
+  ],
+  "local_client_only": true,
+  "files": {
+    "Paks/zBuzzWings_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBuzzWings_P.utoc": "3c2b10f3d51c5c5e3b75d83a55e9d7426269b91f18eb4d140aae684434000f64",
+    "Paks/zBuzzWings_P.ucas": "aa12068fa627fe2784e7b6d6312fb6457504ae5b74b8f86ead1450b5576a6520",
+    "BuzzWings/enabled.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "BuzzWings/Scripts/main.lua": "aceaf65f516daf9cf4b2dbe398614a21e9a6dfedf8358e8fcd87b38884a7e8d8"
+  }
+}

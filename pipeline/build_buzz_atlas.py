@@ -5,19 +5,19 @@ No new shader or game skeleton. Source Blender and its eight material slots stay
 untouched. Repeat UV islands remain continuous (no modulo applied to vertices).
 Native UV V runs down the PNG, with tangent handedness adjusted accordingly.
 """
-import sys,json,hashlib
+import sys,json,hashlib,argparse
 from pathlib import Path
 import numpy as np
 from PIL import Image
 from native_buffers import validate,skeleton_signature
-geometry,images,reference,out=map(Path,sys.argv[1:]);out.mkdir(exist_ok=False)
+parser=argparse.ArgumentParser();parser.add_argument('geometry',type=Path);parser.add_argument('images',type=Path);parser.add_argument('reference',type=Path);parser.add_argument('out',type=Path);parser.add_argument('--max-repeat',type=int,default=4);args=parser.parse_args();geometry,images,reference,out=args.geometry,args.images,args.reference,args.out;assert 1<=args.max_repeat<=32;out.mkdir(exist_ok=False)
 d={k:v.copy() for k,v in np.load(geometry).items()};sources=json.loads((images/'materials.json').read_text());assert len(sources)==8
 size=4096;cols=4;rows=2;cw=size//cols;ch=size//rows;gutter=16
 atlas=Image.new('RGBA',(size,size));records=[];new={k:[] for k in ['positions','normals','tangents','signs','colors','uv0','joints','weights','source_vertices']};triangles=[];source_materials=[];base=0
 for item in sources:
  slot=item['material_slot'];selected=np.flatnonzero(d['materials']==slot);oldtri=d['indices'][selected];used,inverse=np.unique(oldtri,return_inverse=True)
  uv=d['uv0'][used] if len(used) else np.array([[0.,0.],[1.,1.]])
- lower=np.floor(uv.min(0));upper=np.ceil(uv.max(0));upper=np.maximum(upper,lower+1);repeat=(upper-lower).astype(int);assert np.all(repeat<=4)
+ lower=np.floor(uv.min(0));upper=np.ceil(uv.max(0));upper=np.maximum(upper,lower+1);repeat=(upper-lower).astype(int);assert np.all(repeat<=args.max_repeat)
  im=Image.open(images/item['file']).convert('RGBA');assert im.getextrema()[3]==(255,255)
  pattern=Image.new('RGBA',(im.width*int(repeat[0]),im.height*int(repeat[1])))
  for y in range(repeat[1]):
