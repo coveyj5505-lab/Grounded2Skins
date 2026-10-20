@@ -1,0 +1,24 @@
+{
+  "status": "PASS_OFFLINE",
+  "synthetic_FK_not_extracted_game_clips": true,
+  "poses": [
+    {
+      "pose": "standing",
+      "finite": true,
+      "ring_rigid_distance_max_error_m": 2.2326912318959558e-08,
+      "boot_tabs_have_single_leg_ownership": true
+    },
+    {
+      "pose": "sitting",
+      "finite": true,
+      "ring_rigid_distance_max_error_m": 2.2326912318959558e-08,
+      "boot_tabs_have_single_leg_ownership": true
+    },
+    {
+      "pose": "running",
+      "finite": true,
+      "ring_rigid_distance_max_error_m": 2.2326912318959558e-08,
+      "boot_tabs_have_single_leg_ownership": true
+    }
+  ]
+}

@@ -27,13 +27,22 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 - [ ] Windows: confirm automatic startup, arm silhouette, FP grip/TP shaft contact, equipment transitions, jab, cape and wing load/deploy/retract.
 - [ ] Windows: verify no duplicate first-person hand and acceptable view switching. Current runtime cosmetics are local-client only.
 
+## Independent development while v0.3 is frozen
+
+- [x] Separate woody-polish-next branch; released v0.3 ZIP and runtime hashes recorded and preserved.
+- [x] Woody: source-weight comparison found 72 cross-leg boot-tab assignments; corrected ownership and tucked complete inner tabs toward their own cuffs.
+- [x] Woody: original circular source ring restored with uniform scale; rigid spine3 weighting retained. No source geometry deleted.
+- [x] Woody: standing/running/sitting FK checks and independent main/backpack cooked read-back passed; 19 other chunks unchanged. Separate Woody-Boots-Ring-V2-Test.zip prepared; Windows confirmation pending.
+- [x] Buzz: offline forward-flight target prepared with extended wings; source geometry/rest/weights unchanged, reset checked. Runtime adapter still pending.
+- [x] Bo Peep: spear-animation safety assessment updated against concrete attack/notify classes; exact recorded montage retained. Current-build montage tracks/notifies still require asset inspection. No new gameplay test requested.
+
 ## Next iterations, without delaying current test
 
 - [ ] Buzz: convincing forward flying visual pose only while actually gliding; manually deployed standing wings must not enable it. Preserve vanilla controls/camera/physics. Current test retains the upright native glide animation.
 - [ ] Bo Peep: native spear montage substitution, if it can preserve gameplay execution/notifies safely. Cosmetic jab is the simpler current alternative.
 - [ ] Bo Peep: finish remaining small upper-collar artifact and adjust any grip offsets from actual screenshots.
 - [ ] Accessories: interaction clipping and multiplayer visibility after basic states work; avoid broad probes.
-- [ ] Woody: remove tied-together-looking boot geometry and restore circular pull-string ring, incrementally.
+- [ ] Woody: Windows confirmation of the separate boot-tab and circular-ring correction.
 - [ ] Later only: tuft visual hiding, smooth wing deployment, crook/parasol glider. No need for these to perfect the current models.
 
 ## Stop point

@@ -1,0 +1,19 @@
+{
+  "status": "OFFLINE_VISUAL_CANDIDATE_ONLY",
+  "native_glide_clip_available": false,
+  "body_geometry_UVs_weights_rest_preserved": true,
+  "native_bones": 230,
+  "standing_manual_wings_no_flight_pose": true,
+  "flight_body_forward_pitch_degrees": 65,
+  "flight_neck_counter_pitch_degrees": 55,
+  "arms": "Forward with slight outward clearance",
+  "original_wings_reused": true,
+  "landing_reset_verified_offline": true,
+  "runtime_adapter_implemented": false,
+  "released_v03_modified": false,
+  "limitations": [
+    "Synthetic pose, not the actual running game glide animation",
+    "Runtime cosmetic pose layer, first-person isolation and wing attachment must be validated before shipping",
+    "No actor/camera/movement transforms may be used to implement this target"
+  ]
+}

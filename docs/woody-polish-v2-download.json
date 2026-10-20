@@ -1,0 +1,32 @@
+{
+  "file": "Woody-Boots-Ring-V2-Test.zip",
+  "bytes": 11764939,
+  "sha256": "4f973e2e15a67181e7ae8e4af77229163677869c6ad5ed263729c0380166101d",
+  "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+  "files": {
+    "Paks/zWoodyPolishV2_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zWoodyPolishV2_P.utoc": "43e5a1f7451e6f802ecd7c59f80f3ca67cbb136cc70f42dd677b76470b130d3b",
+    "Paks/zWoodyPolishV2_P.ucas": "02fe1b636f5964c5efe1a232f2696b7c701521197d136576ed56b0982c1ae7aa"
+  },
+  "changes": "Woody main/backpack boot-tabs and pull-string ring only",
+  "original_FP_head_body_sections_preserved": true,
+  "other_characters_or_runtime_changes": false,
+  "frozen_v03_verified": {
+    "ToyStory-Buzz-BoPeep-Test-v0.3.zip": "57b5d3f858326fc7ed8df9ef7c1be5f6f5a7187fea533b5ab1ab30d3f2b42511",
+    "runtime/ToyStoryDiscoveryV3/Scripts/main.lua": "1a132e1a42fa94f85d30acc73cf9b6cefc9f3007a59486bf6f9749cc3ec19983",
+    "runtime/ToyStoryDiscoveryV4/Scripts/main.lua": "96e5b0a442d0d4a1ea2fcf00f8cb0a59391e6059a2d04f035bd9832b037dc784",
+    "runtime/ToyStoryObjectAccess/Scripts/main.lua": "f1365f766fb855d34b9543d340f5f3204185f459f17ca95b9b80ef4f9aea3e07",
+    "runtime/ToyStoryAccessoryCheck/Scripts/main.lua": "dea41073f0a071dc00e2a3cec4dc3973365f30c07849385e88d20ff3d530d0cc",
+    "runtime/ToyStoryDiscoveryV2/Scripts/main.lua": "e43df210b1787992bdbd72ee29d9e4e567c9a79a714d7ec25e308cd51fb3cf9e",
+    "runtime/ToyStoryDiscovery/Scripts/main.lua": "c91e7577ba22d5e4e144ef0dd3c4410947658e52d30806fc7340dc84e82f9280",
+    "runtime/BoPeepCrook/Scripts/main.lua": "c40f20a88f43c73591fef527c1a9ae1aafcabe3b5f90e2c904886d33d5e20078",
+    "runtime/BuzzWings/Scripts/main.lua": "ab712a0e0901da58af30379a65fcbe3a604cacd35d23ee0e8a74979c638f38bd",
+    "runtime/BuzzWings/Scripts/wing_config.lua": "67ec5c0370ae1b780ab404ab3c1b64fcf833640ded11d81dd1ab09a6097a26d5"
+  },
+  "install": "Game closed: move previous zWoodyFP_P trio outside Paks; copy new three files into Augusta/Content/Paks. Keep other characters and v0.3 accessories. Do not leave other Pete replacement trios enabled. Roll back by removing new trio and restoring old one.",
+  "limitations": [
+    "Windows validation pending",
+    "Character-select mesh retains previous geometry",
+    "Original animation, rigid hand policy, cloth and material limitations unchanged"
+  ]
+}

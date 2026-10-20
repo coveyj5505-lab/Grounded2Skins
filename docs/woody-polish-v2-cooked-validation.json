@@ -1,0 +1,31 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "meshes": [
+    {
+      "chunk": "b0baaf49556b7e2200000001",
+      "vertices": 32601,
+      "triangles": 54801,
+      "lods": 4,
+      "fresh_positions_indices_UVs_weights_joints_exact": true,
+      "normals_quantization_tolerance": 0.008,
+      "original_materials_and_reference_bones_exact": true,
+      "legacy_payload_exact": true
+    },
+    {
+      "chunk": "69965555c28c2aae00000001",
+      "vertices": 32601,
+      "triangles": 54801,
+      "lods": 4,
+      "fresh_positions_indices_UVs_weights_joints_exact": true,
+      "normals_quantization_tolerance": 0.008,
+      "original_materials_and_reference_bones_exact": true,
+      "legacy_payload_exact": true
+    }
+  ],
+  "only_changed_chunks": [
+    "69965555c28c2aae00000001",
+    "b0baaf49556b7e2200000001"
+  ],
+  "other_chunks_byte_exact": 19,
+  "runtime": "PENDING Windows; no UObject runtime load or animation claim"
+}

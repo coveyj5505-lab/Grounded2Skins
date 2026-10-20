@@ -1,0 +1,14 @@
+{
+  "status": "BUILT_INDEPENDENT_READBACK_PENDING",
+  "main_and_backpack_meshes_changed": 2,
+  "source_triangles": 54801,
+  "head_slot_3_triangle_mask_exact": true,
+  "head_triangles": 28606,
+  "all_original_triangle_source_IDs_and_UVs_exact": true,
+  "unchanged_position_corner_count": 161787,
+  "unchanged_weight_corner_count": 164007,
+  "all_other_positive_weight_bone_assignments_exact": true,
+  "textures_and_materials_not_rebuilt": true,
+  "frozen_combined_v03_not_modified": true,
+  "runtime": "NOT TESTED"
+}
