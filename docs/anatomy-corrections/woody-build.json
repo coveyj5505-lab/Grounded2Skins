@@ -1,0 +1,12 @@
+{
+  "status": "BUILT_READBACK_PENDING",
+  "meshes_changed": 2,
+  "source_triangles": 54801,
+  "FP_head_slot_3_triangle_mask_exact": true,
+  "source_topology_UVs_colors_exact": true,
+  "unchanged_position_corners": 141178,
+  "unchanged_weight_corners": 153712,
+  "native_skeleton_reference_unchanged": true,
+  "textures_materials_and_other_19_chunks_not_rebuilt": true,
+  "runtime": "NOT TESTED"
+}

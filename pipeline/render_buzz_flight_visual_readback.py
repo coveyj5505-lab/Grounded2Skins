@@ -13,6 +13,6 @@ s=bpy.context.scene;s.render.engine='CYCLES';s.cycles.device='CPU';s.cycles.samp
 for loc,power in [((3,-4,5),400),((-3,-1,3),280),((1,3,4),280)]:
  bpy.ops.object.light_add(type='AREA',location=loc);l=bpy.context.object;l.data.energy=power;l.data.size=4;l.rotation_euler=(center-l.location).to_track_quat('-Z','Y').to_euler()
 bpy.ops.object.camera_add();cam=bpy.context.object;s.camera=cam;cam.data.type='ORTHO';cam.data.ortho_scale=3.2
-for name,loc in [('cooked-flight-quarter',(3,-5,3)),('cooked-flight-side',(5,0,1.8))]:
+for name,loc in [('cooked-flight-quarter',(3,-5,3)),('cooked-flight-side',(5,0,1.8)),('cooked-flight-front',(0,-5,1.4)),('cooked-flight-rear',(0,5,2.5))]:
  cam.location=loc;cam.rotation_euler=(center-cam.location).to_track_quat('-Z','Y').to_euler();s.render.filepath=str(out/(name+'.png'));bpy.ops.render.render(write_still=True)
 bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(out/'Buzz-Flight-Actual-Cooked.blend'),compress=True);print('ACTUAL_COOKED_FLIGHT_PREVIEWS_SAVED')

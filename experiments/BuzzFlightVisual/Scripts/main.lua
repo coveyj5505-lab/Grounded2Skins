@@ -1,4 +1,4 @@
--- Isolated rigid wing visual states; no player mesh, equipment, camera or gliding-physics changes.
+-- Isolated third-person flight visual. Native asset data, equipment, camera and physics stay unchanged.
 local function log(s) print('[BuzzFlightVisual] '..s..'\n') end
 local function valid(o)
     if o==nil then return false end
@@ -338,4 +338,4 @@ end)
 if type(cfg.DebugToggleKey)=='string' and Key[cfg.DebugToggleKey] then
     RegisterKeyBind(Key[cfg.DebugToggleKey],function() dispatch(function() enabled=not enabled;if not enabled then controller.stop() end;log('EXPERIMENT ENABLED '..tostring(enabled)) end) end)
 end
-log('Prepared flight visual adapter: enabled='..tostring(enabled)..'; NOT WINDOWS VALIDATED. No default key. Requires private zBuzzFlightDev_P assets. Third-person gliding only; no actor/camera/movement writes. v0.3 untouched.')
+log('Prepared flight visual adapter: enabled='..tostring(enabled)..'; NOT WINDOWS VALIDATED. No default key. Requires private zBuzzFlightTest_P assets. Third-person gliding only; no actor/camera/movement writes. v0.3 untouched.')

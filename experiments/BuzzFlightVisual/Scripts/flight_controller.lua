@@ -52,7 +52,19 @@ function M.new(adapter,asset)
         if self.active and not adapter.valid(self.visual) then
             if not self.stop() then return false,'RESTORATION_PENDING' end
         end
-        if self.active then return true,'FLIGHT_VISUAL' end
+        if self.active then
+            -- The independent wing mod can change its mesh/visibility on the
+            -- same glide transition. Reassert suppression after that update;
+            -- preserve the original rollback snapshot rather than recapturing.
+            local ok,why=pcall(function()
+                for _,entry in ipairs(self.suppressed) do
+                    if adapter.getVisibility(entry.component)~=false then adapter.setVisibility(entry.component,false,'suppress') end
+                end
+                if adapter.getVisibility(self.visual)~=true then adapter.setVisibility(self.visual,true,'visual') end
+            end)
+            if not ok then adapter.log('FLIGHT FALLBACK '..tostring(why));self.stop();return false,'FALLBACK' end
+            return true,'FLIGHT_VISUAL'
+        end
         local ok,why=pcall(function()
             self.owner=snapshot.owner;self.body=snapshot.body
             -- Loading, creation, attachment, collision-off configuration and

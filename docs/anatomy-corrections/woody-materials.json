@@ -1,0 +1,29 @@
+{
+  "status": "PASS_OFFLINE",
+  "fresh_source_vs_cooked_corners": 164403,
+  "max_position_error_m": 7.629394538355427e-08,
+  "preview_normals": "Actual independent CUE4Parse cooked readback",
+  "head_and_body_resolve_same_existing_private_material": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wdy_Apparel01",
+  "material_bindings_public_export_hashes_verified": [
+    {
+      "parameter": "Albedo",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_C"
+    },
+    {
+      "parameter": "Normal",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_N"
+    },
+    {
+      "parameter": "RMA",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_RMA"
+    },
+    {
+      "parameter": "SSSMask",
+      "texture": "/Game/_Woody00/Art/Characters/Player_Male01/Textures/T_Wdy_Apparel_01_SSS"
+    }
+  ],
+  "all_texture_mips_read_back_and_identical_to_original_release": 50,
+  "all_legacy_export_payloads_exact": 17,
+  "native_reference_bones": 188,
+  "runtime": "NOT TESTED"
+}

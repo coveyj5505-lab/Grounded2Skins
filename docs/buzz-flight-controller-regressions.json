@@ -1,11 +1,13 @@
 {
   "status": "PASS_MOCKED_LUA_NOT_UNREAL",
-  "groups": 15,
+  "groups": 17,
   "checks": [
     "manual standing wings never start flight",
     "glide entry and landing restore prior states",
     "first-person entry restores complete native model",
     "manual toggle cannot end actual flight",
+    "concurrent wing visibility is suppressed without replacing rollback state",
+    "suppression refresh failure rolls back native presentation",
     "failed asset load never hides native components",
     "unknown prior visibility aborts before suppression",
     "partial suppression failure restores all previous values",

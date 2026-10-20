@@ -1,10 +1,11 @@
 {
   "status": "PASS_MOCKED_LUA_NOT_UNREAL",
-  "groups": 10,
+  "groups": 11,
   "checks": [
     "disabled development default makes no native changes",
     "standing leaves manual wings and native body alone",
     "glide creates hidden proxy before suppression and restores on landing",
+    "independent wing update cannot leave duplicate upright wings visible",
     "first-person switch restores original presentation and tick policy",
     "asset-load failure never hides native source",
     "unknown glide restores active visual safely",

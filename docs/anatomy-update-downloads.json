@@ -1,0 +1,50 @@
+{
+  "packages": [
+    {
+      "file": "Woody-Pelvis-V3-Test.zip",
+      "bytes": 11758563,
+      "sha256": "196c944d52ee325c552b5c3cf686d4453068989e876bfa3c1ae0105799ba2f34",
+      "files": {
+        "Paks/zWoodyAnatomyV3_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zWoodyAnatomyV3_P.ucas": "a54aadd6c87c8749bb3b26ee29c1d264e7979d3551c4cc423366ac1b5da3fc4d",
+        "Paks/zWoodyAnatomyV3_P.utoc": "f7a9c9cfc9b0363a8666136165da52b55a69a8e43627cedb1b5513787f84f806"
+      },
+      "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+      "requires_UE4SS": false,
+      "install": "Close game, move active older Woody/Pete replacement trio outside Paks, copy these three Paks files into Augusta/Content/Paks. Other characters/accessories unchanged.",
+      "rollback": "Remove zWoodyAnatomyV3_P trio and restore previous Woody trio.",
+      "scope": "Pelvis geometry/weights corrected; V2 boots/ring retained; native 188-bone skeleton, head/body sections, all textures/materials retained. Synthetic pose checks do not replace gameplay confirmation."
+    },
+    {
+      "file": "Buzz-Flight-Pose-V1-Test.zip",
+      "bytes": 3704198,
+      "sha256": "2bba50707dec384c4b16caadd09b7b5a0cd4229d98e36d14118624fa389fcf57",
+      "files": {
+        "Mods/BuzzFlightVisual/Scripts/flight_config.lua": "e08edc9461ac0edbdaa4b92f32960a8a4c4d45bcb955830c3d5088bb0d65b33f",
+        "Mods/BuzzFlightVisual/Scripts/flight_controller.lua": "13563b9864b08f8211db870374dd92d50ecf58b916d62cb0c762cb69bab1d1d4",
+        "Mods/BuzzFlightVisual/Scripts/main.lua": "b8fd1fae9ec360d19bae8a8e4bb985d5789aef9e16d06ffc12c6280e04f14eec",
+        "Paks/zBuzzFlightTest_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zBuzzFlightTest_P.ucas": "75896c95c0b411009d234fb430503b037e36ee76dc7b77f2b973a338964150e9",
+        "Paks/zBuzzFlightTest_P.utoc": "c34f86acd845b92e41ad1674fd628f15a8d206a2b2b9e65ecd96547cce7f6e07"
+      },
+      "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+      "requires_UE4SS": true,
+      "install": "Copy Paks files into Augusta/Content/Paks and Mods/BuzzFlightVisual into the UE4SS Mods folder; add BuzzFlightVisual : 1 to existing mods.txt. Keep v0.3 character and wing/crook files unchanged.",
+      "rollback": "Remove BuzzFlightVisual entry/folder and zBuzzFlightTest_P trio; v0.3 remains untouched.",
+      "scope": "Automatic third-person flight visual only during confirmed IsGliding. First-person/landing restore native render presentation. Static limb pose, original tuft remains, local-client cosmetic only. New runtime paths need Windows validation."
+    }
+  ],
+  "frozen_inputs_sha256": {
+    "ToyStory-Buzz-BoPeep-Test-v0.3.zip": "57b5d3f858326fc7ed8df9ef7c1be5f6f5a7187fea533b5ab1ab30d3f2b42511",
+    "Woody-Boots-Ring-V2-Test.zip": "4f973e2e15a67181e7ae8e4af77229163677869c6ad5ed263729c0380166101d",
+    "runtime/ToyStoryDiscoveryV3/Scripts/main.lua": "1a132e1a42fa94f85d30acc73cf9b6cefc9f3007a59486bf6f9749cc3ec19983",
+    "runtime/ToyStoryDiscoveryV4/Scripts/main.lua": "96e5b0a442d0d4a1ea2fcf00f8cb0a59391e6059a2d04f035bd9832b037dc784",
+    "runtime/ToyStoryObjectAccess/Scripts/main.lua": "f1365f766fb855d34b9543d340f5f3204185f459f17ca95b9b80ef4f9aea3e07",
+    "runtime/ToyStoryAccessoryCheck/Scripts/main.lua": "dea41073f0a071dc00e2a3cec4dc3973365f30c07849385e88d20ff3d530d0cc",
+    "runtime/ToyStoryDiscoveryV2/Scripts/main.lua": "e43df210b1787992bdbd72ee29d9e4e567c9a79a714d7ec25e308cd51fb3cf9e",
+    "runtime/ToyStoryDiscovery/Scripts/main.lua": "c91e7577ba22d5e4e144ef0dd3c4410947658e52d30806fc7340dc84e82f9280",
+    "runtime/BoPeepCrook/Scripts/main.lua": "c40f20a88f43c73591fef527c1a9ae1aafcabe3b5f90e2c904886d33d5e20078",
+    "runtime/BuzzWings/Scripts/main.lua": "ab712a0e0901da58af30379a65fcbe3a604cacd35d23ee0e8a74979c638f38bd",
+    "runtime/BuzzWings/Scripts/wing_config.lua": "67ec5c0370ae1b780ab404ab3c1b64fcf833640ded11d81dd1ab09a6097a26d5"
+  }
+}

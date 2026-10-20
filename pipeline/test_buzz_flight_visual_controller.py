@@ -27,6 +27,8 @@ checks=[
 ('glide entry and landing restore prior states',"assert(c.tick(snapshot(true,false)));assert(not body.visible and not wing.visible and not backup.visible);assert(c.visual.visible);assert(not c.tick(snapshot(false,false)));assert(body.visible and wing.visible and not backup.visible and not c.visual)"),
 ('first-person entry restores complete native model',"c.tick(snapshot(true,false));c.tick(snapshot(true,true));assert(body.visible and wing.visible and not c.visual)"),
 ('manual toggle cannot end actual flight',"local s=snapshot(true,false);assert(c.tick(s));s.manualWingsExtended=true;assert(c.tick(s));s.manualWingsExtended=false;assert(c.tick(s) and n==1)"),
+('concurrent wing visibility is suppressed without replacing rollback state',"c.tick(snapshot(true,false));wing.visible=true;assert(c.tick(snapshot(true,false)));assert(not wing.visible and n==1);c.stop();assert(wing.visible and body.visible and not backup.visible)"),
+('suppression refresh failure rolls back native presentation',"c.tick(snapshot(true,false));wing.visible=true;fail['wing:false']=true;assert(not c.tick(snapshot(true,false)));assert(body.visible and wing.visible and not c.visual)"),
 ('failed asset load never hides native components',"fail.create=true;assert(not c.tick(snapshot(true,false)));assert(body.visible and wing.visible and not c.visual)"),
 ('unknown prior visibility aborts before suppression',"fail.read=true;assert(not c.tick(snapshot(true,false)));assert(body.visible and wing.visible)"),
 ('partial suppression failure restores all previous values',"fail['wing:false']=true;assert(not c.tick(snapshot(true,false)));assert(body.visible and wing.visible and not backup.visible and not c.visual)"),

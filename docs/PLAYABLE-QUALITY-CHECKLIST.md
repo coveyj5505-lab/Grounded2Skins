@@ -32,10 +32,21 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 - [x] Separate woody-polish-next branch; released v0.3 ZIP and runtime hashes recorded and preserved.
 - [x] Woody: source-weight comparison found 72 cross-leg boot-tab assignments; corrected ownership and tucked complete inner tabs toward their own cuffs.
 - [x] Woody: original circular source ring restored with uniform scale; rigid spine3 weighting retained. No source geometry deleted.
-- [x] Woody: standing/running/sitting FK checks and independent main/backpack cooked read-back passed; 19 other chunks unchanged. Separate Woody-Boots-Ring-V2-Test.zip prepared; Windows confirmation pending.
-- [x] Buzz: offline forward-flight target prepared with extended wings; source geometry/rest/weights unchanged, reset checked. Separate full-body/wing asset and disabled runtime-adapter prototype prepared; native Windows validation pending.
+- [x] Woody V2: boot/ring source and native read-back checks passed; 19 other chunks unchanged. User rejected the seated pelvis silhouette; V2 is preserved as fallback, not approved for sitting anatomy.
+- [x] Buzz: first forward-flight target and disabled adapter prepared. User rejected arms near the head; that candidate is superseded, despite passing byte/atlas checks.
 - [x] Buzz: independent flight-visual native read-back and private atlas preparation; 15 controller and 10 adapter Lua test groups passed. Not included in playable releases.
 - [x] Bo Peep: spear-animation safety assessment updated against concrete attack/notify classes; exact recorded montage retained. Current-build montage tracks/notifies still require asset inspection. Exact-path dependency extractor prepared and locally checked; no new gameplay test requested.
+
+## Corrected anatomy tests, Windows pending
+
+- [x] Woody V3: source waist/hip-hinge inversion measured; raise/reweight pelvis and preserve leg length, native skeleton, V2 boots/ring, head/hands, materials and FP split.
+- [x] Woody V3: actual main/backpack readback and all 50 unchanged texture mips checked; standing, running and seated front/side reviewed against rejected old seat silhouette. Synthetic FK is not game animation confirmation.
+- [x] Buzz Flight V1: restore original toy arms with uniform similarity anchored to measured side-armor sockets; torso/head/wings unchanged. Cooked quarter/side views and source front view reviewed.
+- [x] Buzz Flight V1: independent 192-bone root-rigid asset, four LODs, private atlas/material references verified. Optional separate automatic TP-glide adapter with restoration; concurrent wing visibility regression fixed.
+- [x] Controller 17 groups and native-adapter mock 11 groups passed. Tests cover landing, FP switching, wrong pawn, signature/load failures, rollback and independent wing updates. These do not prove Windows engine calls.
+- [ ] Windows: Woody standing/sitting/running and preserved first-person hands/head behavior.
+- [ ] Windows: optional Buzz flight visual load, side-socket arm fit, genuine tuft glide, landing/view-switch restoration, coexistence with v0.3. Static pose, tuft visual retained, local client only.
+- [x] Original v0.3 ZIP/runtime and Woody V2 ZIP remain hash-exact. No Bo Peep or Jessie changes in this correction.
 
 ## Next iterations, without delaying current test
 

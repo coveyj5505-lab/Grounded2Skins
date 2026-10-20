@@ -1,0 +1,15 @@
+{
+  "status": "AUTHORING_CANDIDATE",
+  "cause": "Source pelvis control0.923m is above source leg hinges0.769m, but old fit put pelvis-control geometry at native0.965m below native hinges0.990m. Seat hung0.26m below hinge; thighs entered above seat.",
+  "source_hip_hinge_z_m": 0.7693220376968384,
+  "native_hip_hinge_z_m": 0.9904628098011017,
+  "source_waist_z_m": 0.9233202934265137,
+  "new_waist_z_m": 1.1983604550361633,
+  "old_fit_reproduction_max_error_m": 5.9594369883342324e-08,
+  "geometry_vertices_changed": 4960,
+  "weights_changed": 2207,
+  "upper_pants_cross_side_assignments_corrected": 0,
+  "ring_and_low_boot_vertices_exact_V2": true,
+  "head_hands_skeleton_material_UVs_and_head_split_preserved": true,
+  "runtime": "NOT TESTED"
+}

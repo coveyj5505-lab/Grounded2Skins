@@ -1,0 +1,42 @@
+{
+  "status": "PASS_OFFLINE_VISUAL_REVIEW",
+  "Woody": {
+    "views": [
+      {
+        "pose": "standing-front",
+        "max_source_cooked_evaluated_error_m": 0.0
+      },
+      {
+        "pose": "standing-side",
+        "max_source_cooked_evaluated_error_m": 0.0
+      },
+      {
+        "pose": "standing-rear",
+        "max_source_cooked_evaluated_error_m": 0.0
+      },
+      {
+        "pose": "sitting-side",
+        "max_source_cooked_evaluated_error_m": 0.0
+      },
+      {
+        "pose": "sitting-quarter",
+        "max_source_cooked_evaluated_error_m": 0.0
+      },
+      {
+        "pose": "running",
+        "max_source_cooked_evaluated_error_m": 0.0
+      }
+    ],
+    "standing_sitting_running_visually_reviewed": true,
+    "correction": "Waist/seat above leg hinges, continuous seated silhouette; V2 boots/ring retained",
+    "animations": "Synthetic FK, not captured game clips"
+  },
+  "Buzz": {
+    "quarter_side_front_views_reviewed": true,
+    "correction": "Original uniform-scale toy arms at actual side armor sockets, not native high/inboard shoulder pivot",
+    "cooked_vs_source": "Independent stream checks passed; actual decoded atlas and geometry rendered",
+    "animation": "Static third-person flight visual; native gameplay unmodified"
+  },
+  "rejected_previews": "Previous flight arms near head and previous low-seated Woody pelvis are rejected; prior byte validation did not establish visual quality",
+  "runtime": "Both new builds require Windows testing"
+}

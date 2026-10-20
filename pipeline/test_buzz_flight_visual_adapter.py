@@ -43,6 +43,7 @@ checks=[
 ('disabled development default makes no native changes',"experimentEnabled=false", "glide=true;timer();assert(made==0 and nativeVisible and wingVisible and tickValue==5)"),
 ('standing leaves manual wings and native body alone','',"timer();assert(made==0 and nativeVisible and wingVisible and tickValue==5)"),
 ('glide creates hidden proxy before suppression and restores on landing','',"glide=true;timer();assert(show and made==1 and not nativeVisible and not wingVisible and tickValue==7);timer();assert(made==1);glide=false;timer();assert(not show and destroyed==1 and nativeVisible and wingVisible and tickValue==5)"),
+('independent wing update cannot leave duplicate upright wings visible','',"glide=true;timer();wingVisible=true;timer();assert(show and not wingVisible and not nativeVisible);glide=false;timer();assert(wingVisible and nativeVisible and tickValue==5)"),
 ('first-person switch restores original presentation and tick policy','',"glide=true;timer();fp=true;timer();assert(not show and nativeVisible and wingVisible and tickValue==5);fp=false;timer();assert(show and made==2)"),
 ('asset-load failure never hides native source','',"missingAsset=true;glide=true;timer();assert(made==0 and nativeVisible and wingVisible and tickValue==5);timer();assert(made==0)"),
 ('unknown glide restores active visual safely','',"glide=true;timer();movement.IsGliding=function() return nil end;timer();assert(not show and nativeVisible and wingVisible and tickValue==5)"),
