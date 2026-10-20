@@ -54,6 +54,8 @@ p.Mesh=body;p.EquipmentComponent=eq
 p.K2_GetComponentsByClass=function() return {body} end
 p.GetFullName=function() return female and 'BP_SurvivalPlayerCharacter_Female01_C Player' or 'BP_SurvivalPlayerCharacter_Male01_C Player' end
 p.GetIsFirstPerson=function() return fp end
+p.GetFirstPersonCamera=function() return body end
+p.K2_GetActorRotation=function() return {Pitch=0,Yaw=0,Roll=0} end
 local c
 p.AddComponentByClass=function(self,cls,manual,t,deferred)
  assert(manual and deferred);made=made+1
@@ -69,8 +71,9 @@ p.AddComponentByClass=function(self,cls,manual,t,deferred)
  c.SetOnlyOwnerSee=function(self,v) assert(not v) end
  c.SetOwnerNoSee=function(self,v) assert(not v) end
  c.SetSkeletalMeshAsset=function(self,v) assert(collision and post and anim and not show);assert(v==asset);meshSet=true end
- c.K2_AttachToComponent=function(self,parent,bone,l,r,s,weld) assert(parent==body and bone=='r_hand_JNT' and not weld);return true end
- c.K2_SetRelativeTransform=function(self,t,sweep,hit,teleport) assert(t.Rotation.W==1 and not sweep and teleport) end
+ c.SetAbsolute=function(self,loc,rot,scale) assert(not loc and not scale);self.absoluteRotation=rot end
+ c.K2_AttachToComponent=function(self,parent,bone,l,r,s,weld) assert(parent==body and (bone=='r_hand_JNT' or bone=='None') and not weld);self.socket=bone;return true end
+ c.K2_SetRelativeTransform=function(self,t,sweep,hit,teleport) assert(not sweep and teleport);self.lastTransform=t end
  c.K2_DestroyComponent=function() destroyed=destroyed+1;c.IsValid=function() return false end end
  return c
 end
@@ -90,6 +93,8 @@ function StaticFindObject(path)
 end
 '''.replace('SPECS',',\n'.join(specs))
 checks=[
+("measured palm offset and upright carry frame", "key();local t=c.lastTransform;assert(math.abs(t.Translation.X-3.787)<1e-6);assert(math.abs(t.Translation.Y-.5055)<1e-6);assert(math.abs(t.Translation.Z-30.774)<1e-6);assert(c.absoluteRotation==true and t.Scale3D.Z==1.12)"),
+("first-person accessory reparenting and return without camera movement", "key();fp=true;timer();assert(c.socket=='None' and c.absoluteRotation==false);assert(c.lastTransform.Translation.X==60 and c.lastTransform.Translation.Y==26);main=true;timer();assert(not show);main=false;fp=false;timer();assert(show and c.socket=='r_hand_JNT' and c.absoluteRotation==true)"),
 ("attachment rejection logs final error and destroys cosmetic", "local make=p.AddComponentByClass;p.AddComponentByClass=function(...) local created=make(...);created.K2_AttachToComponent=function() return false end;return created end;key();assert(made==1 and destroyed==1 and not show);assert(table.concat(events,'\\n'):find('phase=hand%-attachment'))"),
 ("visibility readback mismatch removes cosmetic and logs phase", "local make=p.AddComponentByClass;p.AddComponentByClass=function(...) local created=make(...);created.IsVisible=function() return false end;return created end;key();assert(destroyed==1 and not show);assert(table.concat(events,'\\n'):find('phase=visibility',1,true))"),
 ("six separately logged milestones and successful final readback", "key();local text=table.concat(events,'\\n');for i=1,6 do assert(text:find('MILESTONE '..i..'/6',1,true)) end;assert(text:find('RESULT SUCCESS',1,true))"),
@@ -99,7 +104,7 @@ checks=[
 ("empty base Mesh falls back to owned Willow component", "local empty=obj('SkeletalMeshComponent Empty',{'Engine.SkeletalMeshComponent'});empty.GetSkeletalMeshAsset=function() return invalid end;p.Mesh=empty;key();assert(made==1 and show)"),
 ("valid Willow mesh with unexpected Blueprint name", "p.GetFullName=function() return 'BP_ActualWillowVariant_C Player' end;key();assert(made==1 and show)"),
 ("wrong mesh explains why nothing attaches", "female=false;key();assert(made==0);assert(table.concat(events,'\\n'):find('WAIT: no owned component uses verified Willow mesh',1,true))"),
-("attachment, safety ordering, actual slots, both views, cleanup", "key();assert(made==1 and show);main=true;timer();assert(not show);main=false;off=true;timer();assert(not show);off=false;timer();assert(show);fp=true;timer();assert(show);key();assert(destroyed==1 and not show)"),
+("attachment, safety ordering, actual slots, both views, cleanup", "key();assert(made==1 and show);main=true;timer();assert(not show);main=false;off=true;timer();assert(not show);off=false;timer();assert(show);fp=true;timer();assert(show and c.socket=='None' and c.absoluteRotation==false and c.lastTransform.Translation.X==60);fp=false;timer();assert(c.socket=='r_hand_JNT' and c.absoluteRotation==true);key();assert(destroyed==1 and not show)"),
 ("signature rejection before creation", "bad=true;key();assert(made==0);timer();assert(made==0)"),
 ("missing asset before creation", "missingAsset=true;key();assert(made==0)"),
 ("only Willow mesh gets accessory", "female=false;key();assert(made==0)"),

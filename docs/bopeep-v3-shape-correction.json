@@ -1,0 +1,55 @@
+{
+  "source": "/workspace/mod-work/bopeep-v2-stage/fit-v1/BoPeep-Willow-V2.blend",
+  "source_file_sha256": "f3f8e7218ee413b1f39e336ae3079544c4ab99408dd780e38bab7b1857b9f29a",
+  "vertices": 5028,
+  "triangles": 6459,
+  "bone_rest_hash": "5192bc875c0ee3d873c40207384914ae3a917058b4e9a2649e18ca5a6fe03dd8",
+  "native_bones_unchanged": 192,
+  "all_weights_UVs_topology_unchanged": true,
+  "hands_and_pure_head_positions_exact": 2444,
+  "changed_vertices": 1709,
+  "torso_longitudinal_ratio_correction": {
+    "e_root_m": {
+      "old": 0.5140066100192993,
+      "new": 0.85
+    },
+    "e_spine1_m": {
+      "old": 1.2078576907684937,
+      "new": 1.2
+    },
+    "e_chest_m": {
+      "old": 1.46904544591873,
+      "new": 1.2
+    },
+    "e_neck_m": {
+      "old": 1.902875585157801,
+      "new": 1.2
+    }
+  },
+  "cape_old_bounds": [
+    [
+      -0.45925790071487427,
+      0.05369699373841286,
+      -0.0762094110250473
+    ],
+    [
+      0.4592582583427429,
+      0.3963147699832916,
+      1.5002870559692383
+    ]
+  ],
+  "cape_new_bounds": [
+    [
+      -0.3802023158253473,
+      0.05369699373841286,
+      0.42714362710250486
+    ],
+    [
+      0.3802026511802354,
+      0.3963147699832916,
+      1.5002870559692383
+    ]
+  ],
+  "cape": "Top fixed; source vertical aspect restored; hem tucked18%. Original stiff spine3 weighting retained; no cloth simulation claim.",
+  "runtime": "NOT TESTED; native animated stance may still contribute to apparent hunch. No animation or bone changes."
+}

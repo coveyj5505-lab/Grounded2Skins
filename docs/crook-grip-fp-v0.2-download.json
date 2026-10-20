@@ -1,0 +1,20 @@
+{
+  "file": "BoPeep-Crook-Grip-FP-Test-v0.2.zip",
+  "sha256": "50eb7f94e8b90a29a5ef5ad0aaa2f9cf23fc6a591b32ba2e99849e489bf7a3db",
+  "bytes": 6854,
+  "scope": "Script-only; keep the user-confirmed v0.1.3 crook asset trio and four character skins",
+  "status": "WINDOWS_PENDING",
+  "changes": [
+    "Measured native palm-center offset3.787/.5055/-1.226cm",
+    "Upright carry independent of wrist rotation; forward-facing hook",
+    "32cm origin lift; cosmetic scale .7/.7/1.12",
+    "FP component attaches to existing camera with side-screen offset; no camera/body movement or visibility changes"
+  ],
+  "tests": "16 Lua fixture groups pass",
+  "limits": [
+    "Native unarmed attack mechanics/animation unchanged",
+    "No closed-finger pose substitution",
+    "FP hand alignment and screen offset pending user test",
+    "Local client only"
+  ]
+}

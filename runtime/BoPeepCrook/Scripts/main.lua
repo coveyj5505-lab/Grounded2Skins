@@ -142,6 +142,9 @@ spec('Engine.SkeletalMeshComponent','SetEnableAnimation',{bNewEnableAnimation='B
 spec('Engine.SkeletalMeshComponent','SetAllowClothActors',{bInAllow='BoolProperty'})
 spec('Engine.SkeletalMeshComponent','SetSkeletalMeshAsset',{NewMesh='ObjectProperty'})
 spec('Maine.EquipmentComponent','GetItemInSlot',{Slot=enum,ReturnValue='ObjectProperty'})
+spec('Maine.SurvivalCharacter','GetFirstPersonCamera',{ReturnValue='ObjectProperty'})
+spec('Engine.Actor','K2_GetActorRotation',{ReturnValue='StructProperty'})
+spec('Engine.SceneComponent','SetAbsolute',{bNewAbsoluteLocation='BoolProperty',bNewAbsoluteRotation='BoolProperty',bNewAbsoluteScale='BoolProperty'})
 spec('Maine.SurvivalCharacter','GetIsFirstPerson',{ReturnValue='BoolProperty'})
 local function invoke(o,owner,method,...)
     assert(valid(o),'Invalid receiver '..method)
@@ -155,7 +158,7 @@ local function invoke(o,owner,method,...)
     end
     assert(matched,'Wrong receiver for '..owner..'.'..method)
     lastCall=owner..'.'..method
-    if method~='GetItemInSlot' and method~='GetIsFirstPerson' and method~='GetSkeletalMeshAsset' then log('CALL '..owner..'.'..method) end
+    if method~='GetItemInSlot' and method~='GetIsFirstPerson' and method~='GetSkeletalMeshAsset' and method~='GetSocketTransform' and method~='K2_GetActorRotation' and method~='K2_SetRelativeTransform' then log('CALL '..owner..'.'..method) end
     return o[method](o,...)
 end
 local function engineEnum(name,leaf)
@@ -267,6 +270,42 @@ local function create(p,body)
     needsResult=true
     log('ATTACHED r_hand_JNT; upright-at-activation offset. Local cosmetic only; no combat changes.')
 end
+-- Camera-relative presentation changes ONLY the cosmetic, never the native camera/body.
+-- Third-person palm offset measured from sixty source-wrist-dominant vertices in the accepted Bo Peep rig.
+local palm={X=3.787,Y=.5055,Z=-1.226}
+local function rotate(q,v)
+    local tx=2*(q.Y*v.Z-q.Z*v.Y);local ty=2*(q.Z*v.X-q.X*v.Z);local tz=2*(q.X*v.Y-q.Y*v.X)
+    return {X=v.X+q.W*tx+q.Y*tz-q.Z*ty,Y=v.Y+q.W*ty+q.Z*tx-q.X*tz,Z=v.Z+q.W*tz+q.X*ty-q.Y*tx}
+end
+local function present(p,body,fp)
+    assert(type(fp)=='boolean','Camera mode getter did not return bool')
+    phase=fp and 'first-person-accessory-placement' or 'palm-grip-placement'
+    local offset=transform();offset.Scale3D={X=.7,Y=.7,Z=1.12}
+    if fp then
+        if lastFirst~=fp then
+            local camera=invoke(p,'Maine.SurvivalCharacter','GetFirstPersonCamera')
+            assert(valid(camera),'First-person camera unavailable for accessory placement')
+            assert(invoke(component,'Engine.SceneComponent','K2_AttachToComponent',camera,FName('None'),snap,snap,snap,false)==true,'First-person cosmetic attachment failed')
+            invoke(component,'Engine.SceneComponent','SetAbsolute',false,false,false)
+            log('ACCESSORY VIEW FP: camera-relative; native camera/body unchanged; forward60/right26/down40cm')
+        end
+        offset.Translation={X=60,Y=26,Z=-40};offset.Rotation={X=0,Y=0,Z=1,W=0}
+    else
+        if lastFirst~=fp then
+            assert(invoke(component,'Engine.SceneComponent','K2_AttachToComponent',body,FName('r_hand_JNT'),snap,snap,snap,false)==true,'Third-person hand reattachment failed')
+            invoke(component,'Engine.SceneComponent','SetAbsolute',false,true,false)
+            log('ACCESSORY VIEW TP: palm-centered position; upright absolute rotation; hook faces forward')
+        end
+        local socket=invoke(body,'Engine.SceneComponent','GetSocketTransform',FName('r_hand_JNT'),worldSpace)
+        local q=socket.Rotation;local n=q.X*q.X+q.Y*q.Y+q.Z*q.Z+q.W*q.W;assert(n>.9 and n<1.1,'Invalid hand quaternion')
+        local lift=rotate({X=-q.X/n,Y=-q.Y/n,Z=-q.Z/n,W=q.W/n},{X=0,Y=0,Z=32})
+        offset.Translation={X=palm.X+lift.X,Y=palm.Y+lift.Y,Z=palm.Z+lift.Z}
+        local yaw=math.rad(invoke(p,'Engine.Actor','K2_GetActorRotation').Yaw+180)
+        offset.Rotation={X=0,Y=0,Z=math.sin(yaw/2),W=math.cos(yaw/2)}
+    end
+    invoke(component,'Engine.SceneComponent','K2_SetRelativeTransform',offset,false,{},true)
+    lastFirst=fp
+end
 local function update()
     local p=pawn()
     if not valid(p) then
@@ -306,13 +345,13 @@ local function update()
     local off=invoke(eq,'Maine.EquipmentComponent','GetItemInSlot',offSlot)
     -- Only the actual returned item identities determine occupancy; bHas* flags are deliberately absent.
     local empty=not valid(main) and not valid(off)
+    local fp=invoke(p,'Maine.SurvivalCharacter','GetIsFirstPerson')
+    present(p,body,fp)
     visible(empty)
     if needsResult then
         needsResult=false;phase='attached'
-        log('MILESTONE 6/6 RESULT SUCCESS: asset='..assetPath..'; component='..full(component)..'; bone=r_hand_JNT; visible='..tostring(lastVisible)..'; main='..full(main)..'; off='..full(off)..'; rendered appearance awaits user inspection')
+        log('MILESTONE 6/6 RESULT SUCCESS: asset='..assetPath..'; component='..full(component)..'; presentation='..(fp and 'camera-relative' or 'r_hand_JNT palm/upright')..'; visible='..tostring(lastVisible)..'; main='..full(main)..'; off='..full(off)..'; rendered appearance awaits user inspection')
     end
-    local fp=invoke(p,'Maine.SurvivalCharacter','GetIsFirstPerson')
-    if fp~=lastFirst then log('VIEW '..tostring(fp)..' (true=first person); crook remains eligible in both views');lastFirst=fp end
 end
 local function dispatch(fn)
     if busy then return end
@@ -335,4 +374,4 @@ RegisterKeyBind(Key.F9,function()
     end)
 end)
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded carry test v0.1.3 (native soft-object loading; no AssetRegistry dependency). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')
+log('Loaded carry refinement v0.2 (measured palm offset; upright TP; separate FP accessory placement). As Bo Peep, stand upright with empty hands, F9 once. F9 again removes crook. Disable old F9 probes. No spear animation substitution yet.')
