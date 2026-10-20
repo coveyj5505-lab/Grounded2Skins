@@ -1,0 +1,28 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "removed_components": [
+    15,
+    55
+  ],
+  "removed_triangles": 336,
+  "retained_triangles": 19788,
+  "meshes": [
+    {
+      "chunk": "cd809abc483f179000000001",
+      "retained_triangle_corner_positions_UVs_normals_weights_colors_packed_tangents_exact": true,
+      "head_body_section_assignments_exact": true,
+      "skeleton_materials_imports_exact": true,
+      "legacy_payload_exact": true
+    },
+    {
+      "chunk": "8021448bfc8c514500000001",
+      "retained_triangle_corner_positions_UVs_normals_weights_colors_packed_tangents_exact": true,
+      "head_body_section_assignments_exact": true,
+      "skeleton_materials_imports_exact": true,
+      "legacy_payload_exact": true
+    }
+  ],
+  "other_chunks_byte_exact": 16,
+  "arm_rig_unchanged": true,
+  "runtime": "Windows pending; this removes fittings, not an arm-proportion correction"
+}

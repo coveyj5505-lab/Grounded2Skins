@@ -1,0 +1,16 @@
+{
+  "file": "Buzz-Wings-and-Helmet-Cleanup-Test.zip",
+  "bytes": 6683076,
+  "sha256": "628aff45b18987e32de5174b241e033cbef7037a20c5092791b1611822b18f26",
+  "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+  "includes": "Corrected wing dependencies plus isolated removal of two moving helmet fittings; no arm proportion correction",
+  "files": {
+    "Paks/zBuzzClean_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBuzzClean_P.utoc": "c1c020add5cfbd121f71eb7749edca888e97f70b486636ce37892a8dfdc7605b",
+    "Paks/zBuzzClean_P.ucas": "67b178c6073e53dc8af24a01f0ddf89b1b0d761735fb74f459b5459481bd3a7f",
+    "Paks/zBuzzWings_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBuzzWings_P.utoc": "a2848b88c7f1923f50fdbb2bb6b087e1448f44587a60740aa54a9a1569e1b80a",
+    "Paks/zBuzzWings_P.ucas": "6450339ba4361aeed0f38b583f7ab0194719d95a1d37bb60b9033b037795e447",
+    "BuzzWings/Scripts/main.lua": "aceaf65f516daf9cf4b2dbe398614a21e9a6dfedf8358e8fcd87b38884a7e8d8"
+  }
+}
