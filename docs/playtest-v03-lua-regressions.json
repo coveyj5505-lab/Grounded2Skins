@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "runtime": "Actual Lua5.4 via liblua5.4, mocked Unreal objects; Windows behavior not established by fixtures",
+  "groups": {
+    "crook-runtime-tests": 25,
+    "wings-runtime-tests": 11
+  },
+  "coverage": [
+    "automatic startup through menu-to-game transition",
+    "actual slots and fail-closed unknown equipment wrapper",
+    "unknown owned-component wrapper skipped",
+    "optional attack read failure independent of carry",
+    "FP source hand/crook and bare-crook swap during actual attack",
+    "crook camera/hand reparenting and cleanup",
+    "manual wing preference OR gliding, including toggle during glide and landing",
+    "signature/asset/glide failure and cleanup",
+    "wrong TOC file revision rejected",
+    "native-hand view-cone guard and optional-transform-failure staff-only fallback"
+  ]
+}

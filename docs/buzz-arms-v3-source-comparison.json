@@ -1,0 +1,46 @@
+{
+  "source_fit_checked_before_edit": true,
+  "components": [
+    13,
+    56,
+    11,
+    60,
+    10,
+    61
+  ],
+  "segment_fits": [
+    {
+      "component": 13,
+      "old_axial_scale": 0.7991328761568406,
+      "old_radial_scale": 1.02,
+      "new_uniform_scale": 0.8957985490781971,
+      "source_shape_similarity_error": 1.1556828237688283e-16
+    },
+    {
+      "component": 10,
+      "old_axial_scale": 0.7273891538280107,
+      "old_radial_scale": 1.0,
+      "new_uniform_scale": 0.7740034585156185,
+      "source_shape_similarity_error": 1.1102230246251565e-16
+    },
+    {
+      "component": 56,
+      "old_axial_scale": 0.7912544530370749,
+      "old_radial_scale": 1.02,
+      "new_uniform_scale": 0.8868455176280053,
+      "source_shape_similarity_error": 1.1102230246251565e-16
+    },
+    {
+      "component": 61,
+      "old_axial_scale": 0.7371730747374751,
+      "old_radial_scale": 1.0,
+      "new_uniform_scale": 0.784372030986297,
+      "source_shape_similarity_error": 1.1102230246251565e-16
+    }
+  ],
+  "upper_joint_lateral_offset_removed_cm": 7,
+  "elbow_lateral_offset_removed_cm": 2,
+  "all_weights_UVs_head_split_textures_backpack_other_geometry_unchanged": true,
+  "render_vertices_changed": 3021,
+  "runtime": "NOT TESTED; controlled pose preview required"
+}

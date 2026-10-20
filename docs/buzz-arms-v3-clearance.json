@@ -1,0 +1,29 @@
+{
+  "measurements": [
+    {
+      "side": "l",
+      "arm_center_before": [
+        0.19916866285530227,
+        0.023556625273998537,
+        1.3647399961377624
+      ],
+      "measured_torso_side_m": 0.34575560688972473,
+      "relaxed_lateral_correction_m": 0.14658694403442246,
+      "method": "Place rigid upper-arm center at measured torso edge in controlled relaxed pose; elbow65%, wrist0%"
+    },
+    {
+      "side": "r",
+      "arm_center_before": [
+        -0.20622703772462503,
+        0.024976145986057303,
+        1.361254537508395
+      ],
+      "measured_torso_side_m": 0.34575656056404114,
+      "relaxed_lateral_correction_m": 0.1395295228394161,
+      "method": "Place rigid upper-arm center at measured torso edge in controlled relaxed pose; elbow65%, wrist0%"
+    }
+  ],
+  "reference_pose": "Controlled relaxed FK, not game clip",
+  "weights_bones_hands_body_unchanged": true,
+  "runtime": "PENDING"
+}

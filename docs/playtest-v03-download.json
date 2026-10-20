@@ -1,0 +1,33 @@
+{
+  "file": "ToyStory-Buzz-BoPeep-Test-v0.3.zip",
+  "bytes": 11018548,
+  "sha256": "57b5d3f858326fc7ed8df9ef7c1be5f6f5a7187fea533b5ab1ab30d3f2b42511",
+  "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+  "file_only": true,
+  "automatic_accessory_startup": true,
+  "debug_keys": "F6/F9 suspend/resume; not required",
+  "manual_wing_key": "Unassigned; user-configurable in wing_config.lua",
+  "native_spear_animation_substituted": false,
+  "forward_flight_pose_implemented": false,
+  "cape_status": "Incremental upper repair; small collar artifact remains",
+  "current_runtime_accessories": "Local client only",
+  "files": {
+    "BoPeepCrook/Scripts/main.lua": "c40f20a88f43c73591fef527c1a9ae1aafcabe3b5f90e2c904886d33d5e20078",
+    "BoPeepCrook/enabled.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "BuzzWings/Scripts/main.lua": "ab712a0e0901da58af30379a65fcbe3a604cacd35d23ee0e8a74979c638f38bd",
+    "BuzzWings/Scripts/wing_config.lua": "67ec5c0370ae1b780ab404ab3c1b64fcf833640ded11d81dd1ab09a6097a26d5",
+    "BuzzWings/enabled.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Paks/zBoCrookV3_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBoCrookV3_P.ucas": "a3dfdb191b62545310c585342d89d6699c7bfc8546e87cc047d9fd424339d725",
+    "Paks/zBoCrookV3_P.utoc": "5eb7f18d4a471d314d47a196ceeadc2e5bf585eda43849ed1f5c25f70b254ea4",
+    "Paks/zBoPeepV4_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBoPeepV4_P.ucas": "6583df796b6fe1a81627cef3a60431035fc1f5e9d14db34c132b451b692a5081",
+    "Paks/zBoPeepV4_P.utoc": "c720feac74e8ea1bd0a38deb4f64c92871f5146ffc456b00f396be318d2faab8",
+    "Paks/zBuzzArmsV3_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBuzzArmsV3_P.ucas": "9269c6a4051bc780b138d006f1bfad3c585a48b4e88f1e91bfb8cfcf2be357cb",
+    "Paks/zBuzzArmsV3_P.utoc": "9abea348ae9b63c058cb32cf8b593a34edc9f10ead86b4a81d614ac477bac12a",
+    "Paks/zBuzzWingV2_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zBuzzWingV2_P.ucas": "dd657b09d23e4fad0d8a5f1734ae4b5508acc3940b44603c502bc0084c48c9dc",
+    "Paks/zBuzzWingV2_P.utoc": "7036279d02ee8301a3716174e24f36e83dd4b8dd96c6a88f5c00bc0d9a09df34"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "states": [
+    {
+      "kind": "TP",
+      "object": "Crook_TP_GripLocal",
+      "vertices": 391,
+      "triangles": 590,
+      "root_only": true,
+      "crook_original_scale_baked": [
+        0.7,
+        0.7,
+        1.12
+      ],
+      "origin_shift_m": 0.32
+    },
+    {
+      "kind": "FP",
+      "object": "Crook_FP_GripLocal",
+      "vertices": 748,
+      "triangles": 952,
+      "root_only": true,
+      "crook_original_scale_baked": [
+        0.7,
+        0.7,
+        0.85
+      ],
+      "origin_shift_m": 0.24285714285714285
+    }
+  ],
+  "source_hand_vertices": 357,
+  "source_hand_faces": 362,
+  "source_hand_UVs_preserved": true,
+  "source_finger_pose": "Preserved source FBX semantic finger weights and controlled FK; accepted rigid native hand remains unchanged",
+  "source_palm_blender_m": [
+    -0.6585740814817712,
+    -0.16770625137087058,
+    1.0781416530667105
+  ],
+  "FP_viewmodel": "Independent cosmetic source hand/forearm, not native hand animation replacement",
+  "body_animations_damage_collision_unchanged": true,
+  "runtime": "PENDING; closed-grip visual needs preview and Windows confirmation"
+}

@@ -1,6 +1,12 @@
 -- Isolated rigid wing visual states; no player mesh, equipment, camera or gliding-physics changes.
 local function log(s) print('[BuzzWings] '..s..'\n') end
-local function valid(o) return o~=nil and o:IsValid() end
+local function valid(o)
+    if o==nil then return false end
+    local ok,fn=pcall(function() return o.IsValid end)
+    if not ok or type(fn)~='function' then return false end
+    local good,result=pcall(fn,o)
+    return good and result==true
+end
 local function full(o) if valid(o) then return o:GetFullName() end return 'NONE' end
 local signatures={};local enums={};local busy=false;local recording=false
 local untilTime=0;local sequence=0;local lastState=nil;local fault=false
@@ -162,11 +168,11 @@ local function engineEnum(name,leaf)
     assert(result~=nil,'Missing enum value '..name..'.'..leaf);return result
 end
 local assetPaths={
-    RETRACTED='/Game/_BzWRet0/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01',
-    DEPLOYED='/Game/_BzWExt0/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01'
+    RETRACTED='/Game/_BzWRet1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01',
+    DEPLOYED='/Game/_BzWExt1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01'
 }
 local assets={};local component,ownerPawn,bodyMesh
-local enabled=false;local failed=false;local busy=false;local lastState=nil
+local enabled=true;local failed=false;local busy=false;local lastState=nil
 local noCollision,snap
 local function identityTransform()
     return {Rotation={X=0,Y=0,Z=0,W=1},Translation={X=0,Y=0,Z=0},Scale3D={X=1,Y=1,Z=1}}
@@ -189,9 +195,13 @@ local function cleanup()
     end
     component=nil;ownerPawn=nil;bodyMesh=nil;lastState=nil
 end
+local config={ManualWingsExtended=false,ManualToggleKey=nil}
+local loaded,user=pcall(require,'wing_config')
+if loaded and type(user)=='table' then config=user end
+local manualWingsExtended=config.ManualWingsExtended==true
 local function state(gliding)
     assert(type(gliding)=='boolean','IsGliding did not return a bool; no state guessed')
-    return gliding and 'DEPLOYED' or 'RETRACTED'
+    return (manualWingsExtended or gliding) and 'DEPLOYED' or 'RETRACTED'
 end
 local function showState(desired)
     if lastState==desired then return end
@@ -206,11 +216,36 @@ local function showState(desired)
     visibility(true);lastState=desired
     log('STATE '..desired..'; source=IsGliding(); mesh='..full(assets[desired])..'; visible=true')
 end
+local function verifyInstalledContainer()
+    if not io or type(io.open)~='function' then log('DISK CHECK unavailable; native loading remains authoritative');return end
+    local dirs={'../../Content/Paks/','Augusta/Content/Paks/','../../../Augusta/Content/Paks/'}
+    if debug and type(debug.getinfo)=='function' then
+        local ok,info=pcall(debug.getinfo,1,'S')
+        if ok and info and type(info.source)=='string' then
+            local path=info.source:gsub('^@',''):gsub('\\','/')
+            local bin=path:match('^(.-)/[Uu][Ee]4[Ss][Ss]/Mods/')
+            if bin then table.insert(dirs,1,bin..'/../../Content/Paks/') end
+        end
+    end
+    for _,dir in ipairs(dirs) do
+        local f=io.open(dir..'zBuzzWingV2_P.utoc','rb')
+        if f then
+            local header=f:read(64);local size=f:seek('end');f:close()
+            local hex=header and header:gsub('.',function(c) return string.format('%02x',string.byte(c)) end) or ''
+            local good=hex=='2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d08000000900000000c000000720300000c0000000000000020000000000001006503000001000000446a021ff6a16250' and size==12149
+            log('DISK CHECK zBuzzWingV2_P.utoc expected header/size match='..tostring(good)..'; bytes='..tostring(size)..'; path='..dir)
+            assert(good,'Wrong container revision installed: zBuzzWingV2_P.utoc')
+            return
+        end
+    end
+    log('DISK CHECK zBuzzWingV2_P.utoc not found in standard paths; native load result will determine availability')
+end
 local function create(p,body,desired)
     phase='preflight'
     for key,args in pairs(S) do local class,method=key:match('^(.*)%.([^%.]+)$');assert(signature(class,method,args),'Preflight rejected '..key) end
     noCollision=engineEnum('ECollisionEnabled','NoCollision');snap=engineEnum('EAttachmentRule','SnapToTarget')
     local bone=FName('chest_JNT');assert(invoke(body,'Engine.SceneComponent','DoesSocketExist',bone)==true,'chest_JNT missing')
+    phase='disk-package-check';verifyInstalledContainer()
     phase='wing-assets-load'
     local system=StaticFindObject('/Script/Engine.Default__KismetSystemLibrary');assert(valid(system),'Kismet default object unavailable')
     for _,name in ipairs({'RETRACTED','DEPLOYED'}) do
@@ -257,10 +292,25 @@ local function findBody(p)
     local components=invoke(p,'Engine.Actor','K2_GetComponentsByClass',class)
     if components then for i=1,math.min(#components,32) do if matches(components[i]) then return components[i] end end end
 end
+local function survivalPawn(p)
+    if not valid(p) then return false end
+    local getter=p.GetClass
+    if type(getter)~='function' then return false end
+    local cls=getter(p)
+    for depth=1,16 do
+        if not valid(cls) then break end
+        if cls:GetFullName()=='Class /Script/Maine.SurvivalCharacter' then return true end
+        local super=cls.GetSuperStruct
+        if type(super)~='function' then break end
+        cls=super(cls)
+    end
+    return false
+end
 local function update()
     local p=pawn()
     if not valid(p) then cleanup();eligibility('WAIT: enter gameplay as Buzz/Max');return end
     if valid(ownerPawn) and full(ownerPawn)~=full(p) then cleanup() end
+    if not survivalPawn(p) then cleanup();eligibility('WAIT: gameplay SurvivalCharacter required; menu/preview pawn skipped');return end
     local body=findBody(p)
     if not valid(body) then cleanup();eligibility('WAIT: Buzz/Max mesh required; pawn='..full(p));return end
     eligibility('ELIGIBLE Buzz/Max; pawn='..full(p)..'; body='..full(body))
@@ -268,6 +318,7 @@ local function update()
     phase='glide-read'
     local movement=unsafeProperty(p,'CharMovementComponent','ObjectProperty');assert(valid(movement),'Movement component unavailable')
     local gliding=invoke(movement,'Maine.MaineCharMovementComponent','IsGliding');local desired=state(gliding)
+    if desired~=lastState then log('GLIDE OBSERVED '..tostring(gliding)..'; requested='..desired) end
     if not valid(component) then create(p,body,desired) else showState(desired) end
 end
 local function dispatch(fn)
@@ -289,5 +340,10 @@ RegisterKeyBind(Key.F6,function()
         enabled=true;log('ON: automatic IsGliding visual states. F6 again removes accessory.');update()
     end)
 end)
+if type(config.ManualToggleKey)=='string' and config.ManualToggleKey~='F6' and config.ManualToggleKey~='F9' and Key[config.ManualToggleKey] then
+    RegisterKeyBind(Key[config.ManualToggleKey],function()
+        dispatch(function() manualWingsExtended=not manualWingsExtended;log('MANUAL PREFERENCE '..tostring(manualWingsExtended)..'; active glide always overrides folded preference');if enabled then update() end end)
+    end)
+else log('Manual wing key unassigned (wing_config.lua); F6 remains debug suspend/resume only') end
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded wings v0.1: F6 toggles isolated accessory; normal=stored, IsGliding=true=extended, landing=stored. Local-client only; native loading/attachment Windows pending. No tuft visual hiding yet.')
+log('Loaded wings v0.2 stock-accessory layout: AUTOMATIC startup; deployed=manual preference OR IsGliding; landing restores preference. F6 debug suspend/resume only. Requires NEW zBuzzWingV2_P trio; remove old zBuzzWings_P trio. Local-client only; native loading/attachment Windows pending. No tuft visual hiding yet.')

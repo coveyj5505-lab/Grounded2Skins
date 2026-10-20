@@ -1,0 +1,32 @@
+{
+  "material": "Existing private BoPeep MI; unchanged",
+  "new_blue_cloth_source_pixel": [
+    18,
+    16
+  ],
+  "source_image_size": [
+    512,
+    512
+  ],
+  "actual_private_texture_size": [
+    4096,
+    4096
+  ],
+  "native_mip0_sample_xy": [
+    148,
+    3964
+  ],
+  "decoded_BGRA": [
+    109,
+    34,
+    27,
+    255
+  ],
+  "source_RGBA": [
+    28,
+    36,
+    110,
+    255
+  ],
+  "scope": "Normalized UV, V orientation and opaque blue sample verified against actual CUE4Parse-read compressed mip; no shared asset or texture edits"
+}

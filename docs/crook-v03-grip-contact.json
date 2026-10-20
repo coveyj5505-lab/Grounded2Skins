@@ -1,0 +1,13 @@
+{
+  "old_palm_local_cm": [
+    3.787,
+    0.5055,
+    -1.226
+  ],
+  "new_shaft_contact_local_cm": [
+    6.3426782157897925,
+    0.0009105412483165765,
+    -0.8878758284688075
+  ],
+  "basis": "35% from measured palm toward native middle-finger root; moves shaft toward gripping fingers without changing body or animation"
+}

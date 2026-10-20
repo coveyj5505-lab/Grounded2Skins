@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "retained_original_faces": 6268,
+  "retained_source_vertex_correspondence_exact": true,
+  "all_retained_positions_exact": true,
+  "lower_corners_geometry_UVs_weights_joint_ids_exact": 8409,
+  "original_head_section_membership_exact": true,
+  "head_triangles": 2650,
+  "added_geometry_body_slot0_only": true,
+  "runtime": "Windows pending; visible collar artifact remains in preview"
+}

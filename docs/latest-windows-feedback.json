@@ -1,0 +1,7 @@
+{
+  "log_sha256": "f5ec5ff8fc88ebdf20a2949045f9c5b0757e93b40b8bdc70ce045a424d884176",
+  "Buzz": "F6 ON, initial IsGliding false read before create, native retracted asset load invalid; no component creation, attachment, visibility or deployed-state execution reached. Later glide cannot be inferred from this failed controller.",
+  "BoPeep": "TP load/create/attach/visibility succeeded, FP camera presentation ran, returned to TP. Later missing IsValid wrapper method aborted placement; unknown reference guards now regression tested.",
+  "user_confirmed": "Helmet fittings gone, Buzz arms still bad, wings not deployed; BoPeep proportions livable, cape upper broken, FP crook visible but floating.",
+  "current_runtime_status": "New combined test Windows pending; no runtime success claim"
+}

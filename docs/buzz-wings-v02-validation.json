@@ -1,0 +1,31 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "meshes": [
+    {
+      "asset": "/Game/_BzWExt1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+      "vertices": 826,
+      "triangles": 328,
+      "lods": 4,
+      "positions_indices_UVs_root_weights_exact": true,
+      "stock_accessory_reference_bones_and_native_properties_preserved": true,
+      "material": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
+      "material_public_export_hash_verified": true,
+      "actual_package_export_path_verified": true,
+      "legacy_payload_exact": true
+    },
+    {
+      "asset": "/Game/_BzWRet1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01",
+      "vertices": 818,
+      "triangles": 328,
+      "lods": 4,
+      "positions_indices_UVs_root_weights_exact": true,
+      "stock_accessory_reference_bones_and_native_properties_preserved": true,
+      "material": "/Game/_BzWing0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Wng_Apparel01",
+      "material_public_export_hash_verified": true,
+      "actual_package_export_path_verified": true,
+      "legacy_payload_exact": true
+    }
+  ],
+  "runtime": "PENDING Windows asset load/attachment; native read-back does not prove runtime loading",
+  "verified_texture_mips": 50
+}
