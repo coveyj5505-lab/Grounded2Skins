@@ -12,7 +12,7 @@ from PIL import Image
 import ispc_texcomp
 
 
-def layout(data):
+def layout(data, allow_zen_without_footer=False):
  header=struct.unpack_from('<I',data,4)[0];bulk_end=struct.unpack_from('<I',data,24)[0]
  hits=[]
  for fmt in ['PF_DXT5','PF_DXT1','PF_BC5']:
@@ -36,7 +36,10 @@ def layout(data):
   assert size==max(1,(x+3)//4)*max(1,(y+3)//4)*(8 if fmt=='PF_DXT1' else 16)
   records.append({'level':i,'width':x,'height':y,'bytes':size,'inline':inline,'offset':dest,'flags':flags})
  assert struct.unpack_from('<i',data,q)[0]==0;q+=4
- assert q+12==len(data) and data[-4:]==bytes.fromhex('c1832a9e')
+ if allow_zen_without_footer:
+  assert q+8==len(data) and data[-8:]==bytes(8)
+ else:
+  assert q+12==len(data) and data[-4:]==bytes.fromhex('c1832a9e')
  return {'width':width,'height':height,'format':fmt,'header_bytes':header,'platform_start':start,'platform_end':q,'mips':records}
 
 

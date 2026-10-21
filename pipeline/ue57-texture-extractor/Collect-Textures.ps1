@@ -25,7 +25,7 @@ try {
  & $python.Source @pyArgs (Join-Path $PSScriptRoot "collect_textures.py") --retoc $Retoc --utoc $Utoc --output $out
  $result=$LASTEXITCODE
  if ($result -notin @(0,2)) { throw "Helper could not finish. Keep any output/logs at $out and share the error shown here." }
- Write-Host "";Write-Host "UPLOAD ALL SIX Grounded2-TextureTemplates-$stamp-*.zip FILES FROM YOUR DESKTOP." -ForegroundColor Green
+ Write-Host "";Write-Host "UPLOAD Grounded2-TextureTemplates-$stamp.zip FROM YOUR DESKTOP." -ForegroundColor Green
  Write-Host "Only four texture assets; do not redo the four character collections. Partial output is useful too."
  Write-Host "No game files, saves, mods or UE4SS settings were modified."
 } catch {

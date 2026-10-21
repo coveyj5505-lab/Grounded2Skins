@@ -1,5 +1,5 @@
 {
-  "status": "ALL_UPDATED_ARCHIVES_VERIFIED_MIGRATION_IN_PROGRESS",
+  "status": "JESSIE_CURRENT_BUILD_TEST_READY_WINDOWS_PENDING",
   "game_build": "UE5.7.4 Augusta-CL-3207493 as confirmed by crash XML",
   "characters": {
     "Max": {
@@ -31,7 +31,7 @@
   "all_chunk_sizes_sha256_verified": true,
   "source_metadata_unchanged_as_reported": true,
   "Jessie_rebase": "Six mesh assets pass new5.7 native readback; accepted geometry, skin weights, UVs and FP section split exact",
-  "texture_template_inputs_missing": 4,
+  "texture_template_inputs_missing": 0,
   "third_party_mods": "User independently confirmed InvisibleArmor and Teleport both crash on current build; source/archive pending",
   "uploaded_archive_sha256": {
     "Grounded2-AllFour-20261020-193803-690-Willow.zip": "6d56f50ae8afce75dc2d986963aff0e321dbb51c8a25f08f24dd45b0a7ac6c0c",
@@ -40,5 +40,7 @@
     "Grounded2-AllFour-20261020-193803-690-Report.zip": "26977f553c7d2edf2cd971288938cf573b92fa3629b1d4ddd95d2e8b720796b2",
     "Grounded2-AllFour-20261020-193803-690-Shared.zip": "8bc88a69986215e8c7472ed6bc73606eb79d50a6925bc38f038ff54d4aad2d5a",
     "Grounded2-AllFour-20261020-193803-690-Pete.zip": "3cd21bb8e01df566a18197393466af3a8096625659d4a47585745c9e7e41cdfe"
-  }
+  },
+  "texture_chunks_received_verified": 8,
+  "texture_archive_sha256": "5039131f9902414d9939bb1090cd841ba9e1579579c7898bcfce8a7291b45e07"
 }

@@ -1,0 +1,20 @@
+{
+  "file": "Jessie-UE57-Compatibility-Test.zip",
+  "bytes": 2220894,
+  "sha256": "926334ea2bd663ef5cdd4d21dadc29a74ae86dda7981d0779f0bb1f58cbee6bb",
+  "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+  "files": {
+    "Paks/zJessieUE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+    "Paks/zJessieUE57_P.utoc": "a3fe417d20b9a691cfc5cc44fbd5a6ce558a6a72587cba3f28641457128213c4",
+    "Paks/zJessieUE57_P.ucas": "47758e1cd86b5b34b288a7e61bc62f5e55249fee6481e572161164f332dc6414"
+  },
+  "game_build": "UE5.7.4 Augusta-CL-3207493",
+  "scope": "Jessie/Hoops replacement only. No UE4SS script, accessory, other character or third-party-mod repair.",
+  "preserved": "Accepted geometry, weights, UVs and native FP head/body section split exact. Full head retained.",
+  "changed": "Current-build object templates, post-LOD tails, material and texture templates; private2048BC1 atlas resampled from preserved original4096RGBA image.",
+  "test": "Keep other mod Paks out and UE4SS disabled for this asset-only check. Copy three Paks files into Augusta/Content/Paks. Launch to menu, exit, relaunch. If both clean, play as Hoops and check first/third-person views and movement.",
+  "rollback": "Remove only zJessieUE57_P trio. Do not restore old incompatible character trios while testing this build.",
+  "frozen_previous_releases_and_runtime_verified_unchanged": true,
+  "user_input_chunks_verified_unchanged": true,
+  "limitations": "No full mapped UObject deserialization and no Windows engine load test yet. Container/native readback is offline evidence only."
+}

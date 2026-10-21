@@ -11,9 +11,10 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 - [ ] Audit current-build asset serialization and UE4SS support after isolation results. Preserve all released archives.
 - [x] Baseline menu launch recovered after removing9 mod trios and disabling UE4SS. JessieFP alone subsequently reproduces crash; removing it restores launch. Asset compatibility cannot be assumed.
 - [x] All6 original updated-build extraction archives received/verified: Max17,Willow19,Pete20,Hoops16,Shared4 packages. No collection errors.
-- [x] Jessie six-mesh native rebase prepared from current5.7.4 objects. Frozen geometry/weights/UVs/FP material sections byte-exact under native readback. No installable test yet.
+- [x] Jessie six-mesh native rebase prepared from current5.7.4 objects. Frozen geometry/weights/UVs/FP material sections byte-exact under final native readback. Separate Jessie-UE57-Compatibility-Test.zip prepared.
+- [ ] Windows: Jessie-only menu→exit→relaunch, then Hoops gameplay/FP/TP. Other old Paks remain removed; UE4SS off for this asset-only isolation. Do not migrate other skins based on offline checks alone.
 - [x] Current-build private atlas material clone prepared, preserving vanilla master/subsurface imports.
-- [ ] Four current-build texture templates needed: initial collector omitted them. Follow-up helper targets exactly4 verified assets/8 chunks11.9MB decoded; one offline run, no repeated character extraction.
+- [x] Four current-build texture templates received: all8 chunks verified. Fresh private atlas/material built from5.7.4 originals,47 mip payloads independently verified. Original4096 atlas retained; test uses stock2048BC1 layout.
 - [ ] Full mapped UObject runtime loading remains unverified. Native stream parsing alone is not proof of engine compatibility.
 
 ## Preserved and Windows confirmed

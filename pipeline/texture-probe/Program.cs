@@ -12,7 +12,7 @@ using CUE4Parse.UE4.Assets.Exports.Texture;
 using CUE4Parse.UE4.Readers;
 using CUE4Parse.UE4.Versions;
 var path=Path.GetFullPath(args[0]);var output=Path.GetFullPath(args[1]);if(Directory.Exists(output))throw new Exception("New output required");Directory.CreateDirectory(output);
-var version=new VersionContainer(EGame.GAME_Grounded2);
+var version=new VersionContainer(args.Contains("--ue57") ? EGame.GAME_UE5_7 : EGame.GAME_Grounded2);
 var head=File.ReadAllBytes(path+".uasset");var exp=File.ReadAllBytes(path+".uexp");var bulk=File.ReadAllBytes(path+".ubulk");
 using var ha=new FByteArchive("TextureHeader",head,version);using var ea=new FByteArchive("TextureExport",exp,version);using var ba=new FByteArchive("TextureBulk",bulk,version);
 // Read only real serialized header metadata. Package's full-export constructor

@@ -1,0 +1,147 @@
+{
+  "status": "PASS_OFFLINE_WINDOWS_PENDING",
+  "scope": "Jessie/Hoops only; no runtime mod",
+  "current_build": "UE5.7.4 Augusta-CL-3207493",
+  "meshes": [
+    {
+      "chunk": "9c1e99043926369200000001",
+      "vertices": 3,
+      "triangles": 1,
+      "all_frozen_geometry_and_skin_streams_exact": [
+        "triangle-materials.u16",
+        "joints.u16",
+        "weights.f32",
+        "positions.f32",
+        "colors.rgba8",
+        "normals.f32",
+        "weights.u16",
+        "indices.u32",
+        "uv0.f32"
+      ],
+      "current_reference_bones_exact": 12,
+      "lods": 4,
+      "current_build_post_LOD_tail_preserved_bytes": 112
+    },
+    {
+      "chunk": "209f878d72b09cad00000001",
+      "vertices": 3,
+      "triangles": 1,
+      "all_frozen_geometry_and_skin_streams_exact": [
+        "triangle-materials.u16",
+        "joints.u16",
+        "weights.f32",
+        "positions.f32",
+        "colors.rgba8",
+        "normals.f32",
+        "weights.u16",
+        "indices.u32",
+        "uv0.f32"
+      ],
+      "current_reference_bones_exact": 12,
+      "lods": 4,
+      "current_build_post_LOD_tail_preserved_bytes": 112
+    },
+    {
+      "chunk": "32e8e66fd14d9e8d00000001",
+      "vertices": 6860,
+      "triangles": 8757,
+      "all_frozen_geometry_and_skin_streams_exact": [
+        "triangle-materials.u16",
+        "joints.u16",
+        "weights.f32",
+        "positions.f32",
+        "colors.rgba8",
+        "normals.f32",
+        "weights.u16",
+        "indices.u32",
+        "uv0.f32"
+      ],
+      "current_reference_bones_exact": 189,
+      "lods": 4,
+      "current_build_post_LOD_tail_preserved_bytes": 112
+    },
+    {
+      "chunk": "911395b71b48cf1a00000001",
+      "vertices": 6860,
+      "triangles": 8757,
+      "all_frozen_geometry_and_skin_streams_exact": [
+        "triangle-materials.u16",
+        "joints.u16",
+        "weights.f32",
+        "positions.f32",
+        "colors.rgba8",
+        "normals.f32",
+        "weights.u16",
+        "indices.u32",
+        "uv0.f32"
+      ],
+      "current_reference_bones_exact": 189,
+      "lods": 4,
+      "current_build_post_LOD_tail_preserved_bytes": 112
+    },
+    {
+      "chunk": "66498863905bad0300000001",
+      "vertices": 3,
+      "triangles": 1,
+      "all_frozen_geometry_and_skin_streams_exact": [
+        "triangle-materials.u16",
+        "joints.u16",
+        "weights.f32",
+        "positions.f32",
+        "colors.rgba8",
+        "normals.f32",
+        "weights.u16",
+        "indices.u32",
+        "uv0.f32"
+      ],
+      "current_reference_bones_exact": 12,
+      "lods": 4,
+      "current_build_post_LOD_tail_preserved_bytes": 112
+    },
+    {
+      "chunk": "0cc46f3a2e8efeb000000001",
+      "vertices": 3,
+      "triangles": 1,
+      "all_frozen_geometry_and_skin_streams_exact": [
+        "triangle-materials.u16",
+        "joints.u16",
+        "weights.f32",
+        "positions.f32",
+        "colors.rgba8",
+        "normals.f32",
+        "weights.u16",
+        "indices.u32",
+        "uv0.f32"
+      ],
+      "current_reference_bones_exact": 12,
+      "lods": 4,
+      "current_build_post_LOD_tail_preserved_bytes": 112
+    }
+  ],
+  "current_template_texture_mips_verified": 47,
+  "head_body_same_private_material": "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Jes_Apparel01",
+  "private_texture_bindings_public_export_hashes_resolved": [
+    {
+      "parameter": "Albedo",
+      "texture": "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_C"
+    },
+    {
+      "parameter": "Normal",
+      "texture": "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_N"
+    },
+    {
+      "parameter": "RMA",
+      "texture": "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_RMA"
+    },
+    {
+      "parameter": "SSSMask",
+      "texture": "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_SSS"
+    }
+  ],
+  "legacy_exports_match_final_Zen_native_payloads": 11,
+  "stock_master_and_subsurface_imports_preserved": true,
+  "source_model_fit_weights_UVs_and_FP_split_unchanged": true,
+  "color_atlas_resolution": 2048,
+  "full_mapped_UObject_deserialization": "Not performed; object prefixes copied from current original templates",
+  "runtime": "NOT TESTED; native parsing/container hashes do not prove Windows engine loading"
+}
