@@ -1,0 +1,28 @@
+{
+  "file": "Grounded2-All-Four-Updated-Build-Extractor.zip",
+  "bytes": 6755,
+  "sha256": "d541c4fd089acda3c193060e2c82c7331160ad041aa8d2a0141398fb8c30d152",
+  "files": {
+    "Extract-AllFour.ps1": "05029f070f095da3ef55680a48c73c24f6027bf3997f0e7583c59da94817649e",
+    "Start-Extraction.cmd": "7a8f1ddac1298735ed65c50aaadc93de040055804070f448923ca48e9e916f24",
+    "extract_all_four.py": "805bceed0d0df38e76901a06e5f9e88751214a64347098330896fd950ed33b94",
+    "extract_selected.py": "35f34909cef30fc1dc0d80d002af21b5d94f9b2820a53efe2c73458343b052e9",
+    "README.txt": "e53c34d2732b47c8a508bddd48d3f3b18f76d9c941a4f9fe9dd2be0c78d45884"
+  },
+  "status": "LOCALLY_VALIDATED_WINDOWS_COLLECTION_PENDING",
+  "tests": {
+    "count": 6,
+    "real_retoc_positive_control": "Known Commander container:9 Max mesh/physics packages,30.1MiB decoded; missing other3 reported cleanly",
+    "mock_complete_all_four": "All4 roots plus shared asset extracted/archived in one invocation",
+    "unsupported_version_failure": "Partial report ZIP created when listing fails",
+    "readonly": "Original file size/mtime unchanged; output under Paks rejected"
+  },
+  "user_steps": [
+    "Close game; keep UE4SS disabled and removed mods outside Paks",
+    "Extract helper ZIP and double-click Start-Extraction.cmd",
+    "Choose existing retoc.exe0.1.5 then ORIGINAL updated Augusta-WinGDK.utoc",
+    "Upload Desktop Grounded2-AllFour timestamp Max/Willow/Pete/Hoops/Shared/Report ZIPs"
+  ],
+  "no_server_or_character_switching": true,
+  "raw_collection_does_not_assume_UE56_mesh_serialization": true
+}
