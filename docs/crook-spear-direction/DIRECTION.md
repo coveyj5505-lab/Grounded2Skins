@@ -1,0 +1,9 @@
+# Updated user direction: spear-style crook carry and attacks
+
+The user now prefers the crook held at the native spear angle all the time, with shaft thickness comparable to the native spear, using its carry and jab animations where practical. This supersedes the earlier upright walking-stick carry requirement. Preserve the recognizable hook and accepted character skins. The removed first-person proxy hand stays removed; a genuine native hand pose is a separate animation concern.
+
+Target: reuse the native spear visual grip/socket orientation, resting pose, thrust and return. Align the crook's wrapped grip with that frame and thicken shaft cross-section without globally scaling its length/body. Use first-person presentation separately where necessary. Existing persistent FP/TP lifecycle and equipment visibility remain stable.
+
+The preferred shortcut is animation/attachment reuse, not another camera-edge offset paired with punching arms. Native spear attack packages are already collected. Full pose-only substitution is still incomplete: native gameplay hit-frame notifies and any root-motion/attack execution effects must be separated or demonstrably disabled while preserving original unarmed damage, stamina, reach, hit detection and timing. Do not equip an actual spear as an implementation shortcut unless the user explicitly changes the gameplay requirement.
+
+The V2 cosmetic out-and-back draft remains unpublished and is not the intended final native spear-arm solution. Existing releases remain untouched. Use the pending native spear rest/mid-thrust screenshots at the same FOV to compare framing and diameter; avoid another guessed offset. The new session log has no RESULT ERROR but does not record native spear hand transforms, so more repetitions with the current logger will not yield that missing pose data.

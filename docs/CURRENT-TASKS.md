@@ -116,3 +116,11 @@ Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip 
 - [x] Diagnose weak jab: only12cm forward stroke, held through most of native attack. Prepare isolated unpublished V2 out-and-back30cm pulse;11 curve +35 adapter groups pass.
 - [ ] Use proposed real spear standing/mid-jab screenshots at same FOV to set carry/attack presentation. Do not ship another guessed FP offset. Current native arms still punch; independent staff relocation does not solve that pose mismatch.
 - [ ] Full spear-arm pose adaptation remains incomplete. Keep previous collected16 packages; do not play gameplay hit notifies or change native attack mechanics.
+
+## Crook direction update — native spear-style presentation
+
+- [x] User supersedes upright walking-stick carry: match native spear resting angle and shaft thickness; use native spear carry/jab visual poses where practical, preserving the hook.
+- [x] Review additional spear-session log: no mod RESULT ERROR; current logger does not record native spear poses. Existing16-package animation collection remains sufficient for current asset investigation; no repeated thrust test requested.
+- [ ] Native spear standing/mid-thrust screenshots pending (resize to1920px wide JPEG, same FOV). Use for carry/grip/framing/diameter reference.
+- [ ] Prepare visual-only native spear pose/attachment reuse with unarmed gameplay unchanged. Do not substitute a real equipped spear, run uninspected hit notifies, or represent cosmetic V2 staff-only motion as a completed spear-arm solution.
+- [ ] Retain accepted skins, persistent view switching, removed FP proxy hand, and frozen releases.
