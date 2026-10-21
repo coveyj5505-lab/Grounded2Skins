@@ -1,0 +1,11 @@
+{
+  "file": "BoPeep-Crook-ViewSwitch-Repair-Test.zip",
+  "sha256": "501cc9bd2e7b76843d695286258d854b19e69b11d9935e777603967e0cbc570e",
+  "bytes": 8822,
+  "scope": "BoPeepCrook runtime only; no Buzz, assets, skins, loader, settings or mods.txt",
+  "change": "Recreate component on FP/TP/hand presentation changes, assigning skeletal mesh only during deferred creation; hide and dispose old cosmetic first",
+  "FP_position": "Rest forward65/right58/down32 cm; moving closer increases apparent height and side placement without mesh scaling; TP unchanged",
+  "tests": "26 Lua groups pass; new guard rejects repeated per-component mesh assignment during TP-FP-TP cycle",
+  "Windows": "NOT TESTED",
+  "remaining": "Upside-down hand geometry not repaired in this package; flat correct-side grip accepted by user"
+}

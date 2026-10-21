@@ -234,7 +234,7 @@ local function verifyInstalledContainer()
     end
     log('DISK CHECK zBoCrookUE57_P.utoc not found in standard paths; native load result will determine availability')
 end
-local function create(p,body)
+local function create(p,body,presentationMesh)
     phase='preflight'
     -- Complete signature/enum/asset/socket checks BEFORE creating a component.
     for key,args in pairs(S) do
@@ -293,7 +293,7 @@ local function create(p,body)
     invoke(component,'Engine.SkeletalMeshComponent','SetAllowClothActors',false)
     invoke(component,'Engine.PrimitiveComponent','SetOnlyOwnerSee',false)
     invoke(component,'Engine.PrimitiveComponent','SetOwnerNoSee',false)
-    invoke(component,'Engine.SkeletalMeshComponent','SetSkeletalMeshAsset',meshAsset)
+    invoke(component,'Engine.SkeletalMeshComponent','SetSkeletalMeshAsset',presentationMesh or meshAsset)
     invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
     invoke(component,'Engine.SkeletalMeshComponent','SetEnableAnimation',false)
     invoke(p,'Engine.Actor','FinishAddComponent',component,true,transform())
@@ -356,11 +356,13 @@ local function present(p,body,fp)
     if mode~=lastPresentation then
         visible(false)
         local mesh=fp and loadView(copyHand and fpPath or fpBarePath) or meshAsset
-        invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
-        invoke(component,'Engine.SkeletalMeshComponent','SetEnableAnimation',false)
-        invoke(component,'Engine.SkeletalMeshComponent','SetSkeletalMeshAsset',mesh)
-        invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
-        invoke(component,'Engine.SkeletalMeshComponent','SetEnableAnimation',false)
+        -- Preserve the first TP component; all later presentation changes use
+        -- a new deferred component, with one pre-registration mesh assignment.
+        if lastPresentation~=nil or fp then
+            log('PRESENTATION RECREATE '..mode..'; no registered mesh reassignment')
+            cleanup()
+            create(p,body,mesh)
+        end
         lastPresentation=mode
         if fp then log('FP HAND PRESENTATION '..mode..'; native hand visibility cone/attack state; native body untouched') end
     end
@@ -373,9 +375,9 @@ local function present(p,body,fp)
             assert(valid(camera),'First-person camera unavailable for accessory placement')
             assert(invoke(component,'Engine.SceneComponent','K2_AttachToComponent',camera,FName('None'),snap,snap,snap,false)==true,'FP cosmetic attachment failed')
             invoke(component,'Engine.SceneComponent','SetAbsolute',false,false,false)
-            log('ACCESSORY VIEW FP: source hand/forearm grip; forward75/right58/down32cm; native camera/body unchanged')
+            log('ACCESSORY VIEW FP: source hand/forearm grip; forward65/right58/down32cm; closer perspective for taller appearance; native camera/body unchanged')
         end
-        offset.Translation={X=attack and 85 or 75,Y=58,Z=-32}
+        offset.Translation={X=attack and 75 or 65,Y=58,Z=-32}
         local angle=attack and math.rad(75)/2 or 0
         offset.Rotation={X=0,Y=math.sin(angle),Z=0,W=math.cos(angle)}
     else

@@ -94,6 +94,7 @@ function StaticFindObject(path)
 end
 '''.replace('SPECS',',\n'.join(specs))
 checks=[
+("view transitions never reassign a registered crook mesh", "local add=p.AddComponentByClass;p.AddComponentByClass=function(...) local o=add(...);local setter=o.SetSkeletalMeshAsset;local assigned=false;o.SetSkeletalMeshAsset=function(self,mesh) assert(not assigned,'registered crook mesh reassigned');assigned=true;return setter(self,mesh) end;return o end;timer();fp=true;timer();fp=false;timer();assert(made==3 and destroyed==2 and show and c.socket=='r_hand_JNT')"),
 ("copied hand omitted when native hand enters conservative view cone", "fp=true;timer();assert(c.asset:find('_BoCrFP1',1,true));nativeHandVisible=true;timer();assert(c.asset:find('_BoCrFN1',1,true) and show);nativeHandVisible=false;timer();assert(c.asset:find('_BoCrFP1',1,true))"),
 ("optional hand transform failure preserves staff-only carry", "body.GetSocketTransform=function(self,bone) if bone=='None' then error('camera transform unavailable') end;return {Rotation={X=0,Y=0,Z=0,W=1}} end;fp=true;timer();assert(show and c.asset:find('_BoCrFN1',1,true))"),
 ("wrong installed container revision stops before native creation", "io.open=function() return {read=function() return 'wrong' end,seek=function() return 1 end,close=function() end} end;timer();assert(made==0);assert(table.concat(events,'\\n'):find('Wrong container revision installed',1,true))"),
@@ -121,7 +122,8 @@ checks=[
 ("player swap removes accessory", "key();assert(show);female=false;timer();assert(destroyed==1 and not show)"),
 ]
 for name,checksLua in checks:
- if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==58')
+ if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==58').replace('Translation.X==75','Translation.X==65')
+ if os.environ.get('TOYSTORY_RUNTIME_ROOT') and name=='attachment, safety ordering, actual slots, both views, cleanup': checksLua=checksLua.replace('destroyed==1','destroyed==3')
  state=lib.luaL_newstate();lib.luaL_openlibs(state)
  if not checksLua.startswith('timer();') and not checksLua.startswith('fp=true;timer();'):checksLua=checksLua.replace('key();','timer();',1)
  code=(pre+'\n'+source+'\n'+checksLua).encode()

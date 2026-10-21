@@ -127,3 +127,11 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] Isolated wing candidate uses fresh deferred cosmetic creation for each state instead of registered mesh reassignment; 13 mock Lua groups pass, including per-component assignment guard and stored/deployed/disposal transitions. Flight config explicitly disabled for next wing-only test. No assets, skins, loader, crook or mods.txt changed.
 - [ ] Windows: standing F1 extend/retract first; then actual glide and landing only if stable. Forward flight pose intentionally disabled in this isolation package.
 - [ ] Bo Peep FP hand correction clarified: upside-down orientation is main issue; flat fingers acceptable on correct side of shaft. Do not spend time curling every model's fingers.
+
+## Crook FP-to-TP crash follow-up
+
+- [x] User reports stuck/dragged camera-relative crook during view transition. Latest log ends at SetSkeletalMeshAsset during presentation change, before next attachment call. Not a proven camera-parenting crash.
+- [x] Separate BoPeepCrook-only candidate recreates cosmetic for view/hand-state changes, with one deferred mesh assignment per component; 26 local Lua groups pass including TP-FP-TP assignment guard, equipment hiding and cleanup. Buzz test files untouched.
+- [x] FP apparent height/side placement adjusted by perspective: forward75 to65 cm, right58 unchanged; no hand/crook stretching or TP scale change.
+- [ ] Windows: verify TP-FP-TP transition stability before placement refinements. User testing Buzz independently; do not require interrupting that test.
+- [ ] Hand upside-down geometry still pending; simple flat correct-side grip is sufficient.
