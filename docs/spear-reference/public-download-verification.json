@@ -1,0 +1,15 @@
+{
+  "file": "BoPeep-Native-Spear-Reference-Probe-V1.zip",
+  "bytes": 8130,
+  "sha256": "b547b13aa86fc8cb43a8dbeab7e3c040c56ccab7ab9b7e284f74b0f2f6d510d7",
+  "status": "READ_ONLY_PROBE_WINDOWS_PENDING",
+  "mocked_groups": 13,
+  "uploads": [
+    "UE4SS.log",
+    "new native .usmap"
+  ],
+  "existing_animation_packages_recollected": false,
+  "url": "https://raw.githubusercontent.com/coveyj5505-lab/Grounded2Skins/3bbcf7a954bc67c2396f779c2781c9ee3e39b134/BoPeep-Native-Spear-Reference-Probe-V1.zip",
+  "http_status": 200,
+  "verified": true
+}
