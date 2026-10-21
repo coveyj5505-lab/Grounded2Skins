@@ -120,3 +120,10 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] FP-only crook side offset increased from43 to58 cm; TP grip/model scales unchanged; regression passed.
 - [ ] FP proxy hand: repair finger curl around shaft, validate geometry before new asset release. Latest screenshot clearly shows fingers flat over staff. Not included in runtime-only update.
 - [ ] Windows: F1 toggle and genuine glide/landing/FP-switch restoration with flight adapter fix; confirm side placement. Tuft visual still retained intentionally until separate visual-hiding work.
+
+## F1 crash follow-up
+
+- [x] User latest log ends after wing manual preference and during SetSkeletalMeshAsset on existing component. Last logged call is a lead, not a symbolized crash diagnosis. Flight adapter meanwhile polls components.
+- [x] Isolated wing candidate uses fresh deferred cosmetic creation for each state instead of registered mesh reassignment; 13 mock Lua groups pass, including per-component assignment guard and stored/deployed/disposal transitions. Flight config explicitly disabled for next wing-only test. No assets, skins, loader, crook or mods.txt changed.
+- [ ] Windows: standing F1 extend/retract first; then actual glide and landing only if stable. Forward flight pose intentionally disabled in this isolation package.
+- [ ] Bo Peep FP hand correction clarified: upside-down orientation is main issue; flat fingers acceptable on correct side of shaft. Do not spend time curling every model's fingers.

@@ -1,0 +1,13 @@
+{
+  "file": "Buzz-Wings-F1-Recreate-Test.zip",
+  "sha256": "42431d4f7ea12c6a16cdf2ad2bfb849e2cf8c1b7ee434e1892036de7ae5a54e2",
+  "bytes": 7095,
+  "changes": [
+    "Wing state transitions dispose old cosmetic and repeat deferred creation; never reassign registered mesh",
+    "Flight visual disabled to isolate wing transitions",
+    "F1 preference retained"
+  ],
+  "asset_changes": false,
+  "regressions": "13 Lua groups pass, including rejecting repeated assignment to each component and manual OR gliding",
+  "Windows": "NOT TESTED; crash source inferred from final logged native call, not proven by stack trace"
+}

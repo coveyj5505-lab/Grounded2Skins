@@ -203,18 +203,18 @@ local function state(gliding)
     assert(type(gliding)=='boolean','IsGliding did not return a bool; no state guessed')
     return (manualWingsExtended or gliding) and 'DEPLOYED' or 'RETRACTED'
 end
+local create
 local function showState(desired)
     if lastState==desired then return end
-    phase='state-swap '..desired
-    visibility(false)
-    invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
-    invoke(component,'Engine.SkeletalMeshComponent','SetEnableAnimation',false)
-    invoke(component,'Engine.SkeletalMeshComponent','SetSkeletalMeshAsset',assets[desired])
-    invoke(component,'Engine.SkeletalMeshComponent','SetDisablePostProcessBlueprint',true)
-    invoke(component,'Engine.SkeletalMeshComponent','SetEnableAnimation',false)
-    invoke(component,'Engine.PrimitiveComponent','SetCollisionEnabled',noCollision)
-    visibility(true);lastState=desired
-    log('STATE '..desired..'; source=IsGliding(); mesh='..full(assets[desired])..'; visible=true')
+    -- Never replace the mesh of a registered skeletal component: the latest
+    -- Windows crash ended at that operation. Reuse the successful deferred
+    -- creation path, assigning the mesh before registration instead.
+    phase='state-recreate '..desired
+    local p,body=ownerPawn,bodyMesh
+    log('STATE RECREATE '..desired..'; dispose old cosmetic, then deferred component creation')
+    cleanup()
+    create(p,body,desired)
+    log('STATE '..desired..'; new cosmetic component; manual OR actual gliding; visible=true')
 end
 local function verifyInstalledContainer()
     if not io or type(io.open)~='function' then log('DISK CHECK unavailable; native loading remains authoritative');return end
@@ -240,7 +240,7 @@ local function verifyInstalledContainer()
     end
     log('DISK CHECK zBuzzWingsUE57_P.utoc not found in standard paths; native load result will determine availability')
 end
-local function create(p,body,desired)
+create=function(p,body,desired)
     phase='preflight'
     for key,args in pairs(S) do local class,method=key:match('^(.*)%.([^%.]+)$');assert(signature(class,method,args),'Preflight rejected '..key) end
     noCollision=engineEnum('ECollisionEnabled','NoCollision');snap=engineEnum('EAttachmentRule','SnapToTarget')
@@ -349,4 +349,4 @@ if type(config.ManualToggleKey)=='string' and config.ManualToggleKey~='F6' and c
     end)
 else log('Manual wing key unassigned (wing_config.lua); F6 remains debug suspend/resume only') end
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded wings v0.2 stock-accessory layout: AUTOMATIC startup; deployed=manual preference OR IsGliding; landing restores preference. F6 debug suspend/resume only. Requires NEW zBuzzWingsUE57_P trio; remove old zBuzzWings_P trio. Local-client only; native loading/attachment Windows pending. No tuft visual hiding yet.')
+log('Loaded wings registered-mesh-swap avoidance candidate: AUTOMATIC startup; deployed=manual preference OR IsGliding; landing restores preference. F6 debug suspend/resume only. Requires NEW zBuzzWingsUE57_P trio; remove old zBuzzWings_P trio. Local-client only; native loading/attachment Windows pending. No tuft visual hiding yet.')
