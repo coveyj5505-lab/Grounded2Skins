@@ -110,3 +110,13 @@ Once major runtime features work and the user accepts the silhouettes and views,
 
 - [x] User confirms BOTH zBoCrookUE57_P.utoc and zBuzzWingsUE57_P.utoc are missing. Install missing accessory trios before investigating marshalling or engine asset loading. New Accessories-J ZIP includes all 9 unchanged asset files and existing 3 runtime folders, with J config.
 - [ ] Windows: confirm accessory asset loading after full Paks install; automatic empty-handed crook and J/manual/glide/landing wing states.
+
+## Accessory assets Windows confirmed, flight-controller follow-up
+
+- [x] Latest Windows log confirms crook TP/FP assets load and component attachment/visibility succeeds. User confirms carry but FP fingers are flat/misaligned.
+- [x] Both wing assets load, attach and swap correctly via J. J conflicts with game autowalk; new isolated config uses F1 (game conflict unverified).
+- [x] Flight adapter remains WAIT local gameplay character in latest session. Callable reflected IsLocalController guard bug reproduced in Lua regression, corrected using Windows-working wing adapter invocation. New regression passes, remaining adapter/controller tests pass. Windows flight entry still unverified.
+- [x] Glide logging now records boolean changes independently of requested visual state/manual preference. Previous log cannot rule out glide changes while manually extended. No forced gameplay glide or camera/physics changes.
+- [x] FP-only crook side offset increased from43 to58 cm; TP grip/model scales unchanged; regression passed.
+- [ ] FP proxy hand: repair finger curl around shaft, validate geometry before new asset release. Latest screenshot clearly shows fingers flat over staff. Not included in runtime-only update.
+- [ ] Windows: F1 toggle and genuine glide/landing/FP-switch restoration with flight adapter fix; confirm side placement. Tuft visual still retained intentionally until separate visual-hiding work.

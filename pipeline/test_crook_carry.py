@@ -121,6 +121,7 @@ checks=[
 ("player swap removes accessory", "key();assert(show);female=false;timer();assert(destroyed==1 and not show)"),
 ]
 for name,checksLua in checks:
+ if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==58')
  state=lib.luaL_newstate();lib.luaL_openlibs(state)
  if not checksLua.startswith('timer();') and not checksLua.startswith('fp=true;timer();'):checksLua=checksLua.replace('key();','timer();',1)
  code=(pre+'\n'+source+'\n'+checksLua).encode()

@@ -373,9 +373,9 @@ local function present(p,body,fp)
             assert(valid(camera),'First-person camera unavailable for accessory placement')
             assert(invoke(component,'Engine.SceneComponent','K2_AttachToComponent',camera,FName('None'),snap,snap,snap,false)==true,'FP cosmetic attachment failed')
             invoke(component,'Engine.SceneComponent','SetAbsolute',false,false,false)
-            log('ACCESSORY VIEW FP: source hand/forearm grip; forward75/right43/down32cm; native camera/body unchanged')
+            log('ACCESSORY VIEW FP: source hand/forearm grip; forward75/right58/down32cm; native camera/body unchanged')
         end
-        offset.Translation={X=attack and 85 or 75,Y=43,Z=-32}
+        offset.Translation={X=attack and 85 or 75,Y=58,Z=-32}
         local angle=attack and math.rad(75)/2 or 0
         offset.Rotation={X=0,Y=math.sin(angle),Z=0,W=math.cos(angle)}
     else

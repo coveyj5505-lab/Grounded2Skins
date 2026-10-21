@@ -1,0 +1,24 @@
+{
+  "file": "ToyStory-UE57-Runtime-F1-Flight-Test.zip",
+  "bytes": 23420,
+  "sha256": "83cec1fb2f03cecc1d54bf73d99f7403c8b7f9e40109309a2cd1e59a06c124e0",
+  "contents": "Mods only; no assets, DLLs, settings or mods.txt",
+  "changes": [
+    "F1 manual wing preference key",
+    "Flight adapter accepts callable reflected controller getter",
+    "Glide changes logged independently of manual wing state",
+    "FP crook side offset43 to58; TP and scales preserved"
+  ],
+  "regression_groups": {
+    "crook": 25,
+    "wings": 12,
+    "flight_controller": 17,
+    "flight_adapter": 12
+  },
+  "not_fixed": [
+    "FP finger curl",
+    "tuft visual hiding",
+    "native spear animation substitution"
+  ],
+  "Windows": "Pending"
+}

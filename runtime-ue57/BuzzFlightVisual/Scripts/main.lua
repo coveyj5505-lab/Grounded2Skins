@@ -285,7 +285,9 @@ end
 local function localPawn()
     for i,pc in ipairs(FindAllOf('PlayerController') or {}) do
         if i>16 then break end
-        if valid(pc) and type(pc.IsLocalController)=='function' and pc:IsLocalController() then return stable(pc.Pawn) end
+        -- Reflected UFunctions can be callable userdata/tables, not Lua functions.
+        -- Use the same local-controller invocation as the Windows-working wing adapter.
+        if valid(pc) and pc:IsLocalController() then return stable(pc.Pawn) end
     end
 end
 local function components(p)

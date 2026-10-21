@@ -41,6 +41,7 @@ end)()
 function require(name) if name=='flight_config' then return {Enabled=experimentEnabled,DebugToggleKey=nil} end;assert(name=='flight_controller');return module end
 '''.replace('CONTROLLER',controller)
 checks=[
+('callable reflected controller getter is accepted',"local find=FindAllOf;FindAllOf=function(name) local list=find(name);for _,pc in ipairs(list) do local fn=pc.IsLocalController;pc.IsLocalController=setmetatable({},{__call=function(_,self) return fn(self) end}) end;return list end","glide=true;timer();assert(show and made==1 and not nativeVisible and not wingVisible);glide=false;timer();assert(nativeVisible and wingVisible)"),
 ('disabled development default makes no native changes',"experimentEnabled=false", "glide=true;timer();assert(made==0 and nativeVisible and wingVisible and tickValue==5)"),
 ('standing leaves manual wings and native body alone','',"timer();assert(made==0 and nativeVisible and wingVisible and tickValue==5)"),
 ('glide creates hidden proxy before suppression and restores on landing','',"glide=true;timer();assert(show and made==1 and not nativeVisible and not wingVisible and tickValue==7);timer();assert(made==1);glide=false;timer();assert(not show and destroyed==1 and nativeVisible and wingVisible and tickValue==5)"),

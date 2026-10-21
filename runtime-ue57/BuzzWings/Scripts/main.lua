@@ -172,7 +172,7 @@ local assetPaths={
     DEPLOYED='/Game/_BzWExt1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01'
 }
 local assets={};local component,ownerPawn,bodyMesh
-local enabled=true;local failed=false;local busy=false;local lastState=nil
+local enabled=true;local failed=false;local busy=false;local lastState=nil;local lastGliding=nil
 local noCollision,snap
 local function identityTransform()
     return {Rotation={X=0,Y=0,Z=0,W=1},Translation={X=0,Y=0,Z=0},Scale3D={X=1,Y=1,Z=1}}
@@ -193,7 +193,7 @@ local function cleanup()
         pcall(function() invoke(component,'Engine.SceneComponent','SetHiddenInGame',true,false) end)
         pcall(function() invoke(component,'Engine.ActorComponent','K2_DestroyComponent',ownerPawn) end)
     end
-    component=nil;ownerPawn=nil;bodyMesh=nil;lastState=nil
+    component=nil;ownerPawn=nil;bodyMesh=nil;lastState=nil;lastGliding=nil
 end
 local config={ManualWingsExtended=false,ManualToggleKey=nil}
 local loaded,user=pcall(require,'wing_config')
@@ -318,7 +318,10 @@ local function update()
     phase='glide-read'
     local movement=unsafeProperty(p,'CharMovementComponent','ObjectProperty');assert(valid(movement),'Movement component unavailable')
     local gliding=invoke(movement,'Maine.MaineCharMovementComponent','IsGliding');local desired=state(gliding)
-    if desired~=lastState then log('GLIDE OBSERVED '..tostring(gliding)..'; requested='..desired) end
+    if gliding~=lastGliding then
+        log('GLIDE OBSERVED '..tostring(gliding)..'; manual='..tostring(manualWingsExtended)..'; requested='..desired)
+        lastGliding=gliding
+    end
     if not valid(component) then create(p,body,desired) else showState(desired) end
 end
 local function dispatch(fn)
