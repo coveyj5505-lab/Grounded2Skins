@@ -4,7 +4,7 @@ import argparse,hashlib,json,os,shutil,struct,subprocess
 from pathlib import Path
 from compare_stock_max import names
 from extract_reference_skeleton import extract
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',type=Path);p.add_argument('package_work',type=Path);p.add_argument('--global-input',type=Path,default=Path('/workspace/mod-work/global-stage/input'));p.add_argument('--texture-prefix',default='T_Buz');p.add_argument('--mesh-suffixes',nargs='+',default=['SK_Male_Teen_01.uasset','SK_Male_Teen_01_w_BackPack.uasset']);p.add_argument('--expected-mesh-count',type=int,default=2);p.add_argument('--ue57',action='store_true');a=p.parse_args();stage=a.stage.resolve();pack=a.package_work.resolve();pipeline=Path(__file__).resolve().parent
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',type=Path);p.add_argument('package_work',type=Path);p.add_argument('--global-input',type=Path,default=Path('/workspace/mod-work/global-stage/input'));p.add_argument('--texture-prefix',default='T_Buz');p.add_argument('--mesh-suffixes',nargs='+',default=['SK_Male_Teen_01.uasset','SK_Male_Teen_01_w_BackPack.uasset']);p.add_argument('--expected-mesh-count',type=int,default=2);p.add_argument('--ue57',action='store_true');p.add_argument('--colors-map',type=Path);a=p.parse_args();color_map={x['chunk']:x['has_colors'] for x in json.loads(a.colors_map.read_text())['meshes']} if a.colors_map else {};stage=a.stage.resolve();pack=a.package_work.resolve();pipeline=Path(__file__).resolve().parent
 for n,t in {'final-unpacked':pack/'unpacked','final-package':pack/'mod'}.items():assert not (stage/n).exists();(stage/n).symlink_to(t,target_is_directory=True)
 manifest=json.loads((stage/'final-unpacked/manifest.json').read_text());metadata=[];skeletons=[]
 for cid,path in manifest['chunk_paths'].items():
@@ -20,7 +20,7 @@ def run(label,command):
  with (stage/(label+'.log')).open('w') as f:result=subprocess.run(list(map(str,command)),env=env,stdout=f,stderr=subprocess.STDOUT)
  commands.append({'label':label,'command':list(map(str,command)),'exit_code':result.returncode});(stage/'readback-commands.json').write_text(json.dumps(commands,indent=2)+'\n');result.check_returncode()
 for i,m in enumerate([m for m in metadata if m['path'].endswith(tuple(a.mesh_suffixes))]):
- run(f'final-mesh-readback-{i}',[dotnet,pipeline/'native-lod-probe/bin/Release/net10.0/NativeLodProbe.dll',stage/'final-unpacked/chunks'/m['chunk_id'],stage/'final-skeletons.json',stage/'final-metadata.json',stage/f'final-mesh-readback-{i}']+(['--no-colors'] if '/Hair/' in m['path'] else [])+(['--ue57'] if a.ue57 else []))
+ run(f'final-mesh-readback-{i}',[dotnet,pipeline/'native-lod-probe/bin/Release/net10.0/NativeLodProbe.dll',stage/'final-unpacked/chunks'/m['chunk_id'],stage/'final-skeletons.json',stage/'final-metadata.json',stage/f'final-mesh-readback-{i}']+(['--no-colors'] if not color_map.get(m['chunk_id'],'/Hair/' not in m['path']) else [])+(['--ue57'] if a.ue57 else []))
 li=stage/'final-legacy-input';li.mkdir()
 for f in list((stage/'final-package').iterdir())+list(a.global_input.glob('global.*')):shutil.copyfile(f,li/f.name)
 run('final-readback-legacy',['/workspace/mod-work/bin/retoc','to-legacy',li,stage/'final-readback-legacy','--no-shaders','--no-script-objects','--no-parallel','--verbose']+(['--version','UE5_7'] if a.ue57 else []))

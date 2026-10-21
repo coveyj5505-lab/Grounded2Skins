@@ -12,7 +12,7 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 - [x] Baseline menu launch recovered after removing9 mod trios and disabling UE4SS. JessieFP alone subsequently reproduces crash; removing it restores launch. Asset compatibility cannot be assumed.
 - [x] All6 original updated-build extraction archives received/verified: Max17,Willow19,Pete20,Hoops16,Shared4 packages. No collection errors.
 - [x] Jessie six-mesh native rebase prepared from current5.7.4 objects. Frozen geometry/weights/UVs/FP material sections byte-exact under final native readback. Separate Jessie-UE57-Compatibility-Test.zip prepared.
-- [ ] Windows: Jessie-only menu→exit→relaunch, then Hoops gameplay/FP/TP. Other old Paks remain removed; UE4SS off for this asset-only isolation. Do not migrate other skins based on offline checks alone.
+- [x] User confirmed Jessie-UE57 works; Jessie release preserved unchanged. Proceed with the same current-build serialization repair for remaining packages.
 - [x] Current-build private atlas material clone prepared, preserving vanilla master/subsurface imports.
 - [x] Four current-build texture templates received: all8 chunks verified. Fresh private atlas/material built from5.7.4 originals,47 mip payloads independently verified. Original4096 atlas retained; test uses stock2048BC1 layout.
 - [ ] Full mapped UObject runtime loading remains unverified. Native stream parsing alone is not proof of engine compatibility.
@@ -80,3 +80,12 @@ Once major runtime features work and the user accepts the silhouettes and views,
 
 - [ ] Invisible Armor: assess5.7.4 compatibility after a skin startup is restored; source/archive not supplied yet. Preserve armor gameplay; visual hiding only. User independently tested it in Paks on the updated build and it crashed.
 - [ ] Teleport mod: assess separately after skin compatibility; source/archive not supplied yet. User independently tested it in Paks on the updated build and it crashed.
+
+## UE5.7.4 remaining-package release
+
+- [x] Woody, Bo Peep, Buzz body, crook, both wing states and corrected flight-pose mesh rebased and repacked separately. Six independent final readbacks pass geometry, skin, UV, material/export-reference and current native-tail checks.
+- [x] Woody retains V3 pelvis and boot/ring fixes; Bo Peep retains cape/FP sections; Buzz retains custom 230-bone bind table and correct unique head material slot. No camera offset changes.
+- [x] Private textures rebuilt using current stock templates; each private atlas set has 47 validated mips.
+- [x] Isolated runtime-ue57 copies match new accessory container names and exact UTOC header/size. Released v0.3 and stable runtime preserved. Crook, wing and flight Lua regression checks pass.
+- [ ] Windows: three skin trios menu, exit/relaunch and gameplay; then accessories with the updated Lua folders. Offline readback does not prove engine loading or runtime behavior.
+- [ ] Windows: flight proxy load and restore on landing/view change; static corrected side-socket pose, tuft remains visible, local client only. Native spear montage substitution remains separate unfinished work.

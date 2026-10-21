@@ -1,9 +1,10 @@
+import os
 """Real Lua5.4 fault-injection tests for isolated flight visibility rollback.
 No Unreal runtime or native-function availability is claimed.
 """
 import ctypes,json
 from pathlib import Path
-root=Path(__file__).resolve().parents[1];source=(root/'experiments/BuzzFlightVisual/Scripts/flight_controller.lua').read_text();pre='''
+root=Path(__file__).resolve().parents[1];source=(Path(os.environ.get('TOYSTORY_FLIGHT_ROOT',str(root/'experiments/BuzzFlightVisual/Scripts')))/'flight_controller.lua').read_text();pre='''
 local events={};local fail={};local all={};local n=0
 local function object(name,visible) local o={name=name,visible=visible,alive=true};all[#all+1]=o;return o end
 local owner=object('owner',true);local body=object('body',true);local backup=object('backup',false);local wing=object('wing',true)

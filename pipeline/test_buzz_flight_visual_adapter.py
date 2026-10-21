@@ -1,9 +1,10 @@
+import os
 """Exercise the staged native adapter using the proven accessory Lua fixtures.
 These mocks validate flow, rollback and signature gates, not Windows access.
 """
 import ctypes,re,json
 from pathlib import Path
-root=Path(__file__).resolve().parents[1];folder=root/'experiments/BuzzFlightVisual/Scripts';source=(folder/'main.lua').read_text();controller=(folder/'flight_controller.lua').read_text();original=(root/'pipeline/test_crook_carry.py').read_text();pre=original.split("pre=r'''",1)[1].split("'''.replace",1)[0];specs=[]
+root=Path(__file__).resolve().parents[1];folder=Path(os.environ.get('TOYSTORY_FLIGHT_ROOT',str(root/'experiments/BuzzFlightVisual/Scripts')));source=(folder/'main.lua').read_text();controller=(folder/'flight_controller.lua').read_text();original=(root/'pipeline/test_crook_carry.py').read_text();pre=original.split("pre=r'''",1)[1].split("'''.replace",1)[0];specs=[]
 for owner,method,args in re.findall(r"spec\('([^']+)','([^']+)',(\{[^\n]+\})\)",source):specs.append("['/Script/"+owner+':'+method+"']="+args)
 pre=pre.replace('SPECS',',\n'.join(specs)).replace('_BoCrTP1','_BzFlit1').replace('/Game/_BoCr','/Game/_BzFlit1')
 pre=pre.replace('/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01','/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01')

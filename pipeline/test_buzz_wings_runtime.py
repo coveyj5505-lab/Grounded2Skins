@@ -1,3 +1,4 @@
+import os
 """Execute the wing state controller under Lua mocks; no native Unreal safety claim."""
 import ast,ctypes,re
 from pathlib import Path
@@ -5,7 +6,7 @@ root=Path(__file__).resolve().parents[1]
 # Reuse the established component fixture without executing its crook tests.
 mod=ast.parse((root/'pipeline/test_crook_carry.py').read_text());node=next(n for n in mod.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='pre' for t in n.targets))
 pre=ast.literal_eval(node.value.func.value)
-source=(root/'runtime/BuzzWings/Scripts/main.lua').read_text()
+source=(Path(os.environ.get('TOYSTORY_RUNTIME_ROOT',str(root/'runtime')))/'BuzzWings/Scripts/main.lua').read_text()
 specs=["['/Script/"+owner+':'+method+"']="+args for owner,method,args in re.findall(r"spec\('([^']+)','([^']+)',(\{[^\n]+\})\)",source)]
 pre=pre.replace('SPECS',',\n'.join(specs)).replace('Key={F9=120}','Key={F6=117}')
 pre=pre.replace('/Game/_BoCrTP1/','/Game/_BzW').replace('/Game/_BoCr','/Game/_BzW')

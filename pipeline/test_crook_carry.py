@@ -1,8 +1,9 @@
+import os
 """Lua regression checks for isolated crook component lifecycle; not native UE4SS validation."""
 import ctypes,re
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
-source=(root/'runtime/BoPeepCrook/Scripts/main.lua').read_text()
+source=(Path(os.environ.get('TOYSTORY_RUNTIME_ROOT',str(root/'runtime')))/'BoPeepCrook/Scripts/main.lua').read_text()
 lib=ctypes.CDLL('liblua5.4.so.0');lib.luaL_newstate.restype=ctypes.c_void_p
 lib.luaL_openlibs.argtypes=[ctypes.c_void_p];lib.luaL_loadstring.argtypes=[ctypes.c_void_p,ctypes.c_char_p]
 lib.lua_pcallk.argtypes=[ctypes.c_void_p,ctypes.c_int,ctypes.c_int,ctypes.c_int,ctypes.c_longlong,ctypes.c_void_p]

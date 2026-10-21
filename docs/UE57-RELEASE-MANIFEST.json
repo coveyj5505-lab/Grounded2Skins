@@ -1,0 +1,27 @@
+[
+  {
+    "file": "Woody-UE57-Test.zip",
+    "bytes": 6982013,
+    "sha256": "87270aaeca384bd14592fd647a72280d14468600f9f62707a802eab5beefb5a1"
+  },
+  {
+    "file": "BoPeep-UE57-Test.zip",
+    "bytes": 1964854,
+    "sha256": "d1563b24a3be8e1606515f7aa2fa70d8f8526e8fd6106f7374150c5415beab4d"
+  },
+  {
+    "file": "Buzz-UE57-Test.zip",
+    "bytes": 3658079,
+    "sha256": "14b6c527db1d88bf7d371f1da4016fc0991cbc1ae98542c5fe9b3912115ca372"
+  },
+  {
+    "file": "ToyStory-UE57-Accessories-Test.zip",
+    "bytes": 3112433,
+    "sha256": "726fafa7642df40e3721f843d1ec849f3b2715a8d4fadfc2180a8b8b3696e6ff"
+  },
+  {
+    "file": "ToyStory-UE57-Skins-Accessories-Test.zip",
+    "bytes": 15718015,
+    "sha256": "cc9114c496d1dd6bbc04d282bba966b4c0998a365c9272bc1d31490d094158e6"
+  }
+]
