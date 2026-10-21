@@ -1,0 +1,11 @@
+{
+  "file": "Buzz-Flight-Landing-V5-UE57-Test.zip",
+  "bytes": 11997,
+  "sha256": "2989142a50cbe8f19420e996d2bc3c902f551ed965449eeec47c37426598bdae",
+  "status": "CANDIDATE_NOT_WINDOWS_VALIDATED",
+  "mocked_groups": 48,
+  "replaces": "BuzzFlightVisual only",
+  "url": "https://raw.githubusercontent.com/coveyj5505-lab/Grounded2Skins/6841ce98734afdf20daf037989521336b23d6c74/Buzz-Flight-Landing-V5-UE57-Test.zip",
+  "http_status": 200,
+  "verified": true
+}
