@@ -100,3 +100,12 @@ Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip 
 - [ ] Windows acceptance of repeated V5 glides/landing and F1 preference restoration. Buzz-only runtime package; no skin/asset changes.
 - [ ] Buzz arm pivot/armor fit remains unresolved; rejected rigid experiment must not ship.
 - [ ] FreeBuild, Teleport, Invisible Armor compatibility updates remain on backlog; preserve current known-working character files while inspecting those separately.
+
+## Current acceptance and crook animation priority
+
+- [x] Woody V3, Jessie V3, and now Buzz V3 skin/arms accepted as FINAL. No more Buzz geometry/weight changes. Exact accepted Buzz trio recorded in buzz-final/accepted-release.json. Rejected experiments remain unshipped.
+- [x] Bo Peep body/cape and V4 staff-only first-person presentation accepted. Preserve current models, crook thickness/placement, and separate persistent camera views.
+- [x] Crook jab V1 prepared in isolated runtime: smooth cosmetic85-degree hook-first orientation, FP forward thrust/clearance and return, game-time pause handling,33ms polling, strict actual-slot visibility and no added FP hand.10 pure Lua motion and35 adapter/lifecycle groups pass. FP native geometry stays ahead of camera through every sampled orientation.
+- [ ] Windows acceptance of crook jab V1. This animates only the independent crook; native arms still use vanilla unarmed animation. Full native spear-arm substitution remains a separate task: collected clips have gameplay hit notifies; do not play these on the gameplay animation instance without separating effects/timing. Existing clips remain collected and hash-verified; no redundant extraction.
+- [ ] Buzz flight V5 still awaits Windows acceptance; no changes bundled with crook jab.
+- [ ] FreeBuild, Teleport and Invisible Armor compatibility backlog remains active after character work.

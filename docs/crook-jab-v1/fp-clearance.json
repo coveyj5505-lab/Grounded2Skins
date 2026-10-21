@@ -1,0 +1,6 @@
+{
+  "scope": "All current native FP staff vertices,201 orientations and recoil/neutral/extended translation extremes; camera-relative cosmetic units",
+  "minimum_forward_cm": 16.852325577735897,
+  "standing_offset_unchanged": true,
+  "native_game_near_plane_not_assumed": true
+}

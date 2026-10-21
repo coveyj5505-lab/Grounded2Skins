@@ -1,0 +1,23 @@
+{
+  "status": "USER_ACCEPTED_FINAL",
+  "date": "2026-10-21",
+  "scope": "Buzz skin and arm appearance accepted; no more arm geometry/weight work. This does not mark flight-runtime V5 accepted.",
+  "source_release": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+  "files": [
+    {
+      "archive_path": "Paks/zBuzzSkinV3UE57_99_P.pak",
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    {
+      "archive_path": "Paks/zBuzzSkinV3UE57_99_P.ucas",
+      "bytes": 20654410,
+      "sha256": "36bb57d34acd46e28e7f36cbc52f2b5032e45a33b48f046d9d61e23328cd76f2"
+    },
+    {
+      "archive_path": "Paks/zBuzzSkinV3UE57_99_P.utoc",
+      "bytes": 5722,
+      "sha256": "f11cc25c24f8251051ffee508a8b4706b77e7c18dcefbb4d58f9b0034d781cf8"
+    }
+  ]
+}

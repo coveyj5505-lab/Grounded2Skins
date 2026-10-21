@@ -1,0 +1,23 @@
+{
+  "added_native_calls": [
+    [
+      "Engine.GameplayStatics",
+      "GetTimeSeconds"
+    ]
+  ],
+  "gameplay_animation_calls_added": [],
+  "combat_or_equipment_writes_added": [],
+  "asset_changes": false,
+  "accepted_source": "runtime-feedback-v4/BoPeepCrook",
+  "accepted_runtime_files": [
+    {
+      "file": "enabled.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "Scripts/main.lua",
+      "sha256": "fd48291288a0da6ce50e550fc7a67aad5ac065c26b0170bcac25d2a56d4c8091"
+    }
+  ],
+  "scope": "Source call-set comparison plus manual diff review; not native Windows execution"
+}
