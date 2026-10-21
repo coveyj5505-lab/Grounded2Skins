@@ -91,3 +91,12 @@ Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip 
 ## Jessie finalized — user acceptance
 
 - [x] User accepted current V3 Jessie as final. Exact trio sizes/SHA256 recorded in [accepted release](jessie-final/accepted-release.json). No further Jessie skin or first-person changes planned.
+
+## V4 Windows results and V5 landing repair
+
+- [x] User accepts Bo Peep V4 presentation. Preserve current body/cape/staff-only runtime; spear animation remains next after skins. Optional FP staff shadow disable confirmed in log.
+- [x] V4 Buzz still intermittent: old deployed wings AND inactive tuft components reject restoration after landing; RESTORATION_PENDING blocks subsequent glides. Exact identities/timestamps in feedback-v5/windows-v4-evidence.json.
+- [x] V5 prepared: retire missing private wings on all cleanup/retry paths; live vanished tuft gets a best-effort restore, retired rejecting tuft cannot hold restoration debt. Native body/SCAB restoration remains strict.48 mocked controller/adapter groups pass.
+- [ ] Windows acceptance of repeated V5 glides/landing and F1 preference restoration. Buzz-only runtime package; no skin/asset changes.
+- [ ] Buzz arm pivot/armor fit remains unresolved; rejected rigid experiment must not ship.
+- [ ] FreeBuild, Teleport, Invisible Armor compatibility updates remain on backlog; preserve current known-working character files while inspecting those separately.

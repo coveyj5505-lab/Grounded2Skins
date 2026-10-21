@@ -1,0 +1,30 @@
+{
+  "status": "PASS_MOCKED_LUA_NOT_UNREAL",
+  "groups": 22,
+  "checks": [
+    "another character wrist device cannot identify them as Buzz",
+    "shadow-only components are never changed",
+    "visible wrist device hides only with flight proxy",
+    "extra native Max head component is suppressed with body and restored",
+    "real returned component-array parameter wrappers enumerate native bodies and wings",
+    "optional glider getter failure cannot block forward flight",
+    "exact glider item render primitives hide and restore",
+    "reusable tuft uses active inventory item before equipment fallback",
+    "direct character mesh works when enumeration omits native body",
+    "direct and enumerated body is suppressed only once",
+    "callable reflected controller getter is accepted",
+    "disabled development default makes no native changes",
+    "standing leaves manual wings and native body alone",
+    "glide creates hidden proxy before suppression and restores on landing",
+    "independent wing update cannot leave duplicate upright wings visible",
+    "first-person switch restores original presentation and tick policy",
+    "asset-load failure never hides native source",
+    "unknown glide restores active visual safely",
+    "source tick setter failure aborts before native suppression",
+    "wrong source tick property type fails safely",
+    "wrong character receives no flight visual",
+    "missing native function signature rejects before creation"
+  ],
+  "default": "DISABLED, no default hotkey, no enabled.txt, not installed or in v0.3",
+  "runtime": "NOT TESTED; live property/function validation still required"
+}

@@ -1,0 +1,33 @@
+{
+  "log_sha256": "9397186fb547f42f803ad8fb0466365b4e51f1deddbb0cf75a366ef4b751d109",
+  "state_transitions": [
+    "[2026-10-21 18:00:44.6279538] [Lua] [BuzzFlightVisual] NATIVE_PRESENTATION; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:01:11.4887930] [Lua] [BuzzFlightVisual] FLIGHT_VISUAL; IsGliding=true; firstPerson=false; visual=true",
+    "[2026-10-21 18:01:23.4052410] [Lua] [BuzzFlightVisual] NATIVE_PRESENTATION; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:01:23.6107256] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:01:51.1378723] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=true; firstPerson=false; visual=false",
+    "[2026-10-21 18:01:55.7838298] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:01:57.2055934] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=true; firstPerson=false; visual=false",
+    "[2026-10-21 18:02:01.2491925] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:02:02.6587298] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=true; firstPerson=false; visual=false",
+    "[2026-10-21 18:02:04.6764164] [Lua] [BuzzFlightVisual] FLIGHT_VISUAL; IsGliding=true; firstPerson=false; visual=true",
+    "[2026-10-21 18:02:07.5066306] [Lua] [BuzzFlightVisual] NATIVE_PRESENTATION; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:02:07.7143055] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:02:30.5802149] [Lua] [BuzzFlightVisual] NATIVE_PRESENTATION; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:03:05.0308417] [Lua] [BuzzFlightVisual] FLIGHT_VISUAL; IsGliding=true; firstPerson=false; visual=true",
+    "[2026-10-21 18:03:09.0754973] [Lua] [BuzzFlightVisual] NATIVE_PRESENTATION; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:03:09.2823422] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:03:11.3047003] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=true; firstPerson=false; visual=false",
+    "[2026-10-21 18:03:13.1132580] [Lua] [BuzzFlightVisual] RESTORATION_PENDING; IsGliding=false; firstPerson=false; visual=false",
+    "[2026-10-21 18:03:16.9472156] [Lua] [BuzzFlightVisual] NATIVE_PRESENTATION; IsGliding=false; firstPerson=false; visual=false"
+  ],
+  "restore_error_counts": {
+    "RESTORE RETRY ...ries\\WinGDK\\ue4ss\\Mods\\BuzzFlightVisual\\Scripts\\main.lua:238: Visibility readback mismatch: SkeletalMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalPlayerCharacter_Gellarde_C_2147480126.SkeletalMeshComponent_2147315825; purpose=restore; requested=true": 204,
+    "RESTORE RETRY ...ries\\WinGDK\\ue4ss\\Mods\\BuzzFlightVisual\\Scripts\\main.lua:238: Visibility readback mismatch: StaticMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_Equippable_Dandelion_Puff_A_C_2147315828.StaticMesh; purpose=restore; requested=true": 204,
+    "RESTORE RETRY ...ries\\WinGDK\\ue4ss\\Mods\\BuzzFlightVisual\\Scripts\\main.lua:238: Visibility readback mismatch: SkeletalMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalPlayerCharacter_Gellarde_C_2147480126.SkeletalMeshComponent_2147299597; purpose=restore; requested=true": 114,
+    "RESTORE RETRY ...ries\\WinGDK\\ue4ss\\Mods\\BuzzFlightVisual\\Scripts\\main.lua:238: Visibility readback mismatch: StaticMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_Equippable_Dandelion_Puff_A_C_2147299811.StaticMesh; purpose=restore; requested=true": 114,
+    "RESTORE RETRY ...ries\\WinGDK\\ue4ss\\Mods\\BuzzFlightVisual\\Scripts\\main.lua:238: Visibility readback mismatch: SkeletalMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_SurvivalPlayerCharacter_Gellarde_C_2147480126.SkeletalMeshComponent_2147268262; purpose=restore; requested=true": 39,
+    "RESTORE RETRY ...ries\\WinGDK\\ue4ss\\Mods\\BuzzFlightVisual\\Scripts\\main.lua:238: Visibility readback mismatch: StaticMeshComponent /Game/_Augusta/Levels/Augusta_Main/Augusta_Main.Augusta_Main:PersistentLevel.BP_Equippable_Dandelion_Puff_A_C_2147268261.StaticMesh; purpose=restore; requested=true": 39
+  },
+  "bo_peep": "User accepts V4; log confirms optional FP staff shadow disabled"
+}
