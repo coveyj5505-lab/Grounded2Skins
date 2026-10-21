@@ -148,3 +148,10 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] Separate persistent TP/FP_GRIP/FP_STAFF components now initialize only once each. Cached view switches hide old/show target and update cosmetic transform; no creation, destruction, assignment, loading or reattachment. Components keep their assets referenced. All disposed only on disable/pawn change/error.
 - [x] 27 Lua groups pass including repeated mode switches, explicit forbidden lifecycle operations on cache return, no repeated per-component assignment, equipment hiding and cleanup of all retained views.
 - [ ] Windows: short standing TP→FP→TP repeated check; no attacks needed for first stability gate. Hand inversion remains pending, flat correctly oriented grip accepted. Buzz wing confirmed files preserved.
+
+## Persistent crook Windows confirmed
+
+- [x] User confirms TP→FP→TP now works. Latest log shows repeated TP/FP_GRIP cached reuse, no RESULT ERROR, Event loop end. Freeze BoPeep-Crook-Persistent-Views-Test.zip as the working camera-switch baseline.
+- [ ] Preserve this component lifetime design during hand orientation and presentation changes.
+
+Current consolidated priorities are in CURRENT-TASKS.md; earlier unchecked candidate/test entries above are historical and superseded where confirmed.

@@ -1,0 +1,12 @@
+{
+  "file": "BoPeep-Crook-Persistent-Views-Test.zip",
+  "sha256": "d7ed293760534e7bb6deaec9fa0a85d1715a1fef9d0943002a45a5ada3118245",
+  "Windows_confirmed": "User confirms TP-FP-TP works; supplied log shows repeated cached TP/FP_GRIP reuse, no RESULT ERROR, Event loop end.",
+  "source_log": "file_00000000d23881f699df1bbf76bfbb67",
+  "limitations": [
+    "FP hand upside down",
+    "FP size/side placement needs user acceptance",
+    "native spear animation not implemented",
+    "interaction/attack/multiplayer validation outstanding"
+  ]
+}

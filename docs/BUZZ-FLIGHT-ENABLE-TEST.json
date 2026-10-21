@@ -1,0 +1,13 @@
+{
+  "file": "Buzz-Flight-Enable-Only-Test.zip",
+  "bytes": 297,
+  "sha256": "96aac5e2ec0fb7a0da3164883056da2ed8362a0a942005e25225365bfa3f6a12",
+  "change": "Only enable existing BuzzFlightVisual config; stable disabled source config and all skins/wings/crook assets and logic remain unchanged.",
+  "rollback": "Set Enabled=false in Mods/BuzzFlightVisual/Scripts/flight_config.lua with game closed.",
+  "scope": "Actual third-person glide only; tuft remains visible; static cosmetic flight proxy; no physics/control/camera changes",
+  "Windows": "Unverified; short optional test before skin work",
+  "regressions": {
+    "controller": 17,
+    "adapter": 12
+  }
+}
