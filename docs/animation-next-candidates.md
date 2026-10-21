@@ -54,3 +54,8 @@ Fifteen real-Lua controller fault-injection groups and ten adapter fixture group
 For spear inspection, extract_animation_dependencies.py reuses the existing pinned retoc listing and Zen header reader. Its default target is the exact Windows-recorded spear montage; it follows only actual indexed animation imports and imported skeletons, bounded to32packages/64MiB. Local validation on a real existing container recovered5packages/9chunks exactly, retained a usable partial report at the budget boundary, and reported missing targets without guessing. It never changed source file sizes or modification times. This helper is prepared for the minimum additional asset collection when convenient; no additional gameplay sequence or Windows action is requested now.
 
 The small upper-cover-only cape adjustment was rejected: the white shoulder seam persisted in the preview. No source skin was recolored and no lower-cape changes were made. Keep that minor artifact on the checklist instead of shipping a speculative repair.
+
+
+## Current-build collection now received (2026-10-21)
+
+The targeted spear collection is complete:1 AnimMontage,14 AnimSequence packages and1 Skeleton. Actual Zen export tables resolved against current global script objects contain HitFrame notify instances in FP and TP normal swing and charged end clips. Missing source payloads are no longer the blocker. The next step is decoding actual montage wiring, animation tracks/timing and notify/root-motion properties, then separating cosmetic pose playback from gameplay execution. No claim of native spear substitution, safe native Montage_Play, or decoded notify timing is made. No new collection requested. The released tests remain frozen.

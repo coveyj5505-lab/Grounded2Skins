@@ -1,0 +1,19 @@
+{
+  "archive": "Grounded2-SpearAnimation-20261021-162715-629.zip",
+  "sha256": "839da0b490401c7bb174bc8058cf20a9c1ce70561ab0fcab1bd965bac7a4c396",
+  "status": "EXTRACTED_READ_ONLY",
+  "package_count": 16,
+  "decoded_bytes": 560053,
+  "all_collected_chunk_sizes_and_sha256_verified": true,
+  "missing": [],
+  "errors": [],
+  "source_metadata_unchanged": true,
+  "verified_exports": {
+    "AnimMontage": 1,
+    "AnimSequence": 14,
+    "Skeleton": 1,
+    "HitFrame_notify_objects": 4
+  },
+  "next": "Decode montage/sequence properties and pose tracks; separate gameplay notifies and preserve vanilla unarmed execution. No repeated gameplay probe or new collection currently requested.",
+  "released_test_packages": "UNCHANGED; awaiting current Windows results"
+}

@@ -60,3 +60,10 @@ Authoritative evidence: [visual review](skin-fixes-next/visual-review.json), [do
 - [ ] Multiplayer appearance of local cosmetic components remains unverified.
 
 The original v0.3, confirmed F1 wing release and confirmed persistent-view crook release remain frozen. Stable flight config remains disabled; only the isolated flight test ZIP enables the candidate. No BuzzWings runtime changes in this iteration. No new claim that remaining work is final/game-proven.
+
+
+## Spear collection received — 2026-10-21
+
+The targeted collector succeeded:16 packages/560053 decoded bytes, no missing requested dependencies/errors, source metadata unchanged. Every collected chunk size/SHA256 was verified locally. Current-build global script-object IDs resolve1 montage,14 animation sequences and1 skeleton. Actual AnimNotify_HitFrame exports occur in both FP/TP normal swing and charged end clips; these are verified exports, not merely names inferred from the old SDK.
+
+The previous missing-animation-payload blocker is resolved. Next is decoding track/section/timing/notify/root-motion data and a cosmetic-only adaptation; native animation substitution is still NOT implemented. Do not request the same collection or repeat attack recording. See spear-animation-current/export-inventory.json. Released skin/hand/flight test packages remain exactly unchanged while the user tests them.

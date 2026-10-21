@@ -1,0 +1,1212 @@
+{
+  "status": "HASH_VERIFIED_ZEN_EXPORT_INVENTORY",
+  "packages": [
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/am_player_character_attack_spear_01_augusta",
+      "chunk": "b3c3676f8383e08900000001",
+      "exports": [
+        {
+          "object_name": "AM_Player_Character_Attack_Spear_01_Augusta",
+          "class": "AnimMontage",
+          "class_script_index": "0x51361fdbc40aeecc",
+          "serialized_bytes": 1225,
+          "payload_sha256": "fd03bea8796e43fae187b36966e6d052f284b258aea3daccf725e843ac8f7b96"
+        }
+      ],
+      "name_map": [
+        "Attack_Hitstop",
+        "Attack_Loop",
+        "Attack_Power",
+        "Attack_Power_Hitstop",
+        "Attack_Start",
+        "Attack_Swing",
+        "Offhand_FP",
+        "Prep_Attack_Power",
+        "Swimming",
+        "Swimming_FP",
+        "Upperbody",
+        "Upperbody_FP",
+        "AM_Player_Character_Attack_Spear_01_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/AM_Player_Character_Attack_Spear_01_Augusta"
+      ],
+      "actual_imports": [
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Swing_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Prepare_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Prepare_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_Power_Loop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Power_Spear_Loop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_Power_End_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Start_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_Power_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Power_Spear_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Power_Spear_End_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Swing_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Start_Augusta"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_01_swing_augusta",
+      "chunk": "771e64ec81c3380c00000001",
+      "exports": [
+        {
+          "object_name": "AnimNotify_HitFrame_0",
+          "class": "AnimNotify_HitFrame",
+          "class_script_index": "0x698bf41d5bc76822",
+          "serialized_bytes": 6,
+          "payload_sha256": "15ca428cceecf703560711d43cdd4fa70b52e3ee22e638ab75161bd149ac7a1e"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_0",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "4dfacb011ed26ed229dcc69f48c743ea17fd05bdef45ddadf071fa383bbe0b3a"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_1",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "421a44792fe905b89f5f593bb032d545ddfaaa12ba492e44c48a5048bb0014a3"
+        },
+        {
+          "object_name": "AnimNotify_PlaySound_0",
+          "class": "AnimNotify_PlaySound",
+          "class_script_index": "0x4c0e423bb3dbfd41",
+          "serialized_bytes": 23,
+          "payload_sha256": "f2c5c04ff578eeafd514e22cfd936d7747a3066c5755a4913e7c48550ab81c5a"
+        },
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_01_Swing_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 34539,
+          "payload_sha256": "1a5c99e75995c69ea70f8e2e1578e231f8306dbe84f1beea291523a3a70410a1"
+        }
+      ],
+      "name_map": [
+        "Audio.Armor.ArmSwing",
+        "Audio.Weapon.Stab",
+        "HitFrame",
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "PlayCharacterSound",
+        "PlaySound",
+        "r_upperArm_JNT",
+        "AnimNotify_HitFrame",
+        "AnimNotify_PlayCharacterSound",
+        "AnimNotify_PlaySound",
+        "AS_TP_M_PC_Attack_Spear_01_Swing_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Swing_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+        "/Game/Audio/Sfx/Character/Player/Foley/Armor/Default/fol_armor_default_armswing"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_spear_01_prepare_augusta",
+      "chunk": "91a3dafed10e1a0f00000001",
+      "exports": [
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Spear_01_Prepare_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 36885,
+          "payload_sha256": "ddb14da7211aaa966627a6b01334e570061c5792ba1a8c7dc21ffcdbb9392c7e"
+        }
+      ],
+      "name_map": [
+        "AS_FP_M_Player_Character_Attack_Spear_01_Prepare_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Prepare_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_01_prepare_augusta",
+      "chunk": "e05bc762aba8ca1200000001",
+      "exports": [
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_01_Prepare_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 49189,
+          "payload_sha256": "46c39f343babf1c9046d4dd5363fa0b3a1cee016de43d980d9d3c9ff79786c2a"
+        }
+      ],
+      "name_map": [
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "AS_TP_M_PC_Attack_Spear_01_Prepare_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Prepare_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_spear_01_hitstop_augusta",
+      "chunk": "e07489b5bc4e3d1400000001",
+      "exports": [
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Spear_01_Hitstop_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 31723,
+          "payload_sha256": "53dc961d4b91b2ea43db4776088962dabbea661cdf33223d9e25ad2db3862b6f"
+        }
+      ],
+      "name_map": [
+        "AS_FP_M_Player_Character_Attack_Spear_01_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Hitstop_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_power_loop_augusta",
+      "chunk": "f4d9350dbedf401c00000001",
+      "exports": [
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_Power_Loop_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 17555,
+          "payload_sha256": "d0a25aee4e081929bc69fa5c89a24c14d918715a4a522d454233d19b2f119670"
+        }
+      ],
+      "name_map": [
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "AS_TP_M_PC_Attack_Spear_Power_Loop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_Power_Loop_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_power_spear_loop_augusta",
+      "chunk": "3bad6354d931173d00000001",
+      "exports": [
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Power_Spear_Loop_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 14511,
+          "payload_sha256": "dc101bb44e72e23495f1c67096939d7eba1c2d4f11e0491242729a8372814096"
+        }
+      ],
+      "name_map": [
+        "MaxSpeedMultiplier_Attack",
+        "AS_FP_M_Player_Character_Attack_Power_Spear_Loop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Power_Spear_Loop_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_power_end_augusta",
+      "chunk": "ab425fd8f4965e6700000001",
+      "exports": [
+        {
+          "object_name": "AnimNotify_HitFrame_1",
+          "class": "AnimNotify_HitFrame",
+          "class_script_index": "0x698bf41d5bc76822",
+          "serialized_bytes": 6,
+          "payload_sha256": "15ca428cceecf703560711d43cdd4fa70b52e3ee22e638ab75161bd149ac7a1e"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_0",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 34,
+          "payload_sha256": "60d7e2f477ac7175bffb051dbd0587f9c9d47f5e893f8bd8e548440fd5356f16"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_1",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "a85a52d4f5e5db3b984c78ce99558b49d168d8ff14570d5b91c3d5714cdb7db5"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_2",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "066487bcc1f6e1f3254709bbb2354c993f09e4403becb870d8abf2b55d0f66fe"
+        },
+        {
+          "object_name": "AnimNotify_PlaySound_0",
+          "class": "AnimNotify_PlaySound",
+          "class_script_index": "0x4c0e423bb3dbfd41",
+          "serialized_bytes": 23,
+          "payload_sha256": "1e4aecfa490e156ae94f197156e11460a2f2a3e91394c825e85beaa73fb65d70"
+        },
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_Power_End_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 51411,
+          "payload_sha256": "d8fc29e35bfab256c459b95ff1ac5159f2cbcd344fe7821dfff508e114e5c368"
+        }
+      ],
+      "name_map": [
+        "Attack Hit Frame",
+        "Audio.Armor.ArmSwing",
+        "Audio.Vocalization.Yell",
+        "Audio.Weapon.Stab",
+        "head_JNT",
+        "IsUnderwater",
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "PlayCharacterSound",
+        "PlaySound",
+        "r_upperArm_JNT",
+        "AnimNotify_HitFrame",
+        "AnimNotify_PlayCharacterSound",
+        "AnimNotify_PlaySound",
+        "AS_TP_M_PC_Attack_Spear_Power_End_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_Power_End_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+        "/Game/Audio/Sfx/Character/Player/Foley/Armor/Default/fol_armor_default_armswing"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_01_hitstop_augusta",
+      "chunk": "cc01814de51d557500000001",
+      "exports": [
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_01_Hitstop_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 32091,
+          "payload_sha256": "16d271d0e4acb98cd0d4e86ac44ef478d58988aaa560799e9699b5e3c84cea3a"
+        }
+      ],
+      "name_map": [
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "AS_TP_M_PC_Attack_Spear_01_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Hitstop_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_01_start_augusta",
+      "chunk": "d3e9e0eaca7e018b00000001",
+      "exports": [
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_01_Start_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 15723,
+          "payload_sha256": "e1071be4fc4129524154a8757ef2f8f7a594903f66d6b613e9099c5256e3fea0"
+        }
+      ],
+      "name_map": [
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "AS_TP_M_PC_Attack_Spear_01_Start_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_01_Start_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/tp/spear/as_tp_m_pc_attack_spear_power_hitstop_augusta",
+      "chunk": "5a2dbbb182ca6ab200000001",
+      "exports": [
+        {
+          "object_name": "AS_TP_M_PC_Attack_Spear_Power_Hitstop_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 51391,
+          "payload_sha256": "cc7bc5bcd6886b994c74736b6d911878c127fd29c5d1f78b6e6ee748a85b3c05"
+        }
+      ],
+      "name_map": [
+        "NavigationDepthOffset",
+        "NavigationHeadingOffset",
+        "NavigationHeightOffset",
+        "NavigationSideOffset",
+        "AS_TP_M_PC_Attack_Spear_Power_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/TP/Spear/AS_TP_M_PC_Attack_Spear_Power_Hitstop_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/sk_male_teen_01_skeleton",
+      "chunk": "86c3f6a60da5d6be00000001",
+      "exports": [
+        {
+          "object_name": "AnimCurveMetaData_0",
+          "class": "AnimCurveMetaData",
+          "class_script_index": "0x49cde7b092534100",
+          "serialized_bytes": 459,
+          "payload_sha256": "cf2dca73e47677a6a1996d1380d42bba9dc084366b2b4baeee282e0c831b3162"
+        },
+        {
+          "object_name": "Facial",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 767,
+          "payload_sha256": "84c759a5d656dd8dd50db4cbaab31b9e47fd7991ac6545ad3d1a768f7fbbbcf3"
+        },
+        {
+          "object_name": "FirstPerson",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 2415,
+          "payload_sha256": "8ef34596436d2384f8f0a8d3dc5878aa9a57b3d54bda762f5e20172d4c5123fb"
+        },
+        {
+          "object_name": "FullbodyPelvis",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 2895,
+          "payload_sha256": "8e9476c9c8b1822fcf1c1df0e2319a5366e365405c7588d6679f6f1770757d22"
+        },
+        {
+          "object_name": "HandGrip_L",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 415,
+          "payload_sha256": "7066ad6de3d1249a99768873ba750c866ef8e379837ebff5bbbecaebd1823aa5"
+        },
+        {
+          "object_name": "HandGrip_R",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 415,
+          "payload_sha256": "0a86b3c1b3e96d21153666905a87135d4c87e5da662a90252eba289719e8cf16"
+        },
+        {
+          "object_name": "Handgrips",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 655,
+          "payload_sha256": "7be8c9d1ce47dc1e9686a1b4cc5d8286cc131a4d9c33fe89a3b29255de4ff71a"
+        },
+        {
+          "object_name": "Hauling",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 1663,
+          "payload_sha256": "f3a2ad79c7deff85ae902b8ba792eb9a036800f35d469599bcc794b1fd067138"
+        },
+        {
+          "object_name": "Hauling_FP",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 671,
+          "payload_sha256": "185fbc6c1bfb3de0e4947c7253d4cfbd33ef80c9f74809fa60a82af101d84f7a"
+        },
+        {
+          "object_name": "HaulingArm",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 591,
+          "payload_sha256": "7164751222c7f29847d1d934feee755ce397fd3538a8b170fe3f02d3af16f2e7"
+        },
+        {
+          "object_name": "LayeredLocomotionRightArm",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 639,
+          "payload_sha256": "deb7b4c7ecdf6c8145d33158f3f81c48fa36e29f7492dfc6f398a79390e4dbc7"
+        },
+        {
+          "object_name": "LeftArmSwimming",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 655,
+          "payload_sha256": "e35e3965086e02460c45514a5516776514e312f347e3d953740362e6a360b97d"
+        },
+        {
+          "object_name": "LowerbodyPelvisHalf",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 479,
+          "payload_sha256": "dd4a50ae3859e3fb9af8a244dfb984d30eab8e75063a065b6d4f7d85cd233649"
+        },
+        {
+          "object_name": "Offhand",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 591,
+          "payload_sha256": "0c5e3144b82be47831bb63d697633b52f9a3fa802a85d990b7a599dc89002779"
+        },
+        {
+          "object_name": "RightArm",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 639,
+          "payload_sha256": "b0ac7d8be109d49fe1f677764a2abf4329f1f3d70b68d297660dca3a5a14f2dd"
+        },
+        {
+          "object_name": "RightArmSwimming",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 639,
+          "payload_sha256": "d3878cb424d4a7324fcd0e8a4af4f3d97b2e425fe06a9da2944a63ed9b901e2c"
+        },
+        {
+          "object_name": "Swimming",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 591,
+          "payload_sha256": "71943afe3ef2423cbedd26fd7925ea72148d1e39becc8f2a4e5421c9920ab369"
+        },
+        {
+          "object_name": "SwimmingOffhand",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 639,
+          "payload_sha256": "5bd29cab36c32edda5b29912394390d4dd820e6bd7c960c7bdb74f543357d049"
+        },
+        {
+          "object_name": "Upperbody",
+          "class": "BlendProfile",
+          "class_script_index": "0x4c6eff5deee1b524",
+          "serialized_bytes": 2127,
+          "payload_sha256": "03bdc732d8b73b3628a5ab9e77ec0c74f16340a2cd85b22a9a516e9b45155a41"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_0",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "17eddc4b8b66a820b35ca78894a543373847fed989cddcd909a0b5e596b37348"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_1",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "ce320f18f82ebf18358af7db6843a2451288d681e3682d41229061de022e6bf6"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_10",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "c4141b6620204f649986618aa390143867e2ec3259337e8b3a428f2aafb21eaa"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_11",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "9e43bb7c80130ea1570dfa867e3f799abb54a562c8f1ba334b6035f69b79fbb7"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_12",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 70,
+          "payload_sha256": "2f60dfdd768959e6fd208bd21cc9d5c6df722e156435b4f0b34d4c2fe2c5079d"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_13",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "d927a3b23de5a860491c19cbc9aa0d167acef8d19fda0584512cf2df9fe9eb3f"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_14",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "6bf3df2add3b248b05364c109b98eb8d97bc01107ef11a9f668702cc17f1229a"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_15",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "7bdb43c8a2cee59ca2d6af084257981ccd89e39cec8882e598064104d7d5372f"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_16",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "aecef33d4973e32a2bc05e1e04a033bf2d1754d7f7c6b82e767ae36ec0e08f56"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_17",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 48,
+          "payload_sha256": "917f3536e81cb53728c6ca9f8dbde57845c93e64ef1fc51c2cd8243cefc8b109"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_18",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "bbc40efa3df7210632a12bfb179e2dfcdda321d10e1a6627c3b2229c004fdcf4"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_19",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 70,
+          "payload_sha256": "63a551e70de65e24c5deb3340becf9c61bacf7b23a5874af4f3fc13bc0e3056b"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_2",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 70,
+          "payload_sha256": "f4ff4e1abfc6ebf207b128fd6cc37e78e5e258024db8e28ae2a79d5ce5f0bbab"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_20",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 70,
+          "payload_sha256": "c4ddd08e79d03466312e637aa1494c1e4421cc7d4a4ee8f6c1589e12638e2da4"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_21",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "6b5bf8c1bc8ce200b16ad671d2a2f1ff583bbee3c051de6468680c77e29ed152"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_22",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "db073bd08399729a8e109a2c78729d59d0d15dcfb02c317389b2d8178d0fcef2"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_23",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "3bb6cdcc0094090a015b9cb9983dad4a2ed25f78811f5ef391da9ab6fec0b988"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_3",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 48,
+          "payload_sha256": "701d99d6af5b0d7e80f194c82a8210442ed11c319d057a48d956f56642e62622"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_4",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 48,
+          "payload_sha256": "8bf1c48c2910fd1b3b4df6479c0f92c149a860552f2b09c0fb585b5dcf6b9f8f"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_5",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 22,
+          "payload_sha256": "c00c5715e7fe49d159db7cd027afd38fe8c70f8b2fc18ecda0aabf14e0841f4c"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_6",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 70,
+          "payload_sha256": "f05dbef5881cc66b3c3b02fa5f3360f70699eda2e59b683fbb34201085573cad"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_7",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "bb4b22fde21eb9f6bfa3593cd23af22051eb16b69c6b7050f231374e9c980fba"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_8",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 46,
+          "payload_sha256": "af262b765b35f3dd2aa18b843e6772507377647764736570143310ae64203887"
+        },
+        {
+          "object_name": "SkeletalMeshSocket_9",
+          "class": "SkeletalMeshSocket",
+          "class_script_index": "0x713bc4f3f49c3cec",
+          "serialized_bytes": 48,
+          "payload_sha256": "30bae372fe80c400339d755be2eb551321c9170b8a2a822a73d7f749560492b4"
+        },
+        {
+          "object_name": "SK_Male_Teen_01_Skeleton",
+          "class": "Skeleton",
+          "class_script_index": "0x6300bfd362d4e28b",
+          "serialized_bytes": 21497,
+          "payload_sha256": "ac7f62014e2bdea9ba3ee4fba17348f0719217dbac0a2d66b20adec7504f2ee9"
+        }
+      ],
+      "name_map": [
+        "abdomen_JNT",
+        "AimAdhesion_Socket",
+        "AttackOriginSocket",
+        "b_waist_att_JNT",
+        "BackPack_Adjustment",
+        "BackPack_Expand",
+        "BackPack_Parent_JNT",
+        "BackPack_Pivot_JNT",
+        "BackPackEnd_JNT",
+        "Bag_Armor_Low",
+        "Barrel_Base",
+        "Camera_Socket",
+        "chest_JNT",
+        "Chin_JNT",
+        "cloth_SkirtRoot_JNT",
+        "convoCamera_NSK",
+        "Crouch_UpperBody",
+        "deathCamera_NSK",
+        "DefaultGroup",
+        "DefaultSlot",
+        "Dodge",
+        "DodgeAirBackward",
+        "DodgeAirForward",
+        "DodgeAirLeft",
+        "DodgeAirRight",
+        "DodgeBack",
+        "DodgeBack_FP",
+        "DodgeBack_FP_Crouch",
+        "DodgeForward",
+        "DodgeForward_FP",
+        "DodgeForward_FP_Crouch",
+        "DodgeLeft",
+        "DodgeLeft_FP",
+        "DodgeLeft_FP_Crouch",
+        "DodgeRight",
+        "DodgeRight_FP",
+        "DodgeRight_FP_Crouch",
+        "Egg_Carry_Socket",
+        "EyeBrownProcerusLocval_Procerus_JNT",
+        "Facerig_Head_NSK",
+        "Flinch_Additive_Slot",
+        "Flinch_Group",
+        "FP_ScriptedEvent",
+        "FPSpine_Parent",
+        "FPSpine_Pelvis",
+        "FPSpine_Spine3",
+        "FPV_BlockVFX_Socket",
+        "FPV_Camera_NSK",
+        "FPV_Camera_NSK_Socket",
+        "FPVcam_Joint",
+        "FPVcam_SpineFP",
+        "Full_Body_FP",
+        "Fullbody",
+        "Fullbody_Mounted",
+        "Fullbody_Swimming",
+        "Grass_Carry_Socket",
+        "Hair1_JNT",
+        "Hair2_JNT",
+        "Hair3_JNT",
+        "Hair4_JNT",
+        "Hair_Socket",
+        "haul1_JNT",
+        "haul2_JNT",
+        "head_JNT",
+        "Head_Socket",
+        "Hips_JNT",
+        "hips_weapon_NSK",
+        "hips_weapon_scale_NSK",
+        "hips_wpn_l_hand_IKtarget_NSK",
+        "hips_wpn_r_hand_IKtarget_NSK",
+        "IKRetargetParent_JNT",
+        "Jaw_JNT",
+        "Jaw_Parent_NSK",
+        "l_ArmLower_TwistLow_JNT",
+        "l_ArmLower_TwistMid_JNT",
+        "l_ArmLower_TwistTop_JNT",
+        "l_ArmUpper_TwistMid_JNT",
+        "l_ArmUpper_TwistTop_JNT",
+        "l_breast_JNT",
+        "l_butt_JNT",
+        "l_Cheek_JNT",
+        "l_CheekRisorious_JNT",
+        "l_Eye_JNT",
+        "l_Eye_Socket_JNT",
+        "l_Eyebrow_upper_in_JNT",
+        "l_Eyebrow_upper_mid_JNT",
+        "l_Eyebrow_upper_out_JNT",
+        "l_Eyelid_Lower_NSK",
+        "l_EyeLid_LowerIn_JNT",
+        "l_EyeLid_LowerMid_JNT",
+        "l_EyeLid_LowerOut_JNT",
+        "l_Eyelid_Upper_NSK",
+        "l_EyeLid_UpperIn_JNT",
+        "l_EyeLid_UpperMid_JNT",
+        "l_EyeLid_UpperOut_JNT",
+        "l_Foot_JNT",
+        "l_ForeArm_Att_NSK",
+        "l_hand_JNT",
+        "l_IKLeg_Effector_JNT",
+        "l_IKLeg_JointTarget_JNT",
+        "l_knee_JNT",
+        "L_Leg_JointTarget",
+        "l_Lip_Lower_JNT",
+        "l_LipCorner_JNT",
+        "l_LipUpper_JNT",
+        "l_lowerArm_JNT",
+        "l_LowerLeg_JNT",
+        "l_lowerLeg_Twist_JNT",
+        "l_pauldron_JNT",
+        "l_scapula_JNT",
+        "l_shoulder_JNT",
+        "l_Toes_JNT",
+        "l_upperArm_half_JNT",
+        "l_upperArm_JNT",
+        "l_upperArm_TwistMid_DM_JNT",
+        "l_UpperLeg_JNT",
+        "l_upperLeg_Twist_DM_JNT",
+        "l_upperLeg_Twist_JNT",
+        "l_waist_att_JNT",
+        "l_weapn_L_IKtarget_NSK",
+        "l_weapon_NSK",
+        "L_Weapon_Socket",
+        "l_weaponParent_NSK",
+        "l_wrist_JNT",
+        "Leaf_Carry_Socket",
+        "LeftHandIndex1_JNT",
+        "LeftHandIndex2_JNT",
+        "LeftHandIndex3_JNT",
+        "LeftHandIndex4_JNT",
+        "LeftHandMiddle1_JNT",
+        "LeftHandMiddle2_JNT",
+        "LeftHandMiddle3_JNT",
+        "LeftHandMiddle4_JNT",
+        "LeftHandPinky1_JNT",
+        "LeftHandPinky2_JNT",
+        "LeftHandPinky3_JNT",
+        "LeftHandPinky4_JNT",
+        "LeftHandPinkyRoot_JNT",
+        "LeftHandRing1_JNT",
+        "LeftHandRing2_JNT",
+        "LeftHandRing3_JNT",
+        "LeftHandRing4_JNT",
+        "LeftHandRingRoot_JNT",
+        "LeftHandThumb1_JNT",
+        "LeftHandThumb2_JNT",
+        "LeftHandThumb3_JNT",
+        "LeftHandThumb4_JNT",
+        "Lip_Upper_Mid_JNT",
+        "LipLower_Mid_JNT",
+        "LipLower_Parent_NSK",
+        "LipUpper_Parent_NSK",
+        "Log_Carry_Socket",
+        "MaxSpeedMultiplier_Attack",
+        "MaxSpeedMultiplier_Nav",
+        "morph_test",
+        "Mounted",
+        "MountedGroup",
+        "MountedIKLeftFootRelease",
+        "MountedIKLeftHandRelease",
+        "MountedIKPelvisRelease",
+        "MountedIKRightFootRelease",
+        "MountedIKRightHandRelease",
+        "MouthVFXSocket",
+        "MT_Fem01_willow_belt_Squash_01",
+        "MT_Fem01_willow_boots_bow_SkinnyTop",
+        "MT_mal01_Max_Leather_Belt_MT_01",
+        "MT_mal01_Max_Tshirt_collar",
+        "MT_mal02_Pete_Belt_Tuck",
+        "MT_mal02_Pete_Shirt_SleeveLarge",
+        "MT_mal02_Pete_Shirt_SleevesSkinny",
+        "MT_willow_boots_Laces_SkinnyTop",
+        "MT_willow_boots_SkinnyTop",
+        "neck1_JNT",
+        "neck2_JNT",
+        "neck3_JNT",
+        "NoIKFullBody",
+        "Nose_Parent_JNT",
+        "NoseEnd_JNT",
+        "Offhand_FP",
+        "Offhand_TP",
+        "pelvis_JNT",
+        "r_ArmUpper_TwistMid_JNT",
+        "r_ArmUpper_TwistTop_JNT",
+        "r_breast_JNT",
+        "r_butt_JNT",
+        "r_Cheek_JNT",
+        "r_CheekRisorious_JNT",
+        "r_Eye_JNT",
+        "r_Eye_Socket_JNT",
+        "r_Eyebrow_upper_in_JNT",
+        "r_Eyebrow_upper_mid_JNT",
+        "r_Eyebrow_upper_out_JNT",
+        "r_Eyelid_Lower_NSK",
+        "r_EyeLid_LowerIn_JNT",
+        "r_EyeLid_LowerMid_JNT",
+        "r_EyeLid_LowerOut_JNT",
+        "r_Eyelid_Upper_NSK",
+        "r_EyeLid_UpperIn_JNT",
+        "r_EyeLid_UpperMid_JNT",
+        "r_EyeLid_UpperOut_JNT",
+        "r_Foot_JNT",
+        "r_hand_JNT",
+        "r_hips_holster_NSK",
+        "r_IKLeg_Effector_JNT",
+        "r_IKLeg_JointTarget_JNT",
+        "r_knee_JNT",
+        "R_Leg_JointTarget",
+        "r_Lip_Lower_JNT",
+        "r_LipCorner_JNT",
+        "r_LipUpper_JNT",
+        "r_lowerArm_JNT",
+        "r_lowerArm_TwistLow_JNT",
+        "r_lowerArm_TwistMid_JNT",
+        "r_lowerArm_TwistTop_JNT",
+        "r_LowerLeg_JNT",
+        "r_lowerLeg_Twist_JNT",
+        "r_pauldron_JNT",
+        "r_scapula_JNT",
+        "r_shoulder_JNT",
+        "r_Toes_JNT",
+        "r_upper_TwistMid_DM_JNT",
+        "r_upperArm_half_JNT",
+        "r_upperArm_JNT",
+        "r_upperLeg_holster_NSK",
+        "r_UpperLeg_JNT",
+        "r_upperLeg_Twist_DM_JNT",
+        "r_upperLeg_Twist_JNT",
+        "r_waist_att_JNT",
+        "r_weapn_L_IKtarget_NSK",
+        "r_weapon_NSK",
+        "R_Weapon_Socket",
+        "r_weaponParent_NSK",
+        "r_wrist_JNT",
+        "RightHandIndex1_JNT",
+        "RightHandIndex2_JNT",
+        "RightHandIndex3_JNT",
+        "RightHandIndex4_JNT",
+        "RightHandMiddle1_JNT",
+        "RightHandMiddle2_JNT",
+        "RightHandMiddle3_JNT",
+        "RightHandMiddle4_JNT",
+        "RightHandPinky1_JNT",
+        "RightHandPinky2_JNT",
+        "RightHandPinky3_JNT",
+        "RightHandPinky4_JNT",
+        "RightHandPinkyRoot_JNT",
+        "RightHandRing1_JNT",
+        "RightHandRing2_JNT",
+        "RightHandRing3_JNT",
+        "RightHandRing4_JNT",
+        "RightHandRingRoot_JNT",
+        "RightHandThumb1_JNT",
+        "RightHandThumb2_JNT",
+        "RightHandThumb3_JNT",
+        "RightHandThumb4_JNT",
+        "Root_NSK",
+        "RootMotion_Rotation_Percentage",
+        "RootMotion_Translation_Forward_Percentage",
+        "RootMotion_Translation_Side_Percentage",
+        "RootOffset_JNT",
+        "scab_light_socket",
+        "Shield_Attack_FP",
+        "Shield_Attack_TP",
+        "Socket_Katana_VFX",
+        "spine1_JNT",
+        "spine2_JNT",
+        "Spine3_holster_NSK",
+        "spine3_JNT",
+        "Staff_Projectile_Socket",
+        "SwimAttackOriginSocket",
+        "SwimEmote",
+        "Swimming",
+        "Swimming_EatDrinkEquip",
+        "Swimming_FP",
+        "Swimming_OffhandEquip",
+        "ThrowOriginSocket",
+        "TPCameraOverride",
+        "TPCameraOverride_JNT",
+        "TPCameraOverride_Socket",
+        "Upper_Body_HaulingEgg",
+        "Upperbody",
+        "Upperbody_FP",
+        "Upperbody_HaulingEgg",
+        "Upperbody_Mounted",
+        "Zipline_Socket",
+        "ZipperBase_JNT",
+        "ZipperPivot_JNT",
+        "AnimCurveMetaData",
+        "Facial",
+        "FirstPerson",
+        "FullbodyPelvis",
+        "HandGrip_L",
+        "HandGrip_R",
+        "Handgrips",
+        "Hauling",
+        "Hauling_FP",
+        "HaulingArm",
+        "LayeredLocomotionRightArm",
+        "LeftArmSwimming",
+        "LowerbodyPelvisHalf",
+        "Offhand",
+        "RightArm",
+        "RightArmSwimming",
+        "SwimmingOffhand",
+        "SkeletalMeshSocket",
+        "SK_Male_Teen_01_Skeleton",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ],
+      "actual_imports": []
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_power_spear_hitstop_augusta",
+      "chunk": "1e63f802d1e2d6c300000001",
+      "exports": [
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Power_Spear_Hitstop_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 36371,
+          "payload_sha256": "536227702311f048e7cb1fd9bf5f44d7991908569ad78359dd995d947af0ee14"
+        }
+      ],
+      "name_map": [
+        "AS_FP_M_Player_Character_Attack_Power_Spear_Hitstop_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Power_Spear_Hitstop_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_power_spear_end_augusta",
+      "chunk": "c31308ba9fea6dcd00000001",
+      "exports": [
+        {
+          "object_name": "AnimNotify_HitFrame_0",
+          "class": "AnimNotify_HitFrame",
+          "class_script_index": "0x698bf41d5bc76822",
+          "serialized_bytes": 6,
+          "payload_sha256": "15ca428cceecf703560711d43cdd4fa70b52e3ee22e638ab75161bd149ac7a1e"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_0",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 34,
+          "payload_sha256": "60d7e2f477ac7175bffb051dbd0587f9c9d47f5e893f8bd8e548440fd5356f16"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_1",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "b464b2cbbea54cd1d2750fad4b3ed4e0b1bd432b23667c8c3611b61898a64b90"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_2",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "4573537a31e54093be9b064c6f35b11995e6ca9386db83e41a9b347aff612845"
+        },
+        {
+          "object_name": "AnimNotify_PlaySound_0",
+          "class": "AnimNotify_PlaySound",
+          "class_script_index": "0x4c0e423bb3dbfd41",
+          "serialized_bytes": 23,
+          "payload_sha256": "f2c5c04ff578eeafd514e22cfd936d7747a3066c5755a4913e7c48550ab81c5a"
+        },
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Power_Spear_End_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 66575,
+          "payload_sha256": "a09684ed02753c95c7400716a3eb2bc0fe4c4221c0092c0074f191c9aeef3d28"
+        }
+      ],
+      "name_map": [
+        "Attack Hit Frame",
+        "Audio.Armor.ArmSwing",
+        "Audio.Vocalization.Yell",
+        "Audio.Weapon.Stab",
+        "head_JNT",
+        "IsUnderwater",
+        "MaxSpeedMultiplier_Attack",
+        "PlayCharacterSound",
+        "PlaySound",
+        "r_upperArm_JNT",
+        "AnimNotify_HitFrame",
+        "AnimNotify_PlayCharacterSound",
+        "AnimNotify_PlaySound",
+        "AS_FP_M_Player_Character_Attack_Power_Spear_End_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Power_Spear_End_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+        "/Game/Audio/Sfx/Character/Player/Foley/Armor/Default/fol_armor_default_armswing"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_spear_01_swing_augusta",
+      "chunk": "021c3a33a3a33dd200000001",
+      "exports": [
+        {
+          "object_name": "AnimNotify_HitFrame_0",
+          "class": "AnimNotify_HitFrame",
+          "class_script_index": "0x698bf41d5bc76822",
+          "serialized_bytes": 6,
+          "payload_sha256": "15ca428cceecf703560711d43cdd4fa70b52e3ee22e638ab75161bd149ac7a1e"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_0",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "0e02028289922144f47aeb9eeffb762ccb394e1dabb042d029c8887d45fbe17a"
+        },
+        {
+          "object_name": "AnimNotify_PlayCharacterSound_1",
+          "class": "AnimNotify_PlayCharacterSound",
+          "class_script_index": "0x61eae052fba1cab6",
+          "serialized_bytes": 27,
+          "payload_sha256": "512490c58c7fa0753a060729510a899ce1a58c234b3f714d455b10d9557d8f29"
+        },
+        {
+          "object_name": "AnimNotify_PlaySound_0",
+          "class": "AnimNotify_PlaySound",
+          "class_script_index": "0x4c0e423bb3dbfd41",
+          "serialized_bytes": 23,
+          "payload_sha256": "ceb96218f615b2c70c2d2b0ffe18eff2a56b93675aad2ae911bc9d5635457c36"
+        },
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Spear_01_Swing_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 31243,
+          "payload_sha256": "92763a99b9b6d4ae74be629e6b4edb2079e35ba48ce6cac61e1d444f7a2ac3c2"
+        }
+      ],
+      "name_map": [
+        "Attack Hit Frame",
+        "Audio.Armor.ArmSwing",
+        "Audio.Weapon.Stab",
+        "MaxSpeedMultiplier_Attack",
+        "PlayCharacterSound",
+        "PlaySound",
+        "r_upperArm_JNT",
+        "AnimNotify_HitFrame",
+        "AnimNotify_PlayCharacterSound",
+        "AnimNotify_PlaySound",
+        "AS_FP_M_Player_Character_Attack_Spear_01_Swing_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Swing_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton",
+        "/Game/Audio/Sfx/Character/Player/Foley/Armor/Default/fol_armor_default_armswing"
+      ]
+    },
+    {
+      "path": "/game/_augusta/art/characters/player_male01/animation/combat/fp/spear/as_fp_m_player_character_attack_spear_01_start_augusta",
+      "chunk": "055257ad2a529be600000001",
+      "exports": [
+        {
+          "object_name": "AS_FP_M_Player_Character_Attack_Spear_01_Start_Augusta",
+          "class": "AnimSequence",
+          "class_script_index": "0x409ec78c8b98f8fa",
+          "serialized_bytes": 15547,
+          "payload_sha256": "1fec091bbdeb7220529a1d8a8657d04685bfb19aaa1ed75e1bd6951e54867aa0"
+        }
+      ],
+      "name_map": [
+        "AS_FP_M_Player_Character_Attack_Spear_01_Start_Augusta",
+        "/Game/_Augusta/Art/Characters/Player_Male01/Animation/Combat/FP/Spear/AS_FP_M_Player_Character_Attack_Spear_01_Start_Augusta"
+      ],
+      "actual_imports": [
+        "/Engine/Animation/DefaultAnimBoneCompressionSettings",
+        "/Engine/Animation/DefaultAnimCurveCompressionSettings",
+        "/Engine/Animation/DefaultVariableFrameStrippingSettings",
+        "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_Skeleton"
+      ]
+    }
+  ],
+  "package_count": 16,
+  "decoded_bytes": 560053,
+  "original_collection_complete": true,
+  "script_object_source": "/tmp/spear-current-script-objects.txt",
+  "script_object_sha256": "a3f945802ac9f789922f6fc5869e5a30175dbdfa20d8f22ff625b6ea921829fd",
+  "scope": "Actual serialized export inventory resolved with the supplied current-build global script-object IDs; not a full UObject property or compressed-animation decode",
+  "unresolved": [
+    "Montage section-to-sequence wiring and per-track timing",
+    "Sequence duration, compression and bone pose tracks",
+    "Notify frames/properties and root-motion settings",
+    "Safe cosmetic-only adaptation onto Willow without gameplay socket/timing changes"
+  ]
+}
