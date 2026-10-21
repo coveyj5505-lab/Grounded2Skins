@@ -5,8 +5,9 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 ## New game-build compatibility blocker
 
 - [ ] User crash XML confirms **UE5.7.4 / Augusta-CL-3207493 / release0.6.0.3**. Prior working evidence was UE5.6 /0.316.9020.0; do not carry forward runtime or native-asset compatibility claims.
-- [ ] UE4SS v3.0.1 Beta fails StaticConstructObject scanning before accessory Lua startup. Crash requests672GiB with roughly15.8GiB physical memory available; exact cause not established.
-- [ ] Isolate UE4SS from cooked assets by temporarily renaming only the game-local WinGDK/dwmapi.dll loader; retain Paks for that one menu-only test. Local loader path is confirmed by crash module list.
+- [x] User subsequently confirms UE4SS successfully loads on the updated build. Earlier crash log stopped during StaticConstructObject scanning; do not treat that as a continuing basic-load blocker. No repeated initialization test needed. Specific accessory API access still requires live signature gates.
+- [x] Initial crash requested672GiB with roughly15.8GiB physical memory available; Jessie alone reproduces a crash even without UE4SS, supporting the cooked-asset repair priority. Exact allocation origin is unsymbolized.
+- [x] UE4SS/asset isolation performed: disabling loader alone did not stop crash; removing modded Paks recovered menu launch. JessieFP alone then reproduced crash and removal recovered startup.
 - [ ] Audit current-build asset serialization and UE4SS support after isolation results. Preserve all released archives.
 - [x] Baseline menu launch recovered after removing9 mod trios and disabling UE4SS. JessieFP alone subsequently reproduces crash; removing it restores launch. Asset compatibility cannot be assumed.
 - [x] All6 original updated-build extraction archives received/verified: Max17,Willow19,Pete20,Hoops16,Shared4 packages. No collection errors.
