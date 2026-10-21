@@ -1,0 +1,50 @@
+[
+  {
+    "id": "d23e7205bec5f3c800000002",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_N.ubulk",
+    "type": "BulkData",
+    "size": 5586944
+  },
+  {
+    "id": "4dae58768804c44e00000002",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_RMA.ubulk",
+    "type": "BulkData",
+    "size": 2793472
+  },
+  {
+    "id": "4dae58768804c44e00000001",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_RMA.uasset",
+    "type": "ExportBundleData",
+    "size": 3820
+  },
+  {
+    "id": "959b2a25521e32d000000001",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_C.uasset",
+    "type": "ExportBundleData",
+    "size": 3809
+  },
+  {
+    "id": "7fad276178a49ced00000001",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_SSS.uasset",
+    "type": "ExportBundleData",
+    "size": 3775
+  },
+  {
+    "id": "d23e7205bec5f3c800000001",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_N.uasset",
+    "type": "ExportBundleData",
+    "size": 6558
+  },
+  {
+    "id": "7fad276178a49ced00000002",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_SSS.ubulk",
+    "type": "BulkData",
+    "size": 696320
+  },
+  {
+    "id": "959b2a25521e32d000000002",
+    "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Male01/Textures/T_Max_Apparel_01_C.ubulk",
+    "type": "BulkData",
+    "size": 2793472
+  }
+]

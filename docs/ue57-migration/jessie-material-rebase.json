@@ -1,0 +1,15 @@
+{
+  "status": "CURRENT_BUILD_MATERIAL_READY_TEXTURES_PENDING",
+  "path": "../../../Augusta/Content/_Jessie0/Art/Characters/Player_Male01/Textures/MI_Character_Male01_Jes_Apparel01.uasset",
+  "chunk": "493406b770520c7d00000001",
+  "sha256": "aa7020b44488396fb823c2cdb98842535a2f6a1fd7035ecf849443df69e25392",
+  "source_sha256": "f020187fb1782213ba7a46c9d688442a1e26504b45aa6782776ff9874cdc131d",
+  "new_57_native_material_payload_preserved_exact": true,
+  "private_texture_dependencies": [
+    "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_RMA",
+    "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_N",
+    "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_C",
+    "/Game/_Jessie0/Art/Characters/Player_Male01/Textures/T_Jes_Apparel_01_SSS"
+  ],
+  "missing_input": "Four current-build source texture templates, deliberately not guessed from5.6"
+}

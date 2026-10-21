@@ -1,0 +1,80 @@
+{
+  "status": "PASS_NATIVE_REBASE_PRIVATE_TEXTURES_PENDING",
+  "meshes": [
+    {
+      "chunk": "9c1e99043926369200000001",
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Default.uasset",
+      "old_bones": 12,
+      "new_bones": 12,
+      "same_names_parents": true,
+      "frozen_shape_weights_UVs_FP_sections_byte_exact": true,
+      "new_object_prefix_and_post_LOD_data_used": true,
+      "new_native_tail_bytes": 112,
+      "old_Lod_buffer_bytes_reused": 1680,
+      "new_sha256": "b4158dbc014834ba2fea12a78ba75a86b321377a711a8f1be75f634e02d3a52b"
+    },
+    {
+      "chunk": "209f878d72b09cad00000001",
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Hair01.uasset",
+      "old_bones": 12,
+      "new_bones": 12,
+      "same_names_parents": true,
+      "frozen_shape_weights_UVs_FP_sections_byte_exact": true,
+      "new_object_prefix_and_post_LOD_data_used": true,
+      "new_native_tail_bytes": 112,
+      "old_Lod_buffer_bytes_reused": 1680,
+      "new_sha256": "7e10438a43ca7b003c4c67d14813aee8a94e69a5f310745ec4d92e22e2564d33"
+    },
+    {
+      "chunk": "32e8e66fd14d9e8d00000001",
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/SK_Female_Teen_02_w_BackPack.uasset",
+      "old_bones": 189,
+      "new_bones": 189,
+      "same_names_parents": true,
+      "frozen_shape_weights_UVs_FP_sections_byte_exact": true,
+      "new_object_prefix_and_post_LOD_data_used": true,
+      "new_native_tail_bytes": 112,
+      "old_Lod_buffer_bytes_reused": 1631076,
+      "new_sha256": "72c182fa4a819aea6586574332adad8d9abc165a2259197c07be488fd525a564"
+    },
+    {
+      "chunk": "911395b71b48cf1a00000001",
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/SK_Female_Teen_02.uasset",
+      "old_bones": 189,
+      "new_bones": 189,
+      "same_names_parents": true,
+      "frozen_shape_weights_UVs_FP_sections_byte_exact": true,
+      "new_object_prefix_and_post_LOD_data_used": true,
+      "new_native_tail_bytes": 112,
+      "old_Lod_buffer_bytes_reused": 1631076,
+      "new_sha256": "241b11c67270f8eb53c1da67628cd7ac884a661a6484b7c3624c4aa0676f8876"
+    },
+    {
+      "chunk": "66498863905bad0300000001",
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Hair03.uasset",
+      "old_bones": 12,
+      "new_bones": 12,
+      "same_names_parents": true,
+      "frozen_shape_weights_UVs_FP_sections_byte_exact": true,
+      "new_object_prefix_and_post_LOD_data_used": true,
+      "new_native_tail_bytes": 112,
+      "old_Lod_buffer_bytes_reused": 1680,
+      "new_sha256": "44d166a4b08fead9b8fbf20c8de9c977cff080d53554221de0319586874ddb5b"
+    },
+    {
+      "chunk": "0cc46f3a2e8efeb000000001",
+      "path": "../../../Augusta/Content/_Augusta/Art/Characters/Player_Female02/Hair/SK_Female_Teen_02_Hair_Hair02.uasset",
+      "old_bones": 12,
+      "new_bones": 12,
+      "same_names_parents": true,
+      "frozen_shape_weights_UVs_FP_sections_byte_exact": true,
+      "new_object_prefix_and_post_LOD_data_used": true,
+      "new_native_tail_bytes": 112,
+      "old_Lod_buffer_bytes_reused": 1680,
+      "new_sha256": "02dc40f906acaa02722df482a6e7e87c8f73fd70b05252bb024139cf61aeeca7"
+    }
+  ],
+  "gameplay": "NOT TESTED",
+  "geometry_rig_refitting": false,
+  "new_UObject_prefix_native_tail_and_reference_skeletons_from_original_57_templates": true
+}

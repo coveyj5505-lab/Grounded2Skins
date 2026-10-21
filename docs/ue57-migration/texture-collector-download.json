@@ -1,0 +1,12 @@
+{
+  "file": "Grounded2-UE57-Texture-Templates-Collector.zip",
+  "bytes": 4393,
+  "sha256": "29c182fee265eed994db5992dfb25f4d7cfcec9b0f01e1b930b5c4b5142ca33d",
+  "local_regressions_pass": 3,
+  "targets_verified_in_user_updated_index": 4,
+  "chunks": 8,
+  "selected_decoded_bytes": 11888170,
+  "game_or_server_launch_required": false,
+  "windows_current_build_extraction": "PENDING",
+  "reason": "Four texture native/property templates omitted from initial all-four collector; fresh5.7 templates needed for existing private atlases"
+}

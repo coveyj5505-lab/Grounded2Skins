@@ -9,7 +9,11 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 - [ ] Isolate UE4SS from cooked assets by temporarily renaming only the game-local WinGDK/dwmapi.dll loader; retain Paks for that one menu-only test. Local loader path is confirmed by crash module list.
 - [ ] Audit current-build asset serialization and UE4SS support after isolation results. Preserve all released archives.
 - [x] Baseline menu launch recovered after removing9 mod trios and disabling UE4SS. JessieFP alone subsequently reproduces crash; removing it restores launch. Asset compatibility cannot be assumed.
-- [x] One-run read-only four-character extractor prepared and locally tested;6 output ZIPs, no server entry or UE4SS required. Current5.7.4 raw asset collection pending.
+- [x] All6 original updated-build extraction archives received/verified: Max17,Willow19,Pete20,Hoops16,Shared4 packages. No collection errors.
+- [x] Jessie six-mesh native rebase prepared from current5.7.4 objects. Frozen geometry/weights/UVs/FP material sections byte-exact under native readback. No installable test yet.
+- [x] Current-build private atlas material clone prepared, preserving vanilla master/subsurface imports.
+- [ ] Four current-build texture templates needed: initial collector omitted them. Follow-up helper targets exactly4 verified assets/8 chunks11.9MB decoded; one offline run, no repeated character extraction.
+- [ ] Full mapped UObject runtime loading remains unverified. Native stream parsing alone is not proof of engine compatibility.
 
 ## Preserved and Windows confirmed
 
@@ -69,3 +73,8 @@ Goal: four fun, recognizable characters, then stop cosmetic development for a wh
 ## Stop point
 
 Once major runtime features work and the user accepts the silhouettes and views, stop optional refinements. Request combined Windows checks only when a build meaningfully changes visible behavior.
+
+## Follow-up third-party mod compatibility
+
+- [ ] Invisible Armor: assess5.7.4 compatibility after a skin startup is restored; source/archive not supplied yet. Preserve armor gameplay; visual hiding only. User independently tested it in Paks on the updated build and it crashed.
+- [ ] Teleport mod: assess separately after skin compatibility; source/archive not supplied yet. User independently tested it in Paks on the updated build and it crashed.
