@@ -1,0 +1,16 @@
+{
+  "file": "Buzz-Wings-F1-Recreate-Test.zip",
+  "sha256": "42431d4f7ea12c6a16cdf2ad2bfb849e2cf8c1b7ee434e1892036de7ae5a54e2",
+  "Windows_confirmed": [
+    "F1 extend/retract",
+    "glide forces deployed from folded preference",
+    "landing retracts with folded preference",
+    "manual extended preference survives glide and landing"
+  ],
+  "source_log": "User upload file_0000000028bc820d917d5d6748b8f728",
+  "limitations": [
+    "flight visual disabled",
+    "native tuft visual and reaching pose retained",
+    "local cosmetic only"
+  ]
+}

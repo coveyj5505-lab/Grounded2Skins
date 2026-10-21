@@ -1,0 +1,10 @@
+{
+  "file": "BoPeep-Crook-Persistent-Views-Test.zip",
+  "bytes": 9016,
+  "sha256": "d7ed293760534e7bb6deaec9fa0a85d1715a1fef9d0943002a45a5ada3118245",
+  "scope": "BoPeepCrook runtime only",
+  "changes": "Retain separate TP, FP_GRIP and FP_STAFF components; assign each mesh once; switch visibility and pose transform only after first initialization. Components keep private assets referenced. Destroy all on disable/pawn change/error only.",
+  "regressions": "27 Lua groups pass, including repeated cached view changes with create/load/destroy/reparent/mesh assignment forbidden.",
+  "Windows": "NOT TESTED",
+  "unchanged": "All Paks, skins, Buzz wings, loader, mods.txt; FP hand orientation not fixed"
+}

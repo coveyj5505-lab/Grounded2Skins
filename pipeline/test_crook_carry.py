@@ -93,8 +93,13 @@ function StaticFindObject(path)
  return invalid
 end
 '''.replace('SPECS',',\n'.join(specs))
+# Track visibility/lifetime per component: persistent views must not share fixture state.
+pre=pre.replace("c.IsVisible=function() return show end", "c.IsVisible=function(self) return self.testVisible==true end")
+pre=pre.replace("c.SetVisibility=function(self,v,prop) assert(not prop);show=v end", "c.SetVisibility=function(self,v,prop) assert(not prop);self.testVisible=v;show=v;if v then c=self end end")
+pre=pre.replace("c.K2_DestroyComponent=function() destroyed=destroyed+1;c.IsValid=function() return false end end", "c.K2_DestroyComponent=function(self) destroyed=destroyed+1;self.IsValid=function() return false end end")
 checks=[
-("view transitions never reassign a registered crook mesh", "local add=p.AddComponentByClass;p.AddComponentByClass=function(...) local o=add(...);local setter=o.SetSkeletalMeshAsset;local assigned=false;o.SetSkeletalMeshAsset=function(self,mesh) assert(not assigned,'registered crook mesh reassigned');assigned=true;return setter(self,mesh) end;return o end;timer();fp=true;timer();fp=false;timer();assert(made==3 and destroyed==2 and show and c.socket=='r_hand_JNT')"),
+("cached FP-to-TP return performs no load/create/destroy/reparent/mesh assignment", "timer();local tp=c;fp=true;timer();local first=c;local function forbidden() error('view return attempted native lifecycle mutation') end;p.AddComponentByClass=forbidden;system.LoadAsset_Blocking=forbidden;for _,o in ipairs({tp,first}) do o.SetSkeletalMeshAsset=forbidden;o.K2_DestroyComponent=forbidden;o.K2_AttachToComponent=forbidden end;fp=false;timer();assert(show and c==tp);fp=true;timer();assert(show and c==first and made==2 and destroyed==0)"),
+("view transitions never reassign a registered crook mesh", "local add=p.AddComponentByClass;p.AddComponentByClass=function(...) local o=add(...);local setter=o.SetSkeletalMeshAsset;local assigned=false;o.SetSkeletalMeshAsset=function(self,mesh) assert(not assigned,'registered crook mesh reassigned');assigned=true;return setter(self,mesh) end;return o end;timer();fp=true;timer();fp=false;timer();assert(made==2 and destroyed==0 and show and c.socket=='r_hand_JNT');local count=made;for i=1,4 do fp=true;timer();fp=false;timer() end;assert(made==count and destroyed==0)"),
 ("copied hand omitted when native hand enters conservative view cone", "fp=true;timer();assert(c.asset:find('_BoCrFP1',1,true));nativeHandVisible=true;timer();assert(c.asset:find('_BoCrFN1',1,true) and show);nativeHandVisible=false;timer();assert(c.asset:find('_BoCrFP1',1,true))"),
 ("optional hand transform failure preserves staff-only carry", "body.GetSocketTransform=function(self,bone) if bone=='None' then error('camera transform unavailable') end;return {Rotation={X=0,Y=0,Z=0,W=1}} end;fp=true;timer();assert(show and c.asset:find('_BoCrFN1',1,true))"),
 ("wrong installed container revision stops before native creation", "io.open=function() return {read=function() return 'wrong' end,seek=function() return 1 end,close=function() end} end;timer();assert(made==0);assert(table.concat(events,'\\n'):find('Wrong container revision installed',1,true))"),
@@ -123,7 +128,7 @@ checks=[
 ]
 for name,checksLua in checks:
  if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==58').replace('Translation.X==75','Translation.X==65')
- if os.environ.get('TOYSTORY_RUNTIME_ROOT') and name=='attachment, safety ordering, actual slots, both views, cleanup': checksLua=checksLua.replace('destroyed==1','destroyed==3')
+ if os.environ.get('TOYSTORY_RUNTIME_ROOT') and name=='attachment, safety ordering, actual slots, both views, cleanup': checksLua=checksLua.replace('destroyed==1','destroyed==2')
  state=lib.luaL_newstate();lib.luaL_openlibs(state)
  if not checksLua.startswith('timer();') and not checksLua.startswith('fp=true;timer();'):checksLua=checksLua.replace('key();','timer();',1)
  code=(pre+'\n'+source+'\n'+checksLua).encode()

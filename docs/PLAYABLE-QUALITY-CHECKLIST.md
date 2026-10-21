@@ -135,3 +135,16 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] FP apparent height/side placement adjusted by perspective: forward75 to65 cm, right58 unchanged; no hand/crook stretching or TP scale change.
 - [ ] Windows: verify TP-FP-TP transition stability before placement refinements. User testing Buzz independently; do not require interrupting that test.
 - [ ] Hand upside-down geometry still pending; simple flat correct-side grip is sufficient.
+
+## Wing recreation candidate Windows confirmed
+
+- [x] Latest user log (21:26–21:27 local) records manual extend/retract, IsGliding false→true→false with preference true (wings stay extended after landing), and false→true→false with preference false (automatic deploy then retract). All creation transitions report success; no accessory RESULT ERROR in supplied session; Event loop end present. User confirms visible behavior.
+- [x] Preserve Buzz-Wings-F1-Recreate-Test.zip as confirmed baseline. Flight visual remains disabled; tuft and native reaching-up glide animation remain unchanged.
+- [ ] Forward flight visual and tuft hiding are separate next work; do not invalidate confirmed wing toggle/glide behavior.
+
+## Persistent crook view candidate
+
+- [x] Recreation candidate failed in Windows on FP→TP again; fresh log ends at newly created component SetSkeletalMeshAsset after TP reload. Do not call the recreation candidate confirmed or sufficient.
+- [x] Separate persistent TP/FP_GRIP/FP_STAFF components now initialize only once each. Cached view switches hide old/show target and update cosmetic transform; no creation, destruction, assignment, loading or reattachment. Components keep their assets referenced. All disposed only on disable/pawn change/error.
+- [x] 27 Lua groups pass including repeated mode switches, explicit forbidden lifecycle operations on cache return, no repeated per-component assignment, equipment hiding and cleanup of all retained views.
+- [ ] Windows: short standing TP→FP→TP repeated check; no attacks needed for first stability gate. Hand inversion remains pending, flat correctly oriented grip accepted. Buzz wing confirmed files preserved.

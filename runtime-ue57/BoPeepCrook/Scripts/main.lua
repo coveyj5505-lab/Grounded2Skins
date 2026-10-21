@@ -202,12 +202,19 @@ local function visible(value)
     lastVisible=value;log(value and 'MILESTONE 5/6 VISIBILITY ENABLED (IsVisible=true); both actual hand slots empty' or 'VISIBILITY HIDDEN (IsVisible=false)')
 end
 local lastPresentation,lastAttack,firstPersonCamera
+local presentations={}
 local function cleanup()
-    if valid(component) then
-        -- Best effort rollback touches only our new component.
-        pcall(function() invoke(component,'Engine.SceneComponent','SetHiddenInGame',true,false) end)
-        pcall(function() invoke(component,'Engine.ActorComponent','K2_DestroyComponent',ownerPawn) end)
+    local seen={}
+    local function dispose(o)
+        if valid(o) and not seen[o] then
+            seen[o]=true
+            pcall(function() invoke(o,'Engine.SceneComponent','SetHiddenInGame',true,false) end)
+            pcall(function() invoke(o,'Engine.ActorComponent','K2_DestroyComponent',ownerPawn) end)
+        end
     end
+    for _,view in pairs(presentations) do dispose(view.component) end
+    dispose(component)
+    presentations={}
     component=nil;lastPresentation=nil;lastAttack=nil;firstPersonCamera=nil;ownerPawn=nil;lastVisible=nil;lastFirst=nil
 end
 local function verifyInstalledContainer()
@@ -355,13 +362,25 @@ local function present(p,body,fp)
     local mode=fp and (copyHand and 'FP_GRIP' or 'FP_STAFF') or 'TP'
     if mode~=lastPresentation then
         visible(false)
-        local mesh=fp and loadView(copyHand and fpPath or fpBarePath) or meshAsset
-        -- Preserve the first TP component; all later presentation changes use
-        -- a new deferred component, with one pre-registration mesh assignment.
-        if lastPresentation~=nil or fp then
-            log('PRESENTATION RECREATE '..mode..'; no registered mesh reassignment')
-            cleanup()
+        if lastPresentation then
+            presentations[lastPresentation]={component=component,attached=true}
+        elseif valid(component) then
+            -- Initial TP creation stays alive and keeps its asset referenced.
+            presentations.TP={component=component,attached=false}
+        end
+        local saved=presentations[mode]
+        if saved and valid(saved.component) then
+            component=saved.component
+            lastFirst=nil
+            if saved.attached then lastFirst=fp end
+            lastVisible=false
+            log('PRESENTATION REUSE '..mode..'; visibility-only selection; no mesh assignment/destruction')
+        else
+            local mesh=fp and loadView(copyHand and fpPath or fpBarePath) or meshAsset
             create(p,body,mesh)
+            lastFirst=nil
+            presentations[mode]={component=component,attached=false}
+            log('PRESENTATION CREATED ONCE '..mode..'; retained for later view changes')
         end
         lastPresentation=mode
         if fp then log('FP HAND PRESENTATION '..mode..'; native hand visibility cone/attack state; native body untouched') end
@@ -394,6 +413,7 @@ local function present(p,body,fp)
     invoke(component,'Engine.SceneComponent','K2_SetRelativeTransform',offset,false,{},true)
     if attack~=lastAttack then log('COSMETIC JAB '..tostring(attack)..'; native unarmed montage/gameplay untouched; FP proxy hand omitted during native punch');lastAttack=attack end
     lastFirst=fp
+    presentations[mode]={component=component,attached=true}
 end
 local function slotEmpty(value)
     if value==nil then return true end
@@ -487,4 +507,4 @@ RegisterKeyBind(Key.F9,function()
     end)
 end)
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded crook v0.3: AUTOMATIC empty-hand carry. Requires zBoCrookUE57_P trio. F9 is debug suspend/resume only. FP source-hand viewmodel, TP shaft grip origin, cosmetic hook-first jab; native spear montage NOT substituted.')
+log('Loaded crook persistent-view candidate: AUTOMATIC empty-hand carry. Requires zBoCrookUE57_P trio. F9 is debug suspend/resume only. FP source-hand viewmodel, TP shaft grip origin, cosmetic hook-first jab; native spear montage NOT substituted.')
