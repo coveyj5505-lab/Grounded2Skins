@@ -1,0 +1,19 @@
+{
+  "status": "PASS_MOCKED_LUA_NOT_WINDOWS",
+  "groups": 13,
+  "checks": [
+    "menu/empty hands wait without mapping dump",
+    "equipped spear captures assets poses attack rows and one native-only map",
+    "unarmed comparison after spear retains default and current attack",
+    "default unarmed damage getter captured when supported",
+    "client authority false is preserved as a JSON boolean",
+    "missing optional map global does not stop pose capture",
+    "map dumper failure preserves independent pose capture",
+    "bad function metadata stops calls before invocation",
+    "optional montage getter failure leaves hand transforms",
+    "late missing item visuals leave body and attack sources",
+    "game-thread dispatch failure stops safely",
+    "bounded recording self-stops without any native mutations",
+    "FP and TP transitions capture both views"
+  ]
+}

@@ -124,3 +124,10 @@ Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip 
 - [ ] Native spear standing/mid-thrust screenshots pending (resize to1920px wide JPEG, same FOV). Use for carry/grip/framing/diameter reference.
 - [ ] Prepare visual-only native spear pose/attachment reuse with unarmed gameplay unchanged. Do not substitute a real equipped spear, run uninspected hit notifies, or represent cosmetic V2 staff-only motion as a completed spear-arm solution.
 - [ ] Retain accepted skins, persistent view switching, removed FP proxy hand, and frozen releases.
+
+## Native spear crook implementation — clarified gameplay scope
+
+- [x] User selected native spear gameplay, then clarified damage must remain unarmed-level while reach/hit detection must act as a spear. This supersedes unarmed reach, not unarmed damage. Accepted skin work remains closed.
+- [x] Prepare additive read-only SpearReferenceProbe: actual weapon attachment/mesh/bounds, camera/hand poses, montage/stance, native attack row/range and unarmed damage baseline, authority, plus current native .usmap.13 mocked groups pass; no gameplay changes.
+- [ ] One new targeted reference session with this probe, then native spear presentation and scoped damage implementation. Prior thrust sessions used a logger that did not capture these fields; existing16 animation payloads need no repeat extraction.
+- [ ] Confirm server/host damage behavior rather than treating a local cosmetic change as a damage override. No constant guessed damage or global weapon edits.

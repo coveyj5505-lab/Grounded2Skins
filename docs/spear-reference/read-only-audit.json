@@ -1,0 +1,42 @@
+{
+  "native_function_whitelist": [
+    "Engine.Actor.HasAuthority",
+    "Engine.PlayerController.GetViewportSize",
+    "Engine.KismetSystemLibrary.Conv_ClassToSoftClassReference",
+    "Maine.UserInterfaceStatics.GetDefaultBaseDamageFirstAttackOfCharacter",
+    "Maine.SurvivalCharacter.GetCurrentAttack",
+    "Maine.SurvivalCharacter.GetDefaultAttack",
+    "Maine.Item.GetItemDataRowHandle",
+    "Maine.Item.GetAttackDamageModifier",
+    "Maine.Attack.GetAttackDataRowHandle",
+    "Maine.Attack.GetAttackRange",
+    "Maine.Attack.GetChargedAttackRange",
+    "Maine.Attack.GetAnimMontage",
+    "Engine.SkeletalMeshComponent.GetSkeletalMeshAsset",
+    "Engine.SkeletalMeshComponent.GetAnimInstance",
+    "Engine.AnimInstance.GetCurrentActiveMontage",
+    "Engine.AnimInstance.Montage_GetPosition",
+    "Engine.Actor.K2_GetComponentsByClass",
+    "Engine.SceneComponent.GetSocketTransform",
+    "Engine.SceneComponent.DoesSocketExist",
+    "Engine.SceneComponent.GetAttachParent",
+    "Engine.SceneComponent.GetAttachSocketName",
+    "Engine.StaticMeshComponent.GetLocalBounds",
+    "Maine.SurvivalCharacter.GetIsFirstPerson",
+    "Maine.SurvivalCharacter.GetFirstPersonCamera",
+    "Maine.EquipmentComponent.GetItemInSlot",
+    "Maine.Item.GetItemVisuals",
+    "Engine.GameplayStatics.GetTimeSeconds"
+  ],
+  "native_property_writes": false,
+  "native_function_calls_outside_game_thread": false,
+  "diagnostic_output": "UE4SS.log plus native type-layout .usmap",
+  "gameplay_mutations": false,
+  "new_animation_asset_extraction": false,
+  "limits": {
+    "max_frames": 600,
+    "max_active_polls": 2400,
+    "poll_ms": 50
+  },
+  "validation": "Source audit plus13 mocked-Lua groups; not a native Windows execution guarantee"
+}
