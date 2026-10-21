@@ -1,0 +1,15 @@
+{
+  "patch_vertices": 45,
+  "patch_quads": 32,
+  "attachment": "spine3_JNT only",
+  "area": "Rear collar underlay; lower cape unmodified",
+  "atlas_uv": [
+    0.2637939453125,
+    0.4490966796875
+  ],
+  "atlas_rgb": [
+    0.1568627450980392,
+    0.13725490196078433,
+    0.4823529411764706
+  ]
+}

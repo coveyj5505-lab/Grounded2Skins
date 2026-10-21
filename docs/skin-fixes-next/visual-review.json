@@ -1,0 +1,16 @@
+{
+  "status": "VISUALLY_REVIEWED_OFFLINE_WINDOWS_PENDING",
+  "images_opened_and_evaluated": true,
+  "Buzz": "Reviewed front, side and raised-arm cooked readbacks: lowered proximal shoulders now meet armor; forearms/hands untouched. Windows animation still needs confirmation.",
+  "BoPeep": "Rejected remaining holes after first cooked review; added a 45-vertex chest-weighted rear-collar underlay, reviewed second cooked rear/front. Upper gaps closed; stylized seam remains; lower cape retained.",
+  "Woody": "Reviewed quarter and seated cooked readbacks: hip-rigid holster moves with pelvis and clears thigh; accepted boots/pull-ring retained.",
+  "Jessie": "Reviewed side/front cooked readbacks: head/hair/hat translated backward 6cm with blended neck; recognizable proportions retained.",
+  "CrookHand": "Rejected twisted forearm; retained rolled original hand with upright thumb and built connected tapered forearm. Rejected initial texture mismatch; matched existing palm texel verified against actual native atlas. Reviewed close and camera-relative perspective renders. All first-person staff geometry unchanged; TP and bare-FP chunks byte-exact.",
+  "FP_placement": "forward65/right50/down32 cm; closer and farther to side than original75/43. No global crook scale/camera changes. Perspective reviewed at a representative90-degree field of view, not a game capture.",
+  "flight": "Existing side-armor attachment flight mesh personally reviewed in quarter/side; current UE57 positions/indices/UV streams byte-identical to reviewed corrected asset. Horizontal pose candidate awaits runtime test.",
+  "limits": [
+    "Controlled FK previews are not game animations",
+    "First/third person section classification preserved; actual visibility requires Windows",
+    "Cosmetic accessories remain local-client visuals; other-player appearance not yet proven"
+  ]
+}

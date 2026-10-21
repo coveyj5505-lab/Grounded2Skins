@@ -1,0 +1,41 @@
+{
+  "character": "Buzz",
+  "status": "PASS_OFFLINE_WINDOWS_PENDING",
+  "meshes": [
+    {
+      "chunk": "cd809abc483f179000000001",
+      "vertices": 18428,
+      "triangles": 19788,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    },
+    {
+      "chunk": "8021448bfc8c514500000001",
+      "vertices": 18428,
+      "triangles": 19788,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    }
+  ],
+  "all_other_chunks_exact": [
+    "42e2fbe2960242b700000002",
+    "94430761e53876ef00000001",
+    "94430761e53876ef00000002",
+    "ce0ef76a0619337700000001",
+    "100265b7d034bb4900000001",
+    "5204d59f53e222ea00000001",
+    "5204d59f53e222ea00000002",
+    "100265b7d034bb4900000002",
+    "42e2fbe2960242b700000001",
+    "5b5f80c25a06ad0000000001",
+    "22cf2ce093573a5d00000001",
+    "2cbf30966d37155600000001"
+  ],
+  "textures_materials_hair_helpers_unchanged": true,
+  "source_frames_limit": 0.009,
+  "runtime": "No Windows claim; independent render review still required"
+}

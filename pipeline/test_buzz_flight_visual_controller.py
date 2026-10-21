@@ -24,6 +24,8 @@ api.getVisibility=function(o) if fail.read then return nil end;return o.visible 
 local function snapshot(glide,fp) return {owner=owner,body=body,bodies={body,backup},wings={wing},isBuzz=true,isGliding=glide,isFirstPerson=fp,manualWingsExtended=false} end
 '''
 checks=[
+('tuft render components hide only during flight and restore exact prior state',"local tuft=object('tuft',true);local hidden=object('hiddenTuft',false);local s=snapshot(true,false);s.tufts={tuft,hidden};assert(c.tick(s));assert(not tuft.visible and not hidden.visible);s.isGliding=false;c.tick(s);assert(tuft.visible and not hidden.visible and body.visible)"),
+('late tuft render discovery restores and recaptures safely',"c.tick(snapshot(true,false));local tuft=object('tuft',true);local s=snapshot(true,false);s.tufts={tuft};assert(c.tick(s));assert(not tuft.visible and n==2);c.stop();assert(tuft.visible and body.visible)"),
 ('manual standing wings never start flight',"local s=snapshot(false,false);s.manualWingsExtended=true;assert(not c.tick(s));assert(n==0 and body.visible and wing.visible)"),
 ('glide entry and landing restore prior states',"assert(c.tick(snapshot(true,false)));assert(not body.visible and not wing.visible and not backup.visible);assert(c.visual.visible);assert(not c.tick(snapshot(false,false)));assert(body.visible and wing.visible and not backup.visible and not c.visual)"),
 ('first-person entry restores complete native model',"c.tick(snapshot(true,false));c.tick(snapshot(true,true));assert(body.visible and wing.visible and not c.visual)"),

@@ -42,3 +42,21 @@ Suggested order: FP hand orientation + major body/cape fixes; Buzz flight pose; 
 ## Latest user priority
 
 One short optional enable-only flight-visual test first because the candidate already exists. Then prioritize all four skins' obvious defects, including Bo Peep FP hand orientation, followed by Buzz flight refinements. Do not let an unsuccessful flight test delay skin corrections. Preserve working wing and crook baselines.
+
+## Current prepared iteration — 2026-10-21
+
+Authoritative evidence: [visual review](skin-fixes-next/visual-review.json), [downloads and hashes](skin-fixes-next/downloads.json).
+
+- [x] Buzz shoulder attachment candidate: original source/component correspondence and rest matrices audited; proximal cap repositioned toward side armor, blend limited to avoid compression; final native front/side/raised-arm previews personally reviewed. Await Windows animation acceptance.
+- [x] Woody holster candidate: source holster groups isolated, spine1 attachment changed to Hips, moved outward1.5–3cm; actual cooked quarter/seated renders reviewed. Boots/ring unchanged. Await Windows.
+- [x] Jessie neck candidate: head/hat/hair moved back6cm with blended neck; no weight/reference/face redesign; actual cooked side/front reviewed. Await Windows.
+- [x] Bo Peep cape candidate: continuous source topology restored, inner/outer layers separated, torso/pelvis cloth weights avoid hand attachment; first cooked review still showed collar gaps, second revision added small rear collar underlay and reviewed closed gaps. Lower cape retained. Await Windows.
+- [x] Crook FP hand candidate: upright original hand, rebuilt connected short forearm, corrected palm-matched skin texel; close and representative FP perspective reviewed. FP65/right50/down32, TP unchanged. Native readback passes; persistent camera-switch lifecycle unchanged. Await Windows.
+- [x] All four skin candidates and accessory: every inline LOD, native reference/material records, geometry/UV/weights/colors and unrelated chunk preservation checked after repacking. No claim that offline checks establish Windows behavior.
+- [x] Flight source-access candidate: added validated Character.Mesh path in addition to owned components, deduplication and exact source-asset logging. Existing corrected horizontal flight asset preserved. Optional tuft route reads InventoryComponent.UsingGliderItem (Glider-slot fallback) -> Item.GetItemVisuals -> primitive render components; live metadata gates and independent failure handling. Exact visibility restoration included. Await actual Windows execution; tuft path is an SDK lead until verified.
+- [x] Regression run:27 crook lifecycle/access groups,13 wing groups,17 flight-adapter groups and19 flight-controller groups pass locally. Mocked Lua does not prove native function calls.
+- [ ] Native spear animation: existing montage path confirmed; required current-build animation payloads absent from previous character extracts. Do not touch native attack execution or play uninspected gameplay montage. Current hook-first cosmetic jab remains the practical fallback. Targeted read-only dependency collector prepared; no repeated attack recording needed.
+- [ ] Windows acceptance of skin deformation, hand presentation, flight creation/landing/FP rollback and optional tuft visibility.
+- [ ] Multiplayer appearance of local cosmetic components remains unverified.
+
+The original v0.3, confirmed F1 wing release and confirmed persistent-view crook release remain frozen. Stable flight config remains disabled; only the isolated flight test ZIP enables the candidate. No BuzzWings runtime changes in this iteration. No new claim that remaining work is final/game-proven.

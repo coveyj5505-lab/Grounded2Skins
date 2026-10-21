@@ -1,0 +1,43 @@
+{
+  "character": "BoPeep",
+  "status": "PASS_OFFLINE_WINDOWS_PENDING",
+  "meshes": [
+    {
+      "chunk": "2ee2517f02d2199900000001",
+      "vertices": 5262,
+      "triangles": 6479,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    },
+    {
+      "chunk": "5bf07aadb2b863d000000001",
+      "vertices": 5262,
+      "triangles": 6479,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    }
+  ],
+  "all_other_chunks_exact": [
+    "1ac50607e7ab774100000001",
+    "31b82b0e601d9bef00000002",
+    "4314ac14478c622200000001",
+    "0f3106bfc9ae6ed400000001",
+    "31b82b0e601d9bef00000001",
+    "64dca089575262cb00000002",
+    "3b49527404052c4a00000002",
+    "61b61120a13799a400000001",
+    "7b49e1884654cbf400000001",
+    "64dca089575262cb00000001",
+    "3b49527404052c4a00000001",
+    "aa4ca1b108f7254900000002",
+    "aa4ca1b108f7254900000001",
+    "d9081380868b694700000001"
+  ],
+  "textures_materials_hair_helpers_unchanged": true,
+  "source_frames_limit": 0.009,
+  "runtime": "No Windows claim; independent render review still required"
+}

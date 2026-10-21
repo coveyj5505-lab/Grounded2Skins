@@ -1,0 +1,110 @@
+{
+  "packages": [
+    {
+      "file": "ToyStory-Four-Skins-Visual-V2-UE57-Test.zip",
+      "bytes": 18594487,
+      "sha256": "e41739962bfb0167a67ef202c76fe1c6da803657462da77b4243f28a4964133e",
+      "scope": "Four independent skin replacements: Buzz shoulder fit; Bo Peep cape topology/weights/collar underlay; Jessie neck posture; Woody hip-rigid outward holster. Existing native references, textures, material paths and FP head/body classification retained.",
+      "instructions": "Close game. Move previous four replacement trios OUTSIDE Paks: zBuzzUE57_P, zBoPeepUE57_P, zWoodyUE57_P, zJessieUE57_P (and any other older skin replacements). Copy all12 files from Paks into Augusta/Content/Paks. Keep working wing/crook accessories. No UE4SS changes in this ZIP. Test idle/walk/attack/sitting and both views on all4 characters. Rollback: remove the four z*SkinV2UE57_P trios and restore previous trios.",
+      "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+      "files": {
+        "Paks/zBoPeepSkinV2UE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zBoPeepSkinV2UE57_P.ucas": "8f6b4b5988bbe65315025da710863c6f5897801bc1297a032b68df20b02bf611",
+        "Paks/zBoPeepSkinV2UE57_P.utoc": "c761ef9105d4a379dcca2a11988412f4f8d10b769a5c28a6441b0e2bc4d6143d",
+        "Paks/zBuzzSkinV2UE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zBuzzSkinV2UE57_P.ucas": "e7c8b8b0eb2451d8d5ca0f48eb498c9c2fa58dc859c09b7753e23a28ab98f9c0",
+        "Paks/zBuzzSkinV2UE57_P.utoc": "d93b98d01a8f6f374bed93c1d26c36a7a3080cf9438b87637d31cfed6e546172",
+        "Paks/zJessieSkinV2UE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zJessieSkinV2UE57_P.ucas": "7d7ff38520407a4de93d452cede0ddb387d2ba6cc5a574b4e8c3c3ddcc31db1a",
+        "Paks/zJessieSkinV2UE57_P.utoc": "d54724c8bd84e8e99b85c49420cc074272ae33c57037e32a2c5b176f71b8609e",
+        "Paks/zWoodySkinV2UE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zWoodySkinV2UE57_P.ucas": "5095b5e8adb61689c79f2210a9819ec4e231a95c31045f92e970844eb321e1a7",
+        "Paks/zWoodySkinV2UE57_P.utoc": "796f92e2b9302209cbdd5eb9d168a8946dc2b8c9278a7b967bf2227bbab900a9",
+        "Previews/BoPeep-cooked-front.png": "582164d6b51cbb19ee554824e99e20343881b97916820301b14d1969c10e182f",
+        "Previews/BoPeep-cooked-rear.png": "248a229344d64cb337695a3a55ecddff4a5299aa54f45b8eb270c1d9f512e76e",
+        "Previews/Buzz-cooked-front.png": "fa17ddf04b61a09b9c4944655ce3a7da156339e8949f2d5e8352faaea7ec90cc",
+        "Previews/Buzz-cooked-raised-arms.png": "85038df5c3037134d81ac9d07583d205b28d6f02a22b685c65fb1de10247e4e1",
+        "Previews/Buzz-cooked-side.png": "f400aea73c50d1911793d3b5f7079d9c879f191d2554498da24a60e103290ca5",
+        "Previews/Jessie-cooked-front.png": "9896b84badf845d200147c766c3ea4a1b582d2d415440a765fdf30940b463538",
+        "Previews/Jessie-cooked-side.png": "c5326ba3291fb5cfe6107270150b55bb3dc2a5eee7e79a01a90ab85c37fac9c8",
+        "Previews/Woody-cooked-quarter.png": "0b8ac8fdab33c040e611932283894aef698db6d06ebef8e3a70e9f3bfc29c126",
+        "Previews/Woody-cooked-sitting-quarter.png": "edefbd53aa752df7cac3d4edef3dd509f54d3fac7fbd145c29b4931987696d3b",
+        "TEST-STEPS.txt": "298053c912b6ee715564d6b127b35ff38a3229373155840e77a958b7da2e26fe",
+        "Validation/BoPeep.json": "c7369eb1d80694baaacfcfbcce541e8748a644b35e44d2511eb2722af88f3e70",
+        "Validation/Buzz.json": "970e398b9a4460ecfebafff831ce4ee3fed67ce6d376eae42a16c97454912a0c",
+        "Validation/Jessie.json": "a3a713a1b46b1565f1be9bb3a19a4f8e018352fb077a34df8828d482007900e8",
+        "Validation/Woody.json": "7063f01a8ecb9c9f1690a115fbccf1a0799d7ba0146e5cee5d8fc27cb8d5db99"
+      }
+    },
+    {
+      "file": "BoPeep-Crook-Upright-Hand-V2-UE57-Test.zip",
+      "bytes": 1108455,
+      "sha256": "01708d2ee9fe236cddd0780ec52c5ef2a195e247290e618d527af507c269f06a",
+      "scope": "Corrected thumb-up proxy hand and connected forearm, palm-matched skin texel. TP and bare-FP assets unchanged. Persistent component lifetime fix retained. FP65/50/-32 placement; no global scale change. Existing cosmetic jab retained; native spear montage NOT substituted.",
+      "instructions": "Close game. Move old zBoCrookUE57_P trio outside Paks; copy new zBoCrookHandV2UE57_P trio from Paks. Replace only Mods/BoPeepCrook/Scripts/main.lua. Keep BoPeepCrook : 1 in existing mods.txt. Crook should appear automatically for Willow with empty hands; no F9 needed. Check FP upright thumb/hand/height/side placement, repeat FP-TP several times, then equip main-hand and off-hand separately and empty both. Rollback: restore old trio and main.lua from BoPeep-Crook-Persistent-Views-Test.zip.",
+      "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+      "files": {
+        "Mods/BoPeepCrook/Scripts/main.lua": "5287049ff13bba11e37088073e5d412e7c24e87a594c71a854d1705d30e179df",
+        "Paks/zBoCrookHandV2UE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zBoCrookHandV2UE57_P.ucas": "0b9ea0e61acaee1c38d1dd3d70021cfa9c0e806070e5c32ae4706cdc2db99f8d",
+        "Paks/zBoCrookHandV2UE57_P.utoc": "754be5fd996f49920a01bfc694458db29431fd82ca774f672e1b0890c7ea8c8c",
+        "Previews/Crook-FP-camera-review.png": "740d8c498ec84e7938744be4ba9686d913d943938cd9db0363cc4a436e92b38a",
+        "Previews/Crook-FP-upright-review.png": "e9f2190c51e1232f15c7d8e4814a74b6799b29341bef4927722849996d5ae971",
+        "TEST-STEPS.txt": "d1729a494e219604be2527bbd68052571509bcdf548face2d265450defd672f3",
+        "Validation/CrookHand.json": "2bf26d0b7696e3bec055d502b2d222548d7f88e2a7e8cd5595bcc4d0846fd48b"
+      }
+    },
+    {
+      "file": "Buzz-Flight-Source-Mesh-Repair-V2-UE57-Test.zip",
+      "bytes": 2970156,
+      "sha256": "476660b5670f0a1f260beedfd0a84c812985afc2196b8fa1975178bc77daf4d0",
+      "scope": "Repairs missing direct Character.Mesh route; same corrected side-socket horizontal proxy. Optional active inventory item / Glider-slot visual-only tuft suppression with exact visibility rollback. No wing-mod changes, attack RPCs, equipment writes, actor/camera/movement transforms or physics changes. TP only, local-client cosmetic. Windows native execution remains unverified.",
+      "instructions": "Keep the working BuzzWings folder, F1 bind, config and zBuzzWingsUE57_P trio. Copy this Paks trio (zBuzzFlightUE57_P) and replace Mods/BuzzFlightVisual/Scripts with these three Lua files. Add/keep BuzzFlightVisual : 1 in existing mods.txt. First check F1 open-close standing: no flight pose. With wings folded, actually jump/fall far enough and press Shift to OPEN the reusable tuft. In THIRD PERSON, check forward pose, wings and tuft; land. Repeat with manual wings extended: landing must leave them extended. Switch FP during a glide if safe, then return TP; native FP presentation is intentional. Send UE4SS.log. If tuft remains, its optional stage is logged and should not block flight. Rollback: disable BuzzFlightVisual in mods.txt; keep working wings.",
+      "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+      "files": {
+        "Mods/BuzzFlightVisual/Scripts/flight_config.lua": "39e55bb082ca1e5ee8ca7f0fdc339b97e2c29c9c17972513c18905ef0ebb4e56",
+        "Mods/BuzzFlightVisual/Scripts/flight_controller.lua": "30d4d12d3c3d1bec224dac3e5616004227e70100f1f46b1cbcccfe0dae2eb50a",
+        "Mods/BuzzFlightVisual/Scripts/main.lua": "53fc2503a65b3c054efe6e2562225f2e6f95ca6241e433a93564fccb86809943",
+        "Paks/zBuzzFlightUE57_P.pak": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d",
+        "Paks/zBuzzFlightUE57_P.ucas": "0f272309768008f543e9161e3e574893f8cfd4bf40da6d63f7d1080dd084cee2",
+        "Paks/zBuzzFlightUE57_P.utoc": "725832595376e1ec7723d66aab18b78a446aef2418f2038607497d9a8d44df88",
+        "Previews/cooked-flight-quarter.png": "a27383458c253e0bc31bc638b1388fd10439dc1c5077d76b0b083f5ca2bee35a",
+        "Previews/cooked-flight-side.png": "89d00805a43fcf7b0a0e63b4bf229accc65fcae256c59da27bf3eecb5d8dc53e",
+        "TEST-STEPS.txt": "2a1b5815afc4677ec7c24b10158d9f74a5818c188453fc6efec777c6d04a023f",
+        "Validation/buzz-flight-adapter-regressions.json": "54735bf020cb6790d999357aff1779502a32f0f97e21ca4c68b4232e76897a58",
+        "Validation/buzz-flight-controller-regressions.json": "2e32630b34e7cfd7f9b24a4bf66662064d81ec7635b765abab1512884999c420"
+      }
+    },
+    {
+      "file": "Grounded2-Targeted-Spear-Animation-Collector.zip",
+      "bytes": 10923,
+      "sha256": "dede0a5f728c57c830ca7226b3cabd6559d6c52b569ca04ec30d316d0bfc5fda",
+      "scope": "Read-only exact recorded montage plus actual indexed animation/skeleton dependencies. At most32 packages /64MiB decoded. No game launch, no gameplay recording, no mod installation. Needed before inspecting native spear notify/root-motion/slot tracks safely.",
+      "instructions": "Optional separate collection for the next native-animation iteration. Close game; run Start-Collection.cmd from extracted folder. Select existing Windows retoc.exe0.1.5, then ORIGINAL Augusta-WinGDK.utoc. Requires existing Python3.11+. Send the ONE Grounded2-SpearAnimation-*.zip on Desktop. No four-character collector or attack sequence repeated.",
+      "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+      "files": {
+        "Collect-Spear.ps1": "326d27120d46c5a07963e63db3bceb4cafbb0f3ed950c9d3391a1f9975ece393",
+        "Start-Collection.cmd": "c930a111e4039c7a7b233e297fe58aa260ccf9c2da34ed334f72ba1568757175",
+        "TEST-STEPS.txt": "55f5606c874b08cd820cf456e76a2493c221cc99459f6bb6cab10a10e8e065f0",
+        "collect_animation.py": "afbe28ac3f879a7957ee6fcfde9a9da1453132c4256992c33a670dc27f3a0eba",
+        "extract_animation_dependencies.py": "3e245d05a683d7805fbff2dde06ed42594727580626741293ca802e5b0617890",
+        "pete-extractor/discover_pete.py": "43f06fc4cb838aeb4301a5b70d08220057d27bb362f19bc51bc5d6b28c8ec5ef",
+        "pete-extractor/extract_selected.py": "fc2b0c016947dc00403a44ddf85b0c8a6067da682713926ea588df1b25885f6b"
+      }
+    }
+  ],
+  "frozen_inputs_verified": {
+    "ToyStory-Buzz-BoPeep-Test-v0.3.zip": "57b5d3f858326fc7ed8df9ef7c1be5f6f5a7187fea533b5ab1ab30d3f2b42511",
+    "Woody-Boots-Ring-V2-Test.zip": "4f973e2e15a67181e7ae8e4af77229163677869c6ad5ed263729c0380166101d",
+    "runtime/ToyStoryDiscoveryV3/Scripts/main.lua": "1a132e1a42fa94f85d30acc73cf9b6cefc9f3007a59486bf6f9749cc3ec19983",
+    "runtime/ToyStoryDiscoveryV4/Scripts/main.lua": "96e5b0a442d0d4a1ea2fcf00f8cb0a59391e6059a2d04f035bd9832b037dc784",
+    "runtime/ToyStoryObjectAccess/Scripts/main.lua": "f1365f766fb855d34b9543d340f5f3204185f459f17ca95b9b80ef4f9aea3e07",
+    "runtime/ToyStoryAccessoryCheck/Scripts/main.lua": "dea41073f0a071dc00e2a3cec4dc3973365f30c07849385e88d20ff3d530d0cc",
+    "runtime/ToyStoryDiscoveryV2/Scripts/main.lua": "e43df210b1787992bdbd72ee29d9e4e567c9a79a714d7ec25e308cd51fb3cf9e",
+    "runtime/ToyStoryDiscovery/Scripts/main.lua": "c91e7577ba22d5e4e144ef0dd3c4410947658e52d30806fc7340dc84e82f9280",
+    "runtime/BoPeepCrook/Scripts/main.lua": "c40f20a88f43c73591fef527c1a9ae1aafcabe3b5f90e2c904886d33d5e20078",
+    "runtime/BuzzWings/Scripts/main.lua": "ab712a0e0901da58af30379a65fcbe3a604cacd35d23ee0e8a74979c638f38bd",
+    "runtime/BuzzWings/Scripts/wing_config.lua": "67ec5c0370ae1b780ab404ab3c1b64fcf833640ded11d81dd1ab09a6097a26d5"
+  },
+  "working_wings_and_crook_releases_verified_unchanged": true
+}

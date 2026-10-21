@@ -1,0 +1,38 @@
+{
+  "Jessie": {
+    "lower_neck_center_y": 0.03221632167696953,
+    "upper_neck_center_y": -0.03824738676057143,
+    "backward_head_translation_m": 0.06,
+    "affected_vertices": 2241,
+    "head_hat_hair_shape": "Rigid translation where head weighted; no face deformation",
+    "skeleton_weights_UVs": "unchanged"
+  },
+  "Woody": {
+    "source_groups": [
+      "holster a",
+      "holster b",
+      "holster c"
+    ],
+    "vertices": 1266,
+    "previous_bone_masses": {
+      "spine1_JNT": 1266.0
+    },
+    "new_attachment": "Hips_JNT rigid",
+    "lateral_clearance_m": [
+      0.015,
+      0.03
+    ],
+    "boots_pull_ring_head_hands": "unchanged"
+  },
+  "BoPeep": {
+    "cape_vertices": 936,
+    "new_vertices": 4972,
+    "removed_overlay_vertices": 336,
+    "fit": "One continuous source-space fit shared by coincident inner/outer vertices",
+    "cape_depth_before_m": 0.34261777624487877,
+    "cape_depth_after_m": 0.19868273735046388,
+    "weights": "spine3 top, smooth pelvis blend lower; zero arm/hand weights",
+    "UVs": "Original contiguous cape UV/topology restored; atlas unchanged",
+    "body_positions": "Current non-cape positions preserved exactly"
+  }
+}

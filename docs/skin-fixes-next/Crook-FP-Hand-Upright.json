@@ -1,0 +1,10 @@
+{
+  "hand_orientation": "180-degree roll around hand longitudinal axis; thumb above fingers",
+  "forearm": "Rebuilt continuous tapered tube from wrist boundary to original below-screen entry",
+  "boundary_vertices": 20,
+  "tube_quads": 60,
+  "staff_vertices_preserved": 391,
+  "total_vertices": 637,
+  "weights": "Root only, 192-bone accessory reference",
+  "runtime": "Persistent view components unchanged; Windows pending"
+}

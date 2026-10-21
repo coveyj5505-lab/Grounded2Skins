@@ -1,0 +1,22 @@
+{
+  "character": "CrookHand",
+  "status": "PASS_OFFLINE_WINDOWS_PENDING",
+  "meshes": [
+    {
+      "chunk": "f18d1a7a07c9a4a700000001",
+      "vertices": 886,
+      "triangles": 1060,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    }
+  ],
+  "all_other_chunks_exact": [
+    "28cff5d0b466f07f00000001",
+    "3dd9bb1de04af24600000001"
+  ],
+  "textures_materials_hair_helpers_unchanged": true,
+  "source_frames_limit": 0.009,
+  "runtime": "No Windows claim; independent render review still required"
+}

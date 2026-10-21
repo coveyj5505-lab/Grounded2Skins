@@ -75,6 +75,8 @@ local fieldOwners={CharMovementComponent='Maine.SurvivalCharacter',EquipmentComp
     bIsAttacking='Maine.SurvivalCharacter',bIsChargingAttack='Maine.SurvivalCharacter',
     bHasMainHand='Maine.EquipmentComponent',bHasOffHand='Maine.EquipmentComponent'}
 fieldOwners.Mesh='Engine.Character'
+fieldOwners.InventoryComponent='Maine.SurvivalCharacter'
+fieldOwners.UsingGliderItem='Maine.InventoryComponent'
 local fieldKinds={}
 local function unsafeProperty(o,name,expected)
     if not valid(o) then return nil end
@@ -168,7 +170,7 @@ local function engineEnum(name,leaf)
     assert(result~=nil,'Missing enum value '..name..'.'..leaf);return result
 end
 
--- Experimental isolated adapter. No enabled.txt or install ZIP is released.
+-- Isolated flight adapter; disabled in the stable source, enabled only in its test ZIP.
 spec('Maine.SurvivalCharacter','GetIsFirstPerson',{ReturnValue='BoolProperty'})
 local modelPath='/Game/_BzFlit1/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01'
 local cfg={Enabled=false,DebugToggleKey=nil}
@@ -291,23 +293,67 @@ local function localPawn()
     end
 end
 local function components(p)
-    local class=StaticFindObject('/Script/Engine.SkeletalMeshComponent');assert(valid(class),'Missing skeletal component class')
-    local list=invoke(p,'Engine.Actor','K2_GetComponentsByClass',class);local bodies,wings={},{};local body
-    if list then
-        for i=1,math.min(#list,48) do
-            local o=stable(list[i])
-            if o then
-                local mesh=invoke(o,'Engine.SkeletalMeshComponent','GetSkeletalMeshAsset');local name=full(mesh)
-                local native=name=='SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01'
-                    or name=='SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack.SK_Male_Teen_01_w_BackPack'
-                if native then
-                    bodies[#bodies+1]=o;nativeBodies[o]=true
-                    if o==controller.body then body=o elseif not body and api.getVisibility(o)==true then body=o end
-                elseif name:find('/Game/_BzWExt1/',1,true) or name:find('/Game/_BzWRet1/',1,true) then wings[#wings+1]=o end
-            end
+    local bodies,wings,seen={},{},{};local body
+    local function inspect(o,origin)
+        o=stable(o)
+        if not valid(o) then return end
+        local identity=full(o)
+        if seen[identity] then return end
+        seen[identity]=true
+        local mesh=invoke(o,'Engine.SkeletalMeshComponent','GetSkeletalMeshAsset');local name=full(mesh)
+        local native=name=='SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01'
+            or name=='SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01_w_BackPack.SK_Male_Teen_01_w_BackPack'
+        if native then
+            bodies[#bodies+1]=o;nativeBodies[o]=true
+            if o==controller.body then body=o elseif not body and api.getVisibility(o)==true then body=o end
+        elseif name:find('/Game/_BzWExt1/',1,true) or name:find('/Game/_BzWRet1/',1,true) then wings[#wings+1]=o end
+        local key=origin..' '..identity..' asset='..name
+        if not lastMeshCheck or not lastMeshCheck[key] then
+            lastMeshCheck=lastMeshCheck or {};lastMeshCheck[key]=true;log('SOURCE '..key)
         end
     end
+    -- Character.Mesh is the direct, runtime-validated path used by working wings.
+    -- Owned component enumeration supplements it; it must not be the only route.
+    inspect(unsafeProperty(p,'Mesh','ObjectProperty'),'Character.Mesh')
+    local class=StaticFindObject('/Script/Engine.SkeletalMeshComponent');assert(valid(class),'Missing skeletal component class')
+    local list=invoke(p,'Engine.Actor','K2_GetComponentsByClass',class)
+    if list then for i=1,math.min(#list,48) do inspect(list[i],'owned['..i..']') end end
     return body or bodies[1],bodies,wings
+end
+
+-- Optional, bounded item-visual route. These names come from the SDK; every
+-- field/function/enum is verified live. Failure leaves the tuft visible and
+-- never blocks the independent forward-pose transaction.
+local tuftNotice=nil
+local function tuftComponents(p)
+    local ok,result=pcall(function()
+        -- Inventory tracks the actual item used, including reusable trinkets;
+        -- the equipped Glider slot is only a fallback, not a consumption test.
+        local got,item=pcall(function()
+            local inv=unsafeProperty(p,'InventoryComponent','ObjectProperty')
+            return unsafeProperty(inv,'UsingGliderItem','ObjectProperty')
+        end)
+        if not got or not valid(item) then
+            local eq=unsafeProperty(p,'EquipmentComponent','ObjectProperty')
+            local slot=unsafeEnumValue('EEquipmentSlot','Glider')
+            assert(slot~=nil,'Glider equipment enum unavailable')
+            item=unsafeCall(eq,'Maine.EquipmentComponent','GetItemInSlot',{Slot='ByteProperty|EnumProperty',ReturnValue='ObjectProperty'},slot)
+        end
+        assert(valid(item),'No active inventory/glider-slot item visual')
+        local visual=unsafeCall(item,'Maine.Item','GetItemVisuals',{ReturnValue='ObjectProperty'})
+        assert(valid(visual) and full(visual)~=full(p),'No independent glider item visual actor')
+        local cls=StaticFindObject('/Script/Engine.PrimitiveComponent');assert(valid(cls),'PrimitiveComponent class unavailable')
+        local list=invoke(visual,'Engine.Actor','K2_GetComponentsByClass',cls);local found={};local seen={}
+        if list then for i=1,math.min(#list,24) do
+            local c=stable(list[i]);local name=full(c)
+            if valid(c) and not seen[name] then seen[name]=true;found[#found+1]=c end
+        end end
+        assert(#found>0,'Glider visual has no primitive render components')
+        return found
+    end)
+    local note=ok and ('TUFT visual components resolved: '..#result) or ('TUFT optional visibility unavailable: '..tostring(result))
+    if note~=tuftNotice then log(note);tuftNotice=note end
+    return ok and result or {}
 end
 local function update()
     local p=localPawn()
@@ -318,7 +364,9 @@ local function update()
     local glide=unsafeCall(movement,'Maine.MaineCharMovementComponent','IsGliding',{ReturnValue='BoolProperty'})
     local first=invoke(p,'Maine.SurvivalCharacter','GetIsFirstPerson')
     assert(type(glide)=='boolean' and type(first)=='boolean','Unknown glide or view state; keep native presentation')
-    local active,state=controller.tick({owner=p,body=body,bodies=bodies,wings=wings,isBuzz=true,isGliding=glide,isFirstPerson=first})
+    local tufts={}
+    if glide and not first then tufts=tuftComponents(p) end
+    local active,state=controller.tick({owner=p,body=body,bodies=bodies,wings=wings,tufts=tufts,isBuzz=true,isGliding=glide,isFirstPerson=first})
     if state=='FALLBACK' then enabled=false end
     message(state..'; IsGliding='..tostring(glide)..'; firstPerson='..tostring(first)..'; visual='..tostring(active))
 end
@@ -340,4 +388,4 @@ end)
 if type(cfg.DebugToggleKey)=='string' and Key[cfg.DebugToggleKey] then
     RegisterKeyBind(Key[cfg.DebugToggleKey],function() dispatch(function() enabled=not enabled;if not enabled then controller.stop() end;log('EXPERIMENT ENABLED '..tostring(enabled)) end) end)
 end
-log('Prepared flight visual adapter: enabled='..tostring(enabled)..'; NOT WINDOWS VALIDATED. No default key. Requires private zBuzzFlightUE57_P assets. Third-person gliding only; no actor/camera/movement writes. v0.3 untouched.')
+log('Flight source-mesh repair candidate: enabled='..tostring(enabled)..'; NOT WINDOWS VALIDATED. No default key. Requires private zBuzzFlightUE57_P assets. Third-person gliding only; no actor/camera/movement writes. v0.3 untouched.')

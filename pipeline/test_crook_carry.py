@@ -127,7 +127,7 @@ checks=[
 ("player swap removes accessory", "key();assert(show);female=false;timer();assert(destroyed==1 and not show)"),
 ]
 for name,checksLua in checks:
- if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==58').replace('Translation.X==75','Translation.X==65')
+ if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==50').replace('Translation.X==75','Translation.X==65')
  if os.environ.get('TOYSTORY_RUNTIME_ROOT') and name=='attachment, safety ordering, actual slots, both views, cleanup': checksLua=checksLua.replace('destroyed==1','destroyed==2')
  state=lib.luaL_newstate();lib.luaL_openlibs(state)
  if not checksLua.startswith('timer();') and not checksLua.startswith('fp=true;timer();'):checksLua=checksLua.replace('key();','timer();',1)

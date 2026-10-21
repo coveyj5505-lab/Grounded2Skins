@@ -229,17 +229,17 @@ local function verifyInstalledContainer()
         end
     end
     for _,dir in ipairs(dirs) do
-        local f=io.open(dir..'zBoCrookUE57_P.utoc','rb')
+        local f=io.open(dir..'zBoCrookHandV2UE57_P.utoc','rb')
         if f then
             local header=f:read(64);local size=f:seek('end');f:close()
             local hex=header and header:gsub('.',function(c) return string.format('%02x',string.byte(c)) end) or ''
-            local good=hex=='2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d080000009000000004000000090000000c000000000000002000000000000100b50100000100000065ae92e2fc803cf8' and size==873
-            log('DISK CHECK zBoCrookUE57_P.utoc expected header/size match='..tostring(good)..'; bytes='..tostring(size)..'; path='..dir)
-            assert(good,'Wrong container revision installed: zBoCrookUE57_P.utoc')
+            local good=hex=='2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d080000009000000004000000090000000c000000000000002000000000000100b501000001000000914dc8e13c2794e4' and size==873
+            log('DISK CHECK zBoCrookHandV2UE57_P.utoc expected header/size match='..tostring(good)..'; bytes='..tostring(size)..'; path='..dir)
+            assert(good,'Wrong container revision installed: zBoCrookHandV2UE57_P.utoc')
             return
         end
     end
-    log('DISK CHECK zBoCrookUE57_P.utoc not found in standard paths; native load result will determine availability')
+    log('DISK CHECK zBoCrookHandV2UE57_P.utoc not found in standard paths; native load result will determine availability')
 end
 local function create(p,body,presentationMesh)
     phase='preflight'
@@ -394,9 +394,9 @@ local function present(p,body,fp)
             assert(valid(camera),'First-person camera unavailable for accessory placement')
             assert(invoke(component,'Engine.SceneComponent','K2_AttachToComponent',camera,FName('None'),snap,snap,snap,false)==true,'FP cosmetic attachment failed')
             invoke(component,'Engine.SceneComponent','SetAbsolute',false,false,false)
-            log('ACCESSORY VIEW FP: source hand/forearm grip; forward65/right58/down32cm; closer perspective for taller appearance; native camera/body unchanged')
+            log('ACCESSORY VIEW FP: source hand/forearm grip; forward65/right50/down32cm; closer perspective for taller appearance; native camera/body unchanged')
         end
-        offset.Translation={X=attack and 75 or 65,Y=58,Z=-32}
+        offset.Translation={X=attack and 75 or 65,Y=50,Z=-32}
         local angle=attack and math.rad(75)/2 or 0
         offset.Rotation={X=0,Y=math.sin(angle),Z=0,W=math.cos(angle)}
     else
@@ -507,4 +507,4 @@ RegisterKeyBind(Key.F9,function()
     end)
 end)
 LoopAsync(200,function() if enabled then dispatch(update) end return false end)
-log('Loaded crook persistent-view candidate: AUTOMATIC empty-hand carry. Requires zBoCrookUE57_P trio. F9 is debug suspend/resume only. FP source-hand viewmodel, TP shaft grip origin, cosmetic hook-first jab; native spear montage NOT substituted.')
+log('Loaded crook persistent-view candidate: AUTOMATIC empty-hand carry. Requires zBoCrookHandV2UE57_P trio. F9 is debug suspend/resume only. FP source-hand viewmodel, TP shaft grip origin, cosmetic hook-first jab; native spear montage NOT substituted.')

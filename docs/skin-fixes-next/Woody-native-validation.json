@@ -1,0 +1,47 @@
+{
+  "character": "Woody",
+  "status": "PASS_OFFLINE_WINDOWS_PENDING",
+  "meshes": [
+    {
+      "chunk": "b0baaf49556b7e2200000001",
+      "vertices": 32601,
+      "triangles": 54801,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    },
+    {
+      "chunk": "69965555c28c2aae00000001",
+      "vertices": 32601,
+      "triangles": 54801,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    }
+  ],
+  "all_other_chunks_exact": [
+    "032e866730d84ed600000001",
+    "7f1e99f253c2ef0c00000001",
+    "4ee889ec2367e38800000001",
+    "d8a87c6dfe21edbd00000001",
+    "4eed3899ca3fccf500000001",
+    "5706c9a4f959ec6b00000001",
+    "84ea63fff189b34100000001",
+    "4eed3899ca3fccf500000002",
+    "4ee889ec2367e38800000002",
+    "1e4c029cb563110400000001",
+    "15f6751526d55ff800000001",
+    "ae25ee7291bff5b200000001",
+    "0dd668ec3a8ddc5a00000001",
+    "7f1e99f253c2ef0c00000002",
+    "5706c9a4f959ec6b00000002",
+    "916d13dac8eb5e4f00000001",
+    "e50f8821db00f77300000001",
+    "3337342c9c43ff5c00000001"
+  ],
+  "textures_materials_hair_helpers_unchanged": true,
+  "source_frames_limit": 0.009,
+  "runtime": "No Windows claim; independent render review still required"
+}

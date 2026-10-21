@@ -1,7 +1,13 @@
 {
   "status": "PASS_MOCKED_LUA_NOT_UNREAL",
-  "groups": 11,
+  "groups": 17,
   "checks": [
+    "optional glider getter failure cannot block forward flight",
+    "exact glider item render primitives hide and restore",
+    "reusable tuft uses active inventory item before equipment fallback",
+    "direct character mesh works when enumeration omits native body",
+    "direct and enumerated body is suppressed only once",
+    "callable reflected controller getter is accepted",
     "disabled development default makes no native changes",
     "standing leaves manual wings and native body alone",
     "glide creates hidden proxy before suppression and restores on landing",

@@ -1,0 +1,54 @@
+[
+  {
+    "side": 1,
+    "proximal_center_before": [
+      0.30050077356987115,
+      0.02151053876791013,
+      1.5783695849842934
+    ],
+    "measured_side_socket_target": [
+      0.369,
+      0.004,
+      1.424
+    ],
+    "candidate_proximal_center": [
+      0.3484502320709613,
+      0.00925316163037304,
+      1.470310875495288
+    ],
+    "translation_m": [
+      0.04794945850109019,
+      -0.012257377137537091,
+      -0.1080587094890054
+    ],
+    "min_deformation_determinant": 0.32067266794068794,
+    "upper_ball": "rigid translation and chest attachment; distal transition retains upper-arm animation",
+    "elbows_forearms_hands": "geometry and weights unchanged"
+  },
+  {
+    "side": -1,
+    "proximal_center_before": [
+      -0.2957832346651077,
+      0.021722978330905994,
+      1.5733371109364604
+    ],
+    "measured_side_socket_target": [
+      -0.369,
+      0.004,
+      1.424
+    ],
+    "candidate_proximal_center": [
+      -0.3470349703995323,
+      0.009316893499271799,
+      1.468801133280938
+    ],
+    "translation_m": [
+      -0.051251735734424604,
+      -0.012406084831634195,
+      -0.10453597765552236
+    ],
+    "min_deformation_determinant": 0.3187739377809228,
+    "upper_ball": "rigid translation and chest attachment; distal transition retains upper-arm animation",
+    "elbows_forearms_hands": "geometry and weights unchanged"
+  }
+]

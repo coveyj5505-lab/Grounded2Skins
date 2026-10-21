@@ -34,6 +34,7 @@ function M.new(adapter,asset)
         local current={}
         for _,c in ipairs(snapshot.bodies or {}) do current[c]=true end
         for _,c in ipairs(snapshot.wings or {}) do current[c]=true end
+        for _,c in ipairs(snapshot.tufts or {}) do current[c]=true end
         for _,entry in ipairs(self.suppressed) do if not current[entry.component] then return false end;current[entry.component]=nil end
         return next(current)==nil
     end
@@ -73,7 +74,7 @@ function M.new(adapter,asset)
             self.visual=adapter.createHiddenVisual(asset,snapshot.owner,snapshot.body)
             assert(adapter.valid(self.visual),'Flight visual creation failed')
             local seen={};local captured={}
-            for _,list in ipairs({snapshot.bodies or {},snapshot.wings or {}}) do
+            for _,list in ipairs({snapshot.bodies or {},snapshot.wings or {},snapshot.tufts or {}}) do
                 for _,component in ipairs(list) do
                     assert(adapter.valid(component),'Invalid native component before suppression')
                     if not seen[component] then

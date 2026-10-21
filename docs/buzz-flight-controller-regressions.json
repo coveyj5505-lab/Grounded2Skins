@@ -1,7 +1,9 @@
 {
   "status": "PASS_MOCKED_LUA_NOT_UNREAL",
-  "groups": 17,
+  "groups": 19,
   "checks": [
+    "tuft render components hide only during flight and restore exact prior state",
+    "late tuft render discovery restores and recaptures safely",
     "manual standing wings never start flight",
     "glide entry and landing restore prior states",
     "first-person entry restores complete native model",
