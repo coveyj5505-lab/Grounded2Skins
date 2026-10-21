@@ -1,0 +1,20 @@
+{
+  "file": "ToyStory-UE57-Accessories-J-Test.zip",
+  "bytes": 3112345,
+  "sha256": "b0dbbcb6f4be9a1ce35a0989efcb9780ba16fe1def3f7c615fb90b9cc37a8e65",
+  "asset_files": [
+    "Paks/zBoCrookUE57_P.pak",
+    "Paks/zBoCrookUE57_P.ucas",
+    "Paks/zBoCrookUE57_P.utoc",
+    "Paks/zBuzzFlightUE57_P.pak",
+    "Paks/zBuzzFlightUE57_P.ucas",
+    "Paks/zBuzzFlightUE57_P.utoc",
+    "Paks/zBuzzWingsUE57_P.pak",
+    "Paks/zBuzzWingsUE57_P.ucas",
+    "Paks/zBuzzWingsUE57_P.utoc"
+  ],
+  "asset_files_byte_exact_to_previous_release": true,
+  "manual_key": "J",
+  "loader": "not included; repaired UE4SS Windows startup confirmed",
+  "Windows_status": "Assets still need load/attachment/gameplay verification after installing missing trios."
+}

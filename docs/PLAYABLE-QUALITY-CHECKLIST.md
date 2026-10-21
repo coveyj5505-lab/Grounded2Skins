@@ -107,3 +107,6 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] Latest supplied log starts UE4SS 83330635 and all three accessory Lua mods; native reflected signature gates pass. Previous initialization failure resolved for this session.
 - [ ] Crook TP asset and wing RETRACTED asset return invalid from LoadAsset_Blocking before component creation. Both disk checks found no expected UTOC in their limited standard paths; this does not establish absence from ~mods or failed engine mounting. Await exact installed folder/trio check before further loading changes. Soft-path conversion also logs an unsupported empty/subobject Utf8StrProperty; not established as the cause.
 - [x] N conflicts with native hot deposit per user. Isolated config now J; manual OR gliding regression passes with actual J config. Existing released loader ZIP stays unchanged and still contains N until a new update is installed.
+
+- [x] User confirms BOTH zBoCrookUE57_P.utoc and zBuzzWingsUE57_P.utoc are missing. Install missing accessory trios before investigating marshalling or engine asset loading. New Accessories-J ZIP includes all 9 unchanged asset files and existing 3 runtime folders, with J config.
+- [ ] Windows: confirm accessory asset loading after full Paks install; automatic empty-handed crook and J/manual/glide/landing wing states.
