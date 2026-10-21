@@ -109,3 +109,10 @@ Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip 
 - [ ] Windows acceptance of crook jab V1. This animates only the independent crook; native arms still use vanilla unarmed animation. Full native spear-arm substitution remains a separate task: collected clips have gameplay hit notifies; do not play these on the gameplay animation instance without separating effects/timing. Existing clips remain collected and hash-verified; no redundant extraction.
 - [ ] Buzz flight V5 still awaits Windows acceptance; no changes bundled with crook jab.
 - [ ] FreeBuild, Teleport and Invisible Armor compatibility backlog remains active after character work.
+
+## Crook jab V1 Windows feedback — reference alignment next
+
+- [x] Current log confirms game-time reader and motion phases run; native attack windows median0.9215s. FP anchor92% resolvesright101.97cm at1440p.
+- [x] Diagnose weak jab: only12cm forward stroke, held through most of native attack. Prepare isolated unpublished V2 out-and-back30cm pulse;11 curve +35 adapter groups pass.
+- [ ] Use proposed real spear standing/mid-jab screenshots at same FOV to set carry/attack presentation. Do not ship another guessed FP offset. Current native arms still punch; independent staff relocation does not solve that pose mismatch.
+- [ ] Full spear-arm pose adaptation remains incomplete. Keep previous collected16 packages; do not play gameplay hit notifies or change native attack mechanics.

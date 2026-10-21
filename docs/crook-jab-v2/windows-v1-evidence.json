@@ -1,0 +1,28 @@
+{
+  "log_sha256": "a12ada209173e4c6def7b533ebebd821f20244eb8901329fc4f77e062a949c85",
+  "native_clock_signature": "VERIFIED_OK_IN_WINDOWS",
+  "attack_windows_seconds": [
+    0.9000000000000004,
+    0.9320000000000004,
+    0.9119999999999999,
+    0.9150000000000009,
+    0.9420000000000002,
+    0.9150000000000009,
+    0.9179999999999993,
+    0.9210000000000029,
+    0.921999999999997,
+    0.916999999999998,
+    0.9260000000000019,
+    3.2639999999999993,
+    0.902000000000001,
+    0.9549999999999983,
+    0.9510000000000005,
+    0.9249999999999972,
+    0.9300000000000068,
+    0.9140000000000015
+  ],
+  "median_attack_window_seconds": 0.9215,
+  "fp_anchor_from_log": "[2026-10-21 18:21:47.4366742] [Lua] [BoPeepCrook] FP SCREEN ANCHOR viewport=2560x1440; target=92%; rightCm=101.97",
+  "user_feedback": "Staff rotates, thrust not perceptible; FP staff too far from visible punching hand. Native spear carry/jab reference proposed.",
+  "implementation_finding": "V1 thrust only12cm and held at full extension from170ms until native attack ended; no out-and-back pulse during the flag. Native unarmed hand pose was never substituted."
+}

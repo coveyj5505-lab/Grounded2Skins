@@ -1,0 +1,17 @@
+{
+  "status": "PASS_REAL_LUA_MOCKED_TIME_NOT_WINDOWS",
+  "groups": 11,
+  "checks": [
+    "standing and walking stay upright",
+    "attack lowers before thrust with bounded smooth motion",
+    "release smoothly returns exactly upright",
+    "pause freezes the curve at unchanged game time",
+    "early interruption recovers without snapping",
+    "rapid retrigger starts continuously from recovery",
+    "forward stroke retracts before native attack flag ends",
+    "held attack has one thrust and no invented attack repeats",
+    "equipment change cancels visual motion immediately",
+    "world time rewind resets old transition",
+    "nonfinite clock rejected"
+  ]
+}
