@@ -1,0 +1,41 @@
+{
+  "preserved_sources": [
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/Buzz.blend",
+      "sha256": "44055bb2b6d2f738ba5478e894cafccd3d26d743745d90465f2589c833902524",
+      "bytes": 4649836
+    },
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/Woody.blend",
+      "sha256": "18ef6999f91d8b04e7f3dbc7d496d2421801d308f1dc90de8fdb0a837327465d",
+      "bytes": 39354753
+    },
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/BoPeep.blend",
+      "sha256": "1e40802f1d78183dea4b19df5a9c2a465ba4a408f26a182e18da619bc0ed6ee4",
+      "bytes": 1553593
+    },
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/CrookHand.blend",
+      "sha256": "1b8e1331555cc222f0171e6e92a15784452226c4e6339e1ab71131c875ad9f78",
+      "bytes": 1079826
+    },
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/CrookBare.blend",
+      "sha256": "ea3b7d9d9b9f02283a467def5561ac6b2a27d78b5251c2dd6817ef015af2532d",
+      "bytes": 1059000
+    },
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/CrookTP.blend",
+      "sha256": "fdddb8499bc41b942151cc1bad2d1c3168f4003ebb68f7306efe21c368029f9e",
+      "bytes": 1078781
+    },
+    {
+      "file": "/workspace/mod-work/feedback-v3-source-backup/Jessie.blend",
+      "sha256": "42dd7c0147ca2b351bc943dd918877e809fd711541c8e5ef5382e188df1747b5",
+      "bytes": 10256733
+    }
+  ],
+  "reference_textures": "Existing original source files/atlases unchanged",
+  "private_intermediates": "/tmp/toystory-feedback-v3"
+}

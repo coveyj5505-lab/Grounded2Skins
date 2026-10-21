@@ -1,0 +1,18 @@
+[
+  {
+    "radial_inflation_m": 0.003,
+    "staff_vertices": 391,
+    "source_height_m": 1.401053011417389,
+    "new_height_m": 1.401053011417389,
+    "seam_positions_coincident": true,
+    "view": "CrookHand"
+  },
+  {
+    "radial_inflation_m": 0.003,
+    "staff_vertices": 391,
+    "source_height_m": 1.8460934162139893,
+    "new_height_m": 1.8460934162139893,
+    "seam_positions_coincident": true,
+    "view": "CrookTP"
+  }
+]

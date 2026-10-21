@@ -1,0 +1,42 @@
+{
+  "character": "Jessie",
+  "status": "PASS_OFFLINE_WINDOWS_PENDING",
+  "meshes": [
+    {
+      "chunk": "911395b71b48cf1a00000001",
+      "vertices": 6860,
+      "triangles": 8757,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    },
+    {
+      "chunk": "32e8e66fd14d9e8d00000001",
+      "vertices": 6860,
+      "triangles": 8757,
+      "four_LODs_exact": true,
+      "author_buffers_exact_except_quantized_frames": true,
+      "reference_and_material_records_exact": true,
+      "FP_section_triangle_materials_exact": true
+    }
+  ],
+  "all_other_chunks_exact": [
+    "9c1e99043926369200000001",
+    "0cc46f3a2e8efeb000000001",
+    "051512fb8f1be90100000001",
+    "f57c3b2c68c3139a00000001",
+    "051512fb8f1be90100000002",
+    "ac005d2a507fe73900000002",
+    "f57c3b2c68c3139a00000002",
+    "66498863905bad0300000001",
+    "6208076b362ff6c600000002",
+    "6208076b362ff6c600000001",
+    "493406b770520c7d00000001",
+    "209f878d72b09cad00000001",
+    "ac005d2a507fe73900000001"
+  ],
+  "textures_materials_hair_helpers_unchanged": true,
+  "source_frames_limit": 0.009,
+  "runtime": "No Windows claim; independent render review still required"
+}

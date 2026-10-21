@@ -1,0 +1,11 @@
+{
+  "original_collar_component_vertices": 227,
+  "rear_collar_vertices_lowered": 32,
+  "rear_collar_limit_m": 1.525,
+  "outer_rear_cover_top_z_m": 1.54,
+  "old_high_neck_panel_removed": 45,
+  "front_lapels_flower": "unmodified",
+  "lower_cape_below1.34m": "unmodified",
+  "face_body_reference_and_normals": "preserved",
+  "purpose": "Cover reverse-lining intersections from outside rather than leaving broken rear faces ahead of an inner patch"
+}

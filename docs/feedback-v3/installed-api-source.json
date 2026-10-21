@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/UE4SS-RE/RE-UE4SS/83330635/UE4SS/src/LuaType/LuaUObject.cpp",
+    "sha256": "cccf1e63b26fb5a2f009666cf469f19f8eaa655388be462219f3b22b19ae6a0b",
+    "bytes": 101293
+  },
+  {
+    "url": "https://raw.githubusercontent.com/UE4SS-RE/RE-UE4SS/83330635/UE4SS/include/LuaType/LuaUObject.hpp",
+    "sha256": "18982f6d42940b35538f8d1288232049cb79184c778a6579466b2fd273e3a1cd",
+    "bytes": 41914
+  }
+]

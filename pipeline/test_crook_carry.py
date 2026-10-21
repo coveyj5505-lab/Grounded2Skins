@@ -47,7 +47,7 @@ body.SkeletalMeshAsset=obj('SkeletalMesh /Game/_Augusta/Art/Characters/Player_Fe
 body.SkeletalMeshAsset.GetFullName=function() return female and 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01' or 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01' end
 body.GetSkeletalMeshAsset=function() return body.SkeletalMeshAsset end
 body.DoesSocketExist=function(self,b) assert(b=='r_hand_JNT');return true end
-body.GetSocketTransform=function(self,bone) return {Rotation={X=0,Y=0,Z=0,W=1},Translation=bone=='None' and {X=0,Y=0,Z=0} or (nativeHandVisible and {X=50,Y=20,Z=-10} or {X=-10,Y=30,Z=-60})} end
+body.GetSocketTransform=function(self,bone) return {Rotation={X=0,Y=0,Z=0,W=1},Scale3D={X=1,Y=1,Z=1},Translation=bone=='None' and {X=0,Y=0,Z=0} or (nativeHandVisible and {X=50,Y=20,Z=-10} or {X=-10,Y=30,Z=-60})} end
 local eq=obj('EquipmentComponent Equipment',{'Maine.EquipmentComponent'})
 eq.GetItemInSlot=function(self,slot) assert(slot==17 or slot==29);return ((slot==17 and main) or (slot==29 and off)) and item or invalid end
 local p=obj('BP_SurvivalPlayerCharacter_Female01_C Player',{'Maine.SurvivalCharacter','Engine.Character','Engine.Actor'})
@@ -126,8 +126,16 @@ checks=[
 ("only Willow mesh gets accessory", "female=false;key();assert(made==0)"),
 ("player swap removes accessory", "key();assert(show);female=false;timer();assert(destroyed==1 and not show)"),
 ]
+if 'feedback-v3' in os.environ.get('TOYSTORY_RUNTIME_ROOT',''):
+ for width,height in [(1920,1080),(2560,1440)]:
+  setup="""specs['/Script/Engine.PlayerController:GetViewportSize']={SizeX='IntProperty',SizeY='IntProperty'};specs['/Script/Engine.PlayerController:ProjectWorldLocationToScreen']={WorldLocation='StructProperty',ScreenLocation='StructProperty',bPlayerViewportRelative='BoolProperty',ReturnValue='BoolProperty'};specs['/Script/Engine.SceneComponent:K2_GetComponentLocation']={ReturnValue='StructProperty'};specs['/Script/Engine.SceneComponent:GetRightVector']={ReturnValue='StructProperty'};local pc=obj('PlayerController Local',{'Engine.PlayerController'});pc.Pawn=p;pc.IsLocalController=function() return true end;pc.GetViewportSize=function(self,x,y) x.SizeX=WIDTH;y.SizeY=HEIGHT end;pc.ProjectWorldLocationToScreen=function(self,v,screen,relative) assert(relative);screen.X=WIDTH*(.5+.5*v.Y/v.X);screen.Y=HEIGHT*.5;return true end;FindAllOf=function() return {pc} end;body.GetRightVector=function() return {X=0,Y=1,Z=0} end;local add=p.AddComponentByClass;p.AddComponentByClass=function(...) local o=add(...);o.K2_GetComponentLocation=function(self) return self.lastTransform.Translation end;return o end;fp=true;timer();assert(show and math.abs(c.lastTransform.Translation.Y-71.4)<1e-6);local n=made;fp=false;timer();fp=true;timer();assert(made==n and show and math.abs(c.lastTransform.Translation.Y-71.4)<1e-6)""".replace('WIDTH',str(width)).replace('HEIGHT',str(height))
+  checks.append(('right-edge viewport calibration '+str(width)+'x'+str(height),setup))
+  if width==1920:
+   scaled=setup.replace('fp=true;timer();assert(show',"local get=body.GetSocketTransform;body.GetSocketTransform=function(...) local t=get(...);t.Scale3D={X=.1,Y=.1,Z=.1};return t end;local create=p.AddComponentByClass;p.AddComponentByClass=function(...) local o=create(...);o.K2_GetComponentLocation=function(self) local t=self.lastTransform.Translation;return {X=t.X*.1,Y=t.Y*.1,Z=t.Z*.1} end;return o end;fp=true;timer();assert(show",1)
+   checks.append(('right-edge calibration respects scaled camera parent',scaled))
 for name,checksLua in checks:
- if os.environ.get('TOYSTORY_RUNTIME_ROOT'): checksLua=checksLua.replace('Translation.Y==43','Translation.Y==50').replace('Translation.X==75','Translation.X==65')
+ if os.environ.get('TOYSTORY_RUNTIME_ROOT'):
+  feedback='feedback-v3' in os.environ['TOYSTORY_RUNTIME_ROOT'];checksLua=checksLua.replace('Translation.Y==43','Translation.Y=='+('72' if feedback else '50')).replace('Translation.X==75','Translation.X=='+('85' if feedback else '65'))
  if os.environ.get('TOYSTORY_RUNTIME_ROOT') and name=='attachment, safety ordering, actual slots, both views, cleanup': checksLua=checksLua.replace('destroyed==1','destroyed==2')
  state=lib.luaL_newstate();lib.luaL_openlibs(state)
  if not checksLua.startswith('timer();') and not checksLua.startswith('fp=true;timer();'):checksLua=checksLua.replace('key();','timer();',1)

@@ -1,0 +1,11 @@
+{
+  "status": "PASS_MOCKED_LUA_NOT_NATIVE_WINDOWS",
+  "groups": {
+    "crook-tests": 30,
+    "wing-tests": 13,
+    "flight-tests": 19,
+    "flight-controller-tests": 19
+  },
+  "total": 81,
+  "receipt": "Syntax/execution with missing files passed; read-only, optional"
+}

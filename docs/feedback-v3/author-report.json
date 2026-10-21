@@ -1,0 +1,25 @@
+{
+  "Woody": {
+    "holster_length_ratio": 0.62,
+    "belt_anchor_z": 1.1507995128631592,
+    "badge": "Retained one original textured star, depth flattened to8% about a chest-front plane; exact overlapping duplicate badge removed",
+    "badge_source_vertices": 397,
+    "vest_boots_pullring": "untouched"
+  },
+  "BoPeep": {
+    "removed_high_underlay": 45,
+    "new_upper_limit_m": 1.5,
+    "actual_upper_arm_joint_z": 1.508871,
+    "rear_panel_vertices": 36,
+    "lower_cape": "unchanged"
+  },
+  "Buzz": {
+    "elbow_outward_max_m": 0.045,
+    "blend_z_m": [
+      0.9,
+      1.52
+    ],
+    "scope": "Only upper-arm/elbow/forearm geometry; hand, wrist, shoulder bones, skeleton weights, armor, textures unchanged",
+    "deformation": "X shear; determinant1; normals/tangents transformed analytically"
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "character": "Buzz",
+    "stem": "zBuzzSkinV3UE57_99_P",
+    "toc_header_hex": "2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d08000000900000000f000000460100000c000000000000002000000000000100d003000001000000d2759f5447f325e4",
+    "sizes": {
+      "pak": 339,
+      "utoc": 5722,
+      "ucas": 20654410
+    }
+  },
+  {
+    "character": "Woody",
+    "stem": "zWoodySkinV3UE57_99_P",
+    "toc_header_hex": "2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d080000009000000015000000c80100000c0000000000000020000000000001001e05000001000000bb4c7319c6c110a1",
+    "sizes": {
+      "pak": 339,
+      "utoc": 7892,
+      "ucas": 28877945
+    }
+  },
+  {
+    "character": "Jessie",
+    "stem": "zJessieSkinV3UE57_99_P",
+    "toc_header_hex": "2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d080000009000000010000000f90000000c0000000000000020000000000001002e040000010000008a3057c92233f26b",
+    "sizes": {
+      "pak": 339,
+      "utoc": 4938,
+      "ucas": 15515703
+    }
+  },
+  {
+    "character": "Crook",
+    "stem": "zBoCrookHandV3UE57_99_P",
+    "toc_header_hex": "2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d080000009000000004000000090000000c000000000000002000000000000100b50100000100000047c6d493028fdaf2",
+    "sizes": {
+      "pak": 339,
+      "utoc": 873,
+      "ucas": 497106
+    }
+  },
+  {
+    "character": "BoPeep",
+    "stem": "zBoPeepSkinV3UE57_99_P",
+    "toc_header_hex": "2d3d3d2d2d3d3d2d2d3d3d2d2d3d3d2d080000009000000011000000ee0000000c0000000000000020000000000001004e04000001000000233031d2e269fd64",
+    "sizes": {
+      "pak": 339,
+      "utoc": 4884,
+      "ucas": 14796144
+    }
+  }
+]

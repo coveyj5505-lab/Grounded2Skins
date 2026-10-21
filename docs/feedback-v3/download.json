@@ -1,0 +1,183 @@
+{
+  "file": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+  "bytes": 22539760,
+  "sha256": "943aeb326eac16a12912bb1256ef300702b907e4a32aa02fb42ac1a0cbe49706",
+  "status": "OFFLINE_VALIDATED_WINDOWS_PENDING",
+  "paks_trios": 6,
+  "wing_runtime_and_assets": "Existing F1 implementation preserved; not replaced",
+  "all_previous_releases_unchanged": true,
+  "members": {
+    "MOVE-OLD-TRIOS-OUTSIDE-PAKS.txt": {
+      "bytes": 1703,
+      "sha256": "b27813d491bd41470d7267da7b6fb4a894cc3bc2fd3cb659c19440940e85ffd2"
+    },
+    "Mods/BoPeepCrook/Scripts/main.lua": {
+      "bytes": 33206,
+      "sha256": "4a738152166f76825142fa8a99897aa7907ac40d776c031fd30e38fc3fe83bb1"
+    },
+    "Mods/BuzzFlightVisual/Scripts/build_receipt.lua": {
+      "bytes": 2712,
+      "sha256": "f3839aee523ce1a86f3edc5f95486023c0ea2b2273e7fd387f51414cd09b0a12"
+    },
+    "Mods/BuzzFlightVisual/Scripts/flight_config.lua": {
+      "bytes": 112,
+      "sha256": "e1d1c3cdbb133c23acca7e92b83e576a78c70fc875335b4d921f2c4d51ff17d4"
+    },
+    "Mods/BuzzFlightVisual/Scripts/flight_controller.lua": {
+      "bytes": 5896,
+      "sha256": "30d4d12d3c3d1bec224dac3e5616004227e70100f1f46b1cbcccfe0dae2eb50a"
+    },
+    "Mods/BuzzFlightVisual/Scripts/main.lua": {
+      "bytes": 23889,
+      "sha256": "0f48690ae2c0c6b313e069cda8810c343aad954cc65ce36740a3a79578492f2a"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.ucas": {
+      "bytes": 497106,
+      "sha256": "76015bbde41e70957027682ad3599b5a7627759d58f5c35fcf13a75d91646f1e"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.utoc": {
+      "bytes": 873,
+      "sha256": "7c367ea9fcdd067e0deb5330a46ff91a430cf3d1d3d124ec71c81662edd2615a"
+    },
+    "Paks/zBoPeepSkinV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zBoPeepSkinV3UE57_99_P.ucas": {
+      "bytes": 14796144,
+      "sha256": "a4d86a3b0be12bcb405be23a3a4f396dec201de3db79d57d103f3d9ea8d4bf3f"
+    },
+    "Paks/zBoPeepSkinV3UE57_99_P.utoc": {
+      "bytes": 4884,
+      "sha256": "21f0fb9e5c014628706ea70c8e7ebdc70e8cbc3edf9215e15384d3f66a69f95d"
+    },
+    "Paks/zBuzzFlightUE57_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zBuzzFlightUE57_P.ucas": {
+      "bytes": 16558552,
+      "sha256": "0f272309768008f543e9161e3e574893f8cfd4bf40da6d63f7d1080dd084cee2"
+    },
+    "Paks/zBuzzFlightUE57_P.utoc": {
+      "bytes": 4550,
+      "sha256": "725832595376e1ec7723d66aab18b78a446aef2418f2038607497d9a8d44df88"
+    },
+    "Paks/zBuzzSkinV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zBuzzSkinV3UE57_99_P.ucas": {
+      "bytes": 20654410,
+      "sha256": "36bb57d34acd46e28e7f36cbc52f2b5032e45a33b48f046d9d61e23328cd76f2"
+    },
+    "Paks/zBuzzSkinV3UE57_99_P.utoc": {
+      "bytes": 5722,
+      "sha256": "f11cc25c24f8251051ffee508a8b4706b77e7c18dcefbb4d58f9b0034d781cf8"
+    },
+    "Paks/zJessieSkinV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zJessieSkinV3UE57_99_P.ucas": {
+      "bytes": 15515703,
+      "sha256": "e93ca6760e266e4416c21d26b7e76f165d7f65e6847a65bd9daefb773384081a"
+    },
+    "Paks/zJessieSkinV3UE57_99_P.utoc": {
+      "bytes": 4938,
+      "sha256": "c5e9bc55c699557b932dd6bda088b448cb1281983c20fcbffaa38450845949e4"
+    },
+    "Paks/zWoodySkinV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zWoodySkinV3UE57_99_P.ucas": {
+      "bytes": 28877945,
+      "sha256": "8aa37bcaadca2c6e119a0aa1436dc2f145ee35f4b88e084f8e29ea223b6de70a"
+    },
+    "Paks/zWoodySkinV3UE57_99_P.utoc": {
+      "bytes": 7892,
+      "sha256": "01f806354e0be22c68ab58f6cba7798068f768a9a60a625ef0a9ada248a18a8a"
+    },
+    "Previews/BoPeep-cooked-front.png": {
+      "bytes": 461872,
+      "sha256": "09c7224fd0c03eb9f0b136d545d82e231beb520266c80b0b06bacaa342e54cb4"
+    },
+    "Previews/BoPeep-cooked-rear.png": {
+      "bytes": 412073,
+      "sha256": "93ceb1f4a08f3e9bd1b2c76e7ccf988768a41370bb23b45c4875c7c10ec5e758"
+    },
+    "Previews/BoPeep-cooked-side.png": {
+      "bytes": 375626,
+      "sha256": "1210909fee412323cca8ce99250a17bb84a0408c3778c6c440edeb2a67e56234"
+    },
+    "Previews/Buzz-cooked-front.png": {
+      "bytes": 481380,
+      "sha256": "aba72774fd70fdebc968cc307d178212e3e8f0efe3d04647771d92191ee08810"
+    },
+    "Previews/Buzz-cooked-raised-arms.png": {
+      "bytes": 484979,
+      "sha256": "9c92682b8da72e0659a1ff87e0c3f549206eba4c6c85f065e405680395f5f80c"
+    },
+    "Previews/Buzz-cooked-side.png": {
+      "bytes": 406704,
+      "sha256": "0b9d518a70b7012e164845344a8e27a4a995d9c35ef1b3e3207a05632cd66566"
+    },
+    "Previews/Hand-camera-90.png": {
+      "bytes": 569964,
+      "sha256": "f5ce535d2b07459846b0147cc968a379b48337f26c637a8368e9c230e639fa35"
+    },
+    "Previews/Jessie-cooked-front.png": {
+      "bytes": 435358,
+      "sha256": "f389941fbd9b96f96bb963d12445b0b6d79238ecb145299e134277ac32b23180"
+    },
+    "Previews/Jessie-cooked-side.png": {
+      "bytes": 357721,
+      "sha256": "4bb95bcac024f5d8b7af7bd3b8f29b7c39cb33debed0090a73c9958611105dd4"
+    },
+    "Previews/Woody-cooked-front.png": {
+      "bytes": 430136,
+      "sha256": "5b2d29417448651a448acdda2b9696b55e735754215735097c9282e27bdf9eaa"
+    },
+    "Previews/Woody-cooked-quarter.png": {
+      "bytes": 418481,
+      "sha256": "54951520625ece768cbda0bb6b87f17b73cee3bbfa01d822c022269724f68030"
+    },
+    "Previews/Woody-cooked-rear.png": {
+      "bytes": 426066,
+      "sha256": "0ead296adc735d5bbb9802debccdc9eb19f7813423867ef6de3a75ba805c5618"
+    },
+    "Previews/Woody-cooked-sitting-quarter.png": {
+      "bytes": 396076,
+      "sha256": "53c6364a88fdc7ca7cf6b1096dbd7c31e24461b9dfdc1f82816f397bb68fc961"
+    },
+    "Validation/BoPeep.json": {
+      "bytes": 1378,
+      "sha256": "888b7b80cf360505f11dd545f482218f156d1b9b738e2b1ef886955f0aa60b92"
+    },
+    "Validation/Buzz.json": {
+      "bytes": 1266,
+      "sha256": "970e398b9a4460ecfebafff831ce4ee3fed67ce6d376eae42a16c97454912a0c"
+    },
+    "Validation/Crook.json": {
+      "bytes": 2666,
+      "sha256": "7a3950649a78200cd05ab80dd3f95af5e0ae520b538927d2a3c00b22553ac982"
+    },
+    "Validation/Jessie.json": {
+      "bytes": 1296,
+      "sha256": "a3a713a1b46b1565f1be9bb3a19a4f8e018352fb077a34df8828d482007900e8"
+    },
+    "Validation/Woody.json": {
+      "bytes": 1459,
+      "sha256": "32be75f30064e27c9c5f7cc9d402f84ce8add05e038f1b8125e02e72738ac4c9"
+    },
+    "Validation/local-regressions.json": {
+      "bytes": 270,
+      "sha256": "24a45016617529a0ef36b695975e24bcde49a34b9b270e0a640f578013457f02"
+    }
+  }
+}

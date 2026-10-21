@@ -28,7 +28,7 @@ def aim(a,b,direction):
  bpy.context.view_layer.update();pb=arm.pose.bones[a];A=pb.matrix.translation.copy();B=arm.pose.bones[b].matrix.translation.copy();R=(B-A).rotation_difference(Vector(direction));pb.matrix=Matrix.Translation(A)@R.to_matrix().to_4x4()@Matrix.Translation(-A)@pb.matrix
 reset()
 for side,k in [('l',1),('r',-1)]:aim(side+'_upperArm_JNT',side+'_lowerArm_JNT',(k*.12,0,-1));aim(side+'_lowerArm_JNT',side+'_wrist_JNT',(k*.05,-.12,-1))
-views={'Buzz':[('front',(0,-4,1.2)),('side',(4,0,1.2))],'BoPeep':[('rear',(0,4,1.2)),('front',(0,-4,1.2))],'Jessie':[('side',(4,0,1.2)),('front',(0,-4,1.2))],'Woody':[('quarter',(-3,-4,1.2))]}[name];records=[]
+views={'Buzz':[('front',(0,-4,1.2)),('side',(4,0,1.2))],'BoPeep':[('rear',(0,4,1.2)),('side',(4,0,1.2)),('front',(0,-4,1.2))],'Jessie':[('side',(4,0,1.2)),('front',(0,-4,1.2))],'Woody':[('front',(0,-4,1.2)),('rear',(0,4,1.2)),('quarter',(-3,-4,1.2))]}[name];records=[]
 def render(label,loc):
  cam.location=loc;cam.rotation_euler=(Vector((0,0,1.1))-cam.location).to_track_quat('-Z','Y').to_euler();s.render.filepath=str(out/(name+'-cooked-'+label+'.png'));bpy.ops.render.render(write_still=True);records.append(s.render.filepath)
 for label,loc in views:render(label,loc)

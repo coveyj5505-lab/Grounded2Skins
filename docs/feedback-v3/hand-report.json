@@ -1,0 +1,10 @@
+{
+  "source": "Unposed source right hand; all source finger matrices reset; no curled pose or twisted previous proxy reused",
+  "natural_right_hand_vertices_before_cut": 357,
+  "wrist_ring_vertices": 20,
+  "original_crook_vertices_exact": 391,
+  "scale": "source-to-game .25; no hand-specific rescale",
+  "thumb": "Source thumb side mapped upward; proper rotation determinant1, no mirror",
+  "forearm": "Single continuous tapered wrist tube",
+  "root_only": true
+}

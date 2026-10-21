@@ -1,0 +1,77 @@
+{
+  "status": "PASS_ALL_THREE_VIEWS_OFFLINE_WINDOWS_PENDING",
+  "views": [
+    {
+      "character": "CrookHand",
+      "status": "PASS_OFFLINE_WINDOWS_PENDING",
+      "meshes": [
+        {
+          "chunk": "f18d1a7a07c9a4a700000001",
+          "vertices": 886,
+          "triangles": 1060,
+          "four_LODs_exact": true,
+          "author_buffers_exact_except_quantized_frames": true,
+          "reference_and_material_records_exact": true,
+          "FP_section_triangle_materials_exact": true
+        }
+      ],
+      "all_other_chunks_exact": [],
+      "other_meshes_require_separate_validation": [
+        "28cff5d0b466f07f00000001",
+        "3dd9bb1de04af24600000001"
+      ],
+      "textures_materials_hair_helpers_unchanged": true,
+      "source_frames_limit": 0.009,
+      "runtime": "No Windows claim; independent render review still required"
+    },
+    {
+      "character": "CrookBare",
+      "status": "PASS_OFFLINE_WINDOWS_PENDING",
+      "meshes": [
+        {
+          "chunk": "28cff5d0b466f07f00000001",
+          "vertices": 396,
+          "triangles": 590,
+          "four_LODs_exact": true,
+          "author_buffers_exact_except_quantized_frames": true,
+          "reference_and_material_records_exact": true,
+          "FP_section_triangle_materials_exact": true
+        }
+      ],
+      "all_other_chunks_exact": [],
+      "other_meshes_require_separate_validation": [
+        "3dd9bb1de04af24600000001",
+        "f18d1a7a07c9a4a700000001"
+      ],
+      "textures_materials_hair_helpers_unchanged": true,
+      "source_frames_limit": 0.009,
+      "runtime": "No Windows claim; independent render review still required"
+    },
+    {
+      "character": "CrookTP",
+      "status": "PASS_OFFLINE_WINDOWS_PENDING",
+      "meshes": [
+        {
+          "chunk": "3dd9bb1de04af24600000001",
+          "vertices": 396,
+          "triangles": 590,
+          "four_LODs_exact": true,
+          "author_buffers_exact_except_quantized_frames": true,
+          "reference_and_material_records_exact": true,
+          "FP_section_triangle_materials_exact": true
+        }
+      ],
+      "all_other_chunks_exact": [],
+      "other_meshes_require_separate_validation": [
+        "28cff5d0b466f07f00000001",
+        "f18d1a7a07c9a4a700000001"
+      ],
+      "textures_materials_hair_helpers_unchanged": true,
+      "source_frames_limit": 0.009,
+      "runtime": "No Windows claim; independent render review still required"
+    }
+  ],
+  "collision_and_unarmed_combat": "runtime unchanged",
+  "native_tail_and_materials_reference": "byte-exact per original view",
+  "thicker_staff": "all three assets; no thin fallback on attack/native-hand visibility"
+}

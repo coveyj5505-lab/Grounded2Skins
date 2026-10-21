@@ -1,0 +1,7 @@
+{
+  "old_rear_collar_lining_vertices_fitted_under_outer_shoulder_wrap": 161,
+  "clearance_m": 0.004,
+  "rear_cloth_height_limit_m": 1.525,
+  "rear_cloth_attachment": "spine3 only",
+  "front_body_head_and_lower_cape": "excluded from this correction"
+}

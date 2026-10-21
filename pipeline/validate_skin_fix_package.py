@@ -2,7 +2,7 @@
 import argparse,json,hashlib
 from pathlib import Path
 import numpy as np
-p=argparse.ArgumentParser();p.add_argument('name');p.add_argument('stage',type=Path);p.add_argument('check',type=Path);p.add_argument('baseline',type=Path);a=p.parse_args();e=np.load(a.stage/'buffers/expected.npz');data=np.load(a.stage/'geometry.npz');profiles=json.load(open(a.stage/'profiles.json'));meta=json.load(open(a.check/'final-metadata.json'));refs=json.load(open(a.check/'final-skeletons.json'))['meshes'];raw=a.check/'final-unpacked/chunks';old=a.baseline/'final-unpacked/chunks';changed={r['chunk'] for r in profiles};checks=[]
+p=argparse.ArgumentParser();p.add_argument('name');p.add_argument('stage',type=Path);p.add_argument('check',type=Path);p.add_argument('baseline',type=Path);p.add_argument('--other-updated-chunks',nargs='*',default=[]);a=p.parse_args();e=np.load(a.stage/'buffers/expected.npz');data=np.load(a.stage/'geometry.npz');profiles=json.load(open(a.stage/'profiles.json'));meta=json.load(open(a.check/'final-metadata.json'));refs=json.load(open(a.check/'final-skeletons.json'))['meshes'];raw=a.check/'final-unpacked/chunks';old=a.baseline/'final-unpacked/chunks';changed={r['chunk'] for r in profiles};others=set(a.other_updated_chunks);assert not changed&others;assert all(len(c)==24 and c.endswith('00000001') and (old/c).is_file() for c in others);checks=[]
 for item in profiles:
  cid=item['chunk'];m=next(m for m in meta if m['chunk_id']==cid);d=next(d for d in a.check.glob('final-mesh-readback-*') if d.is_dir() and json.load(open(d/'mesh.json'))['source_sha256']==m['sha256']);v=json.load(open(d/'mesh.json'));b=(raw/cid).read_bytes();assert v['lod_count']==4 and len(b)-v['all_lods_end']==112
  assert np.array_equal(np.fromfile(d/'positions.f32',dtype='<f4').reshape(-1,3),e['positions'])
@@ -22,6 +22,6 @@ for item in profiles:
  checks.append({'chunk':cid,'vertices':v['vertices'],'triangles':v['triangles'],'four_LODs_exact':True,'author_buffers_exact_except_quantized_frames':True,'reference_and_material_records_exact':True,'FP_section_triangle_materials_exact':True})
 unchanged=[]
 for f in raw.iterdir():
- if f.name in changed or f.name.endswith('00000006'):continue
+ if f.name in changed|others or f.name.endswith('00000006'):continue
  assert (old/f.name).exists() and f.read_bytes()==(old/f.name).read_bytes(),f.name;unchanged.append(f.name)
-report={'character':a.name,'status':'PASS_OFFLINE_WINDOWS_PENDING','meshes':checks,'all_other_chunks_exact':unchanged,'textures_materials_hair_helpers_unchanged':True,'source_frames_limit':.009,'runtime':'No Windows claim; independent render review still required'};(a.stage/'validation.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS',a.name,len(checks),'meshes;',len(unchanged),'unchanged chunks')
+report={'character':a.name,'status':'PASS_OFFLINE_WINDOWS_PENDING','meshes':checks,'all_other_chunks_exact':unchanged,'other_meshes_require_separate_validation':sorted(others),'textures_materials_hair_helpers_unchanged':True,'source_frames_limit':.009,'runtime':'No Windows claim; independent render review still required'};(a.stage/'validation.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS',a.name,len(checks),'meshes;',len(unchanged),'unchanged chunks')

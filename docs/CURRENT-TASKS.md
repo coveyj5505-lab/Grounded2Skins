@@ -67,3 +67,9 @@ The original v0.3, confirmed F1 wing release and confirmed persistent-view crook
 The targeted collector succeeded:16 packages/560053 decoded bytes, no missing requested dependencies/errors, source metadata unchanged. Every collected chunk size/SHA256 was verified locally. Current-build global script-object IDs resolve1 montage,14 animation sequences and1 skeleton. Actual AnimNotify_HitFrame exports occur in both FP/TP normal swing and charged end clips; these are verified exports, not merely names inferred from the old SDK.
 
 The previous missing-animation-payload blocker is resolved. Next is decoding track/section/timing/notify/root-motion data and a cosmetic-only adaptation; native animation substitution is still NOT implemented. Do not request the same collection or repeat attack recording. See spear-animation-current/export-inventory.json. Released skin/hand/flight test packages remain exactly unchanged while the user tests them.
+
+## Combined Windows feedback correction — V3
+
+See [candidate status](feedback-v3/STATUS.md). Forward flight is now Windows-confirmed; duplicate upright body/wings and tuft remain in that test. The next candidate fixes returned-array parameter-wrapper handling using installed UE4SS83330635 source, preserving F1/manual/glide rules and the working proxy. Native spear substitution is not bundled into this defect repair.
+
+Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip alignment, projected right-edge placement at FOV90 and thicker staff in all3 states; lower rear cape/shoulder wrap; Woody planar/deduplicated sheriff star and38% shorter holster; higher-priority Jessie override with read-only file receipt. Four skins/all crook states pass independent native readbacks, and81 local Lua groups pass. Render review includes front/side/rear/FK pose checks and a representative16:9 FP view. Windows acceptance remains pending. Minor original vest/collar seams remain lower-priority polish.

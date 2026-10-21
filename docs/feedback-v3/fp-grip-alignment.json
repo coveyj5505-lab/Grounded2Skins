@@ -1,0 +1,13 @@
+{
+  "handle_recenter_m": -0.2,
+  "upper_straight_extension_m": 0.2,
+  "hook": "Translated rigidly; no scale/shear",
+  "hand": "Natural flat source rest; no finger curl",
+  "TP_length_and_hook": "unchanged; radial inflation only",
+  "FP_placement_candidate_cm": [
+    85,
+    72,
+    -32
+  ],
+  "screen_anchor": "92% of viewport width, live projection calibration; FOV90 16:9 preview"
+}
