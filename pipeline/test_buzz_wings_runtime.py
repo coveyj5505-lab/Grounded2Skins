@@ -14,7 +14,7 @@ pre=pre.replace("return missingAsset and invalid or asset", "return missingAsset
 pre=pre.replace("assert(v==asset);meshSet=true", "assert(v:GetFullName():find('/Game/_BzW',1,true));meshSet=true;self.asset=v:GetFullName();swaps=swaps+1")
 pre=pre.replace('local events={}', 'local events={};local swaps=0;local glide=false;local manualKey')
 pre=pre.replace("function RegisterKeyBind(k,fn) key=fn end","function RegisterKeyBind(k,fn) if k==Key.F6 then key=fn else manualKey=fn end end")
-pre=pre.replace('Key={F6=117}', 'Key={F6=117,F7=118,N=78}')
+pre=pre.replace('Key={F6=117}', 'Key={F6=117,F7=118,N=78,J=74}')
 pre=pre.replace('meshSet=true;self.asset=v:GetFullName()', 'meshSet=true;self.asset=v:GetFullName();swaps=swaps+1')
 pre=pre.replace("assert(b=='r_hand_JNT')", "assert(b=='chest_JNT')").replace("bone=='r_hand_JNT'", "bone=='chest_JNT'")
 pre=pre.replace("/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01", "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01")

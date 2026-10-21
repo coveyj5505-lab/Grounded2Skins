@@ -101,3 +101,9 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] Official UE5.7-capable experimental asset downloaded, CRC/AMD64/byte checked; small loader-only drag/drop candidate prepared. Old settings, mods, Paks and releases preserved.
 - [x] N binding added to isolated UE57 wing config; regression uses actual config. Manual OR gliding and landing preference checks pass.
 - [ ] Windows: rename failing custom override, install candidate DLLs, verify scan completes and accessory Lua starts. Then test accessory assets/states. Do not repeat gameplay while initialization is failing.
+
+## Loader repair Windows confirmed; accessory load unresolved
+
+- [x] Latest supplied log starts UE4SS 83330635 and all three accessory Lua mods; native reflected signature gates pass. Previous initialization failure resolved for this session.
+- [ ] Crook TP asset and wing RETRACTED asset return invalid from LoadAsset_Blocking before component creation. Both disk checks found no expected UTOC in their limited standard paths; this does not establish absence from ~mods or failed engine mounting. Await exact installed folder/trio check before further loading changes. Soft-path conversion also logs an unsupported empty/subobject Utf8StrProperty; not established as the cause.
+- [x] N conflicts with native hot deposit per user. Isolated config now J; manual OR gliding regression passes with actual J config. Existing released loader ZIP stays unchanged and still contains N until a new update is installed.
