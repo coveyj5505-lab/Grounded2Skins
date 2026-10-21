@@ -14,7 +14,7 @@ pre=pre.replace("return missingAsset and invalid or asset", "return missingAsset
 pre=pre.replace("assert(v==asset);meshSet=true", "assert(v:GetFullName():find('/Game/_BzW',1,true));meshSet=true;self.asset=v:GetFullName();swaps=swaps+1")
 pre=pre.replace('local events={}', 'local events={};local swaps=0;local glide=false;local manualKey')
 pre=pre.replace("function RegisterKeyBind(k,fn) key=fn end","function RegisterKeyBind(k,fn) if k==Key.F6 then key=fn else manualKey=fn end end")
-pre=pre.replace('Key={F6=117}', 'Key={F6=117,F7=118}')
+pre=pre.replace('Key={F6=117}', 'Key={F6=117,F7=118,N=78}')
 pre=pre.replace('meshSet=true;self.asset=v:GetFullName()', 'meshSet=true;self.asset=v:GetFullName();swaps=swaps+1')
 pre=pre.replace("assert(b=='r_hand_JNT')", "assert(b=='chest_JNT')").replace("bone=='r_hand_JNT'", "bone=='chest_JNT'")
 pre=pre.replace("/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01.SK_Female_Teen_01", "/Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01")
@@ -22,11 +22,15 @@ pre=pre.replace("/Game/_Augusta/Art/Characters/Player_Female01/SK_Female_Teen_01
 pre=pre.replace("or 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male01/SK_Male_Teen_01.SK_Male_Teen_01'", "or 'SkeletalMesh /Game/_Augusta/Art/Characters/Player_Male02/SK_Male_Teen_02.SK_Male_Teen_02'")
 pre=pre.replace("{EquipmentComponent='ObjectProperty',bIsAttacking='BoolProperty'}", "{EquipmentComponent='ObjectProperty',CharMovementComponent='ObjectProperty'}")
 pre+='''
-function require(name) assert(name=='wing_config');return {ManualWingsExtended=false,ManualToggleKey='F7'} end
+function require(name) assert(name=='wing_config');return WINGCONFIG end
 local movement=obj('MaineCharMovementComponent Movement',{'Maine.MaineCharMovementComponent'})
 movement.IsGliding=function() return glide end;p.CharMovementComponent=movement
 eq.GetItemInSlot=function() error('Wings must not inspect or modify equipment') end
 '''
+config_path=Path(os.environ.get('TOYSTORY_RUNTIME_ROOT',str(root/'runtime')))/'BuzzWings/Scripts/wing_config.lua'
+config_source=config_path.read_text()
+if not os.environ.get('TOYSTORY_RUNTIME_ROOT'): config_source="return {ManualWingsExtended=false,ManualToggleKey='F7'}"
+pre=pre.replace('WINGCONFIG','(function() '+config_source+' end)()')
 checks=[
 ("wrong installed container revision stops before native creation", "io.open=function() return {read=function() return 'wrong' end,seek=function() return 1 end,close=function() end} end;timer();assert(made==0);assert(table.concat(events,'\\n'):find('Wrong container revision installed',1,true))"),
  ('automatic startup waits safely at menus before gameplay',"local find=FindAllOf;FindAllOf=function() return {} end;timer();assert(made==0);local menu=obj('MenuPawn Preview',{'Engine.Actor'});FindAllOf=function() return {{IsValid=function() return true end,IsLocalController=function() return true end,Pawn=menu}} end;timer();assert(made==0);FindAllOf=find;timer();assert(show)"),

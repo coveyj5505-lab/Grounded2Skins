@@ -89,3 +89,15 @@ Once major runtime features work and the user accepts the silhouettes and views,
 - [x] Isolated runtime-ue57 copies match new accessory container names and exact UTOC header/size. Released v0.3 and stable runtime preserved. Crook, wing and flight Lua regression checks pass.
 - [ ] Windows: three skin trios menu, exit/relaunch and gameplay; then accessories with the updated Lua folders. Offline readback does not prove engine loading or runtime behavior.
 - [ ] Windows: flight proxy load and restore on landing/view change; static corrected side-socket pose, tuft remains visible, local client only. Native spear montage substitution remains separate unfinished work.
+
+## Latest Windows results: updated skins and accessory startup
+
+- [x] User confirms all four current-build skins load. Woody holster clips thigh; Buzz shoulder/upper-arm placement remains poor; Bo Peep upper cape/outer weighting and inward curl remain poor; Jessie neck/head posture leans forward. Preserve current loadable packages as baseline.
+- [ ] Accessory runtime blocked before Lua execution in the supplied 20:38–20:40 local-time log: UE4SS v3.0.1 Beta ca6f9b4c detects UE5.7 but cannot find StaticConstructObject, ends fatal after 2122 Lua scan attempts. No crook/wing/flight script startup markers. Prior user report of successful loader initialization does not establish this session succeeded; check whether this is the latest log before runtime or asset changes.
+
+## Targeted loader repair candidate
+
+- [x] User confirms failed scan log is current. Exact error traced to custom StaticConstructObject.lua override in v3.0.1 source.
+- [x] Official UE5.7-capable experimental asset downloaded, CRC/AMD64/byte checked; small loader-only drag/drop candidate prepared. Old settings, mods, Paks and releases preserved.
+- [x] N binding added to isolated UE57 wing config; regression uses actual config. Manual OR gliding and landing preference checks pass.
+- [ ] Windows: rename failing custom override, install candidate DLLs, verify scan completes and accessory Lua starts. Then test accessory assets/states. Do not repeat gameplay while initialization is failing.
