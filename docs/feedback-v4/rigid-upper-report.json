@@ -1,0 +1,20 @@
+{
+  "status": "OFFLINE_CANDIDATE_REQUIRES_POSED_RENDER_REVIEW",
+  "changes": [
+    {
+      "component": 13,
+      "bone": "l_upperArm_JNT",
+      "vertices": 807,
+      "idle_position_max_error_m": 8.881784197001252e-16,
+      "prior_chest_average_mass": 0.6713626384735107
+    },
+    {
+      "component": 56,
+      "bone": "r_upperArm_JNT",
+      "vertices": 910,
+      "idle_position_max_error_m": 6.661338147750939e-16,
+      "prior_chest_average_mass": 0.6612052917480469
+    }
+  ],
+  "unchanged": "skeleton, hands, elbow/forearm weights, textures, all other geometry"
+}

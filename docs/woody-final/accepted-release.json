@@ -1,0 +1,24 @@
+{
+  "status": "USER_ACCEPTED_FINAL",
+  "date": "2026-10-21",
+  "source_release": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+  "source_release_sha256": "943aeb326eac16a12912bb1256ef300702b907e4a32aa02fb42ac1a0cbe49706",
+  "files": [
+    {
+      "archive_path": "Paks/zWoodySkinV3UE57_99_P.pak",
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    {
+      "archive_path": "Paks/zWoodySkinV3UE57_99_P.ucas",
+      "bytes": 28877945,
+      "sha256": "8aa37bcaadca2c6e119a0aa1436dc2f145ee35f4b88e084f8e29ea223b6de70a"
+    },
+    {
+      "archive_path": "Paks/zWoodySkinV3UE57_99_P.utoc",
+      "bytes": 7892,
+      "sha256": "01f806354e0be22c68ab58f6cba7798068f768a9a60a625ef0a9ada248a18a8a"
+    }
+  ],
+  "policy": "Preserve this accepted skin byte-for-byte. No further holster, badge, vest, boots, ring, proportions or first-person visibility work unless requested."
+}

@@ -73,3 +73,21 @@ The previous missing-animation-payload blocker is resolved. Next is decoding tra
 See [candidate status](feedback-v3/STATUS.md). Forward flight is now Windows-confirmed; duplicate upright body/wings and tuft remain in that test. The next candidate fixes returned-array parameter-wrapper handling using installed UE4SS83330635 source, preserving F1/manual/glide rules and the working proxy. Native spear substitution is not bundled into this defect repair.
 
 Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip alignment, projected right-edge placement at FOV90 and thicker staff in all3 states; lower rear cape/shoulder wrap; Woody planar/deduplicated sheriff star and38% shorter holster; higher-priority Jessie override with read-only file receipt. Four skins/all crook states pass independent native readbacks, and81 local Lua groups pass. Render review includes front/side/rear/FK pose checks and a representative16:9 FP view. Windows acceptance remains pending. Minor original vest/collar seams remain lower-priority polish.
+
+## Buzz V3 Windows follow-up
+
+- [x] Read new Buzz log; correlated flight teardown and restoration-pending delay with wing component replacement. See [V4 candidate status](feedback-v4/STATUS.md).
+- [x] Prepare isolated incremental wing/tuft reconciliation and scoped wrist-device suppression; 44 mocked Lua groups pass. V3 unchanged.
+- [x] Audit actual upper-arm weights: chest/upper-arm blending affects rigid shells. Prepare independent rigid-shell experiment preserving controlled idle placement.
+- [x] Review arm experiment: rejected, raised arms still approach head despite rigid shell shape. Do not cook/ship; native pivot/armor fit remains unresolved.
+- [ ] Confirm flight reliability, tuft suppression, and floating wrist-device removal in Windows after next candidate is ready. Runtime repair passes44 mocked groups; Bo Peep staff-only update passes31.
+- [ ] Incorporate other three characters' incoming V3 results without restarting completed fixes.
+
+## Woody finalized — user acceptance
+
+- [x] User accepted the current V3 Woody skin as final. Exact trio sizes/SHA256 recorded in [accepted release](woody-final/accepted-release.json). Freeze those files; all remaining Woody cosmetic polish is removed from active work.
+- [x] Bo Peep V3 body/cape accepted as good enough for now. User superseded the visible first-person hand requirement: remove added hand/forearm and use existing bare-staff view. Spear animation follows skin finalization.
+
+## Jessie finalized — user acceptance
+
+- [x] User accepted current V3 Jessie as final. Exact trio sizes/SHA256 recorded in [accepted release](jessie-final/accepted-release.json). No further Jessie skin or first-person changes planned.

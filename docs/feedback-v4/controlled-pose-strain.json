@@ -1,0 +1,30 @@
+[
+  {
+    "pose": "raised",
+    "candidate": "V3",
+    "edge_length_ratio_min": 0.24712699137629468,
+    "edge_length_ratio_max": 4.75562631281593,
+    "edge_length_ratio_p95": 2.854055601053923
+  },
+  {
+    "pose": "raised",
+    "candidate": "rigid",
+    "edge_length_ratio_min": 0.9999750786349986,
+    "edge_length_ratio_max": 1.0000278909439122,
+    "edge_length_ratio_p95": 1.000002890955197
+  },
+  {
+    "pose": "bent",
+    "candidate": "V3",
+    "edge_length_ratio_min": 0.03903405829439302,
+    "edge_length_ratio_max": 2.7157020546234,
+    "edge_length_ratio_p95": 1.401488240690737
+  },
+  {
+    "pose": "bent",
+    "candidate": "rigid",
+    "edge_length_ratio_min": 0.9999751937690807,
+    "edge_length_ratio_max": 1.0000279705257318,
+    "edge_length_ratio_p95": 1.0000029771686352
+  }
+]

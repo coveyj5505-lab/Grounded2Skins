@@ -1,0 +1,8 @@
+{
+  "file": "Buzz-BoPeep-Runtime-V4-UE57-Test.zip",
+  "bytes": 21506,
+  "sha256": "a739f84fb14a8be4fe1ecf10a09477dcb9e826a28b7935f340ca12809359c6e3",
+  "status": "CANDIDATE_NOT_WINDOWS_VALIDATED",
+  "asset_changes": false,
+  "mocked_lua_groups": 75
+}

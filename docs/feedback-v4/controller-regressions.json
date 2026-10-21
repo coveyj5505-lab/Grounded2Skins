@@ -1,0 +1,29 @@
+{
+  "status": "PASS_MOCKED_LUA_NOT_UNREAL",
+  "groups": 22,
+  "checks": [
+    "tuft render components hide only during flight and restore exact prior state",
+    "late tuft render discovery joins existing proxy safely",
+    "pending-destroy private wing never blocks glide or landing",
+    "late glider query restores disappeared item without proxy replacement",
+    "landing retires destroyed wing before restoration",
+    "manual standing wings never start flight",
+    "glide entry and landing restore prior states",
+    "first-person entry restores complete native model",
+    "manual toggle cannot end actual flight",
+    "concurrent wing visibility is suppressed without replacing rollback state",
+    "suppression refresh failure rolls back native presentation",
+    "failed asset load never hides native components",
+    "unknown prior visibility aborts before suppression",
+    "partial suppression failure restores all previous values",
+    "proxy visibility failure restores native bodies",
+    "restoration failure retries before another flight attempt",
+    "pawn replacement restores old body first",
+    "late wing component joins existing proxy",
+    "destroy failure is retried while native view restores",
+    "unknown glide/view state stays native",
+    "externally destroyed proxy restores then recreates safely",
+    "wrong character receives no proxy"
+  ],
+  "runtime_adapter": "Prepared separately, disabled; not installed or Windows validated"
+}
