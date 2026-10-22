@@ -1,0 +1,10 @@
+{
+  "source_sha256": "cd2767b623daf3d35593d7d0eae40776b4ce8494f70b89bd94f0fd6f2f82b8c2",
+  "source_package": "/Game/Blueprints/Items/ItemTables/Table_Items_Tools",
+  "private_package": "/Game/Blueprints/Attacks/BoPkItemTbl",
+  "redirected_attack_imports": 1,
+  "throw_disabled": true,
+  "runtime_struct_copy": false,
+  "native_packages_overridden": false,
+  "windows_tested": false
+}

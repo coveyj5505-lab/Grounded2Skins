@@ -1,0 +1,53 @@
+{
+  "file": "BoPeep-Crook-Native-Spear-V2-UE57-Test.zip",
+  "bytes": 219837,
+  "sha256": "c3fb498b2da21759360c8b4fa03caf2799ed9253ac231c331ef4b16718dd0d10",
+  "contents": {
+    "UE4SS-Mods/BoPeepNativeSpear/enabled.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "UE4SS-Mods/BoPeepNativeSpear/Scripts/main.lua": {
+      "bytes": 17411,
+      "sha256": "b8ac06f7db8d6011234b64bf79df8a7122f6ee7da1e84848aa062832679b3859"
+    },
+    "UE4SS-Mods/BoPeepNativeSpear/Scripts/crook_guard.lua": {
+      "bytes": 4268,
+      "sha256": "a70d46321e7890e6688bdbc6250a8be87cde80f6a673b63a57d1b0c37fc652e8"
+    },
+    "UE4SS-Mods/BoPeepNativeSpear/Scripts/item_rows.lua": {
+      "bytes": 2010,
+      "sha256": "be1bba1939ff854d4125458d4cd6730c5016788c08f1c15d9fcf0aa8d8324548"
+    },
+    "Paks/zBoCrookNativeUE57_P.pak": {
+      "bytes": 347,
+      "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+    },
+    "Paks/zBoCrookNativeUE57_P.ucas": {
+      "bytes": 552930,
+      "sha256": "8b74470a312bedfaf838b4d09d54ea1626f2a45383eb3f284581f971baac7c0d"
+    },
+    "Paks/zBoCrookNativeUE57_P.utoc": {
+      "bytes": 641,
+      "sha256": "b5f3f62e636d0672e2cbf9260d296cddef99cdb20068844d3356eeabfae5a400"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.ucas": {
+      "bytes": 497106,
+      "sha256": "76015bbde41e70957027682ad3599b5a7627759d58f5c35fcf13a75d91646f1e"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.utoc": {
+      "bytes": 873,
+      "sha256": "7c367ea9fcdd067e0deb5330a46ff91a430cf3d1d3d124ec71c81662edd2615a"
+    },
+    "READ-ME-FIRST.txt": {
+      "bytes": 2747,
+      "sha256": "56591e25d0ead34c0532944dead4821bd5e494892d29052541c71f4fcab6bd90"
+    }
+  },
+  "accepted_mesh_byte_identical": true,
+  "windows_tested": false
+}

@@ -29,4 +29,4 @@ for name,test in cases.items():
   if r:raise AssertionError(name+': '+lib.lua_tolstring(state,-1,None).decode())
   print('PASS',name)
  finally:lib.lua_close(state)
-print('4 read-only V2 row groups passed; cooked source row still required')
+print('4 read-only V2 row groups passed; Windows native execution remains unverified')

@@ -10,7 +10,7 @@ function M.prepare(_,items,attacks,api)
     assert(api.full(attacks)=='DataTable '..M.attacks,'Wrong private attack table')
     assert(api.full(items:GetRowStruct())=='ScriptStruct /Script/Maine.BaseItemData','Wrong item row struct')
     assert(api.full(attacks:GetRowStruct())=='ScriptStruct /Script/Maine.AttackData','Wrong attack row struct')
-    local item=assert(items:FindRow(M.row),'Cooked item row missing. V1 empty-table asset is incompatible; collect current native item tables to build V2.')
+    local item=assert(items:FindRow(M.row),'Cooked item row missing. V1 empty-table asset is incompatible; replace all three zBoCrookNativeUE57_P asset files with V2.')
     api.structFields('Maine.BaseItemData',{AttackComboData='StructProperty',ThrowData='StructProperty'})
     api.structFields('Maine.AttackComboData',{Attacks='ArrayProperty'})
     local n=0

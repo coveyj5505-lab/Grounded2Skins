@@ -1,0 +1,17 @@
+{
+  "collection_status": "INCOMPLETE",
+  "collection_errors": [
+    "128-package inspection limit reached"
+  ],
+  "collected_chunk_hashes_verified": true,
+  "source_rows": 80,
+  "private_rows": 80,
+  "all_decoded_source_fields_match_except_private_attack_references_and_two_throw_flags": true,
+  "normal_damage": 8,
+  "reach": 275,
+  "charge_time": 0,
+  "throw": false,
+  "native_packages_overridden": false,
+  "runtime_struct_copy": false,
+  "windows_tested": false
+}

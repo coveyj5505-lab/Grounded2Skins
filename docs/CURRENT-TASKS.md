@@ -1,5 +1,20 @@
 # Current Toy Story tasks
 
+## Latest status — native crook V2, 2026-10-22
+
+This section supersedes older historical priorities below.
+
+- [x] Woody, Jessie, Buzz skin/arms and Bo Peep skin accepted; do not reopen geometry or solved visibility.
+- [x] FreeBuild and Invisible Armor user-confirmed working.
+- [x] Received CrookItems collection: inspection limit reached, but required current native tools table and Spear row are present; retained chunk hashes verified. No repeat collection required.
+- [x] Replaced V1's Windows-unsupported runtime struct copy with an offline cooked private BaseItemData table. Original native item/attack packages remain untouched.
+- [x] Native readback of both private tables passed. All 80 source item rows match except private attack references and Spear's two disabled throw flags. Three normal jabs: damage 8, range 275, charge disabled.
+- [x] V2 production Lua: 4 read-only row checks and 15 lifecycle/cache/rollback groups pass. F7 replaces console-conflicting F10. Accepted crook mesh included byte-identically.
+- [ ] Windows host/standalone test of V2 native grip, jab animation, rendering, F7 equip/removal and repeated view switching. Offline checks do not establish engine compatibility.
+- [ ] After successful native integration: automatic empty-hand lifecycle, save/inventory handling, remote-client support. V2 is a short host test; remove with F7 before changing gear/saving/leaving.
+- [ ] Teleport V3 normal-map native hold-Space test remains pending; no Teleport changes in this crook ZIP.
+- [ ] Buzz flight reliability and residual tuft/limb visuals remain active; accepted skin unchanged.
+
 ## Confirmed baseline to preserve
 
 - All four UE5.7.4 skins load; solved first/third-person head/body visibility stays intact.

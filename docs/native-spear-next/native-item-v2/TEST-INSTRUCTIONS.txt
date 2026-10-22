@@ -1,0 +1,48 @@
+BO PEEP NATIVE CROOK V2 — HOST / STANDALONE WINDOWS TEST
+
+This replaces failed native-crook V1. It is not yet Windows validated.
+No body skins, Buzz files, Teleport, FreeBuild or Invisible Armor are changed.
+
+INSTALL (game fully closed)
+1. Replace the UE4SS Mods/BoPeepNativeSpear folder with this ZIP's
+   UE4SS-Mods/BoPeepNativeSpear folder. Do not nest the folder twice.
+2. In mods.txt use:
+   BoPeepNativeSpear : 1
+   BoPeepCrook : 0
+   Keep every unrelated working entry unchanged.
+3. Copy Paks/* into the SAME game Paks mod folder used for your working skins.
+   Replace ALL THREE zBoCrookNativeUE57_P files (.pak, .utoc, .ucas).
+   The included zBoCrookHandV3UE57_99_P trio is byte-identical to the accepted
+   mesh; replace matching files if prompted. Keep Bo Peep's body skin installed.
+   Do not install a second renamed copy of either trio. Remove no other skins.
+
+TEST
+1. Host a game or use standalone as Willow / Bo Peep. Empty BOTH actual
+   equipment hand slots, then wait a few seconds.
+2. Press F7 once. F10 is no longer used (it conflicts with ConsoleEnabler).
+   This first integration test equips only on F7; automatic empty-hand creation
+   is not enabled yet. Clients do not create this test item.
+3. Check crook carry angle/thickness and native spear arm pose. Do several
+   ordinary jabs in first person and third person. Walk and switch views.
+   The crook should follow the native weapon/hand through a forward thrust,
+   rather than rotate on a timer while the character punches.
+4. Charge and throw are disabled. Normal attack rows use base damage 8 and
+   native spear range 275. Ordinary spears elsewhere are unchanged.
+5. Press F7 again to REMOVE the test crook BEFORE changing gear, saving,
+   leaving the server, changing characters, or exiting. Keep this first test
+   short; persistent inventory/save and remote-client support are not validated.
+6. Send UE4SS.log and report: did F7 equip/remove, did both views jab normally,
+   was the grip/alignment reasonable, and did camera switching remain stable?
+   If F7 does nothing, send the log; do not try console commands or extra keys.
+
+WHAT CHANGED
+The native Spear item row is now cooked offline into a private item table.
+V1 failed during initialization because this UE4SS build could not perform
+its native script-struct copy. V2 never calls AddRow or CopyScriptStruct.
+The original item/attack tables are not overridden. The crook uses a private
+copy of native spear equipment and private normal attack rows.
+
+ROLLBACK (game closed)
+Disable BoPeepNativeSpear in mods.txt; restore BoPeepCrook : 1 only if its
+accepted folder remains installed. Remove this test's zBoCrookNativeUE57_P
+trio; keep accepted skin/mesh files. No Teleport update is included here.
