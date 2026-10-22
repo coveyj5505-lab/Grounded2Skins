@@ -1,0 +1,16 @@
+{
+  "file": "Crook-V2.3-Teleport-V5-Lua-Repair.zip",
+  "bytes": 16478,
+  "sha256": "7ecd3e5c8089ae197dcc76eb50c8b7343030d74a6572112d6d96fe5d7fd1517c",
+  "crook_windows_evidence": "Native item/combat successful. VISUAL COMPONENT SKIPPED: NONE; no BOUND log; spear remained visible.",
+  "crook_change": "Get-method unwrapping, exercised with production guard in runtime fixtures",
+  "teleport_issue": "User reports floating door. Actor origin/version/persistence unknown.",
+  "teleport_change": "Suppress helper components and renew/retire source plus door lifetimes for all authoritative players",
+  "arbitrary_door_deletion": false,
+  "windows_tested": false,
+  "lua_checks": {
+    "crook": 19,
+    "teleport": 23
+  },
+  "assets_changed": false
+}

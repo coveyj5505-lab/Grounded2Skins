@@ -12,10 +12,11 @@ This section supersedes older historical priorities below.
 - [x] V2 production Lua: 4 read-only row checks and 15 lifecycle/cache/rollback groups pass. F7 replaces console-conflicting F10. Accepted crook mesh included byte-identically.
 - [x] Windows V2 private cooked item/attack initialization confirmed. Runtime then stopped on inherited IsLocalController lookup; V2.1 Lua-only repair uses declaring class Engine.Controller, with regression constraint.
 - [x] Windows V2.1: native item equipped, combat cache verified, then visual StaticMesh field receiver failure caused removal. V2.2 checks component class first; mixed-component fixture added.
-- [ ] Windows host/standalone test of V2.2 native grip, jab animation, rendering, F7 equip/removal and repeated view switching. Offline checks do not establish engine compatibility.
+- [x] V2.2 Windows: native spear grip/jabs work; wooden spear visible because component wrappers logged NONE. V2.3 uses get-method unwrapping; 19 checks pass, runtime fixtures exercise production unwrap.
+- [ ] Windows host/standalone test of V2.3 crook mesh, native grip, jab animation, rendering, F7 equip/removal and repeated view switching. Offline checks do not establish engine compatibility.
 - [ ] After successful native integration: automatic empty-hand lifecycle, save/inventory handling, remote-client support. V2 is a short host test; remove with F7 before changing gear/saving/leaving.
 - [x] Teleport V3 Windows: native hold-Space travel succeeds to multiple outposts; repeated departure animation incorrectly returns to initial source location.
-- [x] Teleport V4 user-accepted FINAL. Freeze this working release; no further Teleport development requested.
+- [ ] Teleport reopened: user observed floating door after reload. V5 hides helper components/render passes and bounds both actor lifetimes; 23 local checks pass. Unknown saved historical doors are not deleted. V4 release preserved.
 - [ ] Buzz flight reliability and residual tuft/limb visuals remain active; accepted skin unchanged.
 
 ## Confirmed baseline to preserve

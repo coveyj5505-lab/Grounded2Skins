@@ -1,0 +1,11 @@
+# Teleport V3 — native map hold-to-travel candidate
+
+Windows V2 F8 reached the destination lookup but incorrectly required a BP_Teleporter_C. Current native UI_Map.RefreshPTSButton and PTSTravel cast the registered object to BP_Teleporter_Door_C and get its TeleporterOwner. The log message did not mean the F8 key was missed.
+
+This candidate leaves the installed/current map and controller Blueprints untouched. It supplies native IsInPTSView/InteractableItem map context and lets the existing PTSButton, native input/hold/progress, destination lock/busy tests, cancellation, reliable server event, pod animation and native travel execute. No custom fast-travel key, hold timer, direct travel RPC call or player position writes.
+
+A real native departure door is needed by that pipeline; a Boolean alone is insufficient. The authoritative server creates a hidden, noncolliding native BP_Teleporter departure per actual gameplay controller, owned/relevant only to that controller, with native Instigator set to its current pawn. The source replicates movement and expires if the controller disappears/mod stops. Idle source movement follows its owner; an in-use source is never moved. Clients never spawn a local departure: they wait for the replicated source matching their local controller and current pawn, then suppress its render/collision as well. This candidate still requires Windows replication/collision/animation acceptance.
+
+The map receives the owned native door only while the normal map menu is visible and no real native pod interaction already supplies one. Eligibility uses current IsPTSTravelLocked, CanPTSTravel and the actual registered door/owner. Native RefreshPTSButton retains busy checks. A stable hover never repeatedly refreshes the button, avoiding hold-progress resets. Original fields are restored on menu close or guarded error; source actors remain alive for native travel/cancellation rather than being destroyed as the map closes.
+
+Both host and joining player need the same V3 Lua folder. Keep old Teleport Paks removed. No cooked files or skins are included/modified.19 actual-Lua groups exercise the controller/replica/map lifecycle and guards, but cannot prove Windows arrival or native animation. See docs/windows-followup-20261022/evidence.json.
