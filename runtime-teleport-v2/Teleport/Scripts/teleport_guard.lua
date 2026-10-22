@@ -22,6 +22,7 @@ function M.new(tag,schemas,fields)
     end
     function api.unwrap(o)
         if o==nil then return nil end
+        if type(o)~='table' and type(o)~='userdata' then return o end
         local t=type(o.type)=='function' and o:type() or nil
         if t=='RemoteUnrealParam' or t=='LocalUnrealParam' then return o:get() end
         return o

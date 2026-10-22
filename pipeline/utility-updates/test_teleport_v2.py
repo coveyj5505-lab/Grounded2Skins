@@ -100,6 +100,7 @@ cases={
  'rapid duplicate key suppressed':('', 'press();key();assert(spawns==1 and requested==1)'),
  'hook registered outside game thread and once':('', 'register();poll();assert(hookCount==1 and spawns==0)'),
  'server completes remote request without closing host menu':('menu=false;', 'register();receive(pc,false,nil,dest);assert(spawns==1 and requested==1);assert(table.concat(calls,",")=="setPawn,request")'),
+ 'plain callback values also supported':('', 'register();hook(pc,false,nil,dest);assert(spawns==1 and requested==1)'),
  'normal native travel and cancellation untouched':('', 'register();receive(pc,false,dest,dest);receive(pc,true,nil,dest);assert(spawns==0 and requested==0)'),
  'client-side hook cannot execute travel':('', 'register();host=false;receive(pc,false,nil,dest);assert(spawns==0 and requested==0)'),
  'server rejects locked or stale destination':('', 'register();locked=true;receive(pc,false,nil,dest);assert(spawns==0);clock=clock+3;locked=false;destinationValid=false;receive(pc,false,nil,dest);assert(spawns==0)'),
