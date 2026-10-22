@@ -1,0 +1,9 @@
+{
+  "file": "Teleport-Native-Hold-V4-UE57-Test.zip",
+  "bytes": 7753,
+  "sha256": "ab22f7d6ea71240246396e1c1c2dbacb54573cdac3c3d34893a065646b88ffd5",
+  "windows_tested": false,
+  "fixture_groups_passed": 21,
+  "v3_windows_result": "Three destinations accepted, repeated departure animation at first source position",
+  "cause": "Unconfirmed: V3 ignored movement return and lacked position/busy logs. V4 makes portable root movable and verifies idle movement; never clears native busy flags."
+}

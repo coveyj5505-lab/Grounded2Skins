@@ -1,0 +1,28 @@
+TELEPORT V4 — REPEATED NATIVE MAP TRAVEL TEST
+
+Close the game, then replace UE4SS Mods/Teleport with the included
+UE4SS-Mods/Teleport folder. Keep Teleport : 1 in mods.txt.
+Install on host and client when testing multiplayer. No Pak files are included;
+keep the old incompatible Teleport Pak overrides removed. Keep all skins,
+crook, FreeBuild and Invisible Armor files unchanged.
+
+Open the normal map anywhere, hover an unlocked valid outpost, and hold Space.
+No F8, new commands, custom progress circle, or separate teleport mechanism.
+
+Test three consecutive trips, walking out of each destination before the next.
+Watch whether the departure animation still returns to your first location.
+Send UE4SS.log and report where each departure animation appeared.
+
+V4 makes only the temporary departure actor's root movable, verifies idle
+movement succeeded and reached the current pawn, and logs SOURCE_BUSY/IDLE.
+It does not move that actor while the native IsInUse flag is true. Native
+outposts, locked destination rules, native travel RPCs and animation are unchanged.
+
+V3 successfully travelled in Windows, but repeatedly showed the first departure
+location. The log did not record source coordinates, movement results, or busy
+transitions, so the exact cause remains unconfirmed. V4 tests the unchecked
+movement/static-component possibility and adds evidence if the native busy flag
+instead remains set. 21 Lua fixture groups passed; Windows validation pending.
+
+Rollback: close the game and restore the previous Teleport folder from the V3
+package. No Paks or mods.txt changes are required for this rollback.
