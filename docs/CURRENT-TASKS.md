@@ -131,3 +131,21 @@ Prepared together: Buzz elbow clearance; Bo Peep flat source hand, wrapped-grip 
 - [x] Prepare additive read-only SpearReferenceProbe: actual weapon attachment/mesh/bounds, camera/hand poses, montage/stance, native attack row/range and unarmed damage baseline, authority, plus current native .usmap.13 mocked groups pass; no gameplay changes.
 - [ ] One new targeted reference session with this probe, then native spear presentation and scoped damage implementation. Prior thrust sessions used a logger that did not capture these fields; existing16 animation payloads need no repeat extraction.
 - [ ] Confirm server/host damage behavior rather than treating a local cosmetic change as a damage override. No constant guessed damage or global weapon edits.
+
+## Latest authoritative status — utility candidates and native damage preparation
+
+This section supersedes older open skin-fix entries and the former unarmed-reach restriction above.
+
+- [x] Woody V3, Jessie V3, Buzz V3 skin/arms remain final. Bo Peep accepted body/cape/staff-only appearance remains unchanged. All released character ZIPs frozen.
+- [x] Received native reference capture and current .usmap. No repeat jab/animation collection needed. Native spear stance3, Spear02 visual, Spear/Spear2/Spear3 rows/range275 and unarmed Player row/range150 established.
+- [x] All16 already collected animation/skeleton packages deserialize with current native mappings; montage sections/blends recorded in [native evidence](native-spear-next/evidence.json). No unsafe gameplay montage substitution shipped.
+- [x] Supplied FreeBuild, Invisible Armor and Teleport archives unpacked and original hashes recorded. [Utility test instructions](utility-updates/README.md).
+- [x] FreeBuild isolated host/game-thread/schema-checked autocomplete replacement, preserving supplied behavior and crafting settings.
+- [x] Invisible Armor isolated render-only Lua replacement; four native armor fields confirmed by supplied mappings. No146-mesh old Pak override required. Accepted body/SCAB visibility unchanged by design.
+- [x] Teleport confirmed TOC/header identity mismatch repaired; both original Blueprint chunks preserved exactly, retoc/re-extraction checks pass, both packages including script bytecode deserialize using current mappings. Windows behavior remains unconfirmed.
+- [x] Seven actual-Lua utility fixture groups pass. Separate utility ZIP prepared; no changes to character release files.
+- [x] Native damage parser rejects unknown/zero baselines, malformed values, mismatched row counts and nonuniform charged/combo ratios. One-shot read-only native damage probe prepared; five Lua fixture groups pass. No combat writes shipped.
+- [ ] Crook native spear gameplay implementation is **not complete**. Damage helper's0 does not establish fist damage, whether or not a target was hit. Attack table damage values remain absent from received outputs; targeted automatic row read is required before promising correct unarmed-level damage.
+- [ ] Bind thicker hooked crook to actual native weapon visual frame and preserve native spear collision/range/animations, after choosing a correct authoritative damage route. See [implementation preparation](../runtime-native-spear-next/README.md).
+- [ ] Windows validation of utilities, including Teleport controller/map/exit, still required. Parsing does not prove Blueprint compatibility or multiplayer behavior.
+- [ ] Buzz flight V5 acceptance remains pending independently; no new flight or skin changes in utility package.

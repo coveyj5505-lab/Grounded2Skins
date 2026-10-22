@@ -1,0 +1,64 @@
+{
+  "packages": 16,
+  "all_deserialized": true,
+  "mapping_types": 14017,
+  "engine": "UE5.7.4, generic UE5_7 CUE4Parse version container",
+  "sections": [
+    {
+      "SectionName": "Attack_Start",
+      "NextSectionName": "Prep_Attack_Power",
+      "LinkValue": 0.0,
+      "SegmentLength": 0.26666668
+    },
+    {
+      "SectionName": "Prep_Attack_Power",
+      "NextSectionName": "Attack_Loop",
+      "LinkValue": 0.26666668,
+      "SegmentLength": 2.0
+    },
+    {
+      "SectionName": "Attack_Loop",
+      "NextSectionName": "Attack_Loop",
+      "LinkValue": 2.2666667,
+      "SegmentLength": 0.6333333
+    },
+    {
+      "SectionName": "Attack_Power",
+      "NextSectionName": "None",
+      "LinkValue": 2.9,
+      "SegmentLength": 1.6666666
+    },
+    {
+      "SectionName": "Attack_Swing",
+      "NextSectionName": "None",
+      "LinkValue": 4.5666666,
+      "SegmentLength": 1.2
+    },
+    {
+      "SectionName": "Attack_Hitstop",
+      "NextSectionName": "None",
+      "LinkValue": 5.7666664,
+      "SegmentLength": 1.0333333
+    },
+    {
+      "SectionName": "Attack_Power_Hitstop",
+      "NextSectionName": "None",
+      "LinkValue": 6.7999997,
+      "SegmentLength": 1.2
+    }
+  ],
+  "blend_in": {
+    "BlendTime": 0.1
+  },
+  "blend_out": {
+    "BlendTime": 0.4
+  },
+  "gameplay_substitution_implemented": false,
+  "native_spear_range": 275,
+  "native_unarmed_range": 150,
+  "unarmed_damage_helper_return": 0,
+  "helper_is_verified_damage_baseline": false,
+  "native_weapon_asset": "/Game/Art/Items/Weapons/Spear02/Spear02",
+  "damage_rows_pending": true,
+  "current_build_usmap_sha256": "56f4683e25a57ab1aa36ed5b5a537a309e2fb3ab406e61fe1009bd295aa649ba"
+}

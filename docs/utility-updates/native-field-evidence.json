@@ -1,0 +1,42 @@
+{
+  "SurvivalPlayerCharacter": {
+    "super": "SurvivalCharacter",
+    "properties": [
+      {
+        "Index": 15,
+        "Name": "HeadArmorMeshComponent",
+        "Type": "ObjectProperty",
+        "StructType": null
+      },
+      {
+        "Index": 16,
+        "Name": "ChestArmorMeshComponent",
+        "Type": "ObjectProperty",
+        "StructType": null
+      },
+      {
+        "Index": 17,
+        "Name": "ArmsArmorMeshComponent",
+        "Type": "ObjectProperty",
+        "StructType": null
+      },
+      {
+        "Index": 18,
+        "Name": "LegsArmorMeshComponent",
+        "Type": "ObjectProperty",
+        "StructType": null
+      }
+    ]
+  },
+  "SurvivalGameModeSettings": {
+    "super": "Object",
+    "properties": [
+      {
+        "Index": 4,
+        "Name": "bAutoCompleteBuildings",
+        "Type": "BoolProperty",
+        "StructType": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "mod": "FreeBuild",
+    "bytes": 1085,
+    "sha256": "317e703f80ca680e15b22adc55552b85bf9bc360ee73b83921b8c95c58129606"
+  },
+  {
+    "mod": "InvisibleArmor",
+    "bytes": 117217,
+    "sha256": "4564adcb78e78df19308091409a62547d45ed6002850eab241130f0495741b92"
+  },
+  {
+    "mod": "Teleport",
+    "bytes": 79339,
+    "sha256": "5304cd9e5f365238697937d740a52e3fbf0cc784d9b32e7d3c039f49ac500e62"
+  }
+]

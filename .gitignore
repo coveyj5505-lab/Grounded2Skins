@@ -5,3 +5,5 @@ pipeline/native-lod-probe/bin/
 pipeline/native-lod-probe/obj/
 pipeline/texture-probe/bin/
 pipeline/texture-probe/obj/
+pipeline/spear-reference-inspector/bin/
+pipeline/spear-reference-inspector/obj/

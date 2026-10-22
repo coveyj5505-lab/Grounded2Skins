@@ -1,0 +1,14 @@
+[
+  {
+    "file": "Utility-Mods-V1-UE57-Test.zip",
+    "bytes": 88816,
+    "sha256": "eb4de808813f96b22050a480d61feb3b28004df77bc7001428045945a39f6696",
+    "windows_tested": false
+  },
+  {
+    "file": "BoPeep-Native-Damage-Probe-V1.zip",
+    "bytes": 5829,
+    "sha256": "a25445f1b1927725ae9648840abacd73086cd4bf8dae9c71262423370643155a",
+    "windows_tested": false
+  }
+]
