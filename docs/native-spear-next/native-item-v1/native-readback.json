@@ -1,0 +1,22 @@
+[
+  {
+    "Path": "Augusta/Content/Blueprints/Attacks/BoPkAttacks.uasset",
+    "Success": true,
+    "Exports": [
+      {
+        "Name": "BoPkAttacks",
+        "Type": "UDataTable"
+      }
+    ]
+  },
+  {
+    "Path": "Augusta/Content/Blueprints/Attacks/BoPkItemTbl.uasset",
+    "Success": true,
+    "Exports": [
+      {
+        "Name": "BoPkItemTbl",
+        "Type": "UDataTable"
+      }
+    ]
+  }
+]

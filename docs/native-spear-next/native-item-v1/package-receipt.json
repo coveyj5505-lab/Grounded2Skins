@@ -1,0 +1,57 @@
+{
+  "package": "BoPeep-Crook-Native-Spear-V1-UE57-Test.zip",
+  "bytes": 216823,
+  "sha256": "0d3624dcc3907905ea9db3fc19408d9bcf86e0f2d0c9aa4efdef247e3daea8c7",
+  "contents": {
+    "OFFLINE-VALIDATION.json": {
+      "bytes": 683,
+      "sha256": "33bc53d114ae63afd52d613d325da6f6253ef94339de1d9383910296a885ee69"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.pak": {
+      "bytes": 339,
+      "sha256": "caf7cbd0040d0e4982e34a187e8302c0d25ae9451d5e29e9f8eedd4a38d7c67d"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.ucas": {
+      "bytes": 497106,
+      "sha256": "76015bbde41e70957027682ad3599b5a7627759d58f5c35fcf13a75d91646f1e"
+    },
+    "Paks/zBoCrookHandV3UE57_99_P.utoc": {
+      "bytes": 873,
+      "sha256": "7c367ea9fcdd067e0deb5330a46ff91a430cf3d1d3d124ec71c81662edd2615a"
+    },
+    "Paks/zBoCrookNativeUE57_P.pak": {
+      "bytes": 347,
+      "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+    },
+    "Paks/zBoCrookNativeUE57_P.ucas": {
+      "bytes": 467881,
+      "sha256": "431a0dfa8728c3efa8c5da2aaf42f69ef0d44382277424907c82412c846a0847"
+    },
+    "Paks/zBoCrookNativeUE57_P.utoc": {
+      "bytes": 617,
+      "sha256": "f39abeabe8131d7b01a7b48c9bc90f5da409fc8822ba86be7806f65189f005ad"
+    },
+    "READ-ME-FIRST.txt": {
+      "bytes": 2968,
+      "sha256": "edb9daf01886d78839ed5351b02884821195085455382d237eb56d0eb8b5581a"
+    },
+    "UE4SS/Mods/BoPeepNativeSpear/Scripts/crook_guard.lua": {
+      "bytes": 4268,
+      "sha256": "a70d46321e7890e6688bdbc6250a8be87cde80f6a673b63a57d1b0c37fc652e8"
+    },
+    "UE4SS/Mods/BoPeepNativeSpear/Scripts/item_rows.lua": {
+      "bytes": 5105,
+      "sha256": "9a4d0099fb958ba2589e511efc886c8a0508dc5582abcb1bea30059ff8aec0c1"
+    },
+    "UE4SS/Mods/BoPeepNativeSpear/Scripts/main.lua": {
+      "bytes": 17455,
+      "sha256": "2d20597807ab7e72758296d7d07f30274e8cda4a849139a294e690428d3e7441"
+    },
+    "UE4SS/Mods/BoPeepNativeSpear/enabled.txt": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    }
+  },
+  "native_runtime_windows": "NOT TESTED",
+  "public_download": "PENDING PUBLISH/VERIFY"
+}

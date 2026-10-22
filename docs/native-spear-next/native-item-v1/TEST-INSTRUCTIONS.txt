@@ -1,0 +1,32 @@
+BO PEEP NATIVE SPEAR CROOK V1 — FIRST HOST TEST (UE5.7.4)
+
+This is an isolated native-item test, not the final automatic/multiplayer release.
+Keep the accepted four skin packages installed. Teleport/FreeBuild/InvisibleArmor are unchanged.
+
+INSTALL WITH GAME CLOSED
+1. Copy Paks/ contents into the same Paks folder as the accepted skins. The zBoCrookHandV3UE57_99_P trio is byte-identical to your accepted asset; keep only one copy of each file.
+2. Copy UE4SS/Mods/BoPeepNativeSpear into your UE4SS Mods folder.
+3. EDIT the existing mods.txt entries (do not replace the whole file):
+   BoPeepCrook : 0
+   BoPeepNativeSpear : 1
+   Leave your other entries unchanged. This disables the old cosmetic staff controller during this test.
+
+TEST AS HOST OR IN SINGLE PLAYER, AS WILLOW/BO PEEP
+1. Load gameplay, wait a few seconds, and empty BOTH actual hand slots.
+2. Press F10 once: the private crook item should equip with native spear arms/grip/carry angle.
+3. Make two normal jabs in first person, switch to third person, and make two more normal jabs. Check forward travel, hand placement and shaft/hook alignment. Switch views repeatedly while standing.
+4. Press F10 again to REMOVE the test item before changing equipment, saving, leaving or removing this candidate. F10 is a development test control only. Do not test charge or throw; both are disabled.
+5. Send UE4SS.log and describe whether the arms and crook move together. A screenshot of the resting/jab pose is useful if placement differs.
+
+If F10 does nothing, the log should identify the rejected schema/profile or host/character/hand-slot precondition. No further collector is needed.
+
+EXPECTED DATA
+Native three-jab spear combo, native range275, base damage8 on all three attacks, no additional damage multiplier, no charge, no throw. Native armor/resistance/perk effects can still affect actual damage. The private table does not alter ordinary spears.
+The crook follows the native weapon component; no separate fake first-person hand is included. Its shaft cross-section is1.35 times the accepted model. Its cosmetic shadow is disabled.
+
+SCOPE AND LIFETIME
+This candidate intentionally does not automatically equip itself or send client equipment requests. Always remove the test item with F10 while it is equipped before changing gear/saving/leaving. If an unexpected stop leaves the item present, use the normal equipment controls to remove it before saving. Native-item inventory/save/client lifetime is still being integrated.
+The script removes a newly equipped candidate if native attack-cache validation fails, and restores original weapon render flags if visual setup fails. These guards have local Lua fixtures but still need Windows confirmation.
+
+ROLL BACK
+Remove the test item first. Close the game, disable/remove BoPeepNativeSpear, set BoPeepCrook : 1 again, and remove ONLY zBoCrookNativeUE57_P.pak/.ucas/.utoc. Keep the accepted zBoCrookHandV3UE57_99_P trio and all skin/utility packages.

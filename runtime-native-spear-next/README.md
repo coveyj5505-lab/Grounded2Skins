@@ -1,29 +1,24 @@
-# Native spear crook preparation — not an installable gameplay mod yet
+# Native crook spear V1 — host test candidate
 
-User-approved direction: actual native spear grip/carry/jab and spear reach/hit detection, with unarmed-level damage. Native spear gameplay supersedes the former unarmed range requirement. Accepted skins and existing releases remain untouched.
+`BoPeep-Crook-Native-Spear-V1-UE57-Test.zip` is the first native-item integration test. Windows execution is **not confirmed**. The accepted skins, Teleport V2, FreeBuild, InvisibleArmor and prior crook releases are unchanged.
 
-The `damage_rows.lua` module reads/normalizes native exported damage data and rejects an unknown/zero unarmed baseline, missing/misaligned table data, and a single multiplier that would give different damage on different combo or charged profiles. It performs no native writes and is not a completed crook implementation.
+This version uses native equipment and combat rather than playing a cosmetic montage beside unarmed punches. The current native Spear BaseItemData is deep-copied through the installed UE4SS UDataTable API into our own cooked BaseItemData table. Only private attack references and throwing flags change. Ordinary spear rows are never overwritten.
 
-Received capture confirms the real Spear02 static-mesh visual, native spear animation stance3, native spear attack rows Spear/Spear2/Spear3 and275 range, versus unarmed Player row and150 range. Native helper returned0 without measuring hit damage. No target collision was captured, but target hits were not needed for the intended baseline data collection.
+The three native jabs reference private BoPkAttacks: base damage8, range275, ChargeTime0, charged/perfect damage0. No additional0.4 multiplier is applied. After native equipment initializes the owner-bound attack cache, the script verifies all three private row handles, range275, CanCharge=false and item damage modifier1; a mismatch removes the candidate item in the same game-thread operation.
 
-Outstanding:
+The accepted root-rigid crook attaches to the actual native Spear02 static-mesh component. Native equipment supplies the grip, carry angle, first/third-person arm animation and thrust. Only native weapon rendering is suppressed; its collision and attack execution remain. Shaft cross-section is1.35 times the accepted mesh, length matches native cooked bounds. No added FP hand, camera offset, custom attack timer or registered skeletal-mesh reassignment.
 
-1. Read native DamageData/ChargedDamageData/PerfectChargedDamageData values. The narrowly scoped SpearDamageProbe does this automatically after world load; no additional attack recording or mappings dump is needed.
-2. Choose a correct authority-side damage implementation from actual profiles. A generic multiplier must not be claimed correct if combo/charged profiles differ. Native ResolveAttack/ResolveAttackForHitResult are research leads, not proven hooks; direct C++ execution can bypass reflected hooks.
-3. Bind the crook proxy to the real native weapon component, using the native arm animations and existing item attack execution. Keep original weapon collision/hit traces, hide only its render, and preserve independent stable view components/accepted skins. Correct the earlier GetLocalBounds signature (`min`/`max`, not `Min`/`Max`) before using native bounds as fit data; reject unavailable bounds instead of guessing them.
-4. Fit shaft diameter/length and hook orientation against the native weapon. The collected native weapon-to-hand relationship varies across FP poses, so a constant camera offset or fake arm is unsuitable.
-5. Validate normal/charged damage, host/client authority, FP/TP transitions, equipment changes and rollback in Windows. Do not label the old independent timed staff rotation a native spear solution.
+## First test scope
 
-## Current result and scope — 2026-10-22
+Host/standalone Willow only. Empty both hands and press **F10** to create/equip the test crook; press F10 again to remove it. Automatic empty-hand equipment, client requests/replication and long-term save/inventory cleanup remain active work. This limited developer control is not the final behavior.
 
-The latest Windows probe completed: Player/Player2 normal8; Spear/Spear2/Spear3 normal20. User clarified the crook has **normal jabs only, no charge attack**. Charged attack damage is therefore outside the supported behavior. Use normal-only multiplier0.4, after disabling charging specifically for the crook. Do not impose a per-attack charged-damage implementation as a blocker or add charging. The pure normal-only resolver and fixtures reflect this decision; it is not yet a native state implementation.
+Remove the test item with F10 before changing gear, saving, leaving or uninstalling this candidate. Keep BoPeepCrook disabled during this isolated test. The candidate uses a real native item, so it must not be treated as an invisible cosmetic-only component. If an unexpected stop leaves it present, use normal equipment controls to remove the test item before saving. Do not test charging or throwing.
 
-The damage-value blocker above is resolved. Current cooked attack-table and Spear02 mesh baselines are still needed to prepare correct native weapon fitting and charge settings. The new native-baseline collector collects those together with current controller/map/teleporter packages for Teleport repair. It does not collect the existing animation payloads or .usmap again.
+## Offline evidence
 
-## Native asset preparation received and validated
+- Both private cooked tables independently deserialize with current UE5.7.4 mappings;425 attack rows and all three edited profiles checked.
+- The empty private item table reads back as Maine.BaseItemData. Deterministic source rebuild is byte-exact.
+- Retoc repack/re-extraction validates container/header identities and all chunk hashes.
+-25 production-Lua fixture groups cover deep-copy isolation, unsupported row/schema rejection, cache validation and rollback, authority/equipment guards, deferred component assignment, view visibility, native component replacement and original render-state restoration. These do not prove Unreal rendering, animation, networking or saving.
 
-All eight requested native baselines are now available; do not request them again. The current attack table has been cloned into private `/Game/Blueprints/Attacks/BoPkAttacks`. Its three spear combo rows read back with Damage8, Range275, ChargeTime0 and charged/perfect Damage0. All425 rows and unrelated fields are otherwise unchanged. This is a private-table route, so an additional0.4 multiplier must NOT be applied on top of it. Ordinary native ItemAttacks/CreatureAttacks are untouched.
-
-`pipeline/spear-reference/build_private_crook_attacks.py` uses serialized field positions reported by the native reader, not runtime memory offsets. Its output is preparation only until crook-specific item binding is implemented. The new typed UDataTable.FindRow/AddRow APIs in installed83330635 provide reference access and native deep copying; verify BaseItemData row identity and write only private row copies if using that route.
-
-Native weapon-frame fit is recorded in docs/native-spear-next/current-baselines/native-fit.json. It preserves the native Spear02 +Z shaft axis, matches cooked weapon Z bounds, and thickens only the cosmetic cross-section. The existing accepted root-rigid mesh remains unchanged. Source static-mesh ExtendedBounds are decoded, not its full render buffers. Native spear animations already provide camera/grip/jab placement; a fixed camera-space proxy is not the intended integration.
+Reproduction: `pipeline/spear-reference/build_private_crook_items.py`; Lua checks: `python pipeline/spear-reference/test_native_crook.py`. Native asset evidence is in `docs/native-spear-next/native-item-v1/`.

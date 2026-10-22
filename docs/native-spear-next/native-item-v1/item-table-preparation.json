@@ -1,0 +1,12 @@
+{
+  "source_sha256": "b210da9a57576736192bfcdf2451241215cd78e5702a745fa37997bcdb12cda8",
+  "private_package": "/Game/Blueprints/Attacks/BoPkItemTbl",
+  "chunk": "cf393ee92ca15f8900000001",
+  "row_struct": "/Script/Maine.BaseItemData",
+  "rows_on_disk": 0,
+  "serialized_payload_bytes": 14,
+  "source_layout_asserted": true,
+  "native_tables_overridden": false,
+  "row_initialization": "Runtime typed UDataTable.AddRow deep copy; original native Spear row is never edited",
+  "windows_execution": "NOT TESTED"
+}
