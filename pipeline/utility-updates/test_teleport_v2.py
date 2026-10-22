@@ -7,7 +7,7 @@ fixture=r'''
 local script=SOURCE
 local guard=GUARD
 package.preload.teleport_guard=function() return assert(load(guard))() end
-local key,poll,hook;local hookCount=0;local clientSent=0;local spawnPawn;local thread=false;local clock=100;local logs={};local calls={};local spawns=0;local destroyed=0;local requested=0;local host=true;local menu=true;local locked=false;local shown=true;local poiValid=true;local destinationValid=true;local wrongSchema=false;local failedDoor=false
+local key,poll,hook;local hookCount=0;local clientSent=0;local spawnPawn;local thread=false;local clock=100;local logs={};local calls={};local spawns=0;local destroyed=0;local requested=0;local host=true;local menu=true;local locked=false;local shown=true;local poiValid=true;local destinationValid=true;local wrongSchema=false;local bpDot=false;local failedDoor=false
 print=function(s) logs[#logs+1]=s end
 os.time=function() return clock end
 Key={F8=119};function RegisterKeyBind(k,f) assert(k==Key.F8);key=f end
@@ -75,7 +75,7 @@ function StaticFindObject(key)
  local spec=resolveSpec(key)
  if not spec then for owner,s in pairs(fields) do if key==path(owner) then spec=s end end end
  if not spec then return nil end
- return {IsValid=function() return true end,ForEachProperty=function(self,f) for name,t in pairs(spec) do local typ=t:match('^[^|]+');if wrongSchema and key:find(':OnTeleportRequested',1,true) then typ='IntProperty' end;if f({GetFullName=function() return typ..' '..key..':'..name end}) then break end end end}
+ return {IsValid=function() return true end,ForEachProperty=function(self,f) for name,t in pairs(spec) do local typ=t:match('^[^|]+');if wrongSchema and key:find(':OnTeleportRequested',1,true) then typ='IntProperty' end;if f({GetFullName=function() return typ..' '..key..(bpDot and key:sub(1,6)=='/Game/' and '.' or ':')..name end}) then break end end end}
 end
 function FindAllOf(name) assert(thread);if name=='PlayerController' then return {pc} elseif name=='MapWidget' then return {map} end;error('Unexpected scan') end
 pc.ServerRequestPTSTravel=function(self,cancel,departure,target) assert(thread and cancel==false and departure==nil and target==dest);clientSent=clientSent+1 end
@@ -100,6 +100,7 @@ cases={
  'rapid duplicate key suppressed':('', 'press();key();assert(spawns==1 and requested==1)'),
  'hook registered outside game thread and once':('', 'register();poll();assert(hookCount==1 and spawns==0)'),
  'server completes remote request without closing host menu':('menu=false;', 'register();receive(pc,false,nil,dest);assert(spawns==1 and requested==1);assert(table.concat(calls,",")=="setPawn,request")'),
+ 'Blueprint metadata dotted leaf names supported':('bpDot=true;', 'press();assert(spawns==1 and requested==1)'),
  'plain callback values also supported':('', 'register();hook(pc,false,nil,dest);assert(spawns==1 and requested==1)'),
  'normal native travel and cancellation untouched':('', 'register();receive(pc,false,dest,dest);receive(pc,true,nil,dest);assert(spawns==0 and requested==0)'),
  'client-side hook cannot execute travel':('', 'register();host=false;receive(pc,false,nil,dest);assert(spawns==0 and requested==0)'),

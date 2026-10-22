@@ -34,7 +34,7 @@ function M.new(tag,schemas,fields)
         local found=false;local n=0
         cls:ForEachProperty(function(p)
             n=n+1;if n>1024 then return true end
-            local typ,leaf=p:GetFullName():match('^(%S+)%s+.*:([^:]+)$')
+            local typ,leaf=p:GetFullName():match('^(%S+)%s+.*[:%.]([^:%.]+)$')
             if leaf==name then found=typ;return true end
         end)
         properties[key]=found;return found
@@ -59,7 +59,7 @@ function M.new(tag,schemas,fields)
             assert(api.valid(func),'Missing function '..key)
             func:ForEachProperty(function(p)
                 count=count+1;if count>16 then return true end
-                local t,n=p:GetFullName():match('^(%S+)%s+.*:([^:]+)$');if t and n then actual[n]=t end
+                local t,n=p:GetFullName():match('^(%S+)%s+.*[:%.]([^:%.]+)$');if t and n then actual[n]=t end
             end)
             local required=0;local ok=count<=16
             for n,t in pairs(expected) do required=required+1;if not actual[n] or not ('|'..t..'|'):find('|'..actual[n]..'|',1,true) then ok=false end end
