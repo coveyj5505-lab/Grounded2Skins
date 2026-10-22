@@ -5,5 +5,7 @@
   "tests_passed": 5,
   "selection": "eight exact current-build packages",
   "native_game_execution": "NOT RUN",
-  "purpose": "Current Teleport Blueprint baselines; original spear mesh/attack data for normal-only crook"
+  "purpose": "Current Teleport Blueprint baselines; original spear mesh/attack data for normal-only crook",
+  "url": "https://raw.githubusercontent.com/coveyj5505-lab/Grounded2Skins/30dc1fb/Teleport-Spear-Native-Baselines-Collector-V1.zip",
+  "http_download_hash_verified": true
 }
