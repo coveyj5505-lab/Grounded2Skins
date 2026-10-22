@@ -50,5 +50,10 @@
   },
   "windows_teleport_v3": "NOT TESTED",
   "crook_v2": "NOT PACKAGED; native item-table source required",
-  "download": "PENDING PUBLIC VERIFY"
+  "download": {
+    "url": "https://raw.githubusercontent.com/coveyj5505-lab/Grounded2Skins/3a86f5c/Teleport-Native-Hold-V3-and-Crook-Source-Collector.zip",
+    "http_status": 200,
+    "verified_bytes": 21217,
+    "sha256_matches": true
+  }
 }
