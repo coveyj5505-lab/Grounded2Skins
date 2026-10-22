@@ -1,0 +1,55 @@
+Move ONLY previous mod replacements listed here outside Paks; all three extensions for each stem.
+Never remove original game containers.
+
+Xingxing_OutpostMapTeleport_905_P
+zBoCrookAsset_P
+zBoCrookHandV2UE57_P
+zBoCrookHandV3UE57_99_P
+zBoCrookNativeUE57_P
+zBoCrookUE57_P
+zBoCrookV3_P
+zBoPeepFP_P
+zBoPeepSkinV2UE57_P
+zBoPeepSkinV3UE57_99_P
+zBoPeepTest_P
+zBoPeepUE57_P
+zBoPeepV2_P
+zBoPeepV3_P
+zBoPeepV4_P
+zBuzzArmsV3_P
+zBuzzClean_P
+zBuzzFP_P
+zBuzzFlightTest_P
+zBuzzFlightUE57_P
+zBuzzSkinV2UE57_P
+zBuzzSkinV3UE57_99_P
+zBuzzUE57_P
+zBuzzWingV2_P
+zBuzzWingsUE57_P
+zBuzzWings_P
+zInvisibleArmor_P
+zJessieFP_P
+zJessieSkinV2UE57_P
+zJessieSkinV3UE57_99_P
+zJessieTest_P
+zJessieUE57_P
+zJessieV2_P
+zTeleportUE57_99_P
+zWoodyAnatomyV3_P
+zWoodyFP_P
+zWoodyPolishV2_P
+zWoodySkinV2UE57_P
+zWoodySkinV3UE57_99_P
+zWoodyTest_P
+zWoodyUE57_P
+
+Old Lua folders to move outside ue4ss/Mods (enabled.txt can load duplicate mods):
+BoPeepCrook
+BoPeepNativeSpear
+BuzzWings
+BuzzFlightVisual
+FreeBuild
+InvisibleArmor
+Teleport
+
+Disable/remove collectors and probes after collecting; none are needed to play.

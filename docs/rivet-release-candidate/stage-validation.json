@@ -1,0 +1,9 @@
+{
+  "lua_files_syntax_checked": 15,
+  "configuration_agrees_with_enabled_markers": true,
+  "renamed_containers": 8,
+  "real_runtime_receipt_matches": 8,
+  "wing_header_check_passed": true,
+  "loader_byte_identical_to_tested_update": true,
+  "combined_windows_tested": false
+}

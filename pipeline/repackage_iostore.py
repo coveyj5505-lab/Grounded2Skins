@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 def repackage(raw, pak, work, retoc, mod_name="zMeshTest_P"):
-    assert mod_name.endswith("_P") and all(c.isalnum() or c=="_" for c in mod_name)
+    assert mod_name.endswith("_P") and all(c.isalnum() or c in "_-" for c in mod_name)
     work.mkdir(parents=True, exist_ok=False)
     logs = work / 'logs'
     logs.mkdir()

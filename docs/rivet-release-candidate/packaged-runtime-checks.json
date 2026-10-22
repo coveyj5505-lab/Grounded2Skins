@@ -1,0 +1,7 @@
+{
+  "automatic_crook_groups": 10,
+  "teleport_groups": 23,
+  "production_source": "renamed staged Rivet mod folders, not original source folders",
+  "all_passed": true,
+  "windows_combined_tested": false
+}
