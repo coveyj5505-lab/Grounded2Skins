@@ -1,0 +1,18 @@
+CROOK NATIVE SPEAR V2.1 — LUA-ONLY REPAIR
+
+Close the game and replace UE4SS Mods/BoPeepNativeSpear with this package's
+UE4SS-Mods/BoPeepNativeSpear. Keep BoPeepNativeSpear : 1 and BoPeepCrook : 0.
+Keep ALL V2 Pak files installed, and keep Bo Peep's skin unchanged.
+This repair contains NO assets, Teleport changes or other mod updates.
+
+Host as Willow / Bo Peep, empty BOTH actual equipment hands, wait a few seconds,
+then press F7. Check carry and ordinary jabs in first and third person, and switch
+views. Press F7 again to remove the test item BEFORE gear changes, saving,
+leaving, or changing characters. Send UE4SS.log and describe the result.
+
+The uploaded V2 log confirmed COOKED ITEM VERIFIED and READY, then stopped on
+'Missing function Engine.PlayerController.IsLocalController'. That inherited
+function is declared on Engine.Controller. V2.1 corrects the declaring class
+in the schema and call; no combat, mesh, damage, reach or asset changes.
+19 Lua checks pass including a fixture constraint matching this Windows failure.
+Windows equip/animation/rendering is still unconfirmed.

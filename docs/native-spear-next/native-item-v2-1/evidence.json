@@ -1,0 +1,11 @@
+{
+  "file": "BoPeep-Crook-Native-Spear-V2.1-Lua-Repair.zip",
+  "sha256": "df7df208b8f3b64a6f85bacd005721274968864b0d904288ee8ac724710b71ca",
+  "bytes": 8890,
+  "failure": "Missing function Engine.PlayerController.IsLocalController",
+  "correction": "Engine.Controller.IsLocalController declaring-class lookup",
+  "cooked_v2_asset_validation_confirmed_in_windows": true,
+  "windows_equipment_test_passed": false,
+  "lua_groups_passed": 19,
+  "assets_changed": false
+}

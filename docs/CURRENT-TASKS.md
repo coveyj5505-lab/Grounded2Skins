@@ -10,7 +10,8 @@ This section supersedes older historical priorities below.
 - [x] Replaced V1's Windows-unsupported runtime struct copy with an offline cooked private BaseItemData table. Original native item/attack packages remain untouched.
 - [x] Native readback of both private tables passed. All 80 source item rows match except private attack references and Spear's two disabled throw flags. Three normal jabs: damage 8, range 275, charge disabled.
 - [x] V2 production Lua: 4 read-only row checks and 15 lifecycle/cache/rollback groups pass. F7 replaces console-conflicting F10. Accepted crook mesh included byte-identically.
-- [ ] Windows host/standalone test of V2 native grip, jab animation, rendering, F7 equip/removal and repeated view switching. Offline checks do not establish engine compatibility.
+- [x] Windows V2 private cooked item/attack initialization confirmed. Runtime then stopped on inherited IsLocalController lookup; V2.1 Lua-only repair uses declaring class Engine.Controller, with regression constraint.
+- [ ] Windows host/standalone test of V2.1 native grip, jab animation, rendering, F7 equip/removal and repeated view switching. Offline checks do not establish engine compatibility.
 - [ ] After successful native integration: automatic empty-hand lifecycle, save/inventory handling, remote-client support. V2 is a short host test; remove with F7 before changing gear/saving/leaving.
 - [x] Teleport V3 Windows: native hold-Space travel succeeds to multiple outposts; repeated departure animation incorrectly returns to initial source location.
 - [ ] Teleport V4: portable root movable, idle movement return/position checked, SOURCE_BUSY/IDLE transitions logged. 21 fixture groups pass; repeated-trip Windows test pending. Native travel flow retained.
