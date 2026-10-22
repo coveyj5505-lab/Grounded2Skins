@@ -1,0 +1,15 @@
+{
+  "file": "BoPeep-Crook-V2.6-Automatic-Hook-Down-Lua.zip",
+  "sha256": "a2459612d282ae84656b6b4bb153dd9c47d3a0de6bf414652a0f98b09f2e7558",
+  "bytes": 9850,
+  "automatic": true,
+  "development_f7": false,
+  "roll_degrees": 180,
+  "offline_projection_inspected": true,
+  "automatic_fixture_groups": 10,
+  "cooked_row_groups": 4,
+  "remote_client_creation_supported": false,
+  "windows_automatic_tested": false,
+  "assets_changed": false,
+  "teleport_changed": false
+}

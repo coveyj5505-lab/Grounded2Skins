@@ -1,0 +1,14 @@
+{
+  "native_idle_first_person_frames": 15,
+  "optimal_roll_degrees": 152.36259715073987,
+  "range_degrees": [
+    135.93050756008662,
+    153.08394060569898
+  ],
+  "hook_direction_local": [
+    -1.0,
+    3.808784640568774e-06,
+    0.0
+  ],
+  "basis": "minimize upward component of hook bend in captured camera frame; offline historical pose only"
+}

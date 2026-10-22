@@ -1,0 +1,31 @@
+BO PEEP CROOK V2.6 — AUTOMATIC CARRY + HOOK DOWN
+
+Close game; replace only UE4SS Mods/BoPeepNativeSpear with the included folder.
+Keep BoPeepNativeSpear : 1 and BoPeepCrook : 0. KEEP all V2 Pak files and the
+accepted Bo Peep skin. Teleport V6 is FINAL, unchanged, and not included.
+This supersedes the manual V2.5 orientation-only package.
+
+Load as Willow / Bo Peep while hosting or standalone. No F7 needed or bound.
+With BOTH actual equipment hands empty, the crook equips automatically. Real
+main-hand equipment is never displaced. Equipping offhand gear removes the
+crook; emptying both hands restores it. Native spear grip/jabs/reach, base
+damage 8, and no-charge/no-throw profile are unchanged. No fake hand is added.
+Other characters do not receive a crook. Automatic item creation is currently
+host/standalone only; remote-client equipment creation remains pending.
+
+Check automatic appearance, equip a normal weapon then clear it, equip an
+offhand item then clear it, and test normal jabs and camera switching.
+The hook rolls around the shaft, without reversing the weapon tip or grip.
+Offline projections of captured native spear idle frames were inspected:
+180 degrees retains the readable reversed hook; smaller sampled rolls can
+turn the hook edge-on. Exact direction during current Windows poses remains
+subject to visual review; this is not an in-game screenshot validation.
+
+This changes native equipment lifecycle, so automatic carry and save/reload
+behavior are not yet Windows validated. Do not mark this automatic build final
+until tested. The already accepted manual V2.4 package is preserved for rollback.
+If a private crook item appears in inventory after normal gear swaps, report it;
+this build never deletes arbitrary inventory items or ordinary spears.
+
+Rollback: close game and restore BoPeepNativeSpear from accepted V2.4/V6 ZIP.
+No assets or Teleport folder need changing. Send UE4SS.log if anything fails.
