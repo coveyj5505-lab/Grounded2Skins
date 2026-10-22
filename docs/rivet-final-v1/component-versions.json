@@ -1,0 +1,26 @@
+{
+  "containers": 8,
+  "old_to_new": {
+    "zBoPeepSkinV3UE57_99_P": "Rivet-BoPeep_99_P",
+    "zBuzzSkinV3UE57_99_P": "Rivet-Buzz_99_P",
+    "zJessieSkinV3UE57_99_P": "Rivet-Jessie_99_P",
+    "zWoodySkinV3UE57_99_P": "Rivet-Woody_99_P",
+    "zBoCrookHandV3UE57_99_P": "Rivet-BoPeep-CrookMesh_99_P",
+    "zBoCrookNativeUE57_P": "Rivet-BoPeep-CrookNative_99_P",
+    "zBuzzWingsUE57_P": "Rivet-Buzz-Wings_99_P",
+    "zBuzzFlightUE57_P": "Rivet-Buzz-Flight_99_P"
+  },
+  "crook_automatic": "V2.8 USER ACCEPTED FINAL; original orientation",
+  "buzz_flight": "V5 USER ACCEPTED; ENABLED; brief initial tuft flash accepted",
+  "teleport": "V6 USER ACCEPTED FINAL",
+  "ue4ss": "3.0.1-1181-g83330635; DLLs byte-identical to confirmed loader repair",
+  "release": "Rivet Toy Story FINAL v1.0",
+  "character_mapping": {
+    "Pete": "Rivet-Woody",
+    "Max": "Rivet-Buzz",
+    "Hoops": "Rivet-Jessie",
+    "Willow": "Rivet-BoPeep"
+  },
+  "all_components_user_accepted": true,
+  "combined_renamed_windows_install_tested": false
+}

@@ -20,7 +20,7 @@ for t in paks.glob('*.utoc'):
 # Exercise both real disk-check implementations against the staged names/bytes.
 receipt=(mods/'Rivet-Buzz-Flight/Scripts/build_receipt.lua').read_text()
 wing=(mods/'Rivet-Buzz-Wings/Scripts/main.lua').read_text();a=wing.index('local function verifyInstalledContainer()');b=wing.index('\ncreate=function',a);wing=wing[a:b]
-code="local real=io.open;io.open=function(path,mode) local name=path:match('[^/]+$');return real([====["+str(paks)+"/]====]..name,mode) end;local logs={};local function log(s) logs[#logs+1]=s end;local module=assert(load([====["+receipt+"]====]))();module.run(log);local matches=0;for _,s in ipairs(logs) do assert(not s:find('MISSING') and not s:find('MISMATCHED'),s);if s:find('FILES MATCH RIVET RC') then matches=matches+1 end end;assert(matches==8);"+wing+";verifyInstalledContainer()"
+code="local real=io.open;io.open=function(path,mode) local name=path:match('[^/]+$');return real([====["+str(paks)+"/]====]..name,mode) end;local logs={};local function log(s) logs[#logs+1]=s end;local module=assert(load([====["+receipt+"]====]))();module.run(log);local matches=0;for _,s in ipairs(logs) do assert(not s:find('MISSING') and not s:find('MISMATCHED'),s);if s:find('FILES MATCH RIVET RC') or s:find('FILES MATCH RIVET FINAL') then matches=matches+1 end end;assert(matches==8);"+wing+";verifyInstalledContainer()"
 state=lib.luaL_newstate();lib.luaL_openlibs(state)
 try:
  r=lib.luaL_loadstring(state,code.encode())

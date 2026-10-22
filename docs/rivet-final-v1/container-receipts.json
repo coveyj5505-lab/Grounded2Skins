@@ -1,0 +1,58 @@
+[
+  {
+    "source_archive": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+    "source_stem": "zBoPeepSkinV3UE57_99_P",
+    "rivet_stem": "Rivet-BoPeep_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+    "source_stem": "zBuzzSkinV3UE57_99_P",
+    "rivet_stem": "Rivet-Buzz_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+    "source_stem": "zJessieSkinV3UE57_99_P",
+    "rivet_stem": "Rivet-Jessie_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+    "source_stem": "zWoodySkinV3UE57_99_P",
+    "rivet_stem": "Rivet-Woody_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+    "source_stem": "zBoCrookHandV3UE57_99_P",
+    "rivet_stem": "Rivet-BoPeep-CrookMesh_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "BoPeep-Crook-V2.8-Automatic-Original-Orientation.zip",
+    "source_stem": "zBoCrookNativeUE57_P",
+    "rivet_stem": "Rivet-BoPeep-CrookNative_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "ToyStory-UE57-Skins-Accessories-Test.zip",
+    "source_stem": "zBuzzWingsUE57_P",
+    "rivet_stem": "Rivet-Buzz-Wings_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  },
+  {
+    "source_archive": "ToyStory-All-Fixes-V3-UE57-Test.zip",
+    "source_stem": "zBuzzFlightUE57_P",
+    "rivet_stem": "Rivet-Buzz-Flight_99_P",
+    "asset_chunks_byte_identical": true,
+    "validation": null
+  }
+]
