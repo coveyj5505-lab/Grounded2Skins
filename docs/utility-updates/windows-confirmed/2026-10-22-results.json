@@ -1,0 +1,51 @@
+{
+  "log_bytes": 364621,
+  "log_sha256": "176d328f8509cf58faed784b25f3b308b47cb8d4a40b54931c16b4ba43d78997",
+  "windows_user_result": {
+    "FreeBuild": "WORKING",
+    "InvisibleArmor": "WORKING",
+    "Teleport": "candidate withdrawn after launch crash; game launches with Teleport trio and obsolete reference probe removed"
+  },
+  "damage_probe_complete": true,
+  "rows": [
+    {
+      "table": "/Game/Blueprints/Attacks/CreatureAttacks.CreatureAttacks",
+      "row": "Player",
+      "normal": 8.0,
+      "charged": 0.0,
+      "perfect": 0.0
+    },
+    {
+      "table": "/Game/Blueprints/Attacks/CreatureAttacks.CreatureAttacks",
+      "row": "Player2",
+      "normal": 8.0,
+      "charged": 1.0,
+      "perfect": 0.0
+    },
+    {
+      "table": "/Game/Blueprints/Attacks/ItemAttacks.ItemAttacks",
+      "row": "Spear",
+      "normal": 20.0,
+      "charged": 48.0,
+      "perfect": 54.0
+    },
+    {
+      "table": "/Game/Blueprints/Attacks/ItemAttacks.ItemAttacks",
+      "row": "Spear2",
+      "normal": 20.0,
+      "charged": 48.0,
+      "perfect": 54.0
+    },
+    {
+      "table": "/Game/Blueprints/Attacks/ItemAttacks.ItemAttacks",
+      "row": "Spear3",
+      "normal": 20.0,
+      "charged": 48.0,
+      "perfect": 54.0
+    }
+  ],
+  "crook_scope": "normal spear jabs only; unarmed base damage8; no charged attack added",
+  "normal_damage_multiplier": 0.4,
+  "charging_must_be_disabled_before_using_normal_only_profile": true,
+  "no_more_damage_or_animation_recording_required": true
+}

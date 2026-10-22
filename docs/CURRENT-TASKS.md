@@ -149,3 +149,13 @@ This section supersedes older open skin-fix entries and the former unarmed-reach
 - [ ] Bind thicker hooked crook to actual native weapon visual frame and preserve native spear collision/range/animations, after choosing a correct authoritative damage route. See [implementation preparation](../runtime-native-spear-next/README.md).
 - [ ] Windows validation of utilities, including Teleport controller/map/exit, still required. Parsing does not prove Blueprint compatibility or multiplayer behavior.
 - [ ] Buzz flight V5 acceptance remains pending independently; no new flight or skin changes in utility package.
+
+## Latest Windows acceptance and normal-only crook correction — 2026-10-22
+
+- [x] User confirms FreeBuild and Invisible Armor work. Freeze their exact Lua files: [accepted receipts](utility-updates/windows-confirmed/accepted-lua-files.json). No need to re-test unchanged versions just for development.
+- [x] SpearDamageProbe completed successfully. [Evidence](utility-updates/windows-confirmed/2026-10-22-results.json): Player/Player2 normal8; Spear/Spear2/Spear3 normal20. Numerical damage blocker resolved; no new attack recording/target test required. Probe may be removed.
+- [x] User explicitly corrects scope: **normal crook jabs only, no charge attack**. Normal damage multiplier0.4 is consistent across all three spear combo rows. Disable charge behavior specifically for the crook; charged-damage support is not an implementation goal or blocker. Pure normal-only resolver tested against these observed values.
+- [ ] Implement actual native crook binding, normal-only charge behavior, and scoped authoritative damage adjustment. A computed multiplier is not yet a working damage modification; preserve accepted skins and ordinary spears on other characters.
+- [x] Withdraw Teleport V1 trio after launch crash. Container/bytecode parsing did not establish Windows compatibility. Keep old and repaired Teleport trios outside Paks.
+- [x] Prepared and tested a bounded read-only native-baseline collector (five tests, including actual retoc transport). Eight exact current-build packages: controller/map/teleporter/door/map panel, both attack tables and Spear02 mesh. No repeat animation collection, .usmap dump or in-game actions. Current game baseline chunks are absent locally; receive these before rebuilding old Blueprint overrides or fitting original weapon geometry.
+- [ ] Repair Teleport against current native baselines, then validate startup/map/travel/rejoin/exit. Keep accepted Lua utilities and frozen character releases unchanged.

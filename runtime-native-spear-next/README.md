@@ -13,3 +13,9 @@ Outstanding:
 3. Bind the crook proxy to the real native weapon component, using the native arm animations and existing item attack execution. Keep original weapon collision/hit traces, hide only its render, and preserve independent stable view components/accepted skins. Correct the earlier GetLocalBounds signature (`min`/`max`, not `Min`/`Max`) before using native bounds as fit data; reject unavailable bounds instead of guessing them.
 4. Fit shaft diameter/length and hook orientation against the native weapon. The collected native weapon-to-hand relationship varies across FP poses, so a constant camera offset or fake arm is unsuitable.
 5. Validate normal/charged damage, host/client authority, FP/TP transitions, equipment changes and rollback in Windows. Do not label the old independent timed staff rotation a native spear solution.
+
+## Current result and scope — 2026-10-22
+
+The latest Windows probe completed: Player/Player2 normal8; Spear/Spear2/Spear3 normal20. User clarified the crook has **normal jabs only, no charge attack**. Charged attack damage is therefore outside the supported behavior. Use normal-only multiplier0.4, after disabling charging specifically for the crook. Do not impose a per-attack charged-damage implementation as a blocker or add charging. The pure normal-only resolver and fixtures reflect this decision; it is not yet a native state implementation.
+
+The damage-value blocker above is resolved. Current cooked attack-table and Spear02 mesh baselines are still needed to prepare correct native weapon fitting and charge settings. The new native-baseline collector collects those together with current controller/map/teleporter packages for Teleport repair. It does not collect the existing animation payloads or .usmap again.

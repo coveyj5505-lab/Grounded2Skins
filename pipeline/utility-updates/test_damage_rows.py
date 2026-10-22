@@ -16,6 +16,12 @@ assert(not pcall(M.select,{'Player','Player'},cols,{'Player'}))
 cols.DamageData[2]=nil;assert(not pcall(M.select,{'Spear','Player'},cols,{'Player'}))
 assert(not pcall(M.uniformMultiplier,{DamageData=0},{Spear=rows.Spear}))
 assert(not pcall(M.uniformMultiplier,rows.Player,{Spear={DamageData=20,ChargedDamageData=60,PerfectChargedDamageData=80}}))
+local observed={Spear={DamageData=20,ChargedDamageData=48,PerfectChargedDamageData=54},Spear2={DamageData=20,ChargedDamageData=48,PerfectChargedDamageData=54},Spear3={DamageData=20,ChargedDamageData=48,PerfectChargedDamageData=54}}
+assert(M.normalOnlyMultiplier({DamageData=8},observed,true)==.4)
+assert(not pcall(M.normalOnlyMultiplier,{DamageData=8},observed,false))
+assert(not pcall(M.normalOnlyMultiplier,{DamageData=8},observed,nil))
+observed.Spear3.DamageData=24
+assert(not pcall(M.normalOnlyMultiplier,{DamageData=8},observed,true))
 '''
 s=lib.luaL_newstate();lib.luaL_openlibs(s)
 try:

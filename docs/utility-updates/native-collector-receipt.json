@@ -1,0 +1,9 @@
+{
+  "file": "Teleport-Spear-Native-Baselines-Collector-V1.zip",
+  "bytes": 10507,
+  "sha256": "1c8ce707faefa8e35ade105b451e8034a5d1e245309da99bbf8985780e5a2c2e",
+  "tests_passed": 5,
+  "selection": "eight exact current-build packages",
+  "native_game_execution": "NOT RUN",
+  "purpose": "Current Teleport Blueprint baselines; original spear mesh/attack data for normal-only crook"
+}

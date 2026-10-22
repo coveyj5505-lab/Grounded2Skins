@@ -1,5 +1,7 @@
 # Utility mods — UE5.7.4 test candidates
 
+**Latest Windows result:** FreeBuild and InvisibleArmor Lua are user-confirmed working. The Teleport trio in the V1 ZIP is withdrawn after a startup crash. Keep it removed; the older installation/testing steps below are historical candidate instructions, not a recommendation to reinstall it. Current native Blueprint baselines are being collected for a substantive repair.
+
 Prepared for Grounded 2 release 0.6.0.3. These are locally validated candidates, not Windows-confirmed releases. Accepted character packages and all previous releases are unchanged.
 
 ## Install manually

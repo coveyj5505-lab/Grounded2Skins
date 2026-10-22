@@ -60,4 +60,18 @@ function M.uniformMultiplier(unarmed,spearRows)
     assert(ratio and count>0,'Missing native spear damage rows')
     return ratio
 end
+function M.normalOnlyMultiplier(unarmed,spearRows,chargingDisabled)
+    assert(chargingDisabled==true,'Normal-only profile requires charging disabled')
+    assert(unarmed and type(unarmed.DamageData)=='number' and unarmed.DamageData>0,'Positive unarmed baseline required')
+    local multiplier,count=nil,0
+    for _,row in pairs(spearRows) do
+        local base=row.DamageData
+        assert(type(base)=='number' and base>0 and base<math.huge,'Positive normal spear damage required')
+        local ratio=unarmed.DamageData/base
+        if multiplier then assert(math.abs(multiplier-ratio)<1e-6,'Normal combo damage differs') else multiplier=ratio end
+        count=count+1
+    end
+    assert(count>0,'Missing spear combo rows')
+    return multiplier
+end
 return M
