@@ -1,0 +1,27 @@
+BO PEEP V2.8 — AUTOMATIC CROOK, ORIGINAL ORIENTATION
+
+Rotation request is deferred. This restores the accepted original crook
+orientation and removes V2.7's explicit rotation setter/readback checks.
+
+GAME FULLY CLOSED:
+1. Replace UE4SS Mods/BoPeepNativeSpear with the included folder.
+2. Replace ALL THREE included zBoCrookNativeUE57_P files in your mod Paks
+   folder (.pak, .utoc, .ucas). Unlike V2.7, this update NEEDS the new trio.
+3. Keep the accepted Bo Peep skin and zBoCrookHandV3UE57_99_P mesh trio.
+   Keep BoPeepNativeSpear : 1, BoPeepCrook : 0. Leave Buzz/Teleport unchanged.
+
+Host as Willow with both real hands empty; crook appears automatically.
+Check jabs and both views. Equip/clear main-hand and offhand gear to confirm
+hiding/restoration. No F7 needed. Send UE4SS.log if it does not appear.
+
+Your V2.7 log stopped BEFORE rotation, because the private item contained an
+ordinary spear attack handle. V2.8 uses unique private item/jab ROW NAMES
+(RivetBoPeepCrook; RivetCrookJab1/2/3) rather than reusing Spear/Spear2/Spear3.
+This isolates possible native row-name caching collisions, without bypassing
+the combat safety check. The cache-collision explanation remains a hypothesis;
+the observed ordinary attack reference is confirmed in the Windows log.
+
+Private cooked references, three damage8/range275/no-charge jabs and no-throw
+settings read back correctly. 15 local row/runtime groups pass. Windows result
+remains unconfirmed. No global ordinary-spear tables or gameplay are changed.
+Remote-client automatic crook still pending. Final suite packaging stays held.

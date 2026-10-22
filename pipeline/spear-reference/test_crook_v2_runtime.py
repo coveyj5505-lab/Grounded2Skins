@@ -18,23 +18,23 @@ function items:AddRow() error('Unsupported native copy must never execute') end
 lib=ctypes.CDLL('liblua5.4.so.0');lib.luaL_newstate.restype=ctypes.c_void_p
 for n,a in {'luaL_openlibs':[ctypes.c_void_p],'luaL_loadstring':[ctypes.c_void_p,ctypes.c_char_p],'lua_pcallk':[ctypes.c_void_p,ctypes.c_int,ctypes.c_int,ctypes.c_int,ctypes.c_longlong,ctypes.c_void_p],'lua_close':[ctypes.c_void_p]}.items():getattr(lib,n).argtypes=a
 lib.lua_tolstring.argtypes=[ctypes.c_void_p,ctypes.c_int,ctypes.c_void_p];lib.lua_tolstring.restype=ctypes.c_char_p
-if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-1','runtime-native-spear-v2-2','runtime-native-spear-v2-3','runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7'):
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-1','runtime-native-spear-v2-2','runtime-native-spear-v2-3','runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7','runtime-native-spear-v2-8'):
  # The Windows function exists on Controller, not PlayerController. Model that
  # exact declaring-class constraint instead of allowing either fixture parent.
  data['fixture']=data['fixture'].replace("assert(api.isa(o,owner),'Bad receiver '..owner..':'..method)","assert(api.isa(o,owner),'Bad receiver '..owner..':'..method);if method=='IsLocalController' then assert(owner=='Engine.Controller','Function belongs to Controller') end")
-if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-2','runtime-native-spear-v2-3','runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7'):
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-2','runtime-native-spear-v2-3','runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7','runtime-native-spear-v2-8'):
  data['fixture']=data['fixture'].replace('function api.log(s)',"function api.once(k,s) api.log(s) end\nfunction api.log(s)")
  # Actual visual arrays can include Niagara/other components. Never read
  # StaticMesh from one, even if returned by the class-filtered engine call.
  data['main_fixture']=data['main_fixture'].replace('return array({smc})',"return array({object('WeaponEffect','Niagara.NiagaraComponent'),smc})")
  data['fixture']=data['fixture'].replace('assert(api.valid(o));return o[k]',"assert(api.valid(o));if k=='StaticMesh' then assert(api.isa(o,'Engine.StaticMeshComponent'),'Wrong field receiver StaticMesh') end;return o[k]")
-if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-3','runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7'):
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-3','runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7','runtime-native-spear-v2-8'):
  # Exercise the production unwrap, with real get-only array entry wrappers.
  setup+="\napi.unwrap=assert(load([====["+(scripts/'crook_guard.lua').read_text()+"]====]))().new('WrapperFixture',{},{}).unwrap\n"
-if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7'):
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-4','runtime-native-spear-v2-6','runtime-native-spear-v2-7','runtime-native-spear-v2-8'):
  # Actual UE4SS UFunction-return array: plain list of RemoteUnrealParam entries.
  data['main_fixture']=data['main_fixture'].replace("return array({object('WeaponEffect','Niagara.NiagaraComponent'),smc})", "return {{get=function() return object('WeaponEffect','Niagara.NiagaraComponent') end},{get=function() return smc end}}")
-if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-6','runtime-native-spear-v2-7'):
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-6','runtime-native-spear-v2-7','runtime-native-spear-v2-8'):
  data['main_cases']={
   'empty hands automatically equip once without registering F7': 'tick();assert(creates==1 and equips==1 and assigned==1 and key==nil);for i=1,8 do tick() end;assert(creates==1 and equips==1 and assigned==1)',
   'real main hand is preserved': "desiredMain=object('Axe','Maine.Item');function desiredMain:GetItemDataRowHandle() return {DataTable=source,RowName=FName('Axe')} end;tick();assert(creates==0 and desiredMain.full=='Axe')",
@@ -52,6 +52,10 @@ if len(sys.argv)>1 and sys.argv[1]=='runtime-native-spear-v2-7':
  data['main_fixture']=data['main_fixture'].replace('function p:K2_SetRelativeTransform',"function p:K2_SetRelativeRotation(t,sweep,hit,teleport) assert(t.Yaw==180 and t.Pitch==0 and t.Roll==0 and not sweep and teleport);self.RelativeRotation={Yaw=rejectRotation and 0 or t.Yaw,Pitch=0,Roll=0} end\n function p:K2_SetRelativeTransform")
  data['main_cases']['direct shaft rotation is read back from actual component']='tick();assert(proxies[1].RelativeRotation.Yaw==180 and hasLog("CROOK ROTATION VERIFIED"))'
  data['main_cases']['ignored rotation cannot silently pass']='rejectRotation=true;tick();assert(removed==1 and desiredMain==nil and hasLog("Crook shaft roll was not applied"))'
+if len(sys.argv)>1 and sys.argv[1]=='runtime-native-spear-v2-8':
+ data['main_cases']['ordinary spear cache is still rejected before combat']="privateCached=false;tick();assert(removed==1 and desiredMain==nil and hasLog('Native attack table mismatch'))"
+ for k in ('fixture','main_fixture'):
+  data[k]=data[k].replace("{'Spear','Spear2','Spear3'}","{'RivetCrookJab1','RivetCrookJab2','RivetCrookJab3'}")
 for title,test in data['main_cases'].items():
  code=data['fixture'].replace('ROWS','[====['+(scripts/'item_rows.lua').read_text()+']====]')+setup+data['main_fixture'].replace('F10','F7').replace('MAIN','[====['+(scripts/'main.lua').read_text()+']====]')+'\n'+test
  state=lib.luaL_newstate();lib.luaL_openlibs(state)

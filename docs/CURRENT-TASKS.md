@@ -1,5 +1,7 @@
 # Current Toy Story tasks
 
+Latest: user allows dropping cosmetic crook rotation; defer it. V2.7 failed before rotation on an ordinary attack reference. V2.8 restores original orientation, retains automatic carry, isolates private item/jab row names to avoid suspected cache collisions, and keeps strict damage checks. 15 local groups + native cooked readback pass; Windows pending. Replace Lua AND native crook trio. No final suite packaging until accepted. Buzz flight and Teleport remain accepted.
+
 Latest user decisions: Buzz flight accepted as good enough, brief initial tuft flash accepted; preserve current flight behavior. Teleport V6 remains final. Combined final packaging ON HOLD until crook accepted. V2.6 screenshot still wrong hook orientation; V2.7 applies dedicated native relative-rotation setter with actual component readback. 16 local groups pass; standalone Windows crook angle test pending. Prior RC1 is superseded preparatory work, not a final release.
 
 Consolidated Rivet RC1 prepared: four accepted skins, native automatic crook V2.6 pending user test, stable wings, final Teleport V6, accepted FreeBuild/InvisibleArmor, tested UE4SS update; Buzz flight included disabled. Rivet folder/container names, native payloads byte-identical, matching runtime receipts/enable lists verified. Combined renamed Windows install remains pending; this is not a final release.

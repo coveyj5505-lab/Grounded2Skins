@@ -1,0 +1,11 @@
+{
+  "private_item_row": "RivetBoPeepCrook",
+  "private_attack_rows": [
+    "RivetCrookJab1",
+    "RivetCrookJab2",
+    "RivetCrookJab3"
+  ],
+  "reason": "Windows private item returned an ordinary spear attack handle despite private cooked references; isolate row names instead of bypassing checks",
+  "cause_cache_collision": "suspected, not proven",
+  "native_tables_overridden": false
+}

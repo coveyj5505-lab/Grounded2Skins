@@ -1,0 +1,18 @@
+{
+  "file": "BoPeep-Crook-V2.8-Automatic-Original-Orientation.zip",
+  "bytes": 72462,
+  "sha256": "4159d9d44960133e76acafa2f35ca41ed50a37c48558a4fb8ff6a08d3ea4a3cb",
+  "rotation": "DEFERRED at user preference; original orientation restored",
+  "observed_failure": "Ordinary spear attack table in private item before rotation stage",
+  "private_item_row": "RivetBoPeepCrook",
+  "private_attack_rows": [
+    "RivetCrookJab1",
+    "RivetCrookJab2",
+    "RivetCrookJab3"
+  ],
+  "native_readback_passed": true,
+  "local_groups_passed": 15,
+  "cache_collision_cause_confirmed": false,
+  "windows_tested": false,
+  "final_suite_packaging": "ON HOLD"
+}
