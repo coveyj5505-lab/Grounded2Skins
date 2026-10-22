@@ -4,6 +4,8 @@ using CUE4Parse.FileProvider;
 using CUE4Parse.MappingsProvider.Usmap;
 using CUE4Parse.UE4.Versions;
 using CUE4Parse.UE4.Assets.Exports.Animation;
+using CUE4Parse.UE4.Assets.Exports.Engine;
+using CUE4Parse.UE4.Assets.Objects;
 using Newtonsoft.Json;
 var output=args[2];Directory.CreateDirectory(output);
 var mappings=new FileUsmapTypeMappingsProvider(args[1]);
@@ -19,6 +21,12 @@ foreach(var file in provider.Files.Values.Where(f=>f.Path.EndsWith(".uasset",Str
   var package=provider.LoadPackage(file);var exports=package.GetExports().ToArray();
   foreach(var export in exports){
    File.WriteAllText(Path.Combine(output,export.Name+".json"),JsonConvert.SerializeObject(export,Formatting.Indented));
+   if(export is UDataTable table){
+    var selected=table.RowMap.Where(x=>new[]{"Spear","Spear2","Spear3","Player","Player2"}.Contains(x.Key.Text));
+    var layout=selected.ToDictionary(x=>x.Key.Text,x=>x.Value.Properties.Select(p=>new {Name=p.Name.Text,p.Position,p.Size,Value=p.Tag?.GenericValue is FScriptStruct script && script.StructType is FStructFallback nested ? nested.Properties.Select(n=>new {Name=n.Name.Text,n.Position,n.Size,Value=n.Tag?.GenericValue}).Cast<object>().ToArray() : null}));
+    File.WriteAllText(Path.Combine(output,export.Name+"-row-layout.json"),JsonConvert.SerializeObject(layout,Formatting.Indented));
+   }
+
   }
   results.Add(new{Path=file.Path,Success=true,Exports=exports.Select(x=>new{x.Name,Type=x.GetType().Name})});
  }catch(Exception e){results.Add(new{Path=file.Path,Success=false,Error=e.ToString()});Console.WriteLine(file.Path+": "+e.Message);}

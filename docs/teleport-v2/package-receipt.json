@@ -1,0 +1,8 @@
+{
+  "file": "Teleport-V2-Lua-Multiplayer-UE57-Test.zip",
+  "bytes": 9041,
+  "sha256": "e18ba2176fc82bd3397254a8af5dee4956f07d0c1a6c57bd2b4098507700f394",
+  "windows_tested": false,
+  "intended_clients": "Same Lua files on host and connected clients",
+  "controls": "Map open; hover unlocked outpost; F8"
+}

@@ -1,0 +1,52 @@
+{
+  "upload_bytes": 361524,
+  "upload_sha256": "ab9e0e90d817eb776dd6a8639bcca6e439600a6c1671abf75fcd29457fd8d084",
+  "status": "EXTRACTED_READ_ONLY",
+  "decoded_bytes": 1428971,
+  "missing": [],
+  "errors": [],
+  "source_metadata_unchanged": true,
+  "all_chunk_sha256_verified": true,
+  "packages": [
+    {
+      "path": "/game/blueprints/player/bp_survivalplayercontroller",
+      "chunk": "f56c7bd870bb661300000001",
+      "sha256": "65941b892015ac651c151672fad4b591bef79420ef059eaa8811a04384a00465"
+    },
+    {
+      "path": "/game/ui/map/ui_map",
+      "chunk": "275a70de37344a2a00000001",
+      "sha256": "92b2db3498ae192109aea649e057b677151d1680264b87a47fbad70793b7ab59"
+    },
+    {
+      "path": "/game/_dev/art/buildings/proto/bp_teleporter",
+      "chunk": "67384ba939b93a3300000001",
+      "sha256": "92673b99ce9d60eb2744ca1b0b95046d2d927084b7cd51c754605ab7cc13309c"
+    },
+    {
+      "path": "/game/art/world/zn10_labs/lab_props/teleporter/bp_teleporter_door",
+      "chunk": "cc555385dd8bca3300000001",
+      "sha256": "81e76ab1f1077c8633be9f6f0dbae68bc86d0f9781a7d3d277cdabfe47e4a0d6"
+    },
+    {
+      "path": "/game/ui/map/ui_mappanel",
+      "chunk": "a1af5522dea3ac1100000001",
+      "sha256": "c817daf11775c588a5cf1f26832c8c4d90b56bbb93d72423440e61ce5ee43c62"
+    },
+    {
+      "path": "/game/blueprints/attacks/creatureattacks",
+      "chunk": "701083858cc77c5000000001",
+      "sha256": "e8eae5b887cba4725bfac070f34fb7890b4735c96e62ac9a0bc95715cd351bef"
+    },
+    {
+      "path": "/game/blueprints/attacks/itemattacks",
+      "chunk": "9599c95c7cbef52800000001",
+      "sha256": "b210da9a57576736192bfcdf2451241215cd78e5702a745fa37997bcdb12cda8"
+    },
+    {
+      "path": "/game/art/items/weapons/spear02/spear02",
+      "chunk": "de05455472f48fa300000001",
+      "sha256": "76a77d59b0c582635412c23dcb1dfc5bdec17f4dbd882e018ee424948113ae68"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "current_packages_decoded": 8,
+  "all_success": true,
+  "current_controller_exports": 43,
+  "old_controller_exports": 41,
+  "current_controller_added_functions": [
+    "OnHasRestorableData"
+  ],
+  "replacement_approach": "Keep all current game Blueprints; Lua calls current native outpost travel and host posthook of existing reliable server event",
+  "native_blueprint_schemas": {
+    "ServerRequestPTSTravel": {
+      "fields": [
+        {
+          "Name": "RequestCancelled",
+          "Type": "BoolProperty"
+        },
+        {
+          "Name": "TeleporterDeparture",
+          "Type": "ObjectProperty"
+        },
+        {
+          "Name": "TeleporterDestinationOverride",
+          "Type": "ObjectProperty"
+        }
+      ],
+      "flags": "FUNC_Net | FUNC_NetReliable | FUNC_NetServer | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+    },
+    "SetTeleportDoorRef": {
+      "fields": [
+        {
+          "Name": "CallFunc_IsValid_ReturnValue",
+          "Type": "BoolProperty"
+        },
+        {
+          "Name": "K2Node_DynamicCast_AsBP_Teleporter_Door",
+          "Type": "ObjectProperty"
+        },
+        {
+          "Name": "K2Node_DynamicCast_bSuccess",
+          "Type": "BoolProperty"
+        }
+      ],
+      "flags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+    },
+    "SetAndPrintInteractionInstigator": {
+      "fields": [
+        {
+          "Name": "InteractionInstigator",
+          "Type": "ObjectProperty"
+        },
+        {
+          "Name": "CallFunc_GetDisplayName_ReturnValue",
+          "Type": "StrProperty"
+        }
+      ],
+      "flags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+    },
+    "OnTeleportRequested": {
+      "fields": [
+        {
+          "Name": "RequestCancelled",
+          "Type": "BoolProperty"
+        },
+        {
+          "Name": "OverrideDestination",
+          "Type": "ObjectProperty"
+        }
+      ],
+      "flags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+    }
+  },
+  "installed_ue4ss_commit": "83330635",
+  "hook_source_url": "https://raw.githubusercontent.com/UE4SS-RE/RE-UE4SS/83330635/UE4SS/src/Mod/LuaMod.cpp",
+  "hook_source_sha256": "a6328cd49a4e7810ed2cbb1bf80e7b9e53b4c66e8062c0e108a25accd7928f5a",
+  "script_hook_is_post_callback": true,
+  "local_lua_groups_passed": 16,
+  "windows_multiplayer_test": "NOT RUN",
+  "no_cooked_replacement_blueprints_shipped": true,
+  "freebuild_invisible_armor_or_character_files_modified": false,
+  "registration_thread": "LoopAsync; all live schema/world/action work queued to game thread",
+  "source_thread_restriction_matches_are_commented_out": true,
+  "all_four_called_blueprint_schemas_match_current_baseline": true
+}

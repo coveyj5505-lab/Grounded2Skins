@@ -1,0 +1,63 @@
+{
+  "source_crook_sha256": "8d2ba7db6a3b5a258e219ad307a29dc63ca6a97f78315e1d6425a64f5c713502",
+  "source_crook_bounds": [
+    [
+      -9.116371154785156,
+      -2.1109166145324707,
+      -89.77508544921875
+    ],
+    [
+      5.308444976806641,
+      2.1124448776245117,
+      94.83425903320312
+    ]
+  ],
+  "native_spear_bounds": {
+    "Origin": {
+      "X": -1.8500743,
+      "Y": 0.1374054,
+      "Z": 21.291454
+    },
+    "BoxExtent": {
+      "X": 6.475631,
+      "Y": 10.205188,
+      "Z": 87.85507
+    },
+    "SphereRadius": 90.18870544433594
+  },
+  "native_long_axis": "Z",
+  "source_joint_influences": [
+    0
+  ],
+  "relative_translation": [
+    0,
+    0,
+    18.883807460713253
+  ],
+  "relative_rotation_xyzw": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "relative_scale": [
+    1.35,
+    1.35,
+    0.9517943985589026
+  ],
+  "native_z_range": [
+    -66.563616,
+    109.146524
+  ],
+  "fitted_z_range": [
+    -66.563616,
+    109.146524
+  ],
+  "shaft_source_width_cm": 4.223361492156982,
+  "shaft_fitted_width_cm": 5.7015380859375,
+  "parent": "Actual equipped native Spear02 StaticMeshComponent; native animation drives FP/TP and jab pose",
+  "camera_body_or_physics_changes": false,
+  "runtime_binding_implemented": false,
+  "static_mesh_render_buffers_decoded": false,
+  "bounds_source": "Current native Spear02 ExtendedBounds property; no invented vertex reconstruction"
+}

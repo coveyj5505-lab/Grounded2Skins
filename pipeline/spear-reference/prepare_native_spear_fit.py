@@ -1,0 +1,9 @@
+"""Record an offline component-frame fit; does not replace the accepted crook asset."""
+import argparse,json,hashlib
+from pathlib import Path
+import numpy as np
+p=argparse.ArgumentParser();p.add_argument('crook',type=Path);p.add_argument('spear',type=Path);p.add_argument('out',type=Path);a=p.parse_args()
+x=np.load(a.crook);v=x['positions'];assert np.array_equal(np.unique(x['joints'][x['weights']>0]),[0]);assert np.isfinite(v).all()
+b=json.load(open(a.spear))['Properties']['ExtendedBounds'];origin=np.array([b['Origin'][k] for k in 'XYZ']);extent=np.array([b['BoxExtent'][k] for k in 'XYZ']);lo=v.min(0);hi=v.max(0);factor=2*extent[2]/(hi[2]-lo[2]);offset=origin[2]-(lo[2]+hi[2])*.5*factor
+result={'source_crook_sha256':hashlib.sha256(a.crook.read_bytes()).hexdigest(),'source_crook_bounds':[lo.tolist(),hi.tolist()],'native_spear_bounds':b,'native_long_axis':'Z','source_joint_influences':[0],'relative_translation':[0,0,float(offset)],'relative_rotation_xyzw':[0,0,0,1],'relative_scale':[1.35,1.35,float(factor)],'native_z_range':[(origin-extent)[2],(origin+extent)[2]],'fitted_z_range':[lo[2]*factor+offset,hi[2]*factor+offset],'shaft_source_width_cm':float(hi[1]-lo[1]),'shaft_fitted_width_cm':float((hi[1]-lo[1])*1.35),'parent':'Actual equipped native Spear02 StaticMeshComponent; native animation drives FP/TP and jab pose','camera_body_or_physics_changes':False,'runtime_binding_implemented':False,'static_mesh_render_buffers_decoded':False,'bounds_source':'Current native Spear02 ExtendedBounds property; no invented vertex reconstruction'}
+assert np.allclose(result['native_z_range'],result['fitted_z_range']);a.out.parent.mkdir(parents=True,exist_ok=True);a.out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:result[k] for k in ['relative_translation','relative_scale','shaft_fitted_width_cm']},indent=2))

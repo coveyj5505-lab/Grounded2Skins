@@ -1,0 +1,108 @@
+{
+  "source_sha256": "b210da9a57576736192bfcdf2451241215cd78e5702a745fa37997bcdb12cda8",
+  "private_package": "/Game/Blueprints/Attacks/BoPkAttacks",
+  "chunk": "bce6efd542f97bbd00000001",
+  "patches": [
+    {
+      "row": "Spear",
+      "field": "DamageData",
+      "serialized_position": 60395,
+      "old": 20.0,
+      "new": 8.0
+    },
+    {
+      "row": "Spear",
+      "field": "ChargedDamageData",
+      "serialized_position": 60435,
+      "old": 48.0,
+      "new": 0.0
+    },
+    {
+      "row": "Spear",
+      "field": "PerfectChargedDamageData",
+      "serialized_position": 60467,
+      "old": 54.0,
+      "new": 0.0
+    },
+    {
+      "row": "Spear",
+      "field": "ChargeTime",
+      "serialized_position": 60500,
+      "old": 1.5,
+      "new": 0.0
+    },
+    {
+      "row": "Spear2",
+      "field": "DamageData",
+      "serialized_position": 61254,
+      "old": 20.0,
+      "new": 8.0
+    },
+    {
+      "row": "Spear2",
+      "field": "ChargedDamageData",
+      "serialized_position": 61294,
+      "old": 48.0,
+      "new": 0.0
+    },
+    {
+      "row": "Spear2",
+      "field": "PerfectChargedDamageData",
+      "serialized_position": 61326,
+      "old": 54.0,
+      "new": 0.0
+    },
+    {
+      "row": "Spear2",
+      "field": "ChargeTime",
+      "serialized_position": 61359,
+      "old": 1.5,
+      "new": 0.0
+    },
+    {
+      "row": "Spear3",
+      "field": "DamageData",
+      "serialized_position": 62113,
+      "old": 20.0,
+      "new": 8.0
+    },
+    {
+      "row": "Spear3",
+      "field": "ChargedDamageData",
+      "serialized_position": 62153,
+      "old": 48.0,
+      "new": 0.0
+    },
+    {
+      "row": "Spear3",
+      "field": "PerfectChargedDamageData",
+      "serialized_position": 62185,
+      "old": 54.0,
+      "new": 0.0
+    },
+    {
+      "row": "Spear3",
+      "field": "ChargeTime",
+      "serialized_position": 62218,
+      "old": 1.5,
+      "new": 0.0
+    }
+  ],
+  "range_retained": 275,
+  "normal_damage": 8,
+  "charge_time": 0,
+  "charged_damage": 0,
+  "perfect_charged_damage": 0,
+  "renamed_public_exports": 1,
+  "native_tables_overridden": false,
+  "runtime_item_binding": "NOT IMPLEMENTED; do not present this preparation as a completed gameplay mod",
+  "source_files_modified": false,
+  "native_readback_rows": 425,
+  "all_unrequested_row_fields_unchanged": true,
+  "requested_scalar_changes": 12,
+  "range_verified": 275,
+  "normal_damage_verified": 8,
+  "charge_time_verified": 0,
+  "ordinary_native_tables_unchanged": true,
+  "runtime_item_binding_complete": false
+}

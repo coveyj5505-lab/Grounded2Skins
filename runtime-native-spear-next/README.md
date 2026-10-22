@@ -19,3 +19,11 @@ Outstanding:
 The latest Windows probe completed: Player/Player2 normal8; Spear/Spear2/Spear3 normal20. User clarified the crook has **normal jabs only, no charge attack**. Charged attack damage is therefore outside the supported behavior. Use normal-only multiplier0.4, after disabling charging specifically for the crook. Do not impose a per-attack charged-damage implementation as a blocker or add charging. The pure normal-only resolver and fixtures reflect this decision; it is not yet a native state implementation.
 
 The damage-value blocker above is resolved. Current cooked attack-table and Spear02 mesh baselines are still needed to prepare correct native weapon fitting and charge settings. The new native-baseline collector collects those together with current controller/map/teleporter packages for Teleport repair. It does not collect the existing animation payloads or .usmap again.
+
+## Native asset preparation received and validated
+
+All eight requested native baselines are now available; do not request them again. The current attack table has been cloned into private `/Game/Blueprints/Attacks/BoPkAttacks`. Its three spear combo rows read back with Damage8, Range275, ChargeTime0 and charged/perfect Damage0. All425 rows and unrelated fields are otherwise unchanged. This is a private-table route, so an additional0.4 multiplier must NOT be applied on top of it. Ordinary native ItemAttacks/CreatureAttacks are untouched.
+
+`pipeline/spear-reference/build_private_crook_attacks.py` uses serialized field positions reported by the native reader, not runtime memory offsets. Its output is preparation only until crook-specific item binding is implemented. The new typed UDataTable.FindRow/AddRow APIs in installed83330635 provide reference access and native deep copying; verify BaseItemData row identity and write only private row copies if using that route.
+
+Native weapon-frame fit is recorded in docs/native-spear-next/current-baselines/native-fit.json. It preserves the native Spear02 +Z shaft axis, matches cooked weapon Z bounds, and thickens only the cosmetic cross-section. The existing accepted root-rigid mesh remains unchanged. Source static-mesh ExtendedBounds are decoded, not its full render buffers. Native spear animations already provide camera/grip/jab placement; a fixed camera-space proxy is not the intended integration.
