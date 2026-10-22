@@ -1,0 +1,19 @@
+BO PEEP CROOK V2.5 — HOOK FACES DOWN
+
+Close the game; replace only UE4SS Mods/BoPeepNativeSpear with the included
+UE4SS-Mods/BoPeepNativeSpear folder. Keep all Pak files and mods.txt unchanged.
+Keep the now-final Teleport V6 folder unchanged; it is not included here.
+
+Same working behavior: host as Willow, both hands empty, F7 equips/removes.
+The crook now rolls 180 degrees about its shaft, so the hook points downward
+in the native spear carrying pose. Grip offset, shaft thickness/length, spear
+jabs/reach/damage, views and gameplay are unchanged. This also retains the
+same hook orientation relative to the hand during attacks.
+
+Check the direction in first/third person and during a jab. F7 removes the test
+item before gear changes/saving/leaving, as before. Automatic empty-hand equip
+and persistence remain separate tasks.
+
+Rollback: restore BoPeepNativeSpear from the accepted V2.4/V6 combined package.
+No assets need replacing. Lua syntax checked; only the mesh-relative rotation
+changed in executable behavior. Visual direction still needs Windows review.

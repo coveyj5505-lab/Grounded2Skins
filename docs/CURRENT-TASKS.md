@@ -1,6 +1,6 @@
 # Current Toy Story tasks
 
-Latest follow-up: V5 Teleport stopped on nil ForEach (plain function-return list); V2.3 crook list branch still skipped unwrapping. V6/V2.4 handle plain wrapped lists and native property arrays. 42 local checks pass; Windows test pending. Earlier user save had no old floating door. Assets unchanged.
+Latest accepted baseline: user confirms Teleport V6 FINAL and Bo Peep native crook V2.4 functions working. Preserve both released ZIPs. V2.5 is a cosmetic-only 180-degree roll about the crook shaft to turn the hook downward; translation/scale, native grip/combat and camera handling unchanged. Automatic empty-hand creation and other remaining lifecycle work stay on the checklist.
 
 ## Latest status — native crook V2, 2026-10-22
 
@@ -15,10 +15,10 @@ This section supersedes older historical priorities below.
 - [x] Windows V2 private cooked item/attack initialization confirmed. Runtime then stopped on inherited IsLocalController lookup; V2.1 Lua-only repair uses declaring class Engine.Controller, with regression constraint.
 - [x] Windows V2.1: native item equipped, combat cache verified, then visual StaticMesh field receiver failure caused removal. V2.2 checks component class first; mixed-component fixture added.
 - [x] V2.2 Windows: native spear grip/jabs work; wooden spear visible because component wrappers logged NONE. V2.3 uses get-method unwrapping; 19 checks pass, runtime fixtures exercise production unwrap.
-- [ ] Windows host/standalone test of V2.3 crook mesh, native grip, jab animation, rendering, F7 equip/removal and repeated view switching. Offline checks do not establish engine compatibility.
+- [x] User confirms V2.4 native crook functions working in Windows. V2.5 hook-downward cosmetic orientation awaits visual confirmation.
 - [ ] After successful native integration: automatic empty-hand lifecycle, save/inventory handling, remote-client support. V2 is a short host test; remove with F7 before changing gear/saving/leaving.
 - [x] Teleport V3 Windows: native hold-Space travel succeeds to multiple outposts; repeated departure animation incorrectly returns to initial source location.
-- [ ] Teleport reopened: user observed floating door after reload. V5 hides helper components/render passes and bounds both actor lifetimes; 23 local checks pass. Unknown saved historical doors are not deleted. V4 release preserved.
+- [x] Teleport V6 user-confirmed working and FINAL again. Preserve V6; do not reopen without new reports.
 - [ ] Buzz flight reliability and residual tuft/limb visuals remain active; accepted skin unchanged.
 
 ## Confirmed baseline to preserve

@@ -1,0 +1,18 @@
+{
+  "file": "BoPeep-Crook-V2.5-Hook-Down-Lua.zip",
+  "sha256": "6d85a67569cf6b676d988508e6d0aa6efdf650bb4060cd210e5872bf01c6d82a",
+  "bytes": 9063,
+  "rotation_quaternion_xyzw": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "rotation_degrees": 180,
+  "rotation_axis": "mesh-local Z shaft",
+  "only_behavioral_change": "cosmetic crook component-relative rotation",
+  "syntax_checked": true,
+  "teleport_changed": false,
+  "assets_changed": false,
+  "windows_orientation_tested": false
+}
