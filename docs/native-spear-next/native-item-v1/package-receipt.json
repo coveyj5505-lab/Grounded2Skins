@@ -53,5 +53,10 @@
     }
   },
   "native_runtime_windows": "NOT TESTED",
-  "public_download": "PENDING PUBLISH/VERIFY"
+  "public_download": {
+    "url": "https://raw.githubusercontent.com/coveyj5505-lab/Grounded2Skins/e53cc2b/BoPeep-Crook-Native-Spear-V1-UE57-Test.zip",
+    "http_status": 200,
+    "downloaded_bytes": 216823,
+    "download_sha256_matches": true
+  }
 }
