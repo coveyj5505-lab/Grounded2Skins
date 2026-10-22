@@ -1,0 +1,17 @@
+{
+  "file": "BoPeep-Crook-V2.7-Explicit-Rotation-Lua.zip",
+  "bytes": 9832,
+  "sha256": "6bed6df4084c0edd5f75939521f6db8dabd553b040f0988c2b900a44ee16242d",
+  "user_evidence": "Crook orientation still wrong in V2.6 screenshot. No corresponding log supplied with screenshot.",
+  "rotation_change": "Native K2_SetRelativeRotation then checked RelativeRotation readback",
+  "requested_relative_rotation": {
+    "Pitch": 0,
+    "Yaw": 180,
+    "Roll": 0
+  },
+  "local_check_groups": 16,
+  "windows_tested": false,
+  "combined_package_built": false,
+  "buzz_flight": "User accepted good enough; brief initial tuft flash accepted",
+  "teleport": "Final unchanged"
+}

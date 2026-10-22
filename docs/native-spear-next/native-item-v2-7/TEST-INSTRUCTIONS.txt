@@ -1,0 +1,20 @@
+BO PEEP V2.7 — EXPLICIT HOOK ROTATION / AUTOMATIC CARRY
+
+Game closed: replace only Mods/BoPeepNativeSpear with the included folder.
+Keep all Pak files and mods.txt unchanged. Leave Teleport/Buzz unchanged.
+This is a standalone crook update, NOT the consolidated final package.
+
+Host as Willow, both actual hands empty. Crook appears automatically, no F7.
+Check hook direction in both views and a normal jab, plus equip/clear gear.
+Send UE4SS.log with a screenshot if the angle still looks wrong.
+
+V2.7 sets relative rotation using native K2_SetRelativeRotation (Yaw180 about
+local +Z shaft), then reads RelativeRotation from the actual component. Look
+for CROOK ROTATION VERIFIED with actual Pitch/Yaw/Roll. The previous V2.6
+input transform alone did not establish that the requested roll took effect.
+A rejected/ignored rotation triggers guarded removal rather than silent success.
+Automatic carry, native spear grip/jabs/reach and damage are unchanged.
+
+16 local row/lifecycle/rotation checks passed; current Windows pose and angle
+still require review. Remote-client automatic crook remains pending.
+No final suite packaging until the crook is accepted.
