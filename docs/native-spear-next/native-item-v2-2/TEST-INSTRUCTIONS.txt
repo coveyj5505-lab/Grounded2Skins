@@ -1,0 +1,20 @@
+CROOK NATIVE SPEAR V2.2 — LUA-ONLY REPAIR
+
+Close the game and replace UE4SS Mods/BoPeepNativeSpear with this package's
+UE4SS-Mods/BoPeepNativeSpear. Keep BoPeepNativeSpear : 1 and BoPeepCrook : 0.
+Keep ALL V2 Pak files installed, and keep Bo Peep's skin unchanged.
+This repair contains NO assets, Teleport changes or other mod updates.
+
+Host as Willow / Bo Peep, empty BOTH actual equipment hands, wait a few seconds,
+then press F7. Check carry and ordinary jabs in first and third person, and switch
+views. Press F7 again to remove the test item BEFORE gear changes, saving,
+leaving, or changing characters. Send UE4SS.log and describe the result.
+
+The V2.1 Windows log confirmed the item equipped, all three private native
+attacks passed damage/range/charge checks, and then the visual stage rolled
+back on 'Wrong field receiver StaticMesh'. V2.2 explicitly checks the component
+class before reading StaticMesh. Non-mesh components are skipped and logged.
+This preserves rollback for actual failures and the verified combat assets.
+
+19 Lua groups pass, including a mixed Niagara/static-mesh visual array with a
+strict field-receiver check. Windows crook rendering remains unconfirmed.

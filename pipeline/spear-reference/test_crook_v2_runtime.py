@@ -18,10 +18,16 @@ function items:AddRow() error('Unsupported native copy must never execute') end
 lib=ctypes.CDLL('liblua5.4.so.0');lib.luaL_newstate.restype=ctypes.c_void_p
 for n,a in {'luaL_openlibs':[ctypes.c_void_p],'luaL_loadstring':[ctypes.c_void_p,ctypes.c_char_p],'lua_pcallk':[ctypes.c_void_p,ctypes.c_int,ctypes.c_int,ctypes.c_int,ctypes.c_longlong,ctypes.c_void_p],'lua_close':[ctypes.c_void_p]}.items():getattr(lib,n).argtypes=a
 lib.lua_tolstring.argtypes=[ctypes.c_void_p,ctypes.c_int,ctypes.c_void_p];lib.lua_tolstring.restype=ctypes.c_char_p
-if len(sys.argv)>1 and sys.argv[1]=='runtime-native-spear-v2-1':
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-1','runtime-native-spear-v2-2'):
  # The Windows function exists on Controller, not PlayerController. Model that
  # exact declaring-class constraint instead of allowing either fixture parent.
  data['fixture']=data['fixture'].replace("assert(api.isa(o,owner),'Bad receiver '..owner..':'..method)","assert(api.isa(o,owner),'Bad receiver '..owner..':'..method);if method=='IsLocalController' then assert(owner=='Engine.Controller','Function belongs to Controller') end")
+if len(sys.argv)>1 and sys.argv[1]=='runtime-native-spear-v2-2':
+ data['fixture']=data['fixture'].replace('function api.log(s)',"function api.once(k,s) api.log(s) end\nfunction api.log(s)")
+ # Actual visual arrays can include Niagara/other components. Never read
+ # StaticMesh from one, even if returned by the class-filtered engine call.
+ data['main_fixture']=data['main_fixture'].replace('return array({smc})',"return array({object('WeaponEffect','Niagara.NiagaraComponent'),smc})")
+ data['fixture']=data['fixture'].replace('assert(api.valid(o));return o[k]',"assert(api.valid(o));if k=='StaticMesh' then assert(api.isa(o,'Engine.StaticMeshComponent'),'Wrong field receiver StaticMesh') end;return o[k]")
 for title,test in data['main_cases'].items():
  code=data['fixture'].replace('ROWS','[====['+(scripts/'item_rows.lua').read_text()+']====]')+setup+data['main_fixture'].replace('F10','F7').replace('MAIN','[====['+(scripts/'main.lua').read_text()+']====]')+'\n'+test
  state=lib.luaL_newstate();lib.luaL_openlibs(state)
