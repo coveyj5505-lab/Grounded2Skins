@@ -1,0 +1,13 @@
+{
+  "file": "Crook-V2.4-Teleport-V6-Lua-Repair.zip",
+  "bytes": 16678,
+  "sha256": "99c1cc5b60817f43dacfd10c86f58ded1434b531e42aeba8c5a780d50e8d5650",
+  "teleport_failure": "attempt to call nil ForEach; function returns plain Lua list",
+  "crook_failure": "Plain list branch returned wrappers without unwrapping; visual component NONE",
+  "engine_source": "UE4SS/src/LuaType/LuaUObject.cpp push_arrayproperty iterate_array_and_turn_into_lua_table: GetParam wrapped entries in plain numeric Lua table",
+  "fix": "Unwrap entries in plain-list branch; support both returned lists and ForEach property arrays",
+  "fixture_checks_passed": 42,
+  "windows_tested": false,
+  "assets_changed": false,
+  "user_save_evidence": "Earlier save had no floating door"
+}

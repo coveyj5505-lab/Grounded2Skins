@@ -1,5 +1,7 @@
 # Current Toy Story tasks
 
+Latest follow-up: V5 Teleport stopped on nil ForEach (plain function-return list); V2.3 crook list branch still skipped unwrapping. V6/V2.4 handle plain wrapped lists and native property arrays. 42 local checks pass; Windows test pending. Earlier user save had no old floating door. Assets unchanged.
+
 ## Latest status — native crook V2, 2026-10-22
 
 This section supersedes older historical priorities below.

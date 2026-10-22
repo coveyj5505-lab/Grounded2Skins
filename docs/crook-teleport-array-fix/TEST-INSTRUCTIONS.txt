@@ -1,0 +1,42 @@
+CROOK V2.4 + TELEPORT V6 — LUA-ONLY FOLLOW-UP
+
+Game fully closed:
+1. Replace Mods/BoPeepNativeSpear and Mods/Teleport with the corresponding
+   folders inside this ZIP's UE4SS-Mods folder. Do not nest folders twice.
+2. Keep mods.txt entries BoPeepNativeSpear : 1, BoPeepCrook : 0, Teleport : 1.
+3. KEEP all V2 crook Pak files, accepted body skins, FreeBuild and Invisible
+   Armor unchanged. There are no Paks in this update.
+
+BO PEEP
+Host as Willow / Bo Peep, empty both equipment hands, press F7. Check whether
+it is now the turquoise crook rather than a wooden spear. Test ordinary jabs
+and first/third-person switching. F7 removes the test item; REMOVE before
+saving, leaving, gear changes or switching characters. Send UE4SS.log.
+Native spear stance/reach/jabs and private damage 8/no charge/no throw remain.
+V2.3 still skipped the visual because its plain Lua-list branch returned
+wrapped entries without resolving them. V2.4 unwraps both plain lists and
+native ForEach arrays. The runtime test now exercises the plain wrapped list
+format produced by the installed UE4SS array-return implementation.
+
+TELEPORT
+Use the normal map and native hold Space, taking several trips and walking
+away from each arrival. Check for floating doors at departure/arrival points.
+New helpers have component visibility/rendering/shadows suppressed as well as
+actor hiding. Both helper actors now have bounded cleanup lifetimes and are
+hidden on the host for all authoritative players, not only the local one.
+Native real outpost doors and travel rules are unchanged.
+
+Your earlier-save test showed no old door there. Continue using that save. If the SAME old floating door remains after a
+fresh game restart with this update, report that and its location (and send the
+log). Old saved leftovers are not yet identified: this update deliberately does
+not delete arbitrary outpost doors or claim to clean unknown historical actors.
+Keep a backup of your save. A clean-save comparison is only needed if it remains.
+
+VALIDATION / ROLLBACK
+V5 stopped because a plain Lua list has no ForEach method. V6 supports both
+plain lists and native array iterators while retaining component hiding and
+cleanup. 19 crook Lua checks and 23 Teleport Lua checks pass. These are local fixtures;
+Windows mesh rendering, hidden native animations and cleanup still need testing.
+To roll back, close the game and restore the previous two Lua folders. No asset
+rollback is needed. Teleport V4 is preserved, but no longer marked final due to
+the reported floating-door artifact.
