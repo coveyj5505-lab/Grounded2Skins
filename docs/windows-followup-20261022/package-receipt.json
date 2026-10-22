@@ -1,0 +1,54 @@
+{
+  "package": "Teleport-Native-Hold-V3-and-Crook-Source-Collector.zip",
+  "bytes": 21217,
+  "sha256": "8a9be60a1bf54ef080eb528bec05089de717873dbebcb8ac4171e975db242c4a",
+  "contents": {
+    "Crook-Item-Collector/Collect-Spear.ps1": {
+      "bytes": 2493,
+      "sha256": "fc4050efed307d01094fcc18404162d7eed8be034ff6cba3fb458dfecd6c5d96"
+    },
+    "Crook-Item-Collector/README.txt": {
+      "bytes": 1046,
+      "sha256": "62f2e46f14423a3035f5890653ffbe6d08208c41e678cb7c372def5bff888496"
+    },
+    "Crook-Item-Collector/Start-Collection.cmd": {
+      "bytes": 96,
+      "sha256": "c930a111e4039c7a7b233e297fe58aa260ccf9c2da34ed334f72ba1568757175"
+    },
+    "Crook-Item-Collector/collect_crook_items.py": {
+      "bytes": 5005,
+      "sha256": "dea4320a40a2bf995356419a2ea4509b3d7721569b1b411dc3620532b01a8634"
+    },
+    "Crook-Item-Collector/support/discover_pete.py": {
+      "bytes": 5975,
+      "sha256": "43f06fc4cb838aeb4301a5b70d08220057d27bb362f19bc51bc5d6b28c8ec5ef"
+    },
+    "Crook-Item-Collector/support/extract_selected.py": {
+      "bytes": 6882,
+      "sha256": "841157c09642219b95970bed1d8b7d5b50d216e34638a284a69417828c7733e2"
+    },
+    "OFFLINE-EVIDENCE.json": {
+      "bytes": 2370,
+      "sha256": "e1b3fb78261c311dc0d55ed6320740e13091ca70f7b2261ffdfa875ba583f9d8"
+    },
+    "READ-ME-FIRST.txt": {
+      "bytes": 3854,
+      "sha256": "70973f8ace0efad430fd3de81f5ed1513dc8db1f42a11c49c85fa6f3defb490f"
+    },
+    "Teleport-V3/UE4SS/Mods/Teleport/Scripts/main.lua": {
+      "bytes": 14952,
+      "sha256": "f4d7fce98081ea65560d1c1d2e2ea1fe3e61a65becb58ec2d4ee9ad4c17384c2"
+    },
+    "Teleport-V3/UE4SS/Mods/Teleport/Scripts/teleport_native_guard.lua": {
+      "bytes": 4240,
+      "sha256": "90524ce6f913dbcb5e47eb6c78866edc2c718cd554283c403274c743f01a3ea8"
+    },
+    "Teleport-V3/UE4SS/Mods/Teleport/enabled.txt": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    }
+  },
+  "windows_teleport_v3": "NOT TESTED",
+  "crook_v2": "NOT PACKAGED; native item-table source required",
+  "download": "PENDING PUBLIC VERIFY"
+}

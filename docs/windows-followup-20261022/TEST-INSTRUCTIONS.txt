@@ -1,0 +1,31 @@
+RIVET — NATIVE TELEPORT V3 TEST + CROOK SOURCE COLLECTION
+
+WHAT THIS BUNDLE DOES
+Teleport V3 is a new Windows TEST candidate for the normal map's native hold-Space travel. It has no F8 command, no custom hold timer and no cooked overrides. Actual Windows travel is not yet confirmed.
+Crook V1 is NOT repaired by changing a key: its native row-copy operation failed at startup, and F10 is also a ConsoleEnabler key. This bundle includes the missing-source collector needed to cook the crook item row offline. It does NOT include a finished Crook V2 gameplay mod.
+
+A. INSTALL TELEPORT V3 — GAME CLOSED
+1. Replace the existing UE4SS Mods/Teleport folder with the Teleport folder inside Teleport-V3/UE4SS/Mods/. Back up the old folder OUTSIDE Mods if you want it retained.
+2. Keep Teleport : 1 in your existing mods.txt. Do not replace the whole mods.txt. Both the host and joining player need the same V3 Teleport folder.
+3. Set BoPeepNativeSpear : 0 to stop the known-failed V1 candidate. If you still have the accepted cosmetic BoPeepCrook folder, you may restore BoPeepCrook : 1 while the native item is rebuilt. No skins or crook asset Paks need replacement.
+4. Keep the old Teleport Paks removed. There are NO Paks in this bundle. FreeBuild, InvisibleArmor and accepted character files are unchanged.
+
+B. TEST THE NORMAL MAP — NO HOTKEY
+1. Host loads a character into gameplay and waits a few seconds. For the first check, host tests before a second player repeats it with the same V3 files.
+2. Open the NORMAL map from somewhere away from a real travel pod. Hover a valid unlocked outpost. Look for the normal hold-Space prompt and native progress circle.
+3. Hold Space until complete. Confirm whether the native pod animation plays and you actually arrive at the selected outpost.
+4. If the first trip works, cancel a partially held Space action, verify a locked/invalid marker cannot start travel, and check ordinary travel from a real pod.
+5. If both players have V3, let the joining player repeat the same native map action. Confirm actual destination arrival for each player; a log saying READY is not proof of travel.
+6. Send UE4SS.log and report the last visible stage: prompt missing / circle fills / animation starts / arrives correctly. If you notice an invisible obstacle or other gameplay interference, stop using this candidate and report it.
+
+ROLL BACK TELEPORT
+Close the game and disable/remove the Teleport Lua folder. All stock map/controller assets are unchanged. Native temporary sources have bounded lifetimes and are recreated only by this mod. No save unlocks or player coordinates are edited.
+
+C. COLLECT THE MISSING CROOK ITEM TABLES — NO IN-GAME ACTIONS
+After testing, close the game. Open Crook-Item-Collector/ and double-click Start-Collection.cmd.
+Choose the same retoc.exe0.1.5 used for earlier extractions and ORIGINAL Augusta-WinGDK.utoc from the game Content/Paks folder. Python3.11+ is required as before.
+It reads Table_AllItems and follows actual CompositeDataTable imports until ordinary native DataTables, with128-package/64MiB limits. It does not repeat the received animations, attack tables, character assets or .usmap. Game files/settings/saves are never modified.
+Send the ONE Grounded2-CrookItems-....zip created on your Desktop, along with the Teleport test log. Do not upload this downloaded test bundle instead.
+
+WHY THAT NEW SOURCE IS NEEDED
+The prior eight-package baseline set contained attacks and Spear02 mesh but not the native item tables. Crook V1 tried to deep-copy BaseItemData at runtime; Windows proved the installed UE4SS lacks the required ICppStructOps::Copy helper. The replacement design loads a private item row cooked OFFLINE from those current tables, avoiding that helper entirely. The future development key is F7, not F10; there is no new crook key test in this bundle yet.

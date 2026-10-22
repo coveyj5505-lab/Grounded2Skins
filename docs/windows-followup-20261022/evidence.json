@@ -1,0 +1,31 @@
+{
+  "log_sha256": "8406c0a12911d197c67c42ad25a8b900e9a4af40f01c9347f1594cfc2723c5b8",
+  "log_bytes": 152099,
+  "crook": {
+    "console_conflict": "ConsoleEnabler lists F10 as ConsoleKey[3] at16:51:47",
+    "initialization_failure": "16:51:48 AddRow fails: Virtual UScriptStruct::ICppStructOps::Copy is unavailable, possibly unsupported in engine version",
+    "conclusion": "Crook stopped before F10; changing a key cannot fix the actual initialization failure",
+    "v1_status": "WITHDRAWN as functional candidate; archive/source preserved",
+    "v2_fix": "Offline cooked private BaseItemData row, no runtime AddRow/CopyScriptStruct, draft development key F7",
+    "blocker": "Current native item tables absent from the previous eight exact baseline targets; targeted read-only composite-parent collector prepared"
+  },
+  "teleport": {
+    "input_received": true,
+    "log_stop": "WAIT: marker has no registered native outpost teleporter",
+    "v2_bug": "GetRegisteredPTSTravel result was required to be BP_Teleporter_C; current native UI_Map casts it to BP_Teleporter_Door_C, then uses TeleporterOwner for RPC",
+    "current_native_ui": [
+      "IsInPTSView BoolProperty",
+      "InteractableItem ObjectProperty (native departure door)",
+      "PTSButton hold/progress",
+      "RefreshPTSButton lock/busy/door checks",
+      "PTSTravel native ServerRequestPTSTravel(false,departure.TeleporterOwner,destination.TeleporterOwner)"
+    ],
+    "original_archive": "Contains replacements for BP_SurvivalPlayerController and UI_Map only. Decoded old map PTSTravel uses native button, door, busy test and existing travel RPC. Old payload lacks the current native explicit lock-check block; do not transplant old function/assume which differences were deliberate mod edits versus old game version. Some old Blueprint dependency imports remain unresolved under current mappings.",
+    "v3_approach": "Current native UI and server event unchanged; supply an owner-relevant, server-replicated native departure and checked map state. Native lock/CanPTSTravel/busy/hold/cancel/travel logic retained. No hotkey, custom hold timer, manually invoked travel RPC or player coordinate writes.",
+    "windows_v3_status": "NOT TESTED",
+    "local_lua_groups": 19
+  },
+  "collector_tests": 6,
+  "read_only_crook_v2_row_tests": 4,
+  "accepted_skins_and_confirmed_utilities_modified": false
+}
