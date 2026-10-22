@@ -5,5 +5,7 @@
   "windows_tested": false,
   "local_lua_groups_passed": 18,
   "intended_clients": "Same Lua files on host and connected clients",
-  "controls": "Map open; hover unlocked outpost; F8"
+  "controls": "Map open; hover unlocked outpost; F8",
+  "url": "https://raw.githubusercontent.com/coveyj5505-lab/Grounded2Skins/3193b06/Teleport-V2-Lua-Multiplayer-UE57-Test.zip",
+  "http_download_hash_verified": true
 }
