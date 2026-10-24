@@ -1,0 +1,16 @@
+{
+  "file": "Rivet-Save-Character-Cleanup-v1.1-Test.zip",
+  "bytes": 17670,
+  "sha256": "f536377dc7818a453987dc79012fd67c4fb2ee7b1f7393df742c10258c380f5c",
+  "windows_tested": false,
+  "local_fixture_groups": {
+    "teleport": 24,
+    "crook_runtime": 13,
+    "private_rows": 4
+  },
+  "source_log_sha256": "b5605e3a4bb824405b9ec6336a9664dfcc6f24e031ad7edb59c1776f6a825bcf",
+  "save_fix": "Only new helper door persistence flag bNeverSpawnAsDynamicActor=true; native save behavior not confirmed",
+  "character_fix": "Remove exact private crook from authoritative local non-Willow pawn even with no prior Lua live refs",
+  "existing_orphan_door_removal": false,
+  "final_v1_zip_modified": false
+}

@@ -4,7 +4,7 @@ from pathlib import Path
 root=Path(__file__).resolve().parents[2]
 old=root/'pipeline/spear-reference/test_native_crook.py'
 fixture=next(ast.literal_eval(n.value) for n in ast.parse(old.read_text()).body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='fixture' for t in n.targets))
-if len(sys.argv)>1 and sys.argv[1]=='runtime-native-spear-v2-8':
+if len(sys.argv)>1 and sys.argv[1] in ('runtime-native-spear-v2-8','runtime-native-spear-v2-9'):
  fixture=fixture.replace("{'Spear','Spear2','Spear3'}","{'RivetCrookJab1','RivetCrookJab2','RivetCrookJab3'}")
 module=(root/(sys.argv[1] if len(sys.argv)>1 else 'runtime-native-spear-v2')/'BoPeepNativeSpear/Scripts/item_rows.lua').read_text()
 lib=ctypes.CDLL('liblua5.4.so.0');lib.luaL_newstate.restype=ctypes.c_void_p
