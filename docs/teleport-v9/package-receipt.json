@@ -1,0 +1,58 @@
+{
+  "archive": "Rivet-Base-Teleporter-V1-Multiplayer-Test.zip",
+  "bytes": 241164,
+  "sha256": "547ada1e77b217f7617a6514b32afd7ac91442ed53e90424cf4dde8ba5a44f9d",
+  "files": [
+    {
+      "path": "Mods/Teleport/Scripts/base_registry.lua",
+      "bytes": 1873,
+      "sha256": "01da905a456292c3a51ec3a45a8427c71535fde8fa845e0c8a36d59c3116cdd2"
+    },
+    {
+      "path": "Mods/Teleport/Scripts/base_teleport.lua",
+      "bytes": 16257,
+      "sha256": "99ffe8ca8dd4702f9d49326c3f46e6f7e051862fa1b88d68a11862925e269251"
+    },
+    {
+      "path": "Mods/Teleport/Scripts/main.lua",
+      "bytes": 21841,
+      "sha256": "1127b9b19bd0380db9e6174e85e27feb943260f303a7686c3f0d04537c0f6b6f"
+    },
+    {
+      "path": "Mods/Teleport/Scripts/teleport_native_guard.lua",
+      "bytes": 4224,
+      "sha256": "42f16519a995e770ffdde086fa541a28992cf404e013f9a6f49e3efc58103875"
+    },
+    {
+      "path": "Mods/Teleport/enabled.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "Paks/zRivetBaseTeleportV1_P.pak",
+      "bytes": 347,
+      "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+    },
+    {
+      "path": "Paks/zRivetBaseTeleportV1_P.ucas",
+      "bytes": 959136,
+      "sha256": "9955cea4a3e37eb6ebe288910c279120e7eeb460469405b425fd1446bf37928a"
+    },
+    {
+      "path": "Paks/zRivetBaseTeleportV1_P.utoc",
+      "bytes": 963,
+      "sha256": "4cfedaab5add85b651c1bfdefa3daa964125f04d662571561468fef29d1bd5b9"
+    },
+    {
+      "path": "README-FIRST.md",
+      "bytes": 4696,
+      "sha256": "c4aa4307c9591580b7c71646ab6d016cd5d2f1880c1f59f3094982176ab9399e"
+    },
+    {
+      "path": "TEST-INSTRUCTIONS.txt",
+      "bytes": 3656,
+      "sha256": "79650ec80559c59dcfad8890ff59496f38e5d3f3701dde9cf6daa85d5d1e773d"
+    }
+  ],
+  "zip_crc_and_source_match": true
+}

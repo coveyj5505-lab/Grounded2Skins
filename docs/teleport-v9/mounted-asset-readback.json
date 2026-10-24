@@ -1,0 +1,26 @@
+[
+  {
+    "Path": "Augusta/Content/Blueprints/Items/Table_BuildingRecipes.uasset",
+    "Name": "Table_BuildingRecipes",
+    "Rows": 635,
+    "PrivateParentsLoaded": 1
+  },
+  {
+    "Path": "Augusta/Content/Blueprints/Items/Table_AllBuildings.uasset",
+    "Name": "Table_AllBuildings",
+    "Rows": 862,
+    "PrivateParentsLoaded": 1
+  },
+  {
+    "Path": "Augusta/Content/Rivet/Teleport/RivetBaseRecipeData.uasset",
+    "Name": "RivetBaseRecipeData",
+    "Rows": 1,
+    "PrivateParentsLoaded": 0
+  },
+  {
+    "Path": "Augusta/Content/Rivet/Teleport/RivetBaseBuildingData.uasset",
+    "Name": "RivetBaseBuildingData",
+    "Rows": 1,
+    "PrivateParentsLoaded": 0
+  }
+]

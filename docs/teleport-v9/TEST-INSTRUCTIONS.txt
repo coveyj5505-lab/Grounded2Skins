@@ -1,0 +1,56 @@
+RIVET BASE TELEPORTER V1 — FIRST WINDOWS / MULTIPLAYER TEST
+
+Install the SAME complete ZIP contents on host and all clients: the Paks trio and
+Mods/Teleport. Replace old Teleport Lua, remove Xingxing/old Teleport cooked
+map/controller overrides, and use a COPY of a save. Keep the other Rivet mods.
+
+First check construction:
+1. Find Teleporter in the utility/athletics building menu. Prototype cost: the
+   basic trail-marker ingredients. If missing, do not substitute a trail marker
+   or unlock every recipe. Send UE4SS.log and the package filenames installed.
+2. Place it outside on level ground, finish construction, and verify the pad
+   appearance. An unfinished/placement-preview building must not offer travel.
+3. Check the native map marker. Hover it and click Travel to Base. Verify arrival
+   at the correct base with no visible/colliding tube helper. Leave the native
+   arrival area clear; do not put it against walls for the first test.
+4. Build a second base destination elsewhere and name the markers differently.
+   Select each from the map: it must use the selected marker, not random pairing.
+5. Check a normal trail marker remains a normal trail marker. Check existing
+   outposts still offer native hold-to-travel and respect lock/busy conditions.
+
+Demolish/rebuild and save:
+6. Demolish one base using the normal building action. Its marker/old target must
+   stop accepting travel. Rebuild at the SAME location; verify the new one works.
+7. Save/reload BEFORE any trip, immediately AFTER a trip, and after waiting over
+   30 seconds. Exit/restart the game too. Verify each saved base has one destination,
+   no extra marker/door/collision, and a demolished base does not return.
+
+Required multiplayer acceptance (not performed in the cloud):
+8. Host loads the world but NEVER opens its map. Joining player builds/finishes a
+   base, opens their own map and travels to it. Only the requesting player moves.
+9. Repeat with a host-built base selected by a joining player, then a client-built
+   base selected by the host. Both players must see the same completed destinations.
+10. Have two players request DIFFERENT bases. Then try the SAME occupied base:
+    the second request must be refused while the target is in use.
+11. While a joining player hovers a destination, host demolishes it. A stale button
+    must not travel. Rebuild and confirm the client can select the NEW destination.
+12. Disconnect/rejoin and repeat after HOST save/reload. Travel far enough to leave
+    the base's normal draw/streaming range and test the distant map marker too.
+13. During a building placement preview, verify another player can still travel
+    to an already completed base. An uninitialized preview must not disable it.
+
+Useful log evidence:
+BASE_REGISTERED identifies the completed saved building and its new backend.
+BASE_UNREGISTERED marks demolition/retirement; no new requests should use that target.
+ON_DEMAND_REQUESTED is the SERVER starting native travel, not proof of arrival.
+CLIENT_BASE_REQUEST_SENT proves sending only.
+BASE_VISUAL_WAIT, BASE_LIFECYCLE_STOP, BASE_BUTTON_STOP, BASE_REQUEST_STOP,
+SERVER_REQUEST_STOP, HOOK_WAIT and SCHEMA REJECTED need investigation.
+
+If construction creates an ordinary flag with no BASE_REGISTERED, the native
+placement path may not have retained the new building row. Keep the log and stop
+that test; this engine-side row assignment is not proven by the Lua fixtures.
+
+Do not uninstall the Paks from a keep-worthy save containing these custom rows.
+Demolish the Rivet bases and save with the mod installed, or restore the pre-test
+save copy. This prototype has no automated save migration.

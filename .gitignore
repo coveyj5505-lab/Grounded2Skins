@@ -7,3 +7,5 @@ pipeline/texture-probe/bin/
 pipeline/texture-probe/obj/
 pipeline/spear-reference-inspector/bin/
 pipeline/spear-reference-inspector/obj/
+pipeline/base-teleporter/bin/
+pipeline/base-teleporter/obj/
