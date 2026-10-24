@@ -1,0 +1,34 @@
+{
+  "archive": "Buildable-Teleport-Collector-V1.zip",
+  "bytes": 11869,
+  "sha256": "0feb8d23276333d4f7d17e09db7e657e6b0f12d32f8cd42730e6679e38e63c5c",
+  "zip_crc_and_source_match": true,
+  "unit_tests_passed": 11,
+  "windows_extraction": "NOT_RUN",
+  "files": [
+    {
+      "path": "Collect-BuildableTeleport.ps1",
+      "sha256": "de853d2771091d687f1ed54edb220904af4c438c6c8475a0a14ddee1510aeba6"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "a18c7bbe58b6a943155f1cd634971ef70f89af2f2b61cf4c4f22be385e0e56fb"
+    },
+    {
+      "path": "Start-Collection.cmd",
+      "sha256": "cc75c0b3e0f05e757be5d316653a894c750452192d3ec652a0e085dde8507f97"
+    },
+    {
+      "path": "collect_buildable_teleport.py",
+      "sha256": "67bb20b702f4ef2c2277a4afed90b35e91e6d64df23d9f800e0ffa0add544125"
+    },
+    {
+      "path": "support/discover_pete.py",
+      "sha256": "43f06fc4cb838aeb4301a5b70d08220057d27bb362f19bc51bc5d6b28c8ec5ef"
+    },
+    {
+      "path": "support/extract_selected.py",
+      "sha256": "841157c09642219b95970bed1d8b7d5b50d216e34638a284a69417828c7733e2"
+    }
+  ]
+}
