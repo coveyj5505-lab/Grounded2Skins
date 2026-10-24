@@ -120,7 +120,7 @@ local function meta(class,fieldTypes)
  end
  return o
 end
-local fieldSpecs={['Maine.Switch']={PersistenceComponent='ObjectProperty'},['Maine.PersistenceComponent']={bNeverSpawnAsDynamicActor='BoolProperty',bShouldEditModeSave='BoolProperty'},['Engine.Actor']={bOnlyRelevantToOwner='BoolProperty',bAlwaysRelevant='BoolProperty',Instigator='ObjectProperty'},['Maine.MapWidget']={MapPanel='ObjectProperty'},['Maine.MapPOIWidget']={POIData='ObjectProperty'},[MAP]={IsInPTSView='BoolProperty',InteractableItem='ObjectProperty',PTSTravelRequested='BoolProperty'},[TP]={Teleporter_Door_Object_REF='ObjectProperty',POIDataAsset='ObjectProperty',IsInUse='BoolProperty'},[DOOR]={TeleporterOwner='ObjectProperty',['Interaction Instigator']='ObjectProperty'}}
+local fieldSpecs={['Maine.Switch']={PersistenceComponent='ObjectProperty'},['Maine.PersistenceComponent']={bNeverSpawnAsDynamicActor='BoolProperty',bShouldEditModeSave='BoolProperty'},['Engine.Actor']={bOnlyRelevantToOwner='BoolProperty',bAlwaysRelevant='BoolProperty',Instigator='ObjectProperty'},['Maine.MapWidget']={MapPanel='ObjectProperty'},['Maine.MapPOIWidget']={POIData='ObjectProperty'},[MAP]={IsInPTSView='BoolProperty',InteractableItem='ObjectProperty',PTSTravelRequested='BoolProperty'},[TP]={PersistenceComponent='ObjectProperty',Teleporter_Door_Object_REF='ObjectProperty',POIDataAsset='ObjectProperty',IsInUse='BoolProperty'},[DOOR]={TeleporterOwner='ObjectProperty',['Interaction Instigator']='ObjectProperty'}}
 fieldSpecs['Engine.StaticMeshComponent']={StaticMesh='ObjectProperty'}
 fieldSpecs['Maine.Building']={BuildingData='StructProperty',BuildingState='EnumProperty',StaticMeshComponent='ObjectProperty',bCanBeInstanced='BoolProperty',bShouldCreateLODActor='BoolProperty',bCanActorEverProxy='BoolProperty'}
 fieldSpecs['Maine.MarkerBuilding']={CustomNameFiltered='StrProperty'}
@@ -146,7 +146,7 @@ function StaticFindObject(p)
 end
 function FindAllOf(c)
  assert(thread)
- if c=='MarkerBuilding' then return baseBuildings elseif c=='PlayerController' then return controllers elseif c=='MapWidget' then return {map} elseif c=='BP_Teleporter_C' then return sources end
+ if c=='MarkerBuilding' or c=='BP_MarkerBuilding_C' then return baseBuildings elseif c=='PlayerController' then return controllers elseif c=='MapWidget' then return {map} elseif c=='BP_Teleporter_C' then return sources end
  error('Unexpected class scan '..c)
 end
 
@@ -213,6 +213,12 @@ local function target() local v;ExecuteInGameThread(function() v=mod.targetOnMap
 local function matches(t) local v;ExecuteInGameThread(function() v=mod.isTarget(t) end);drain();return v end
 '''
 cases={
+ 'exact blueprint scan finds bases when native class scan is empty': 'local original=FindAllOf;FindAllOf=function(c) if c=="MarkerBuilding" then return {} end;return original(c) end;tickBases();assert(creates==1 and logged("BASE_IDENTITY"))',
+
+ 'zero-indexed persistence array is guarded': 'local native=objects["/Script/Engine.Default__GameplayStatics"].FinishSpawningActor;objects["/Script/Engine.Default__GameplayStatics"].FinishSpawningActor=function(self,a,t,s) local r=native(self,a,t,s);local original=a.K2_GetComponentsByClass;a.K2_GetComponentsByClass=function(self,cls) if cls==objects["/Script/Maine.PersistenceComponent"] then return {[0]=self.persistence} end;return original(self,cls) end;return r end;tickBases();assert(creates==1 and sources[1].persistence.bNeverSpawnAsDynamicActor)',
+ 'empty component array uses guarded blueprint reference': 'local native=objects["/Script/Engine.Default__GameplayStatics"].FinishSpawningActor;objects["/Script/Engine.Default__GameplayStatics"].FinishSpawningActor=function(self,a,t,s) local r=native(self,a,t,s);a.PersistenceComponent=a.persistence;local original=a.K2_GetComponentsByClass;a.K2_GetComponentsByClass=function(self,cls) if cls==objects["/Script/Maine.PersistenceComponent"] then return {} end;return original(self,cls) end;return r end;tickBases();assert(creates==1 and sources[1].persistence.bNeverSpawnAsDynamicActor and logged("PERSISTENCE_LOOKUP"))',
+ 'missing persistence array and reference still reject travel': 'local native=objects["/Script/Engine.Default__GameplayStatics"].FinishSpawningActor;objects["/Script/Engine.Default__GameplayStatics"].FinishSpawningActor=function(self,a,t,s) local r=native(self,a,t,s);local original=a.K2_GetComponentsByClass;a.K2_GetComponentsByClass=function(self,cls) if cls==objects["/Script/Maine.PersistenceComponent"] then return {} end;return original(self,cls) end;return r end;local ok=pcall(tickBases);assert(not ok and sources[1].dead and logged("PERSISTENCE_LOOKUP"))',
+
  'uninitialized preview cannot block another players completed base': 'baseBuilding.BuildingState=2;baseBuilding.StaticMeshComponent=nil;local other=makeBase("OtherPlayersBase");baseBuildings={baseBuilding,other};tickBases();assert(creates==1 and sources[1].owner==other and matches(sources[1]) and logged("BASE_VISUAL_WAIT"))',
 
  'preview-to-built transition accepts an already assigned pad mesh': 'baseBuilding.BuildingState=2;tickBases();baseBuilding.BuildingState=1;tickBases();assert(creates==1 and target()==sources[1])',

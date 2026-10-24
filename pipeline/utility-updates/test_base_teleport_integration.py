@@ -123,7 +123,7 @@ local function meta(class,fieldTypes)
  end
  return o
 end
-local fieldSpecs={['Maine.Switch']={PersistenceComponent='ObjectProperty'},['Maine.PersistenceComponent']={bNeverSpawnAsDynamicActor='BoolProperty',bShouldEditModeSave='BoolProperty'},['Engine.Actor']={bOnlyRelevantToOwner='BoolProperty',bAlwaysRelevant='BoolProperty',Instigator='ObjectProperty'},['Maine.MapWidget']={MapPanel='ObjectProperty'},['Maine.MapPOIWidget']={POIData='ObjectProperty'},[MAP]={IsInPTSView='BoolProperty',InteractableItem='ObjectProperty',PTSTravelRequested='BoolProperty'},[TP]={Teleporter_Door_Object_REF='ObjectProperty',POIDataAsset='ObjectProperty',IsInUse='BoolProperty'},[DOOR]={TeleporterOwner='ObjectProperty',['Interaction Instigator']='ObjectProperty'}}
+local fieldSpecs={['Maine.Switch']={PersistenceComponent='ObjectProperty'},['Maine.PersistenceComponent']={bNeverSpawnAsDynamicActor='BoolProperty',bShouldEditModeSave='BoolProperty'},['Engine.Actor']={bOnlyRelevantToOwner='BoolProperty',bAlwaysRelevant='BoolProperty',Instigator='ObjectProperty'},['Maine.MapWidget']={MapPanel='ObjectProperty'},['Maine.MapPOIWidget']={POIData='ObjectProperty'},[MAP]={IsInPTSView='BoolProperty',InteractableItem='ObjectProperty',PTSTravelRequested='BoolProperty'},[TP]={PersistenceComponent='ObjectProperty',Teleporter_Door_Object_REF='ObjectProperty',POIDataAsset='ObjectProperty',IsInUse='BoolProperty'},[DOOR]={TeleporterOwner='ObjectProperty',['Interaction Instigator']='ObjectProperty'}}
 fieldSpecs['Engine.StaticMeshComponent']={StaticMesh='ObjectProperty'}
 fieldSpecs['Maine.Building']={BuildingData='StructProperty',BuildingState='EnumProperty',StaticMeshComponent='ObjectProperty',bCanBeInstanced='BoolProperty',bShouldCreateLODActor='BoolProperty',bCanActorEverProxy='BoolProperty'}
 fieldSpecs['Maine.MarkerBuilding']={CustomNameFiltered='StrProperty'}
@@ -149,7 +149,7 @@ function StaticFindObject(p)
 end
 function FindAllOf(c)
  assert(thread)
- if c=='MarkerBuilding' then return baseBuildings elseif c=='PlayerController' then return controllers elseif c=='MapWidget' then return {map} elseif c=='BP_Teleporter_C' then return sources end
+ if c=='MarkerBuilding' or c=='BP_MarkerBuilding_C' then return baseBuildings elseif c=='PlayerController' then return controllers elseif c=='MapWidget' then return {map} elseif c=='BP_Teleporter_C' then return sources end
  error('Unexpected class scan '..c)
 end
 

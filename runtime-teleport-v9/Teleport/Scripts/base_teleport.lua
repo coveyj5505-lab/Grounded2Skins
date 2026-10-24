@@ -63,6 +63,10 @@ local fields={
 }
 function M.new(env)
  local api=require('teleport_native_guard').new('Rivet-BaseTeleport',schemas,fields)
+ local persistenceRefs={}
+ for _,owner in ipairs({TP,'Maine.Switch'}) do
+  persistenceRefs[owner]=require('teleport_native_guard').new('Rivet-BaseTeleport',{}, {PersistenceComponent={owner=owner,type='ObjectProperty'}})
+ end
  local function call(o,c,m,...) return api.call(o,c,m,...) end
  local function text(v) return type(v)=='string' and v or v:ToString() end
  local function ours(b)
@@ -99,8 +103,18 @@ function M.new(env)
    count=count+1;assert(count<=16,'Persistence component limit')
    api.write(part,'bNeverSpawnAsDynamicActor',true);api.write(part,'bShouldEditModeSave',false)
   end
-  if type(parts)=='table' and type(parts.ForEach)~='function' then for i,p in ipairs(parts) do visit(i,p) end else parts:ForEach(visit) end
-  assert(count>0,'Backend target has no save-persistence guard')
+  if type(parts)=='table' and type(parts.ForEach)~='function' then
+   for i,p in pairs(parts) do if type(i)=='number' then visit(i,p) end end
+  else parts:ForEach(visit) end
+  if count==0 then
+   -- Blueprint SCS references can be available even when component enumeration
+   -- returns no registered component. Validate the reflected property before use.
+   local owner=api.isa(actor,TP) and TP or 'Maine.Switch'
+   local ok,part=pcall(persistenceRefs[owner].field,actor,'PersistenceComponent')
+   api.log('PERSISTENCE_LOOKUP actor='..api.full(actor)..'; array='..type(parts)..'; direct='..(ok and api.full(part) or tostring(part)))
+   if ok and api.isa(part,'Maine.PersistenceComponent') then visit(0,part) end
+  end
+  assert(count>0,'Backend target has no save-persistence guard: '..api.full(actor))
  end
  local function align(target,building)
   if api.field(target,'IsInUse') then return end
@@ -183,7 +197,18 @@ function M.new(env)
  local base={}
  function base.tick()
   local authoritative={};local seen={}
-  for i,b in ipairs(FindAllOf('MarkerBuilding') or {}) do
+  local candidates={};local unique={}
+  for _,class in ipairs({'MarkerBuilding','BP_MarkerBuilding_C'}) do
+   local list=FindAllOf(class) or {}
+   api.once('scan:'..class..':'..#list,'BASE_SCAN class='..class..'; count='..#list)
+   for _,b in ipairs(list) do
+    local key=api.full(b)
+    if api.isa(b,'Maine.MarkerBuilding') and not unique[key] then unique[key]=true;candidates[#candidates+1]=b end
+   end
+  end
+  for i,b in ipairs(candidates) do
+   local h=api.field(b,'BuildingData')
+   api.once('identity:'..api.full(b)..':'..text(h.RowName),'BASE_IDENTITY actor='..api.full(b)..'; row='..text(h.RowName)..'; table='..api.full(h.DataTable)..'; state='..tostring(api.field(b,'BuildingState')))
    assert(i<=1024,'Base building scan limit reached')
    if ours(b) then
     seen[api.full(b)]=true

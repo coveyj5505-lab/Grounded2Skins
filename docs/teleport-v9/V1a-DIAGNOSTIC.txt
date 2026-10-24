@@ -1,0 +1,25 @@
+Rivet V1a diagnostic patch — not a verified buildable-teleporter fix
+
+1. Close the game. Back up your save; test a copy.
+2. Replace Mods/Teleport/Scripts/base_teleport.lua with the included file.
+   Keep the existing V1 main.lua, other scripts, enabled.txt, and PAK trio.
+   Install the same patch on the host and every joining player.
+3. Load the test save, open the build menu and place/complete the test object.
+4. Hover its map marker, then try an unlocked outpost once.
+5. Close the game and send the new UE4SS.log, including BASE_SCAN,
+   BASE_IDENTITY, PERSISTENCE_LOOKUP, BASE_REGISTERED and MAP_REQUEST_STOP.
+
+The Telepotty label/icon are known borrowed native presentation and are NOT
+corrected by this Lua-only patch. A placed ordinary marker is NOT assumed to
+be our base; all existing ordinary markers remain excluded from travel.
+
+What changed: scan both native MarkerBuilding and exact BP_MarkerBuilding_C;
+log actual building identities; support zero-indexed component tables; use a
+reflected, class-checked Blueprint PersistenceComponent reference if the
+native enumeration returns empty. If both lookups fail, abort safely. Do not
+remove the persistence guard to force a trip.
+
+67 local Lua fixture groups pass. Windows, actual co-op, and save/reload remain
+unverified. The prior user's log established an empty persistence lookup before
+travel, but did not establish why base registration failed. This patch gathers
+that evidence; it does not promise a completed fix or rewrite saved markers.
